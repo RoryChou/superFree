@@ -43,27 +43,27 @@
                 <div class="search-contents-title">出发日期</div>
                 <div class="search-contents-icon"></div>
                 <div class="search-contents-info">周五</div>
-                <input type="text" disabled>
+                <input type="text"  disabled>
             </div>
             <div class="combo-days section-input">
                 <div class="search-contents-title">游玩天数</div>
                 <div class="search-contents-info">05-25返回</div>
                 <div class="num-minus">-</div>
                 <div class="num-add">+</div>
-                <input type="text" value="4天" >
+                <input type="text" data-max="20" data-min="1" value="4天" >
             </div>
             <div class="combo-persons-adult section-input">
                 <div class="search-contents-title">成人数</div>
-                <div class="num-minus">-</div>
+                <div class="num-minus" onselectstart="return false;">-</div>
                 <div class="num-add">+</div>
-                <input type="text" value="2">
+                <input type="text" data-max="9" data-min="1" value="2">
             </div>
             <div class="combo-persons-children section-input">
                 <div class="search-contents-title">儿童数</div>
                 <div class="num-minus">-</div>
                 <div class="num-add">+</div>
                 <div class="search-contents-info">0-12岁</div>
-                <input type="text" value="0">
+                <input type="text" data-max="6" data-min="0" value="0">
             </div>
             <div class="drop-suggestion-citys">
                 <div class="drop-title">热门城市</div>

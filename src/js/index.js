@@ -67,7 +67,6 @@ $(function () {
             var self = this;
             //点击section
             $document.on('click','.section-input',function (e) {
-                console.log('section-input:clicked')
                 e.stopPropagation();
                 self.target = $(e.target).hasClass('section-input')?$(e.target):$(e.target).parent('.section-input');
                 //判断是否需要drop
@@ -94,18 +93,23 @@ $(function () {
             $document.on('click','.letter-tabs',function (e) {
                 e.stopPropagation();
             });
-            var inputBox = self.target && self.target.find('input');
             //input输入
-            $document.on('input',inputBox,function (e) {
-                console.log('input:input')
+            $document.on('input','.section-input input',function (e) {
                 self.target = $(e.target);
+                self.getPosition();
+
                 var value = $(this).val();
                 self.getData('data/citys.json',{},'input');
             });
             //点击加数量
-            $document.on('input','.num-add',function (e) {
-                var inputBox = $(this).parent('.section-input').find('input');
-                var inputVal = inputBox.val()
+            $document.on('click','.num-add',function (e) {
+                self.target = $(this).parent('.section-input');
+                self.numCalc(1)
+            });
+            //点击减数量
+            $document.on('click','.num-minus',function (e) {
+                self.target = $(this).parent('.section-input');
+                self.numCalc(-1)
             });
 
             //点击其他位置
@@ -122,6 +126,33 @@ $(function () {
                 //跳转页面
 
             })
+        },
+        numCalc: function (move) {
+            var inputBox = this.target.find('input');
+            var max = inputBox.data('max');
+            var min = inputBox.data('min');
+            var oldValue = parseInt(inputBox.val());
+            var newValue = oldValue+move;
+
+            //判断最大最小值
+            if(newValue>max) {
+                newValue = max;
+                this.target.find('.num-add').addClass('disabled')
+            }else if(newValue<min) {
+                newValue = min;
+                this.target.find('.num-minus').addClass('disabled')
+            }else {
+                this.target.find('.num-minus').removeClass('disabled');
+                this.target.find('.num-add').removeClass('disabled');
+            }
+
+            //判断不同的规则
+            if(this.target.hasClass('combo-days')){
+                inputBox.val(newValue+'天')
+            }else {
+                inputBox.val(newValue)
+            }
+
         },
         getData: function (url,data,type) {
             var self = this;

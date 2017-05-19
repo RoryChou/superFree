@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ui-calendar { z-index: 10; }
 
 .search-container { position: relative; left: 50%; margin-left: -250px; width: 500px; height: 300px; background-color: rgba(0, 0, 0, 0.4); padding: 20px; }
@@ -18,7 +19,9 @@
 
 .search-container .search-contents .section-input .search-contents-info { right: 40px; width: auto; color: #999; }
 
-.search-container .search-contents .section-input .num-add, .search-container .search-contents .section-input .num-minus { cursor: pointer; color: #e38; border-radius: 4px; font-size: 20px; width: 20px; height: 20px; line-height: 20px; text-align: center; border: 1px solid #e38; top: 9px; right: 4px; }
+.search-container .search-contents .section-input .num-add, .search-container .search-contents .section-input .num-minus { cursor: pointer; color: #e38; border-radius: 4px; font-size: 20px; width: 20px; height: 20px; line-height: 20px; text-align: center; border: 1px solid #e38; top: 9px; right: 4px; -moz-user-select: none; /*火狐*/ -webkit-user-select: none; /*webkit浏览器*/ -ms-user-select: none; /*IE10*/ /*早期浏览器*/ user-select: none; }
+
+.search-container .search-contents .section-input .num-add.disabled, .search-container .search-contents .section-input .disabled.num-minus { color: #ccc; border: 1px solid #ccc; }
 
 .search-container .search-contents .section-input .num-minus { right: 143px; }
 
