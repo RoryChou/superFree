@@ -1,0 +1,220 @@
+@import "var";
+
+.ui-calendar {
+  z-index: 10;
+}
+.search-container {
+  position: relative;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  height: 300px;
+  background-color: rgba(0,0,0,0.4);
+  padding: 20px;
+  .search-tabs {
+    li {
+      cursor: pointer;
+      float: left;
+      padding: 0 10px;
+      height: 30px;
+      line-height: 30px;
+      &.current {
+        color: #fff;
+      }
+    }
+  }
+  .search-contents {
+    height: 205px;
+    .section-input {
+      float: left;
+      position: relative;
+      height: 40px;
+      background-color: #fff;
+      input {
+        position: absolute;
+        left: 80px;
+        top: 0;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        font-size: 16px;
+        width: 137px;
+      }
+      .search-contents-icon {
+        position: absolute;
+        top: 0;
+        height: 40px;
+        line-height: 40px;
+        z-index: 10;
+        right: 0;
+        width: 30px;
+      }
+      .search-contents-title {
+        @extend .search-contents-icon;
+        left: 0;
+        width: 80px;
+      }
+      .search-contents-info {
+        @extend .search-contents-icon;
+        right: 40px;
+        width: auto;
+        color: #999;
+      }
+
+      .num-add {
+        @extend .search-contents-icon;
+        cursor: pointer;
+        color: $color-lv-pink;
+        border-radius: 4px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border: 1px solid $color-lv-pink;
+        top: 9px;
+        right: 4px;
+      }
+      .num-minus {
+        @extend .num-add;
+        right: 143px;
+      }
+    }
+  }
+  .search-contents-combo {
+    .section-input {
+      width: 217px;
+      margin: 10px;
+    }
+    .combo-date {
+      input {
+        width: 100px;
+        text-align: center;
+      }
+      .search-contents-info {
+        right: 10px;
+      }
+    }
+    .combo-days {
+      input {
+        width: 40px;
+        text-align: center;
+      }
+
+    }
+    .combo-persons-adult {
+      input {
+        width: 100px;
+        text-align: center;
+      }
+    }
+    .combo-persons-children {
+      input {
+        width: 40px;
+        text-align: center;
+      }
+    }
+  }
+  .search-contents-flight {
+    .section-input {
+      width: 217px;
+      margin: 10px;
+    }
+    .flight-single {
+      float: left;
+      padding: 10px;
+    }
+    .flight-double {
+      @extend .flight-single;
+      margin-right: 300px;
+    }
+    .citys-wrapper {
+      width: 260px;
+      float: left;
+      .flight-change {
+        position: absolute;
+        width: 20px;
+        height: 80px;
+        left: 250px;
+        top: 114px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+          background-color: #c33;
+        }
+      }
+    }
+    .dates-wrapper {
+      width: 240px;
+      float: left;
+    }
+  }
+  .search-btn-wrapper {
+    text-align: center;
+    .search-btn {
+      @include inlineblock;
+      color: #fff;
+      background-color: $color-lv-pink;
+    }
+  }
+  .drop-suggestion-citys {
+    display: none;
+    position: absolute;
+    top:100px;
+    left: 30px;
+    width: 450px;
+    height: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 100;
+    .drop-title {
+      color: #999;
+      font-size: 16px;
+      height: 24px;
+      line-height: 24px;
+    }
+    .city-hot {
+      li {
+        cursor: pointer;
+        float: left;
+        color: #666;
+        width: 30px;
+        &:hover {
+          color: $color-hover-orange;
+        }
+      }
+    }
+    .letter-tabs {
+      li {
+        float: left;
+        margin: 0 4px;
+        cursor: pointer;
+        &.current {
+          color: $color-lv-pink;
+        }
+      }
+    }
+    .letter-city-contents {
+      dl {
+        dt {
+          float: left;
+          color: $color-lv-pink;
+          padding: 0 10px;
+        }
+        dd {
+          cursor: pointer;
+          float: left;
+          margin: 0 5px;
+          &:hover {
+            color: $color-hover-orange;
+          }
+        }
+      }
+    }
+  }
+  .drop-complete {
+    @extend .drop-suggestion-citys;
+    z-index: 200;
+  }
+}

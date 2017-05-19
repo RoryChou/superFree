@@ -1,0 +1,18 @@
+$color-lv-pink: #e38;
+$color-hover-orange: #f60;
+
+
+@mixin etc() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin inlineblock() {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
+}
+@mixin sprite($url,$repeat:no-repeat,$position:center){
+  /* @meta {"spritesheet": {"include": true}} */
+  background:$url $repeat $position;
+}

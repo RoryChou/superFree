@@ -1,0 +1,73 @@
+.ui-calendar { z-index: 10; }
+
+.search-container { position: relative; left: 50%; margin-left: -250px; width: 500px; height: 300px; background-color: rgba(0, 0, 0, 0.4); padding: 20px; }
+
+.search-container .search-tabs li { cursor: pointer; float: left; padding: 0 10px; height: 30px; line-height: 30px; }
+
+.search-container .search-tabs li.current { color: #fff; }
+
+.search-container .search-contents { height: 205px; }
+
+.search-container .search-contents .section-input { float: left; position: relative; height: 40px; background-color: #fff; }
+
+.search-container .search-contents .section-input input { position: absolute; left: 80px; top: 0; height: 40px; line-height: 40px; background-color: #fff; font-size: 16px; width: 137px; }
+
+.search-container .search-contents .section-input .search-contents-icon, .search-container .search-contents .section-input .search-contents-title, .search-container .search-contents .section-input .search-contents-info, .search-container .search-contents .section-input .num-add, .search-container .search-contents .section-input .num-minus { position: absolute; top: 0; height: 40px; line-height: 40px; z-index: 10; right: 0; width: 30px; }
+
+.search-container .search-contents .section-input .search-contents-title { left: 0; width: 80px; }
+
+.search-container .search-contents .section-input .search-contents-info { right: 40px; width: auto; color: #999; }
+
+.search-container .search-contents .section-input .num-add, .search-container .search-contents .section-input .num-minus { cursor: pointer; color: #e38; border-radius: 4px; font-size: 20px; width: 20px; height: 20px; line-height: 20px; text-align: center; border: 1px solid #e38; top: 9px; right: 4px; }
+
+.search-container .search-contents .section-input .num-minus { right: 143px; }
+
+.search-container .search-contents-combo .section-input { width: 217px; margin: 10px; }
+
+.search-container .search-contents-combo .combo-date input { width: 100px; text-align: center; }
+
+.search-container .search-contents-combo .combo-date .search-contents-info { right: 10px; }
+
+.search-container .search-contents-combo .combo-days input { width: 40px; text-align: center; }
+
+.search-container .search-contents-combo .combo-persons-adult input { width: 100px; text-align: center; }
+
+.search-container .search-contents-combo .combo-persons-children input { width: 40px; text-align: center; }
+
+.search-container .search-contents-flight .section-input { width: 217px; margin: 10px; }
+
+.search-container .search-contents-flight .flight-single, .search-container .search-contents-flight .flight-double { float: left; padding: 10px; }
+
+.search-container .search-contents-flight .flight-double { margin-right: 300px; }
+
+.search-container .search-contents-flight .citys-wrapper { width: 260px; float: left; }
+
+.search-container .search-contents-flight .citys-wrapper .flight-change { position: absolute; width: 20px; height: 80px; left: 250px; top: 114px; color: #fff; cursor: pointer; }
+
+.search-container .search-contents-flight .citys-wrapper .flight-change:hover { background-color: #c33; }
+
+.search-container .search-contents-flight .dates-wrapper { width: 240px; float: left; }
+
+.search-container .search-btn-wrapper { text-align: center; }
+
+.search-container .search-btn-wrapper .search-btn { display: inline-block; *display: inline; *zoom: 1; color: #fff; background-color: #e38; }
+
+.search-container .drop-suggestion-citys, .search-container .drop-complete { display: none; position: absolute; top: 100px; left: 30px; width: 450px; height: 300px; padding: 10px; background-color: #fff; border: 1px solid #ccc; z-index: 100; }
+
+.search-container .drop-suggestion-citys .drop-title, .search-container .drop-complete .drop-title { color: #999; font-size: 16px; height: 24px; line-height: 24px; }
+
+.search-container .drop-suggestion-citys .city-hot li, .search-container .drop-complete .city-hot li { cursor: pointer; float: left; color: #666; width: 30px; }
+
+.search-container .drop-suggestion-citys .city-hot li:hover, .search-container .drop-complete .city-hot li:hover { color: #f60; }
+
+.search-container .drop-suggestion-citys .letter-tabs li, .search-container .drop-complete .letter-tabs li { float: left; margin: 0 4px; cursor: pointer; }
+
+.search-container .drop-suggestion-citys .letter-tabs li.current, .search-container .drop-complete .letter-tabs li.current { color: #e38; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl dt, .search-container .drop-complete .letter-city-contents dl dt { float: left; color: #e38; padding: 0 10px; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl dd, .search-container .drop-complete .letter-city-contents dl dd { cursor: pointer; float: left; margin: 0 5px; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl dd:hover, .search-container .drop-complete .letter-city-contents dl dd:hover { color: #f60; }
+
+.search-container .drop-complete { z-index: 200; }
