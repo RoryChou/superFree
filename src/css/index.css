@@ -7,7 +7,7 @@
 
 .search-container .search-tabs li.current { color: #fff; }
 
-.search-container .search-contents { height: 205px; }
+.search-container .search-contents { display: block; height: 205px; }
 
 .search-container .search-contents .section-input { float: left; position: relative; height: 40px; background-color: #fff; }
 
@@ -25,11 +25,11 @@
 
 .search-container .search-contents .section-input .num-minus { right: 143px; }
 
+.search-container .search-contents .search-date input { width: 100px; text-align: center; }
+
+.search-container .search-contents .search-date .search-contents-info { right: 10px; }
+
 .search-container .search-contents-combo .section-input { width: 217px; margin: 10px; }
-
-.search-container .search-contents-combo .combo-date input { width: 100px; text-align: center; }
-
-.search-container .search-contents-combo .combo-date .search-contents-info { right: 10px; }
 
 .search-container .search-contents-combo .combo-days input { width: 40px; text-align: center; }
 

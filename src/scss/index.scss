@@ -24,6 +24,7 @@
     }
   }
   .search-contents {
+    display: block;
     height: 205px;
     .section-input {
       float: left;
@@ -89,13 +90,7 @@
         right: 143px;
       }
     }
-  }
-  .search-contents-combo {
-    .section-input {
-      width: 217px;
-      margin: 10px;
-    }
-    .combo-date {
+    .search-date {
       input {
         width: 100px;
         text-align: center;
@@ -103,6 +98,12 @@
       .search-contents-info {
         right: 10px;
       }
+    }
+  }
+  .search-contents-combo {
+    .section-input {
+      width: 217px;
+      margin: 10px;
     }
     .combo-days {
       input {

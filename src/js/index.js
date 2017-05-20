@@ -5,15 +5,17 @@ $(function () {
     var $document = $(document);
 
     var search = {
-        suggestionFinished:false,
         target:null,
         container:$('.search-container'),
-        suggestionBox: $('.drop-suggestion-citys'),
-        completeBox: $('.drop-complete'),
+        contentsLi:null,
+        suggestionBox: null,
+        calendar:null,
+        tabSwitcher:null,
+        completeBox: $('.drop-complete'),//当前页面是否唯一？
         init: function () {
+            this.suggestionBox = $('.drop-suggestion-citys');
             this.bindEvent();
-            //tab切换
-            tabSwitch('.letter-tabs li','.letter-city-contents li');
+            this.tabSwitcher = new tabSwitch('.letter-tabs li','.letter-city-contents li');
             this.calendatInit();
             this.getDefaultInfo();
         },
@@ -39,7 +41,7 @@ $(function () {
         },
         calendatInit: function () {
             var self = this;
-            lv.calendar({
+            this.calendar = lv.calendar({
                 date: "2017-05-19",
                 autoRender: false,
                 trigger: ".search-date",
@@ -65,29 +67,51 @@ $(function () {
         },
         bindEvent: function () {
             var self = this;
-            //点击section
-            $document.on('click','.section-input',function (e) {
+            //点击search-city
+            $document.on('click','.search-city',function (e) {
+                console.log('.search-city clicked',$(e.target));
+                var data = {};
                 e.stopPropagation();
-                self.target = $(e.target).hasClass('section-input')?$(e.target):$(e.target).parent('.section-input');
-                //判断是否需要drop
-                if(!self.target.hasClass('search-city') && !self.target.hasClass('search-date')){
-                    return
-                }
+                self.target = $(e.target).hasClass('search-city')?$(e.target):$(e.target).parent('.search-city');
                 self.getPosition();
-                //判断是suggestion还是calendar
-                if(self.target.hasClass('search-city')){
-                    self.getData('data/citys.json',{},'click');
-                }else if(self.target.hasClass('search-date')){
-
+                //判断是何种请求
+                if(self.target.hasClass('combo-from')) {
+                    data = {};
+                    self.getData('data/citys.json',data,'click');
                 }
+                if(self.target.hasClass('flight-from')) {
+                    data = {};
+                    self.getData('data/citys.json',data,'click');
+                }
+                if(self.target.hasClass('combo-to')) {
+                    data = {};
+                    self.getData('data/citys.json',data,'click');
+                }
+                if(self.target.hasClass('flight-to')) {
+                    data = {};
+                    self.getData('data/citys.json',data,'click');
+                }
+
+                self.calendar && self.calendar.destroy();
+            });
+            //点击search-date
+            $document.on('click','.search-date',function (e) {
+                e.stopPropagation();
+                self.target = $(e.target).hasClass('search-date')?$(e.target):$(e.target).parent('.search-date');
+                self.getPosition();
+                self.suggestionBox.hide();
+                self.completeBox.hide();
             });
             //drop中选择城市
             $document.on('click','.drop-city',function (e) {
+                e.stopPropagation();
                 var value = $(this).html();
                 //填写在input内,判断是suggestion还是complete
                 var input = self.target.hasClass('section-input')?self.target.find('input'):self.target;
                 input.val(value);
                 self.suggestionBox.hide();
+                self.tabSwitcher.init();
+                self.completeBox.hide();
             });
             //drop中切换城市列表
             $document.on('click','.letter-tabs',function (e) {
@@ -95,25 +119,39 @@ $(function () {
             });
             //input输入
             $document.on('input','.section-input input',function (e) {
-                self.target = $(e.target);
-                self.getPosition();
-
-                var value = $(this).val();
-                self.getData('data/citys.json',{},'input');
+                self.target = $(e.target).parent('.section-input');
+                if($(this).parent('.section-input').hasClass('search-date')||$(this).parent('.section-input').hasClass('search-city')){
+                    self.getPosition();
+                    //判断是否为空
+                    if ($(this).val()===''){
+                        self.getData('data/citys.json',{},'click');
+                    }else {
+                        self.getData('data/citys.json',{},'input');
+                    }
+                }
+            });
+            //input on blur
+            $document.on('blur','.section-input input',function (e) {
+                self.target = $(e.target).parent('.section-input');
+                if(!$(this).parent('.section-input').hasClass('search-date')&&!$(this).parent('.section-input').hasClass('search-city')){
+                    var value = parseInt($(this).val())||0;
+                    value = value>=0?value:-value;
+                    self.numCalc(0,value)
+                }
             });
             //点击加数量
-            $document.on('click','.num-add',function (e) {
+            $document.on('click','.num-add',function () {
                 self.target = $(this).parent('.section-input');
                 self.numCalc(1)
             });
             //点击减数量
-            $document.on('click','.num-minus',function (e) {
+            $document.on('click','.num-minus',function () {
                 self.target = $(this).parent('.section-input');
                 self.numCalc(-1)
             });
-
             //点击其他位置
             $document.on('click',$document,function () {
+                console.log('hide')
                 self.suggestionBox.hide();
                 self.completeBox.hide();
             });
@@ -127,23 +165,29 @@ $(function () {
 
             })
         },
-        numCalc: function (move) {
+        numCalc: function (move,inputValue) {
             var inputBox = this.target.find('input');
             var max = inputBox.data('max');
             var min = inputBox.data('min');
+            var btnAdd = this.target.find('.num-add');
+            var btnMinus = this.target.find('.num-minus');
             var oldValue = parseInt(inputBox.val());
-            var newValue = oldValue+move;
+            var newValue = inputValue === undefined?oldValue+move:inputValue;
+
+            //判断输入还是加减
 
             //判断最大最小值
-            if(newValue>max) {
+            if(newValue>=max) {
                 newValue = max;
-                this.target.find('.num-add').addClass('disabled')
-            }else if(newValue<min) {
+                btnAdd.addClass('disabled');
+                btnMinus.removeClass('disabled');
+            }else if(newValue<=min) {
                 newValue = min;
-                this.target.find('.num-minus').addClass('disabled')
+                btnMinus.addClass('disabled');
+                btnAdd.removeClass('disabled');
             }else {
-                this.target.find('.num-minus').removeClass('disabled');
-                this.target.find('.num-add').removeClass('disabled');
+                btnMinus.removeClass('disabled');
+                btnAdd.removeClass('disabled');
             }
 
             //判断不同的规则
@@ -157,28 +201,25 @@ $(function () {
         getData: function (url,data,type) {
             var self = this;
             if(type === 'click'){
-                //判断是否已经加载过
-                if(!this.suggestionFinished){
-                    $.ajax({
-                        url:url,
-                        data: data,
-                        success: function (res) {
-                            self.renderData(res)
-                        },
-                        error: function (error) {
-                            console.log('error',error)
-                        }
-                    });
-                }else {
-                    self.suggestionBox.show();
-                }
+                $.ajax({
+                    url:url,
+                    data: data,
+                    success: function (res) {
+                        self.renderData(res,'suggestion')
+                    },
+                    error: function (error) {
+                        console.log('error',error)
+                    }
+                });
+                self.suggestionBox.show();
+                self.completeBox.hide();
             }else {
                 //input 搜索
                 $.ajax({
                     url:url,
                     data: data,
                     success: function (res) {
-                        self.renderData(res)
+                        self.renderData(res,'complete')
                     },
                     error: function (error) {
                         console.log('error',error)
@@ -186,17 +227,19 @@ $(function () {
                 });
             }
         },
-        renderData: function (res) {
+        renderData: function (res,type) {
             //根据target判断如何渲染数据
-            if(this.target.hasClass('search-city')){
+            if(type === 'suggestion'){
                 var hotCitys = res.hot;
                 var allCitys = res.all;
+                this.suggestionBox.find('.city-hot').empty();
                 for(var i in hotCitys){
                     var li = $('<li class="drop-city"></li>');
                     li.html(hotCitys[i]);
                     this.suggestionBox.find('.city-hot').append(li)
                 }
                 var dts = $('.letter-city-contents').find('dt');
+                dts.siblings('dd').remove();
                 dts.each(function () {
                     var letter = $(this).html().toLowerCase();
                     var dl = $(this).parent('dl');
@@ -208,10 +251,7 @@ $(function () {
                 });
                 this.suggestionFinished = true;
                 this.suggestionBox.show();
-            }else if(this.target.hasClass('search-date')){
-                //弹出日历
-
-            }else {
+            }else if(type === 'complete'){
                 //input事件
                 //清除当前内容
                 this.completeBox.empty();
@@ -222,13 +262,14 @@ $(function () {
                     this.completeBox.append(li)
                 }
                 this.completeBox.show();
+            }else {
+                console.log('search renderData error!')
             }
         },
         setCookie: function (info) {
 
         }
     };
-    //search.init();
 
     /**
      * @param
@@ -238,17 +279,18 @@ $(function () {
     function tabSwitch(tabs, details,shouldInitSearch) {
         shouldInitSearch = shouldInitSearch||false;
         //添加默认样式
-        $(tabs).eq(0).addClass("current").siblings(tabs).removeClass("current");
-        $(details).eq(0).show().siblings(details).hide();
-        shouldInitSearch && search.init();
+        this.init = function () {
+            $(tabs).eq(0).addClass("current").siblings(tabs).removeClass("current");
+            $(details).eq(0).show().siblings(details).hide();
+            shouldInitSearch && search.init();
+        };
+        this.init();
         //点击切换
         $(tabs).click(function () {
             $(this).addClass("current").siblings(tabs).removeClass("current");
-            console.log($(details).eq($(this).index()));
             $(details).eq($(this).index()).show().siblings(details).hide();
-            shouldInitSearch && search.init();
         })
     }
 
-    tabSwitch('.search-tabs>li','.search-contents>li',true)
+    new tabSwitch('.search-tabs>li','.search-contents>li',true)
 });
