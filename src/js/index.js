@@ -11,6 +11,7 @@ $(function () {
         suggestionBox: null,
         calendar:null,
         tabSwitcher:null,
+        startDate:null,
         completeBox: $('.drop-complete'),//当前页面是否唯一？
         init: function () {
             this.suggestionBox = $('.drop-suggestion-citys');
@@ -21,6 +22,11 @@ $(function () {
         },
         getDefaultInfo:function () {
             //填写默认信息
+            this.startDate = $('.combo-date').find('input').val()||this.dateNow();
+        },
+        dateNow: function (set) {
+            var date = set?new Date(set):new Date();
+            return date.toLocaleDateString();
         },
         getPosition: function () {
             //获取container的位置
@@ -61,6 +67,7 @@ $(function () {
                         var week = ['周日','周一','周二','周三','周四','周五','周六']
                         var weekDay = week[date.getDay()];
                         self.target.find('.search-contents-info').html(weekDay);
+                        self.startDate = $('.combo-date').find('input').val();
                     }
                 }
             })
@@ -193,6 +200,7 @@ $(function () {
             //判断不同的规则
             if(this.target.hasClass('combo-days')){
                 inputBox.val(newValue+'天')
+                this.target.find('.search-contents-info').html(this.startDate.substring(5)+'返回');
             }else {
                 inputBox.val(newValue)
             }
