@@ -6,213 +6,240 @@
     <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">
     <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/tips.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/ui.css">-->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/tips.css">-->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/ui.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<div class="search-container">
-    <ul class="search-tabs clearfix">
-        <li class="current">
-            优选套餐
-        </li>
-        <li>
-            机票
-        </li>
-        <li>
-            酒店
-        </li>
-        <li>
-            门票
-        </li>
-    </ul>
-    <ul class="search-contents">
-        <li class="search-contents-combo">
-            <div class="combo-from section-input search-city">
-                <div class="search-contents-title">出发地</div>
-                <div class="search-contents-icon"></div>
-                <input type="text">
-            </div>
-            <div class="combo-to section-input search-city">
-                <div class="search-contents-title">目的地</div>
-                <div class="search-contents-icon"></div>
-                <input type="text" placeholder="请输入目的地">
-            </div>
-            <div class="combo-date section-input search-date">
-                <div class="search-contents-title">出发日期</div>
-                <div class="search-contents-icon"></div>
-                <div class="search-contents-info">周五</div>
-                <input type="text"  disabled>
-            </div>
-            <div class="combo-days section-input">
-                <div class="search-contents-title">游玩天数</div>
-                <div class="search-contents-info">05-25返回</div>
-                <div class="num-minus">-</div>
-                <div class="num-add">+</div>
-                <input type="text" data-max="20" data-min="1" value="4天" >
-            </div>
-            <div class="combo-persons-adult section-input">
-                <div class="search-contents-title">成人数</div>
-                <div class="num-minus" onselectstart="return false;">-</div>
-                <div class="num-add">+</div>
-                <input type="text" data-max="9" data-min="1" value="2">
-            </div>
-            <div class="combo-persons-children section-input">
-                <div class="search-contents-title">儿童数</div>
-                <div class="num-minus disabled">-</div>
-                <div class="num-add">+</div>
-                <div class="search-contents-info">0-12岁</div>
-                <input type="text" data-max="6" data-min="0" value="0">
-            </div>
-            <div class="drop-suggestion-citys">
-                <div class="drop-title">热门城市</div>
-                <ul class="city-hot clearfix">
-                </ul>
-                <ul class="letter-tabs clearfix">
-                    <li class="current">ABCD</li>
-                    <li>EFGH</li>
-                    <li>JKLM</li>
-                    <li>NPQRS</li>
-                    <li>TUVWX</li>
-                    <li>YZ</li>
-                </ul>
-                <ul class="letter-city-contents">
-                    <li>
-                        <dl class="clearfix">
-                            <dt>A</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>B</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>C</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>D</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl class="clearfix">
-                            <dt>E</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>F</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>G</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>H</dt>
-                        </dl>
-                    </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </li>
-        <li class="search-contents-flight">
-            <div class="flight-single">单程</div>
-            <div class="flight-double">往返</div>
-            <div class="citys-wrapper clearfix">
-                <div class="flight-from section-input search-city">
-                    <div class="search-contents-title">出发</div>
-                    <div class="search-contents-icon"></div>
+<div class="search-wrapper">
+    <div class="banner-title"></div>
+    <div class="search-container">
+        <ul class="search-tabs clearfix">
+            <li class="current tab-combo">
+                <div class="tab-wrapper">
+                    <i></i>
+                    优选套餐
+                </div>
+            </li>
+            <li class="tab-flight">
+                <div class="tab-wrapper">
+                    <i></i>
+                    机票
+                </div>
+            </li>
+            <li class="tab-hotel">
+                <div class="tab-wrapper">
+                    <i></i>
+                    酒店
+                </div>
+            </li>
+            <li class="tab-ticket">
+                <div class="tab-wrapper">
+                    <i></i>
+                    门票
+                </div>
+            </li>
+        </ul>
+        <ul class="search-contents">
+            <li class="search-contents-combo">
+                <div class="combo-from section-input search-city">
+                    <div class="search-contents-title">出发地</div>
+                    <div class="search-contents-icon-location"></div>
                     <input type="text">
                 </div>
-                <div class="flight-change">换</div>
-                <div class="flight-to section-input search-city">
-                    <div class="search-contents-title">到达</div>
-                    <div class="search-contents-icon"></div>
+                <div class="combo-to section-input search-city">
+                    <div class="search-contents-title">目的地</div>
                     <input type="text" placeholder="请输入目的地">
                 </div>
-            </div>
-            <div class="dates-wrapper clearfix">
-                <div class="flight-date section-input search-date">
+                <div class="combo-date section-input search-date search-calendar-common">
                     <div class="search-contents-title">出发日期</div>
-                    <div class="search-contents-icon"></div>
+                    <div class="search-contents-icon-calendar"></div>
                     <div class="search-contents-info">周五</div>
-                    <input type="text" disabled>
+                    <input type="text" readonly="readonly">
                 </div>
-                <div class="flight-date section-input search-date">
-                    <div class="search-contents-title">返程日期</div>
-                    <div class="search-contents-icon"></div>
-                    <div class="search-contents-info">周五</div>
-                    <input type="text" disabled>
+                <div class="combo-days section-input">
+                    <div class="search-contents-title">游玩天数</div>
+                    <div class="search-contents-info">05-25返回</div>
+                    <div class="num-minus"></div>
+                    <div class="num-add"></div>
+                    <input type="text" data-max="20" data-min="1" value="4天">
                 </div>
-            </div>
-            <div class="drop-suggestion-citys">
-                <div class="drop-title">热门城市</div>
-                <ul class="city-hot clearfix">
-                </ul>
-                <ul class="letter-tabs clearfix">
-                    <li class="current">ABCD</li>
-                    <li>EFGH</li>
-                    <li>JKLM</li>
-                    <li>NPQRS</li>
-                    <li>TUVWX</li>
-                    <li>YZ</li>
-                </ul>
-                <ul class="letter-city-contents">
-                    <li>
-                        <dl class="clearfix">
-                            <dt>A</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>B</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>C</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>D</dt>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl class="clearfix">
-                            <dt>E</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>F</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>G</dt>
-                        </dl>
-                        <dl class="clearfix">
-                            <dt>H</dt>
-                        </dl>
-                    </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            hotel
-        </li>
-        <li>
-            tickits
-        </li>
-    </ul>
-    <ul class="drop-complete">
+                <div class="combo-persons-adult section-input">
+                    <div class="search-contents-title">成人数</div>
+                    <input class="search-contents-select" value="2" readonly="readonly">
+                    <b></b>
+                    <ul class="search-contents-selections">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                    </ul>
+                </div>
+                <div class="combo-persons-children section-input">
+                    <div class="search-contents-title">儿童数</div>
+                    <input class="search-contents-select" value="0" readonly="readonly">
+                    <b></b>
+                    <ul class="search-contents-selections">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                    </ul>
+                </div>
+                <div class="drop-suggestion-citys">
+                    <div class="drop-title">热门城市</div>
+                    <ul class="city-hot clearfix">
+                    </ul>
+                    <ul class="letter-tabs clearfix">
+                        <li class="current">ABCD</li>
+                        <li>EFGH</li>
+                        <li>JKLM</li>
+                        <li>NPQRS</li>
+                        <li>TUVWX</li>
+                        <li>YZ</li>
+                    </ul>
+                    <ul class="letter-city-contents">
+                        <li>
+                            <dl class="clearfix">
+                                <dt>A</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>B</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>C</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>D</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl class="clearfix">
+                                <dt>E</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>F</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>G</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>H</dt>
+                            </dl>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="search-contents-flight">
+                <div class="flight-single current">单程</div>
+                <div class="flight-double">往返</div>
+                <div class="citys-wrapper clearfix">
+                    <div class="flight-from section-input search-city">
+                        <div class="search-contents-title">出发</div>
+                        <div class="search-contents-icon"></div>
+                        <input type="text">
+                    </div>
+                    <div class="flight-change">换</div>
+                    <div class="flight-to section-input search-city">
+                        <div class="search-contents-title">到达</div>
+                        <div class="search-contents-icon"></div>
+                        <input type="text" placeholder="请输入目的地">
+                    </div>
+                </div>
+                <div class="dates-wrapper clearfix">
+                    <div class="flight-date-start section-input search-date search-cascading">
+                        <div class="search-contents-title">出发日期</div>
+                        <div class="search-contents-icon"></div>
+                        <div class="search-contents-info">周五</div>
+                        <input type="text" readonly="readonly">
+                    </div>
+                    <div class="flight-date-return section-input search-date disabled">
+                        <div class="search-contents-title">返程日期</div>
+                        <div class="search-contents-icon"></div>
+                        <div class="search-contents-info">周五</div>
+                        <input type="text" readonly="readonly">
+                    </div>
+                </div>
+                <div class="drop-suggestion-citys">
+                    <div class="drop-title">热门城市</div>
+                    <ul class="city-hot clearfix">
+                    </ul>
+                    <ul class="letter-tabs clearfix">
+                        <li class="current">ABCD</li>
+                        <li>EFGH</li>
+                        <li>JKLM</li>
+                        <li>NPQRS</li>
+                        <li>TUVWX</li>
+                        <li>YZ</li>
+                    </ul>
+                    <ul class="letter-city-contents">
+                        <li>
+                            <dl class="clearfix">
+                                <dt>A</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>B</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>C</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>D</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl class="clearfix">
+                                <dt>E</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>F</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>G</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>H</dt>
+                            </dl>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                hotel
+            </li>
+            <li>
+                tickits
+            </li>
+        </ul>
+        <ul class="drop-complete">
 
-    </ul>
-    <div class="search-btn-wrapper">
-        <span class="search-btn"><i></i>搜索自由行套餐</span>
+        </ul>
+        <div class="search-btn-wrapper">
+            <span class="search-btn"><i></i>搜索自由行套餐</span>
+        </div>
     </div>
 </div>
-
-
-
 
 
 <!--<script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>-->
 <script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
 <!--<script src="http://pic.lvmama.com/js/v6/header_new.js"></script>-->
-<script src="http://pic.lvmama.com/js/lv/calendar.js"></script>
-<!--<script src="http://pic.lvmama.com/js/lv/ui.js"></script>-->
+<script src="libs/calendar.js"></script>
+<script src="http://pic.lvmama.com/js/lv/ui.js"></script>
 <script src="js/index.js"></script>
 <!--<script src="http://pic.lvmama.com/js/v5/ibm/eluminate.js"></script>
 <script src="http://pic.lvmama.com/js/v5/ibm/coremetrics-initalize.js"></script>-->

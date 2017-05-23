@@ -3,126 +3,262 @@
 .ui-calendar {
   z-index: 10;
 }
-.search-container {
+body {
+  min-width: 1000px;
+  overflow: hidden;
+  font-family: "Microsoft YaHei";
+}
+.search-wrapper {
   position: relative;
   left: 50%;
-  margin-left: -250px;
-  width: 500px;
-  height: 300px;
-  background-color: rgba(0,0,0,0.4);
-  padding: 20px;
+  margin-left: -960px;
+  width: 1920px;
+  height: 540px;
+  .banner-title {
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    top: 32px;
+    @include sprite(url('../imgs/sprite/banner-title.png'));
+    width: 221px;
+    height: 49px;
+  }
+  background: url("../imgs/banner.jpg") no-repeat center;
+}
+.search-container {
+  position: relative;
+  top: 120px;
+  left: 50%;
+  margin-left: -(685px/2);
+  width: 585px;
+  height: 306px;
+  background-color: rgba(0,0,0,0.6);
+  padding: 25px 50px;
+  border-radius:8px;
   .search-tabs {
+    margin-left: -22px;
+    margin-bottom: 18px;
     li {
       cursor: pointer;
       float: left;
-      padding: 0 10px;
-      height: 30px;
-      line-height: 30px;
+      padding: 0 22px;
+      height: 22px;
+      line-height: 22px;
+      font-size: 18px;
+      margin-bottom: 18px;
+      color: #fff;
+      border-right: 1px solid #777;
+      .tab-wrapper {
+        width: 107px;
+        text-align: center;
+        padding-bottom: 9px;
+      }
+      i {
+        @include inlineblock;
+        height: 24px;
+        width: 24px;
+        vertical-align: top;
+        padding-right: 5px;
+      }
       &.current {
-        color: #fff;
+        font-weight: 600;
+        .tab-wrapper {
+          border-bottom: 2px solid #fff;
+        }
+      }
+    }
+    .tab-combo {
+      i {
+        @include sprite(url('../imgs/sprite/icon-tab-combo.png'))
+      }
+      &.current {
+        i {
+          @include sprite(url('../imgs/sprite/icon-tab-combo-cur.png'))
+        }
+      }
+    }
+    .tab-flight {
+      i {
+        @include sprite(url('../imgs/sprite/icon-tab-flight.png'))
+      }
+      &.current {
+        i {
+          @include sprite(url('../imgs/sprite/icon-tab-flight-cur.png'))
+        }
+      }
+    }
+    .tab-hotel {
+      i {
+        @include sprite(url('../imgs/sprite/icon-tab-hotel.png'))
+      }
+      &.current {
+        i {
+          @include sprite(url('../imgs/sprite/icon-tab-hotel-cur.png'))
+        }
+      }
+    }
+    .tab-ticket {
+      border: 0;
+      i {
+        @include sprite(url('../imgs/sprite/icon-tab-ticket.png'))
+      }
+      &.current {
+        i {
+          @include sprite(url('../imgs/sprite/icon-tab-ticket-cur.png'))
+        }
       }
     }
   }
   .search-contents {
     display: block;
     height: 205px;
+    margin-left: -15px;
+    border-radius:3px;
     .section-input {
       float: left;
       position: relative;
       height: 40px;
       background-color: #fff;
+      width: 285px;
+      margin: 0 0 15px 15px;
       input {
         position: absolute;
-        left: 80px;
+        z-index: 10;
+        padding-left: 85px;
+        padding-right: 37px;
         top: 0;
         height: 40px;
         line-height: 40px;
-        background-color: #fff;
+        background: url(../imgs/alpha.gif) repeat;
         font-size: 16px;
         width: 137px;
+        color: #333;
       }
-      .search-contents-icon {
+      .search-contents-icon-location {
         position: absolute;
-        top: 0;
-        height: 40px;
-        line-height: 40px;
-        z-index: 10;
-        right: 0;
-        width: 30px;
+        top: 10px;
+        height: 20px;
+        z-index: 9;
+        right: 10px;
+        width: 16px;
+        @include sprite(url('../imgs/sprite/icon-loaction.png'));
+      }
+      .search-contents-icon-calendar {
+        @extend .search-contents-icon-location;
+        top: 13px;
+        height: 15px;
+        @include sprite(url('../imgs/sprite/icon-calendar.png'));
       }
       .search-contents-title {
-        @extend .search-contents-icon;
-        left: 0;
-        width: 80px;
-      }
-      .search-contents-info {
-        @extend .search-contents-icon;
-        right: 40px;
-        width: auto;
+        position: absolute;
+        z-index: 9;
+        left: 0px;
+        padding-left: 10px;
+        height: 40px;
+        line-height: 40px;
+        width: 75px;
+        font-size: 14px;
         color: #999;
       }
-
+      .search-contents-info {
+        position: absolute;
+        z-index: 9;
+        right: 47px;
+        height: 40px;
+        line-height: 40px;
+        color: #999;
+      }
       .num-add {
-        @extend .search-contents-icon;
+        position: absolute;
+        z-index: 11;
         cursor: pointer;
-        color: $color-lv-pink;
-        border-radius: 4px;
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-        border: 1px solid $color-lv-pink;
+        width: 26px;
+        height: 26px;
         top: 9px;
-        right: 4px;
-        -moz-user-select:none;/*火狐*/
-        -webkit-user-select:none;/*webkit浏览器*/
-        -ms-user-select:none;/*IE10*/
-        -khtml-user-select:none;/*早期浏览器*/
-        user-select:none;
+        right: 10px;
+        @include sprite(url('../imgs/sprite/icon-num-add.png'));
         &.disabled {
-          color: #ccc;
-          border: 1px solid #ccc;
+          @include sprite(url('../imgs/sprite/icon-num-add-not.png'));
         }
       }
       .num-minus {
         @extend .num-add;
-        right: 143px;
+        right: 175px;
+        @include sprite(url('../imgs/sprite/icon-num-minus.png'));
+        &.disabled {
+          @include sprite(url('../imgs/sprite/icon-num-minus-not.png'));
+        }
+      }
+      .search-contents-select {
+        width: 100px;
+        padding-right: 100px;
+      }
+      .search-contents-selections {
+        display: none;
+        position: absolute;
+        top: 41px;
+        background-color: #fff;
+        border: 1px solid #ccc/9;
+        box-shadow: 0px 2px 4px #999;
+        li {
+          cursor: pointer;
+          width: 251px;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 17px;
+          &:hover {
+            background-color: #fef2f9;
+            color: $color-lv-pink;
+          }
+        }
       }
     }
     .search-date {
       input {
         width: 100px;
-        text-align: center;
       }
       .search-contents-info {
-        right: 10px;
+        right: 36px;
       }
     }
   }
   .search-contents-combo {
     .section-input {
-      width: 217px;
-      margin: 10px;
+      //margin: 10px;
+    }
+    .combo-from,.combo-to {
+      input {
+        padding-right: 63px;
+      }
+    }
+    .combo-date {
+      input {
+        padding-right: 100px;
+      }
     }
     .combo-days {
       input {
         width: 40px;
-        text-align: center;
+        padding-left: 139px;
+        padding-right: 106px;
       }
-
     }
     .combo-persons-adult {
-      input {
-        width: 100px;
-        text-align: center;
+      b {
+        position: absolute;
+        top: 17px;
+        right: 10px;
+        @include sprite(url('../imgs/sprite/icon-select.png'));
+        width: 12px;
+        height: 8px;
+        transition: all 0.3s;
+        &.active {
+          transform: rotate(180deg);
+        }
       }
     }
     .combo-persons-children {
-      input {
-        width: 40px;
-        text-align: center;
-      }
+      @extend .combo-persons-adult;
     }
   }
   .search-contents-flight {
@@ -133,10 +269,16 @@
     .flight-single {
       float: left;
       padding: 10px;
+      &.current {
+        color: #fff;
+      }
     }
     .flight-double {
       @extend .flight-single;
       margin-right: 300px;
+      &.current {
+        color: #fff;
+      }
     }
     .citys-wrapper {
       width: 260px;
@@ -157,6 +299,21 @@
     .dates-wrapper {
       width: 240px;
       float: left;
+      .flight-date-return {
+        &.disabled {
+          input {
+            background-color: #ccc;
+            color: #999;
+          }
+          color: #999;
+        }
+        &.search-cascading {
+          input {
+            background-color: #fff;
+          }
+          color: #333;
+        }
+      }
     }
   }
   .search-btn-wrapper {
@@ -170,13 +327,14 @@
   .drop-suggestion-citys {
     display: none;
     position: absolute;
+    border: 1px solid #ccc/9;
+    box-shadow: 0px 2px 4px #999;
     top:100px;
     left: 30px;
     width: 450px;
     height: 300px;
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
     z-index: 100;
     .drop-title {
       color: #999;
