@@ -111,28 +111,34 @@ body {
   }
   .search-contents {
     display: block;
-    height: 205px;
     margin-left: -15px;
     border-radius:3px;
     .section-input {
       float: left;
       position: relative;
-      height: 40px;
+      height: 38px;
       background-color: #fff;
-      width: 285px;
+      width: 283px;
       margin: 0 0 15px 15px;
+      border-radius: 3px;
+      border: 1px solid #fff;
+      &.error {
+        border: 1px solid #f30;
+        background-color: #ffe8e8;
+      }
       input {
         position: absolute;
         z-index: 10;
         padding-left: 85px;
         padding-right: 37px;
         top: 0;
-        height: 40px;
-        line-height: 40px;
+        height: 38px;
+        line-height: 38px;
         background: url(../imgs/alpha.gif) repeat;
         font-size: 16px;
         width: 137px;
         color: #333;
+        outline: none;
       }
       .search-contents-icon-location {
         position: absolute;
@@ -154,8 +160,8 @@ body {
         z-index: 9;
         left: 0px;
         padding-left: 10px;
-        height: 40px;
-        line-height: 40px;
+        height: 38px;
+        line-height: 38px;
         width: 75px;
         font-size: 14px;
         color: #999;
@@ -164,8 +170,8 @@ body {
         position: absolute;
         z-index: 9;
         right: 47px;
-        height: 40px;
-        line-height: 40px;
+        height: 38px;
+        line-height: 38px;
         color: #999;
       }
       .num-add {
@@ -200,9 +206,10 @@ body {
         background-color: #fff;
         border: 1px solid #ccc/9;
         box-shadow: 0px 2px 4px #999;
+        z-index: 10;
         li {
           cursor: pointer;
-          width: 251px;
+          width: 250px;
           height: 30px;
           line-height: 30px;
           padding: 0 17px;
@@ -219,6 +226,22 @@ body {
       }
       .search-contents-info {
         right: 36px;
+      }
+    }
+    .nova-tip-form {
+      display: none;
+      position: absolute;
+      top:244px;
+      left: 50px;
+      margin-top: -16px;
+      color: #fff;
+      .tip-content {
+        height: 18px;
+        overflow: hidden;
+        li {
+          display: block;
+          height: 18px;
+        }
       }
     }
   }
@@ -317,11 +340,29 @@ body {
     }
   }
   .search-btn-wrapper {
+    position: absolute;
+    width: 100%;
+    top:268px;
+    left: 0;
     text-align: center;
     .search-btn {
       @include inlineblock;
       color: #fff;
       background-color: $color-lv-pink;
+      border-radius:5px;
+      width:300px;
+      height:48px;
+      font-size:20px;
+      line-height: 48px;
+      cursor: pointer;
+      .icon {
+        @include inlineblock;
+        @include sprite(url('../imgs/sprite/search-btn.png'));
+        width: 16px;
+        height: 19px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
     }
   }
   .drop-suggestion-citys {
@@ -384,5 +425,11 @@ body {
   .drop-complete {
     @extend .drop-suggestion-citys;
     z-index: 200;
+    &.error {
+      border: 1px solid #f30;
+      background-color: #ffe8e8;
+      color: #f30;
+      height: 28px;
+    }
   }
 }

@@ -5,9 +5,10 @@
     <title>自由行+DIY</title>
     <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/tips.css">-->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/tips.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/ui.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/lv/icons.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -46,11 +47,11 @@
                 <div class="combo-from section-input search-city">
                     <div class="search-contents-title">出发地</div>
                     <div class="search-contents-icon-location"></div>
-                    <input type="text">
+                    <input type="text" class="input-city-from">
                 </div>
                 <div class="combo-to section-input search-city">
                     <div class="search-contents-title">目的地</div>
-                    <input type="text" placeholder="请输入目的地">
+                    <input type="text" placeholder="请输入目的地" class="input-city-to">
                 </div>
                 <div class="combo-date section-input search-date search-calendar-common">
                     <div class="search-contents-title">出发日期</div>
@@ -60,7 +61,7 @@
                 </div>
                 <div class="combo-days section-input">
                     <div class="search-contents-title">游玩天数</div>
-                    <div class="search-contents-info">05-25返回</div>
+                    <div class="search-contents-info"></div>
                     <div class="num-minus"></div>
                     <div class="num-add"></div>
                     <input type="text" data-max="20" data-min="1" value="4天">
@@ -138,6 +139,12 @@
                         <li></li>
                         <li></li>
                         <li></li>
+                    </ul>
+                </div>
+                <div class="nova-tip-form">
+                    <span class="nova-icon-xs nova-icon-warning"></span>
+                    <ul class="tip-content">
+
                     </ul>
                 </div>
             </li>
@@ -228,8 +235,9 @@
         <ul class="drop-complete">
 
         </ul>
+
         <div class="search-btn-wrapper">
-            <span class="search-btn"><i></i>搜索自由行套餐</span>
+            <a class="search-btn btn btn-pink"><span class="icon"></span>搜索自由行套餐</a>
         </div>
     </div>
 </div>

@@ -38,19 +38,21 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 
 .search-container .search-tabs .tab-ticket.current i { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-tab-ticket-cur.png") no-repeat center; }
 
-.search-container .search-contents { display: block; height: 205px; margin-left: -15px; border-radius: 3px; }
+.search-container .search-contents { display: block; margin-left: -15px; border-radius: 3px; }
 
-.search-container .search-contents .section-input { float: left; position: relative; height: 40px; background-color: #fff; width: 285px; margin: 0 0 15px 15px; }
+.search-container .search-contents .section-input { float: left; position: relative; height: 38px; background-color: #fff; width: 283px; margin: 0 0 15px 15px; border-radius: 3px; border: 1px solid #fff; }
 
-.search-container .search-contents .section-input input { position: absolute; z-index: 10; padding-left: 85px; padding-right: 37px; top: 0; height: 40px; line-height: 40px; background: url(../imgs/alpha.gif) repeat; font-size: 16px; width: 137px; color: #333; }
+.search-container .search-contents .section-input.error { border: 1px solid #f30; background-color: #ffe8e8; }
+
+.search-container .search-contents .section-input input { position: absolute; z-index: 10; padding-left: 85px; padding-right: 37px; top: 0; height: 38px; line-height: 38px; background: url(../imgs/alpha.gif) repeat; font-size: 16px; width: 137px; color: #333; outline: none; }
 
 .search-container .search-contents .section-input .search-contents-icon-location, .search-container .search-contents .section-input .search-contents-icon-calendar { position: absolute; top: 10px; height: 20px; z-index: 9; right: 10px; width: 16px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-loaction.png") no-repeat center; }
 
 .search-container .search-contents .section-input .search-contents-icon-calendar { top: 13px; height: 15px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-calendar.png") no-repeat center; }
 
-.search-container .search-contents .section-input .search-contents-title { position: absolute; z-index: 9; left: 0px; padding-left: 10px; height: 40px; line-height: 40px; width: 75px; font-size: 14px; color: #999; }
+.search-container .search-contents .section-input .search-contents-title { position: absolute; z-index: 9; left: 0px; padding-left: 10px; height: 38px; line-height: 38px; width: 75px; font-size: 14px; color: #999; }
 
-.search-container .search-contents .section-input .search-contents-info { position: absolute; z-index: 9; right: 47px; height: 40px; line-height: 40px; color: #999; }
+.search-container .search-contents .section-input .search-contents-info { position: absolute; z-index: 9; right: 47px; height: 38px; line-height: 38px; color: #999; }
 
 .search-container .search-contents .section-input .num-add, .search-container .search-contents .section-input .num-minus { position: absolute; z-index: 11; cursor: pointer; width: 26px; height: 26px; top: 9px; right: 10px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-num-add.png") no-repeat center; }
 
@@ -62,15 +64,21 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 
 .search-container .search-contents .section-input .search-contents-select { width: 100px; padding-right: 100px; }
 
-.search-container .search-contents .section-input .search-contents-selections { display: none; position: absolute; top: 41px; background-color: #fff; border: 1px solid #ccc/9; box-shadow: 0px 2px 4px #999; }
+.search-container .search-contents .section-input .search-contents-selections { display: none; position: absolute; top: 41px; background-color: #fff; border: 1px solid #ccc/9; box-shadow: 0px 2px 4px #999; z-index: 10; }
 
-.search-container .search-contents .section-input .search-contents-selections li { cursor: pointer; width: 251px; height: 30px; line-height: 30px; padding: 0 17px; }
+.search-container .search-contents .section-input .search-contents-selections li { cursor: pointer; width: 250px; height: 30px; line-height: 30px; padding: 0 17px; }
 
 .search-container .search-contents .section-input .search-contents-selections li:hover { background-color: #fef2f9; color: #e38; }
 
 .search-container .search-contents .search-date input { width: 100px; }
 
 .search-container .search-contents .search-date .search-contents-info { right: 36px; }
+
+.search-container .search-contents .nova-tip-form { display: none; position: absolute; top: 244px; left: 50px; margin-top: -16px; color: #fff; }
+
+.search-container .search-contents .nova-tip-form .tip-content { height: 18px; overflow: hidden; }
+
+.search-container .search-contents .nova-tip-form .tip-content li { display: block; height: 18px; }
 
 .search-container .search-contents-combo .combo-from input, .search-container .search-contents-combo .combo-to input { padding-right: 63px; }
 
@@ -108,9 +116,11 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 
 .search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading input { background-color: #fff; }
 
-.search-container .search-btn-wrapper { text-align: center; }
+.search-container .search-btn-wrapper { position: absolute; width: 100%; top: 268px; left: 0; text-align: center; }
 
-.search-container .search-btn-wrapper .search-btn { display: inline-block; *display: inline; *zoom: 1; color: #fff; background-color: #e38; }
+.search-container .search-btn-wrapper .search-btn { display: inline-block; *display: inline; *zoom: 1; color: #fff; background-color: #e38; border-radius: 5px; width: 300px; height: 48px; font-size: 20px; line-height: 48px; cursor: pointer; }
+
+.search-container .search-btn-wrapper .search-btn .icon { display: inline-block; *display: inline; *zoom: 1; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/search-btn.png") no-repeat center; width: 16px; height: 19px; vertical-align: middle; margin-right: 5px; }
 
 .search-container .drop-suggestion-citys, .search-container .drop-complete { display: none; position: absolute; border: 1px solid #ccc/9; box-shadow: 0px 2px 4px #999; top: 100px; left: 30px; width: 450px; height: 300px; padding: 10px; background-color: #fff; z-index: 100; }
 
@@ -131,3 +141,5 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 .search-container .drop-suggestion-citys .letter-city-contents dl dd:hover, .search-container .drop-complete .letter-city-contents dl dd:hover { color: #f60; }
 
 .search-container .drop-complete { z-index: 200; }
+
+.search-container .drop-complete.error { border: 1px solid #f30; background-color: #ffe8e8; color: #f30; height: 28px; }
