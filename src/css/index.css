@@ -1,16 +1,16 @@
 .ui-calendar { z-index: 10; }
 
-body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
+body { min-width: 1200px; font-family: "Microsoft YaHei"; }
 
-.search-wrapper { position: relative; left: 50%; margin-left: -960px; width: 1920px; height: 540px; background: url("../imgs/banner.jpg") no-repeat center; }
+.search-wrapper { position: relative; height: 540px; overflow: hidden; background: url("../imgs/banner.jpg") no-repeat center; }
 
 .search-wrapper .banner-title { position: absolute; left: 50%; margin-left: -110px; top: 32px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/banner-title.png") no-repeat center; width: 221px; height: 49px; }
 
-.search-container { position: relative; top: 120px; left: 50%; margin-left: -342.5px; width: 585px; height: 306px; background-color: rgba(0, 0, 0, 0.6); padding: 25px 50px; border-radius: 8px; }
+.search-container { position: relative; top: -420px; left: 50%; margin-left: -342.5px; width: 585px; height: 306px; background-color: rgba(0, 0, 0, 0.6); padding: 25px 50px; border-radius: 8px; }
 
 .search-container .search-tabs { margin-left: -22px; margin-bottom: 18px; }
 
-.search-container .search-tabs li { cursor: pointer; float: left; padding: 0 22px; height: 22px; line-height: 22px; font-size: 18px; margin-bottom: 18px; color: #fff; border-right: 1px solid #777; }
+.search-container .search-tabs li { cursor: pointer; float: left; padding: 0 22px; height: 22px; line-height: 22px; font-size: 18px; margin-bottom: 13px; color: #fff; border-right: 1px solid #777; }
 
 .search-container .search-tabs li .tab-wrapper { width: 107px; text-align: center; padding-bottom: 9px; }
 
@@ -90,31 +90,59 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 
 .search-container .search-contents-combo .combo-persons-adult b.active, .search-container .search-contents-combo .combo-persons-children b.active { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 
-.search-container .search-contents-flight .section-input { width: 217px; margin: 10px; }
+.search-container .search-contents-flight .search-city { width: 253px; }
 
-.search-container .search-contents-flight .flight-single, .search-container .search-contents-flight .flight-double { float: left; padding: 10px; }
+.search-container .search-contents-flight .search-city input { padding-right: 32px; }
 
-.search-container .search-contents-flight .flight-single.current, .search-container .search-contents-flight .current.flight-double { color: #fff; }
+.search-container .search-contents-flight .search-date { width: 283px; margin-left: 0; }
+
+.search-container .search-contents-flight .search-date input { padding-right: 99px; }
+
+.search-container .search-contents-flight .flight-single, .search-container .search-contents-flight .flight-double { float: left; padding: 15px; padding-bottom: 18px; font-size: 16px; color: #fff; cursor: pointer; }
+
+.search-container .search-contents-flight .flight-single span, .search-container .search-contents-flight .flight-double span { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/flight-not.png") no-repeat center; display: inline-block; *display: inline; *zoom: 1; width: 22px; height: 22px; vertical-align: top; }
+
+.search-container .search-contents-flight .flight-single.current span, .search-container .search-contents-flight .current.flight-double span { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/flight-choose.png") no-repeat center; }
 
 .search-container .search-contents-flight .flight-double { margin-right: 300px; }
 
-.search-container .search-contents-flight .flight-double.current { color: #fff; }
+.search-container .search-contents-flight .citys-wrapper { width: 313px; float: left; }
 
-.search-container .search-contents-flight .citys-wrapper { width: 260px; float: left; }
+.search-container .search-contents-flight .citys-wrapper .flight-change { position: absolute; width: 25px; height: 61px; left: 308px; top: 150px; color: #fff; cursor: pointer; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/flight-change.png") no-repeat center; }
 
-.search-container .search-contents-flight .citys-wrapper .flight-change { position: absolute; width: 20px; height: 80px; left: 250px; top: 114px; color: #fff; cursor: pointer; }
-
-.search-container .search-contents-flight .citys-wrapper .flight-change:hover { background-color: #c33; }
+.search-container .search-contents-flight .citys-wrapper .flight-change:hover { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/flight-change-hover.png") no-repeat center; }
 
 .search-container .search-contents-flight .dates-wrapper { width: 240px; float: left; }
 
 .search-container .search-contents-flight .dates-wrapper .flight-date-return.disabled { color: #999; }
 
-.search-container .search-contents-flight .dates-wrapper .flight-date-return.disabled input { background-color: #ccc; color: #999; }
+.search-container .search-contents-flight .dates-wrapper .flight-date-return.disabled input { background-color: #eee; opacity: 0.5; filter: "alpha(opacity=$per*100)"; *filter: alpha(opacity=50); *zoom: 1; }
+
+.search-container .search-contents-flight .dates-wrapper .flight-date-return.disabled .search-contents-icon-calendar, .search-container .search-contents-flight .dates-wrapper .flight-date-return.disabled .search-contents-info { display: none; }
 
 .search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading { color: #333; }
 
-.search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading input { background-color: #fff; }
+.search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading input { background: url(../imgs/alpha.gif) repeat; }
+
+.search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading .search-contents-icon-calendar, .search-container .search-contents-flight .dates-wrapper .flight-date-return.search-cascading .search-contents-info { display: block; }
+
+.search-container .search-contents-hotel .hotel-from { width: 224px; }
+
+.search-container .search-contents-hotel .hotel-from input { padding-right: 3px; }
+
+.search-container .search-contents-hotel .hotel-keywrods { width: 342px; }
+
+.search-container .search-contents-hotel .hotel-keywrods input { width: 223px; }
+
+.search-container .search-contents-hotel .search-date input { padding-right: 99px; }
+
+.search-container .search-contents-ticket .ticket-keywrods { width: 583px; }
+
+.search-container .search-contents-ticket .ticket-keywrods input { padding: 0 10px; width: 563px; }
+
+.search-container .search-contents-ticket .hotel-keywrods { width: 342px; }
+
+.search-container .search-contents-ticket .hotel-keywrods input { width: 223px; }
 
 .search-container .search-btn-wrapper { position: absolute; width: 100%; top: 268px; left: 0; text-align: center; }
 
@@ -122,24 +150,66 @@ body { min-width: 1000px; overflow: hidden; font-family: "Microsoft YaHei"; }
 
 .search-container .search-btn-wrapper .search-btn .icon { display: inline-block; *display: inline; *zoom: 1; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/search-btn.png") no-repeat center; width: 16px; height: 19px; vertical-align: middle; margin-right: 5px; }
 
-.search-container .drop-suggestion-citys, .search-container .drop-complete { display: none; position: absolute; border: 1px solid #ccc/9; box-shadow: 0px 2px 4px #999; top: 100px; left: 30px; width: 450px; height: 300px; padding: 10px; background-color: #fff; z-index: 100; }
+.search-container .drop-suggestion-citys, .search-container .drop-complete { display: none; position: absolute; border: 1px solid #ccc/9; box-shadow: 0px 2px 4px #999; top: 100px; left: 30px; width: 494px; height: 291px; padding: 13px 21px; background-color: #fff; z-index: 100; }
 
-.search-container .drop-suggestion-citys .drop-title, .search-container .drop-complete .drop-title { color: #999; font-size: 16px; height: 24px; line-height: 24px; }
+.search-container .drop-suggestion-citys .drop-title, .search-container .drop-complete .drop-title { color: #999; font-size: 14px; height: 19px; line-height: 19px; margin-bottom: 10px; }
 
-.search-container .drop-suggestion-citys .city-hot li, .search-container .drop-complete .city-hot li { cursor: pointer; float: left; color: #666; width: 30px; }
+.search-container .drop-suggestion-citys .city-hot, .search-container .drop-complete .city-hot { border-bottom: 1px dotted #ddd; padding-bottom: 8px; }
+
+.search-container .drop-suggestion-citys .city-hot li, .search-container .drop-complete .city-hot li { cursor: pointer; float: left; color: #666; font-size: 12px; height: 16px; line-height: 16px; margin-right: 20px; }
 
 .search-container .drop-suggestion-citys .city-hot li:hover, .search-container .drop-complete .city-hot li:hover { color: #f60; }
 
-.search-container .drop-suggestion-citys .letter-tabs li, .search-container .drop-complete .letter-tabs li { float: left; margin: 0 4px; cursor: pointer; }
+.search-container .drop-suggestion-citys .letter-tabs, .search-container .drop-complete .letter-tabs { border-bottom: 1px solid #ccc; height: 36px; }
 
-.search-container .drop-suggestion-citys .letter-tabs li.current, .search-container .drop-complete .letter-tabs li.current { color: #e38; }
+.search-container .drop-suggestion-citys .letter-tabs li, .search-container .drop-complete .letter-tabs li { position: relative; float: left; cursor: pointer; height: 35px; width: 69px; text-align: center; line-height: 35px; font-family: Arial; font-size: 14px; }
 
-.search-container .drop-suggestion-citys .letter-city-contents dl dt, .search-container .drop-complete .letter-city-contents dl dt { float: left; color: #e38; padding: 0 10px; }
+.search-container .drop-suggestion-citys .letter-tabs li i, .search-container .drop-complete .letter-tabs li i { display: none; position: absolute; bottom: -2px; left: 30px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-arrow.png") no-repeat center; width: 11px; height: 6px; }
 
-.search-container .drop-suggestion-citys .letter-city-contents dl dd, .search-container .drop-complete .letter-city-contents dl dd { cursor: pointer; float: left; margin: 0 5px; }
+.search-container .drop-suggestion-citys .letter-tabs li.current, .search-container .drop-complete .letter-tabs li.current { font-family: Arial; color: #e38; font-weight: 600; border-bottom: 2px solid #e38; }
+
+.search-container .drop-suggestion-citys .letter-tabs li.current i, .search-container .drop-complete .letter-tabs li.current i { display: inline; }
+
+.search-container .drop-suggestion-citys .letter-city-contents, .search-container .drop-complete .letter-city-contents { padding: 8px 15px; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl, .search-container .drop-complete .letter-city-contents dl { position: relative; padding: 5px 0px; padding-left: 12px; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl dt, .search-container .drop-complete .letter-city-contents dl dt { position: absolute; top: 8px; left: 0; font-family: Arial; font-weight: 700; float: left; color: #e38; height: 16px; font-size: 14px; line-height: 16px; }
+
+.search-container .drop-suggestion-citys .letter-city-contents dl dd, .search-container .drop-complete .letter-city-contents dl dd { cursor: pointer; float: left; margin: 2px 10px; height: 16px; font-size: 12px; line-height: 16px; }
 
 .search-container .drop-suggestion-citys .letter-city-contents dl dd:hover, .search-container .drop-complete .letter-city-contents dl dd:hover { color: #f60; }
 
 .search-container .drop-complete { z-index: 200; }
 
 .search-container .drop-complete.error { border: 1px solid #f30; background-color: #ffe8e8; color: #f30; height: 28px; }
+
+.cart { position: fixed; z-index: 100; bottom: 20px; right: 0px; /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/bg-cart.png") no-repeat center; height: 46px; line-height: 46px; width: 140px; text-align: center; color: #fff; font-size: 14px; cursor: pointer; }
+
+.cart .pro-num { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-cart-num.png") no-repeat center; height: 26px; line-height: 26px; text-align: center; width: 26px; position: absolute; top: -13px; left: 0px; }
+
+.cart i { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/icon-cart.png") no-repeat center; height: 20px; width: 20px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; margin-top: -3px; }
+
+.cart:hover { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/bg-cart-hover.png") no-repeat center; }
+
+.hot-citys-container { width: 1200px; position: relative; left: 50%; margin-left: -600px; }
+
+.hot-citys-title { position: relative; left: 50%; margin-left: -291.5px; width: 583px; height: 84px; border-bottom: 1px solid #ddd; margin-bottom: 68px; }
+
+.hot-citys-title .title-wrapper { position: absolute; width: 361px; top: 53px; left: 50%; margin-left: -180px; background-color: #fff; }
+
+.hot-citys-title .title-wrapper .title-main { font-size: 30px; display: block; height: 40px; line-height: 40px; text-align: center; }
+
+.hot-citys-title .title-wrapper .title-en { font-family: Arial; display: block; font-size: 14px; color: #999; text-align: center; height: 16px; line-height: 16px; }
+
+.hot-citys { margin-left: -20px; }
+
+.hot-citys .hot-pros { float: left; position: relative; width: 285px; height: 410px; margin-left: 20px; }
+
+.hot-citys .hot-pros .pro-info { position: absolute; left: 44px; top: 41px; width: 200px; height: 80px; color: #fff; }
+
+.hot-citys .hot-pros .pro-info .pro-name { font-weight: 700; font-size: 24px; text-align: center; }
+
+.hot-citys .hot-pros .pro-info .pro-icon { /* @meta {"spritesheet": {"include": true}} */ background: url("../imgs/sprite/pro-icon.png") no-repeat center; width: 200px; height: 10px; margin: 10px 0; }
+
+.hot-citys .hot-pros .pro-info .pro-tips li { float: left; width: 58px; height: 20px; line-height: 20px; text-align: center; border-radius: 10px; border: 1px solid #ffffff; margin-left: 5px; }

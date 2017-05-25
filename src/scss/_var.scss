@@ -16,3 +16,9 @@ $color-hover-orange: #f60;
   /* @meta {"spritesheet": {"include": true}} */
   background:$url $repeat $position;
 }
+@mixin opacity($per){
+  opacity: $per;
+  filter: "alpha(opacity=$per*100)";
+  *filter: alpha(opacity=$per*100);
+  *zoom:1;
+}

@@ -10,58 +10,80 @@ $(function () {
         container:$('.search-container'),
         currentLi:null,
         currentLiName:null,
-        suggestionBox: $('.drop-suggestion-citys'),
-        selectBox: $('.search-contents-selections'),
+        suggestionBox: null,
+        suggestionBoxHotel: null,
+        selectBoxs: $('.search-contents-selections'),
         calendar:null,
         calendarFlightReturn:null,
-        tabSwitcher:null,
+        calendarHotel:null,
         selectFlag:false,
-        localCity:'上海',
+        localCity:'',
         passCombo: true,
         passFlight: true,
         passHotel: true,
         passTicket: true,
-        pass:true,
-        completeBox: $('.drop-complete'),//当前页面是否唯一？
+        completeBox: $('.drop-complete'),
         init: function () {
             this.refresh();
             this.bindEvent();
-            this.tabSwitcherCombo = this.tabSwitch('.search-contents-combo .letter-tabs li','.search-contents-combo .letter-city-contents li');
-            this.tabSwitcherFlight = this.tabSwitch('.search-contents-flight .letter-tabs li','.search-contents-flight .letter-city-contents li');
+            this.tabSwitch('.search-contents-combo .letter-tabs li','.search-contents-combo .letter-city-contents li');
+            this.tabSwitch('.search-contents-flight .letter-tabs li','.search-contents-flight .letter-city-contents li');
+            this.tabSwitch('.search-contents-hotel .letter-tabs li','.search-contents-hotel .letter-city-contents li');
             this.getDefaultInfo();
             this.calendarInit();
         },
         refresh: function () {
+            console.log('refresh');
             this.currentLi = this.container.find('.search-contents li:visible');
+
+            //TODO 被下方代码替代
+            //this.suggestionBox = this.currentLi.find('.drop-suggestion-citys');
+            this.suggestionBox = $('.drop-suggestion-citys');
+
             if(this.currentLi.hasClass('search-contents-combo')){
                 this.currentLiName = 'combo';
-                this.pass = this.passCombo
             }
             if(this.currentLi.hasClass('search-contents-flight')){
                 this.currentLiName = 'flight';
-                this.pass = this.passFlight
             }
             if(this.currentLi.hasClass('search-contents-hotel')){
                 this.currentLiName = 'hotel';
-                this.pass = this.passHotel
+                this.suggestionBoxHotel = this.currentLi.find('.drop-suggestion-keywords');
             }
             if(this.currentLi.hasClass('search-contents-ticket')){
                 this.currentLiName = 'ticket';
-                this.pass = this.passTicket
             }
         },
         getDefaultInfo:function () {
+            //TODO 获取当前站点
+            this.localCity = '上海';
+            //this.localCity = $('#currentCity').html();
+
+            var nextDay = this.dateNow(Date.now(),1);
+            var nextDayPlus = this.dateNow(Date.now(),2);
+
             //填写默认信息
-            $('.combo-date input').val(this.dateNow(Date.now()+86400000));
+            $('.combo-date input').val(nextDay);
+            this.getWeekday($('.combo-date'),nextDay);
+            $('.flight-date-start input').val(nextDay);
+            this.getWeekday($('.flight-date-start'),nextDay);
+            $('.hotel-date-start input').val(nextDay);
+            this.getWeekday($('.hotel-date-start'),nextDay);
+            $('.hotel-date-end input').val(nextDayPlus);
+            this.getWeekday($('.hotel-date-end'),nextDayPlus);
+            $('.ticket-date-start input').val(nextDay);
+            this.getWeekday($('.ticket-date-start'),nextDay);
+            $('.flight-date-return').find('input').val('YYYY-MM-DD');
             this.freshInfo();
-            $('.flight-date-start input').val(this.dateNow());
-            $('.flight-date-return input').val(this.dateNow(Date.now()+86400000));
+
             //默认出发地为本站站点
             $('.combo-from input').val(this.localCity);
             $('.flight-from input').val(this.localCity);
         },
-        dateNow: function (set) {
+        dateNow: function (set,moveDays) {
             var date = set?new Date(set):new Date();
+            var move = moveDays?86400000*moveDays:0;
+            date = new Date(date.getTime()+move);
             var dateArr = date.toLocaleDateString().split('/');
             //+0
             dateArr[1] = dateArr[1]<10?'0'+dateArr[1]:dateArr[1];
@@ -72,21 +94,31 @@ $(function () {
             //获取container的位置
             var dropT = this.targetSection.offset().top-this.container.offset().top+this.targetSection.height();
             var dropL = this.targetSection.offset().left-this.container.offset().left;
-            if(this.targetSection.hasClass('search-city')){
-                this.suggestionBox.css({
-                    top: dropT,
-                    left: dropL
-                });
-                this.completeBox.css({
-                    top: dropT,
-                    left: dropL
-                });
-            }else {
-                //弹出calendar
-            }
+
+            this.suggestionBox.css({
+                top: dropT+3,
+                left: dropL
+            });
+            this.completeBox.css({
+                top: dropT+3,
+                left: dropL
+            });
+        },
+        getWeekday: function (targetSection,date) {
+            //判断星期几并写入info
+            var dateObj = new Date(date);
+            var week = ['周日','周一','周二','周三','周四','周五','周六']
+            var weekDay = week[dateObj.getDay()];
+            targetSection.find('.search-contents-info').html(weekDay);
+            //刷新返程时间info
+            this.freshInfo();
+            //刷新返程的日历起始时间
+            //$('.flight-date-return input').val(this.dateNow(date,1));
         },
         calendarInit: function () {
+            //TODO 多日历是否OK
             var self = this;
+            //初始化通用日历
             this.calendar = lv.calendar({
                 date: self.dateNow(),
                 autoRender: false,
@@ -102,23 +134,16 @@ $(function () {
                 selectDateCallback: function () {
                     for(var i in this.selected){
                         self.targetSection.find('input').val(i)
-                        //判断星期几并写入info
-                        var date = new Date(i);
-                        var week = ['周日','周一','周二','周三','周四','周五','周六']
-                        var weekDay = week[date.getDay()];
-                        self.targetSection.find('.search-contents-info').html(weekDay);
-                        //刷新返程时间info
-                        self.freshInfo();
-                        //刷新返程的日历起始时间
-                        $('.flight-date-return input').val(self.dateNow((new Date(i)).getTime()+86400000))
+                        self.getWeekday(self.targetSection,i);
                     }
                 }
             });
+            //初始化连级日历
             this.calendarFlightReturn = lv.calendar({
                 autoRender: false,
                 trigger: ".search-cascading input",
                 triggerEvent: "click",
-                bimonthly: false,
+                bimonthly: true,
                 //定位偏移
                 monthNext: 10,
                 monthPrev: 10,
@@ -128,20 +153,61 @@ $(function () {
                 cascadingNextAuto: false,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
-                    var week = ['周日','周一','周二','周三','周四','周五','周六']
-                    var date = new Date(self.targetSection.find('input').val());
-                    var weekDay = week[date.getDay()];
-                    self.targetSection.find('.search-contents-info').html(weekDay);
+                    var date = self.targetSection.find('input').val();
+                    self.getWeekday(self.targetSection,date);
+                }
+            });
+            //初始化连级日历-hotel
+            this.calendarHotel = lv.calendar({
+                autoRender: false,
+                trigger: ".search-cascading-hotel input",
+                triggerEvent: "click",
+                bimonthly: true,
+                //定位偏移
+                monthNext: 10,
+                monthPrev: 10,
+                dayPrev: 0,
+                template: "small",
+                cascading: true,
+                cascadingNextAuto: false,
+                //点击选择日期后的回调函数 默认返回值: calendar对象
+                selectDateCallback: function () {
+                    var date = self.targetSection.find('input').val();
+                    self.getWeekday(self.targetSection,date);
                 }
             })
+        },
+        calendarFresh: function () {
+            var self = this;
+            this.calendarFlightReturn.destroy();
+            //初始化连级日历
+            this.calendarFlightReturn = lv.calendar({
+                autoRender: false,
+                trigger: ".search-cascading input",
+                triggerEvent: "click",
+                bimonthly: true,
+                //定位偏移
+                monthNext: 10,
+                monthPrev: 10,
+                dayPrev: 0,
+                template: "small",
+                cascading: true,
+                cascadingNextAuto: false,
+                //点击选择日期后的回调函数 默认返回值: calendar对象
+                selectDateCallback: function () {
+                    var date = self.targetSection.find('input').val();
+                    self.getWeekday(self.targetSection,date);
+                }
+            });
         },
         bindEvent: function () {
             var self = this;
             //点击search-city
             $document.on('click','.search-city',function (e) {
+                console.log('search-city clicked')
                 var data = {};
-                //e.stopPropagation();
                 self.targetSection = $(e.target).parent('.search-city');
+                self.target = $(e.target);
                 self.getPosition();
                 //判断是何种请求
                 if(self.targetSection.hasClass('combo-from')) {
@@ -160,10 +226,22 @@ $(function () {
                     data = {};
                     self.getData('data/citys.json',data,'click');
                 }
-                //self.calendar && self.calendar.destroy();
+                if(self.targetSection.hasClass('hotel-from')) {
+                    data = {};
+                    self.getData('data/citys.json',data,'click');
+                }
             });
-            //点击search-date
-            $document.on('click','.search-date',function (e) {
+            //点击酒店关键字
+            $document.on('click','.search-keywords',function (e) {
+                var data = {};
+                self.targetSection = $(e.target).parent('.search-keywords');
+                self.target = $(e.target);
+                self.getPosition();
+                self.getData('data/keywords.json',data,'click');
+            });
+            //点击search-date,需要在calendar点击前触发
+            $document.on('mousedown','.search-date',function (e) {
+                console.log('search-date clicked')
                 self.targetSection = $(e.target).parent('.search-date');
                 self.target = $(e.target);
             });
@@ -172,25 +250,22 @@ $(function () {
                 console.log('.drop-city mousedown');
                 var className = '';
                 //判断触发位置
+                //FIXME 这里可以用attr
                 if(self.targetSection.hasClass('combo-from')){
                     className = 'combo-from'
                 }
                 if(self.targetSection.hasClass('combo-to')){
                     className = 'combo-to'
                 }
-                //e.stopPropagation();
                 var value = $(this).html();
 
-                //填写在input内,判断是suggestion还是complete???
+                //填写在input内
                 var input = self.targetSection.find('input');
                 input.val(value);
 
                 //判断是在哪个tab下，初始化字母分组
-                if(self.targetSection.parent().hasClass('search-contents-combo')){
-                    self.tabSwitchInit('.search-contents-combo .letter-tabs li','.search-contents-combo .letter-city-contents li');
-                }else if(self.targetSection.parent().hasClass('search-contents-flight')){
-                    self.tabSwitchInit('.search-contents-flight .letter-tabs li','.search-contents-flight .letter-city-contents li');
-                }
+                self.tabSwitchInit(self.currentLi.find('.letter-tabs li'),self.currentLi.find('.letter-city-contents li'));
+                //清除error
                 self.showError('',true,className);
                 self.suggestionBox.hide();
                 self.completeBox.hide();
@@ -233,12 +308,9 @@ $(function () {
                 console.log('blur');
                 //过滤suggestion内字母切换
                 if(!self.target.parent().hasClass('letter-tabs')){
+                    //FIXME 由于blur在tabswitch(mousedown)后触发，此时 self.suggestionBox已经不是目标tab中的了
                     self.suggestionBox.hide();
-                    if(self.target.parent().hasClass('search-contents-combo')){
-                        self.tabSwitchInit('.search-contents-combo .letter-tabs li','.search-contents-combo .letter-city-contents li');
-                    }else if(self.target.parent().hasClass('search-contents-flight')){
-                        self.tabSwitchInit('.search-contents-flight .letter-tabs li','.search-contents-flight .letter-city-contents li');
-                    }
+                    self.tabSwitchInit(self.currentLi.find('.letter-tabs li'),self.currentLi.find('.letter-city-contents li'));
                 }
                 self.targetSection = $(e.target).parent('.section-input');
                 self.target = $(e.target);
@@ -251,12 +323,12 @@ $(function () {
                 }
                 //下拉菜单旋转箭头
                 if($(this).hasClass('search-contents-select')){
+                    self.selectFlag = false;
                     self.showSelectbox(false);
                 }
-                //过滤suggestion中的点击
 
                 self.completeBox.hide();
-                self.selectBox.hide();
+                self.selectBoxs.hide();
             });
             //点击加数量
             $document.on('click','.num-add',function () {
@@ -272,23 +344,49 @@ $(function () {
             $document.on('click','.flight-single',function () {
                 $(this).addClass('current').next().removeClass('current');
                 $('.flight-date-return').removeClass('search-cascading').addClass('disabled');
+                $('.flight-date-return').find('input').val('YYYY-MM-DD');
+            });
+            //机票返程
+            $document.on('click','.flight-double',function () {
+                var startTime = $('.flight-date-start input').val();
+                $(this).addClass('current').siblings('.flight-single').removeClass('current');
+                $('.flight-date-return').addClass('search-cascading').removeClass('disabled');
+                $('.flight-date-return input').val(self.dateNow(startTime,4));
+                self.getWeekday($('.flight-date-return'),self.dateNow(startTime,4));
+                self.calendarFresh();
+            });
+            //机票切换出发地与到达
+            $document.on('click','.flight-change',function () {
+                var fromInput = $('.flight-from input');
+                var toInput = $('.flight-to input');
+                var start = fromInput.val();
+                var to = toInput.val();
+                toInput.val(start);
+                fromInput.val(to);
             });
             //下拉框点击
             $document.on('click','.search-contents-select',function (e) {
+                console.log('search-contents-select clicked')
                 self.selectFlag = !self.selectFlag;
+                self.targetSection = $(this).parent('.section-input');
                 self.target = $(e.target);
                 self.showSelectbox(self.selectFlag);
             });
             //下拉框内容确定
             $document.on('mousedown','.search-contents-selections li',function () {
-                console.log('selections mousedown');
                 $(this).parent().siblings('b').removeClass('active');
                 $(this).parent().parent('.section-input').find('.search-contents-select').val($(this).html());
+                //清除error
+                self.numCheck();
             });
-            //机票返程
-            $document.on('click','.flight-double',function () {
-                $(this).addClass('current').siblings('.flight-single').removeClass('current');
-                $('.flight-date-return').addClass('search-cascading').removeClass('disabled');
+            //blur补充条件=>点击suggestion内部tab
+            $document.on('mousedown',document,function () {
+                if(self.target&&self.target.parent().hasClass('letter-tabs')){
+                    self.suggestionBox.hide();
+                    self.tabSwitchInit(self.currentLi.find('.letter-tabs li'),self.currentLi.find('.letter-city-contents li'));
+                }else {
+                    console.log('do nothing')
+                }
             });
             //点击提交
             $document.on('click','.search-btn',function () {
@@ -345,14 +443,12 @@ $(function () {
         },
         freshInfo: function () {
             var startDateStr = $('.combo-date').find('input').val();
-            var startDate = new Date(startDateStr);
-            var startTime = startDate.getTime();
-            var period = parseInt($('.combo-days input').val())*86400000;
-            var returnTime = new Date(startTime+period);
-            var returnDate = this.dateNow(returnTime).substring(5);
+            var period = parseInt($('.combo-days input').val());
+            var returnDate = this.dateNow(startDateStr,period).substring(5);
             $('.combo-days .search-contents-info').html(returnDate+'返回')
         },
         getData: function (url,data,type) {
+            console.log('getData')
             var self = this;
             var str = '';
             var className = '';
@@ -408,6 +504,7 @@ $(function () {
             }
         },
         showError: function (info,reset,className) {
+            console.log('showError')
             var tipBox = this.currentLi.find('.nova-tip-form');
             var tipContent = tipBox.find('.tip-content');
             var $className = "."+className;
@@ -415,8 +512,7 @@ $(function () {
             reset = reset===undefined?false:reset;
 
             if(reset){
-                this.targetSection.removeClass('error');
-                //TODO $($className).removeClass('error');
+                $($className).removeClass('error');
                 tipContent.find($className).remove();
                 var tipContentLis = tipContent.find('li');
                 if(tipContentLis.length === 0){
@@ -425,13 +521,13 @@ $(function () {
                    console.log('still have error')
                 }
             }else {
+                console.log($className)
                 $($className).addClass('error');
                 //判断是否已经存在此error
                 if(targetLi.length === 0){
                     var li = $('<li></li>');
                     li.addClass(className);
                     li.html(info);
-                    //
                     tipContent.append(li);
                 }else if(targetLi.length === 1){
                     targetLi.html(info);
@@ -442,6 +538,7 @@ $(function () {
             }
         },
         renderData: function (res,type,error) {
+            console.log('renderData')
             //根据target判断如何渲染数据
             if(type === 'suggestion'){
                 var hotCitys = res.hot;
@@ -464,6 +561,7 @@ $(function () {
                     }
                 });
                 this.suggestionFinished = true;
+                console.log(this.suggestionBox);
                 this.suggestionBox.show();
             }else if(type === 'complete'){
                 //input事件
@@ -489,36 +587,81 @@ $(function () {
             }
         },
         tabSwitch: function (tabs, details) {
+            console.log('tabSwitch')
+            var $tabs,$details;
+            if(typeof tabs === 'string'){
+                $tabs = $(tabs)
+            }else if(tabs instanceof jQuery){
+                $tabs = tabs
+            }else {
+                console.log('tabSwitch tabs type error')
+            }
+            if(typeof details === 'string'){
+                $details = $(details)
+            }else if(details instanceof jQuery){
+                $details = details
+            }else {
+                console.log('tabSwitch details type error')
+            }
             var self = this;
             //添加默认样式
-            this.tabSwitchInit(tabs, details);
+            this.tabSwitchInit($tabs, $details);
             //点击切换
-            $(tabs).mousedown(function (e) {
+            $tabs.mousedown(function (e) {
+                e.stopPropagation();
                 self.target = $(e.target);
-                $(this).addClass("current").siblings(tabs).removeClass("current");
-                $(details).eq($(this).index()).show().siblings(details).hide();
+                $(this).addClass("current").siblings().removeClass("current");//TODO 舍弃了siblings()的选择器筛选
+                $details.eq($(this).index()).show().siblings().hide();
             })
         },
-        tabSwitchInit: function (tabs, details) {
-            $(tabs).eq(0).addClass("current").siblings(tabs).removeClass("current");
-            $(details).eq(0).show().siblings(details).hide();
+        tabSwitchInit: function ($tabs, $details) {
+            console.log('tabSwitchInit');
+            $tabs.eq(0).addClass("current").siblings().removeClass("current");
+            $details.eq(0).show().siblings().hide();
         },
         formCheck: function () {
             //逐个判断(empty/notfound/num-error)
             if(this.currentLiName === 'combo'){
+                this.passCombo = true;
                 if($('.combo-from input').val()===''){
                     this.showError('出发地不能为空',false,'combo-from')
+                    this.passCombo = false;
                 }
                 if($('.combo-to input').val()===''){
-                    //TODO
                     this.showError('出发地不能为空',false,'combo-to')
+                    this.passCombo = false;
                 }
+                //判断人数
+                this.numCheck();
+                //TODO ...
+                if(this.passCombo&&this.currentLi.find('.tip-content').html()===''){
+                    alert('combo pass!')
+                }
+            }
+        },
+        numCheck: function () {
+            var adultNum = parseInt($('.combo-persons-adult input').val());
+            var kidsNum = parseInt($('.combo-persons-children input').val());
+            //判断人数
+            if(adultNum+kidsNum>9){
+                this.showError('总人数不能超过9人哦',false,'combo-persons-adult');
+                this.passCombo = false;
+            }else {
+                this.showError('',true,'combo-persons-adult');
+            }
+            if(kidsNum-adultNum*2>0){
+                this.showError('儿童数最多为'+ adultNum*2 +'人哦',false,'combo-persons-children');
+                this.passCombo = false;
+            }else {
+                this.showError('',true,'combo-persons-children');
             }
         },
         setCookie: function (info) {
 
         }
     };
+
+    tabSwitch('.search-tabs>li','.search-contents>li',true);
 
     /**
      * @param
@@ -528,18 +671,15 @@ $(function () {
     function tabSwitch(tabs, details,shouldInitSearch) {
         shouldInitSearch = shouldInitSearch||false;
         //添加默认样式
-        this.init = function () {
-            $(tabs).eq(0).addClass("current").siblings(tabs).removeClass("current");
-            $(details).eq(0).show().siblings(details).hide();
-            shouldInitSearch && search.init();
-        };
-        this.init();
+        $(tabs).eq(0).addClass("current").siblings(tabs).removeClass("current");
+        $(details).eq(0).show().siblings(details).hide();
+        shouldInitSearch && search.init();
         //点击切换
         $(tabs).mousedown(function () {
             $(this).addClass("current").siblings(tabs).removeClass("current");
             $(details).eq($(this).index()).show().siblings(details).hide();
+            search.refresh();
         })
     }
 
-    new tabSwitch('.search-tabs>li','.search-contents>li',true)
 });

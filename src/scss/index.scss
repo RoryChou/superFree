@@ -4,16 +4,14 @@
   z-index: 10;
 }
 body {
-  min-width: 1000px;
-  overflow: hidden;
+  min-width: 1200px;
   font-family: "Microsoft YaHei";
 }
+
 .search-wrapper {
   position: relative;
-  left: 50%;
-  margin-left: -960px;
-  width: 1920px;
   height: 540px;
+  overflow: hidden;
   .banner-title {
     position: absolute;
     left: 50%;
@@ -27,7 +25,7 @@ body {
 }
 .search-container {
   position: relative;
-  top: 120px;
+  top: -420px;
   left: 50%;
   margin-left: -(685px/2);
   width: 585px;
@@ -45,7 +43,7 @@ body {
       height: 22px;
       line-height: 22px;
       font-size: 18px;
-      margin-bottom: 18px;
+      margin-bottom: 13px;
       color: #fff;
       border-right: 1px solid #777;
       .tab-wrapper {
@@ -285,37 +283,57 @@ body {
     }
   }
   .search-contents-flight {
-    .section-input {
-      width: 217px;
-      margin: 10px;
+    .search-city {
+      width: 253px;
+      input {
+        padding-right: 32px;
+      }
+    }
+    .search-date {
+      width: 283px;
+      margin-left: 0;
+      input {
+        padding-right: 99px;
+      }
     }
     .flight-single {
       float: left;
-      padding: 10px;
+      padding: 15px;
+      padding-bottom: 18px;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      span {
+        @include sprite(url('../imgs/sprite/flight-not.png'));
+        @include inlineblock;
+        width: 22px;
+        height: 22px;
+        vertical-align: top;
+      }
       &.current {
-        color: #fff;
+        span {
+          @include sprite(url('../imgs/sprite/flight-choose.png'));
+        }
       }
     }
     .flight-double {
       @extend .flight-single;
       margin-right: 300px;
-      &.current {
-        color: #fff;
-      }
     }
     .citys-wrapper {
-      width: 260px;
+      width: 313px;
       float: left;
       .flight-change {
         position: absolute;
-        width: 20px;
-        height: 80px;
-        left: 250px;
-        top: 114px;
+        width: 25px;
+        height: 61px;
+        left: 308px;
+        top: 150px;
         color: #fff;
         cursor: pointer;
+        @include sprite(url('../imgs/sprite/flight-change.png'));
         &:hover {
-          background-color: #c33;
+          @include sprite(url('../imgs/sprite/flight-change-hover.png'));
         }
       }
     }
@@ -325,17 +343,57 @@ body {
       .flight-date-return {
         &.disabled {
           input {
-            background-color: #ccc;
-            color: #999;
+            background-color: #eee;
+            @include opacity(0.5);
           }
           color: #999;
+          .search-contents-icon-calendar,.search-contents-info {
+            display: none;
+          }
         }
         &.search-cascading {
           input {
-            background-color: #fff;
+            background: url(../imgs/alpha.gif) repeat;
           }
           color: #333;
+          .search-contents-icon-calendar,.search-contents-info {
+            display: block;
+          }
         }
+      }
+    }
+  }
+  .search-contents-hotel{
+    .hotel-from {
+      width: 224px;
+      input {
+        padding-right: 3px;
+      }
+    }
+    .hotel-keywrods {
+      width: 342px;
+      input {
+        width: 223px;
+      }
+    }
+    .search-date {
+      input {
+        padding-right: 99px;
+      }
+    }
+  }
+  .search-contents-ticket{
+    .ticket-keywrods {
+      width: 583px;
+      input {
+        padding: 0 10px;
+        width: 563px;
+      }
+    }
+    .hotel-keywrods {
+      width: 342px;
+      input {
+        width: 223px;
       }
     }
   }
@@ -372,49 +430,92 @@ body {
     box-shadow: 0px 2px 4px #999;
     top:100px;
     left: 30px;
-    width: 450px;
-    height: 300px;
-    padding: 10px;
+    width: (536px - 21*2);
+    height: (317px - 13*2);
+    padding: 13px 21px;
     background-color: #fff;
     z-index: 100;
     .drop-title {
       color: #999;
-      font-size: 16px;
-      height: 24px;
-      line-height: 24px;
+      font-size: 14px;
+      height: 19px;
+      line-height: 19px;
+      margin-bottom: 10px;
     }
     .city-hot {
+      border-bottom: 1px dotted #ddd;
+      padding-bottom: 8px;
       li {
         cursor: pointer;
         float: left;
         color: #666;
-        width: 30px;
+        font-size: 12px;
+        height: 16px;
+        line-height: 16px;
+        margin-right: 20px;
         &:hover {
           color: $color-hover-orange;
         }
       }
     }
     .letter-tabs {
+      border-bottom: 1px solid #ccc;
+      height: 36px;
       li {
+        position: relative;
         float: left;
-        margin: 0 4px;
         cursor: pointer;
+        height: 35px;
+        width: 69px;
+        text-align: center;
+        line-height: 35px;
+        font-family:Arial;
+        font-size: 14px;
+        i {
+          display: none;
+          position: absolute;
+          bottom: -2px;
+          left: 30px;
+          @include sprite(url('../imgs/sprite/icon-arrow.png'));
+          width: 11px;
+          height: 6px;
+        }
         &.current {
+          font-family:Arial;
           color: $color-lv-pink;
+          font-weight: 600;
+          border-bottom: 2px solid $color-lv-pink;
+          i {
+            display: inline;
+          }
         }
       }
     }
     .letter-city-contents {
+      padding: 8px 15px;
       dl {
+        position: relative;
+        padding: 5px 0px;
+        padding-left: 12px;
         dt {
+          position: absolute;
+          top:8px;
+          left: 0;
+          font-family:Arial;
+          font-weight: 700;
           float: left;
           color: $color-lv-pink;
-          padding: 0 10px;
+          height: 16px;
+          font-size: 14px;
+          line-height: 16px;
         }
         dd {
           cursor: pointer;
           float: left;
-          margin: 0 5px;
+          margin: 2px 10px;
+          height: 16px;
+          font-size: 12px;
+          line-height: 16px;
           &:hover {
             color: $color-hover-orange;
           }
@@ -430,6 +531,121 @@ body {
       background-color: #ffe8e8;
       color: #f30;
       height: 28px;
+    }
+  }
+}
+.cart {
+  position: fixed;
+  z-index: 100;
+  bottom: 20px;
+  right: 0px;
+  @include sprite(url('../imgs/sprite/bg-cart.png'));
+  height: 46px;
+  line-height: 46px;
+  width: 140px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  .pro-num {
+    @include sprite(url('../imgs/sprite/icon-cart-num.png'));
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    width: 26px;
+    position: absolute;
+    top: -13px;
+    left: 0px;
+  }
+  i {
+    @include sprite(url('../imgs/sprite/icon-cart.png'));
+    height: 20px;
+    width: 20px;
+    @include inlineblock;
+    vertical-align: middle;
+    margin-top: -3px;
+  }
+  &:hover {
+    @include sprite(url('../imgs/sprite/bg-cart-hover.png'));
+  }
+}
+.hot-citys-container {
+  width: 1200px;
+  position: relative;
+  left: 50%;
+  margin-left: -600px;
+}
+.hot-citys-title {
+  position: relative;
+  left: 50%;
+  margin-left: -(583px/2);
+  width: 583px;
+  height: 84px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 68px;
+  .title-wrapper {
+    position: absolute;
+    width: 361px;
+    top: 53px;
+    left: 50%;
+    margin-left: -180px;
+    background-color: #fff;
+    .title-main {
+      font-size: 30px;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+    .title-en {
+      font-family:Arial;
+      display: block;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+      height: 16px;
+      line-height: 16px;
+    }
+  }
+}
+.hot-citys {
+  margin-left: -20px;
+  .hot-pros {
+    float: left;
+    position: relative;
+    width: 285px;
+    height: 410px;
+    margin-left: 20px;
+    .pro-info {
+      position: absolute;
+      left: 44px;
+      top: 41px;
+      width: 200px;
+      height: 80px;
+      color: #fff;
+      .pro-name {
+        font-weight: 700;
+        font-size:24px;
+        text-align: center;
+      }
+      .pro-icon {
+        @include sprite(url('../imgs/sprite/pro-icon.png'));
+        width: 200px;
+        height: 10px;
+        margin: 10px 0;
+      }
+      .pro-tips {
+        li {
+          float: left;
+          width:58px;
+          height:20px;
+          line-height: 20px;
+          text-align: center;
+          border-radius: 10px;
+          border:1px solid #ffffff;
+          margin-left: 5px;
+        }
+      }
     }
   }
 }

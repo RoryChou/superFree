@@ -13,8 +13,10 @@
 </head>
 <body>
 
-<div class="search-wrapper">
-    <div class="banner-title"></div>
+<div class="main-superfree">
+    <div class="search-wrapper">
+        <div class="banner-title"></div>
+    </div>
     <div class="search-container">
         <ul class="search-tabs clearfix">
             <li class="current tab-combo">
@@ -56,7 +58,7 @@
                 <div class="combo-date section-input search-date search-calendar-common">
                     <div class="search-contents-title">出发日期</div>
                     <div class="search-contents-icon-calendar"></div>
-                    <div class="search-contents-info">周五</div>
+                    <div class="search-contents-info"></div>
                     <input type="text" readonly="readonly">
                 </div>
                 <div class="combo-days section-input">
@@ -100,12 +102,15 @@
                     <ul class="city-hot clearfix">
                     </ul>
                     <ul class="letter-tabs clearfix">
-                        <li class="current">ABCD</li>
-                        <li>EFGH</li>
-                        <li>JKLM</li>
-                        <li>NPQRS</li>
-                        <li>TUVWX</li>
-                        <li>YZ</li>
+                        <li class="current">
+                            ABCD
+                            <i></i>
+                        </li>
+                        <li>EFGH<i></i></li>
+                        <li>JKLM<i></i></li>
+                        <li>NPQRS<i></i></li>
+                        <li>TUVWX<i></i></li>
+                        <li>YZ<i></i></li>
                     </ul>
                     <ul class="letter-city-contents">
                         <li>
@@ -143,37 +148,40 @@
                 </div>
                 <div class="nova-tip-form">
                     <span class="nova-icon-xs nova-icon-warning"></span>
-                    <ul class="tip-content">
-
-                    </ul>
+                    <ul class="tip-content"></ul>
                 </div>
             </li>
             <li class="search-contents-flight">
-                <div class="flight-single current">单程</div>
-                <div class="flight-double">往返</div>
+                <div class="flight-single current">
+                    <span></span>
+                    单程
+                </div>
+                <div class="flight-double">
+                    <span></span>
+                    往返
+                </div>
                 <div class="citys-wrapper clearfix">
                     <div class="flight-from section-input search-city">
                         <div class="search-contents-title">出发</div>
-                        <div class="search-contents-icon"></div>
-                        <input type="text">
+                        <div class="search-contents-icon-location"></div>
+                        <input type="text" class="input-city-from">
                     </div>
-                    <div class="flight-change">换</div>
+                    <div class="flight-change"></div>
                     <div class="flight-to section-input search-city">
                         <div class="search-contents-title">到达</div>
-                        <div class="search-contents-icon"></div>
-                        <input type="text" placeholder="请输入目的地">
+                        <input type="text" placeholder="请输入目的地" class="input-city-to">
                     </div>
                 </div>
                 <div class="dates-wrapper clearfix">
                     <div class="flight-date-start section-input search-date search-cascading">
                         <div class="search-contents-title">出发日期</div>
-                        <div class="search-contents-icon"></div>
-                        <div class="search-contents-info">周五</div>
+                        <div class="search-contents-icon-calendar"></div>
+                        <div class="search-contents-info"></div>
                         <input type="text" readonly="readonly">
                     </div>
                     <div class="flight-date-return section-input search-date disabled">
                         <div class="search-contents-title">返程日期</div>
-                        <div class="search-contents-icon"></div>
+                        <div class="search-contents-icon-calendar"></div>
                         <div class="search-contents-info">周五</div>
                         <input type="text" readonly="readonly">
                     </div>
@@ -183,12 +191,12 @@
                     <ul class="city-hot clearfix">
                     </ul>
                     <ul class="letter-tabs clearfix">
-                        <li class="current">ABCD</li>
-                        <li>EFGH</li>
-                        <li>JKLM</li>
-                        <li>NPQRS</li>
-                        <li>TUVWX</li>
-                        <li>YZ</li>
+                        <li class="current">ABCD<i></i></li>
+                        <li>EFGH<i></i></li>
+                        <li>JKLM<i></i></li>
+                        <li>NPQRS<i></i></li>
+                        <li>TUVWX<i></i></li>
+                        <li>YZ<i></i></li>
                     </ul>
                     <ul class="letter-city-contents">
                         <li>
@@ -225,27 +233,168 @@
                     </ul>
                 </div>
             </li>
-            <li>
-                hotel
+            <li class="search-contents-hotel">
+                <div class="hotel-from section-input search-city">
+                    <div class="search-contents-title">目的地</div>
+                    <input type="text" class="input-city-to">
+                </div>
+                <div class="hotel-keywrods section-input search-keywords">
+                    <div class="search-contents-title">关键字</div>
+                    <input type="text" placeholder="酒店名称/商圈/地标" class="input-hotel-keywords">
+                </div>
+                <div class="hotel-date-start section-input search-date search-cascading-hotel">
+                    <div class="search-contents-title">入住日期</div>
+                    <div class="search-contents-icon-calendar"></div>
+                    <div class="search-contents-info"></div>
+                    <input type="text" readonly="readonly">
+                </div>
+                <div class="hotel-date-end section-input search-date search-cascading-hotel">
+                    <div class="search-contents-title">退房日期</div>
+                    <div class="search-contents-info"></div>
+                    <div class="search-contents-icon-calendar"></div>
+                    <input type="text" readonly="readonly">
+                </div>
+                <div class="drop-suggestion-citys">
+                    <div class="drop-title">热门城市</div>
+                    <ul class="city-hot clearfix">
+                    </ul>
+                    <ul class="letter-tabs clearfix">
+                        <li class="current">ABCD<i></i></li>
+                        <li>EFGH<i></i></li>
+                        <li>JKLM<i></i></li>
+                        <li>NPQRS<i></i></li>
+                        <li>TUVWX<i></i></li>
+                        <li>YZ<i></i></li>
+                    </ul>
+                    <ul class="letter-city-contents">
+                        <li>
+                            <dl class="clearfix">
+                                <dt>A</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>B</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>C</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>D</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl class="clearfix">
+                                <dt>E</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>F</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>G</dt>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>H</dt>
+                            </dl>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="drop-suggestion-keywords"></div>
+                <div class="nova-tip-form">
+                    <span class="nova-icon-xs nova-icon-warning"></span>
+                    <ul class="tip-content"></ul>
+                </div>
             </li>
-            <li>
-                tickits
+            <li class="search-contents-ticket">
+                <div class="ticket-keywrods section-input">
+                    <input type="text" placeholder="请输入目的地、主题、或景区名称" class="input-ticket-keywords">
+                </div>
+                <div class="ticket-date-start section-input search-date search-calendar-common">
+                    <div class="search-contents-title">游玩日期</div>
+                    <div class="search-contents-icon-calendar"></div>
+                    <div class="search-contents-info"></div>
+                    <input type="text" readonly="readonly">
+                </div>
+                <div class="nova-tip-form">
+                    <span class="nova-icon-xs nova-icon-warning"></span>
+                    <ul class="tip-content"></ul>
+                </div>
             </li>
         </ul>
-        <ul class="drop-complete">
-
-        </ul>
-
+        <ul class="drop-complete"></ul>
         <div class="search-btn-wrapper">
             <a class="search-btn btn btn-pink"><span class="icon"></span>搜索自由行套餐</a>
         </div>
     </div>
+    <div class="cart">
+        <span class="pro-num">6</span>
+        <i></i>
+        自由行+DIY
+    </div>
+    <div class="hot-citys-container">
+        <div class="hot-citys-title">
+            <div class="title-wrapper">
+                <span class="title-main">热门目的地旅游宝典</span>
+                <span class="title-en">POPULAR DESTINATION TRAVEL BIBLE</span>
+            </div>
+        </div>
+        <ul class="hot-citys clearfix">
+            <li class="hot-pros">
+                <div class="pro-info">
+                    <p class="pro-name">长滩</p>
+                    <p class="pro-icon"></p>
+                    <ul class="pro-tips clearfix">
+                        <li>标题名称</li>
+                        <li>美食</li>
+                        <li>观光</li>
+                    </ul>
+                </div>
+                <img src="imgs/changtan.jpg" alt="">
+            </li>
+            <li class="hot-pros">
+                <div class="pro-info">
+                    <p class="pro-name">厦门</p>
+                    <p class="pro-icon"></p>
+                    <ul class="pro-tips clearfix">
+                        <li>标题名称</li>
+                        <li>美食</li>
+                        <li>观光</li>
+                    </ul>
+                </div>
+                <img src="imgs/xiamen.jpg" alt="">
+            </li>
+            <li class="hot-pros">
+                <div class="pro-info">
+                    <p class="pro-name">长隆</p>
+                    <p class="pro-icon"></p>
+                    <ul class="pro-tips clearfix">
+                        <li>标题名称</li>
+                        <li>美食</li>
+                        <li>观光</li>
+                    </ul>
+                </div>
+                <img src="imgs/changlong.jpg" alt="">
+            </li>
+            <li class="hot-pros">
+                <div class="pro-info">
+                    <p class="pro-name">三亚</p>
+                    <p class="pro-icon"></p>
+                    <ul class="pro-tips clearfix">
+                        <li>标题名称</li>
+                        <li>美食</li>
+                        <li>观光</li>
+                    </ul>
+                </div>
+                <img src="imgs/sanya.jpg" alt="">
+            </li>
+        </ul>
+    </div>
 </div>
 
-
-<!--<script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>-->
+<script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
-<!--<script src="http://pic.lvmama.com/js/v6/header_new.js"></script>-->
+<script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
 <script src="libs/calendar.js"></script>
 <script src="http://pic.lvmama.com/js/lv/ui.js"></script>
 <script src="js/index.js"></script>
