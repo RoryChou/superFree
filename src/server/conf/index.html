@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ekp</title>
+    <style>
+        .btn {
+            height: 30px;
+            width: 80px;
+            background-color: #c33;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: "Microsoft Yahei";
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+
+        }
+        .btn:hover {
+            background-color: #c46d34;
+        }
+        .content {
+            border: 1px solid #CCCCCC;
+            height: 300px;
+            width: 300px;
+
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+<body>
+    <div class="btn">发送</div>
+    <div class="content">
+
+    </div>
+    <script>
+        $.cookie('route','dba843b6e09792febb32577a41c9be73');
+        $.cookie('JSESSIONID','3FBFE8C921D834FE82522B139A6E06B8');
+        $.cookie('LtpaToken','AAECAzU4RERGRUQ3NThERTFBRjd6aG91aGFvdGlhbvZERUrnBWWI+YEi2p9/c1RE9WYw');
+        var btn = $('.btn');
+        btn.click(function () {
+            $.ajax('/km/review/km_review_card_record/kmReviewCardRecord.do',{
+                headers: {"Cookie": document.cookie},
+                data:{
+                    method:'data',
+                    exceptLabelIds:'',
+                    fdStart: '2017-02-26 00:00',
+                    fdEnd: '2017-04-09 00:00',
+                    s_seq: 0.6375143305123765
+                },
+                success: function (res) {
+                    //$('.content').html(JSON.stringify(res))
+                    document.write(res)
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
