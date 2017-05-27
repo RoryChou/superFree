@@ -9,7 +9,6 @@ body {
 }
 .main-superfree {
   position: relative;
-  height: 540px;
 }
 .search-wrapper {
   position: relative;
@@ -20,7 +19,7 @@ body {
     left: 50%;
     margin-left: -110px;
     top: 32px;
-    @include sprite(url('../imgs/sprite/banner-title.png'));
+    @include sprite(url('../imgs/sprite/banner-title.png'),url('../imgs/sprite/banner-title@2x.png'));
     width: 221px;
     height: 49px;
   }
@@ -33,7 +32,10 @@ body {
   margin-left: -(685px/2);
   width: 585px;
   height: 306px;
+  *z-index: 1;
   background-color: rgba(0,0,0,0.6);
+  background-color: #444\9;
+  *background-color: #444;
   padding: 25px 50px;
   border-radius:8px;
   .search-tabs {
@@ -49,6 +51,7 @@ body {
       margin-bottom: 13px;
       color: #fff;
       border-right: 1px solid #777;
+      @include opacity(0.75);
       .tab-wrapper {
         width: 107px;
         text-align: center;
@@ -59,9 +62,10 @@ body {
         height: 24px;
         width: 24px;
         vertical-align: top;
-        padding-right: 5px;
+        margin-right: 5px;
       }
       &.current {
+        @include opacity(1);
         font-weight: 600;
         .tab-wrapper {
           border-bottom: 2px solid #fff;
@@ -70,7 +74,7 @@ body {
     }
     .tab-combo {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-combo.png'))
+        @include sprite(url('../imgs/sprite/icon-tab-combo.png'),url('../imgs/sprite/icon-tab-combo@2x.png'))
       }
       &.current {
         i {
@@ -80,32 +84,36 @@ body {
     }
     .tab-flight {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-flight.png'))
+        @include sprite(url('../imgs/sprite/icon-tab-flight.png'),url('../imgs/sprite/icon-tab-flight@2x.png'))
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-flight-cur.png'))
+          @include sprite(url('../imgs/sprite/icon-tab-flight-cur.png'),url('../imgs/sprite/icon-tab-flight-cur@2x.png'))
         }
       }
     }
     .tab-hotel {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-hotel.png'))
+        @include sprite(url('../imgs/sprite/icon-tab-hotel.png'),url('../imgs/sprite/icon-tab-hotel@2x.png'));
+        height: 25px;
+        width: 23px;
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-hotel-cur.png'))
+          @include sprite(url('../imgs/sprite/icon-tab-hotel-cur.png'),url('../imgs/sprite/icon-tab-hotel-cur@2x.png'))
         }
       }
     }
     .tab-ticket {
       border: 0;
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-ticket.png'))
+        @include sprite(url('../imgs/sprite/icon-tab-ticket.png'),url('../imgs/sprite/icon-tab-ticket@2x.png'));
+        width: 26px;
+        height: 26px;
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-ticket-cur.png'))
+          @include sprite(url('../imgs/sprite/icon-tab-ticket-cur.png'),url('../imgs/sprite/icon-tab-ticket-cur@2x.png'))
         }
       }
     }
@@ -114,6 +122,7 @@ body {
     display: block;
     margin-left: -15px;
     border-radius:3px;
+    *padding-top: 9px;
     .section-input {
       float: left;
       position: relative;
@@ -123,6 +132,7 @@ body {
       margin: 0 0 15px 15px;
       border-radius: 3px;
       border: 1px solid #fff;
+      *z-index: 1;
       &.error {
         border: 1px solid #f30;
         background-color: #ffe8e8;
@@ -148,13 +158,13 @@ body {
         z-index: 9;
         right: 10px;
         width: 16px;
-        @include sprite(url('../imgs/sprite/icon-loaction.png'));
+        @include sprite(url('../imgs/sprite/icon-loaction.png'),url('../imgs/sprite/icon-loaction@2x.png'));
       }
       .search-contents-icon-calendar {
         @extend .search-contents-icon-location;
         top: 13px;
         height: 15px;
-        @include sprite(url('../imgs/sprite/icon-calendar.png'));
+        @include sprite(url('../imgs/sprite/icon-calendar.png'),url('../imgs/sprite/icon-calendar@2x.png'));
       }
       .search-contents-title {
         position: absolute;
@@ -183,15 +193,15 @@ body {
         height: 26px;
         top: 6px;
         right: 10px;
-        @include sprite(url('../imgs/sprite/icon-num-add.png'));
+        @include sprite(url('../imgs/sprite/icon-num-add.png'),url('../imgs/sprite/icon-num-add@2x.png'));
         &.disabled {
-          @include sprite(url('../imgs/sprite/icon-num-add-not.png'));
+          @include sprite(url('../imgs/sprite/icon-num-add-not.png'),url('../imgs/sprite/icon-num-add-not@2x.png'));
         }
       }
       .num-minus {
         @extend .num-add;
         right: 175px;
-        @include sprite(url('../imgs/sprite/icon-num-minus.png'));
+        @include sprite(url('../imgs/sprite/icon-num-minus.png'),url('../imgs/sprite/icon-num-minus@2x.png'));
         &.disabled {
           @include sprite(url('../imgs/sprite/icon-num-minus-not.png'));
         }
@@ -205,7 +215,8 @@ body {
         position: absolute;
         top: 41px;
         background-color: #fff;
-        border: 1px solid #ccc/9;
+        border: 1px solid #ccc\9;
+        *border: 1px solid #ccc;
         box-shadow: 0px 2px 4px #999;
         z-index: 10;
         padding: 10px 0;
@@ -218,6 +229,10 @@ body {
           font-size: 14px;
           font-family:Arial;
           &:hover {
+            background-color: #fef2f9;
+            color: $color-lv-pink;
+          }
+          &.current {
             background-color: #fef2f9;
             color: $color-lv-pink;
           }
@@ -275,7 +290,7 @@ body {
         position: absolute;
         top: 17px;
         right: 10px;
-        @include sprite(url('../imgs/sprite/icon-select.png'));
+        @include sprite(url('../imgs/sprite/icon-select.png'),url('../imgs/sprite/icon-select@2x.png'));
         width: 12px;
         height: 8px;
         transition: all 0.3s;
@@ -311,7 +326,7 @@ body {
       color: #fff;
       cursor: pointer;
       span {
-        @include sprite(url('../imgs/sprite/flight-not.png'));
+        @include sprite(url('../imgs/sprite/flight-not.png'),url('../imgs/sprite/flight-not@2x.png'));
         @include inlineblock;
         width: 22px;
         height: 22px;
@@ -319,7 +334,7 @@ body {
       }
       &.current {
         span {
-          @include sprite(url('../imgs/sprite/flight-choose.png'));
+          @include sprite(url('../imgs/sprite/flight-choose.png'),url('../imgs/sprite/flight-choose@2x.png'));
         }
       }
     }
@@ -338,9 +353,9 @@ body {
         top: 150px;
         color: #fff;
         cursor: pointer;
-        @include sprite(url('../imgs/sprite/flight-change.png'));
+        @include sprite(url('../imgs/sprite/flight-change.png'),url('../imgs/sprite/flight-change@2x.png'));
         &:hover {
-          @include sprite(url('../imgs/sprite/flight-change-hover.png'));
+          @include sprite(url('../imgs/sprite/flight-change-hover.png'),url('../imgs/sprite/flight-change-hover@2x.png'));
         }
       }
     }
@@ -402,11 +417,8 @@ body {
         width: 563px;
       }
     }
-    .hotel-keywords {
-      width: 342px;
-      input {
-        width: 223px;
-      }
+    .nova-tip-form {
+      top: 190px;
     }
   }
   .search-btn-wrapper {
@@ -418,7 +430,6 @@ body {
     .search-btn {
       @include inlineblock;
       color: #fff;
-      background-color: $color-lv-pink;
       border-radius:5px;
       width:300px;
       height:48px;
@@ -427,7 +438,7 @@ body {
       cursor: pointer;
       .icon {
         @include inlineblock;
-        @include sprite(url('../imgs/sprite/search-btn.png'));
+        @include sprite(url('../imgs/sprite/search-btn.png'),url('../imgs/sprite/search-btn@2x.png'));
         width: 16px;
         height: 19px;
         vertical-align: middle;
@@ -438,7 +449,7 @@ body {
   .drop-suggestion-citys {
     display: none;
     position: absolute;
-    border: 1px solid #ccc/9;
+    border: 1px solid #ccc\9;
     box-shadow: 0px 2px 4px #999;
     top:100px;
     left: 30px;
@@ -556,6 +567,7 @@ body {
       float: left;
       width: 309px;
       span {
+        *white-space: nowrap;
         margin-right: 20px;
         cursor: pointer;
         float: left;
@@ -599,6 +611,13 @@ body {
           @include inlineblock;
         }
       }
+      &.current {
+        background-color: #fef2f9;
+        color: $color-lv-pink;
+        .type {
+          @include inlineblock;
+        }
+      }
     }
     &.error {
       border: 1px solid #f30;
@@ -613,7 +632,7 @@ body {
   z-index: 100;
   bottom: 20px;
   right: 0px;
-  @include sprite(url('../imgs/sprite/bg-cart.png'));
+  @include sprite(url('../imgs/sprite/bg-cart.png'),url('../imgs/sprite/bg-cart@2x.png'));
   height: 46px;
   line-height: 46px;
   width: 140px;
@@ -622,7 +641,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   .pro-num {
-    @include sprite(url('../imgs/sprite/icon-cart-num.png'));
+    @include sprite(url('../imgs/sprite/icon-cart-num.png'),url('../imgs/sprite/icon-cart-num@2x.png'));
     height: 26px;
     line-height: 26px;
     text-align: center;
@@ -632,7 +651,7 @@ body {
     left: 0px;
   }
   i {
-    @include sprite(url('../imgs/sprite/icon-cart.png'));
+    @include sprite(url('../imgs/sprite/icon-cart.png'),url('../imgs/sprite/icon-cart@2x.png'));
     height: 20px;
     width: 20px;
     @include inlineblock;
@@ -640,14 +659,16 @@ body {
     margin-top: -3px;
   }
   &:hover {
-    @include sprite(url('../imgs/sprite/bg-cart-hover.png'));
+    @include sprite(url('../imgs/sprite/bg-cart-hover.png'),url('../imgs/sprite/bg-cart-hover@2x.png'));
   }
 }
 .hot-citys-container {
   width: 1200px;
   position: relative;
+  height: 563px;
   left: 50%;
   margin-left: -600px;
+  margin-bottom: 50px;
 }
 .hot-citys-title {
   position: relative;
@@ -690,6 +711,7 @@ body {
     width: 285px;
     height: 410px;
     margin-left: 20px;
+    transition: all 0.5s;
     .pro-info {
       position: absolute;
       left: 44px;
@@ -703,7 +725,7 @@ body {
         text-align: center;
       }
       .pro-icon {
-        @include sprite(url('../imgs/sprite/pro-icon.png'));
+        @include sprite(url('../imgs/sprite/pro-icon.png'),url('../imgs/sprite/pro-icon@2x.png'));
         width: 200px;
         height: 10px;
         margin: 10px 0;
@@ -720,6 +742,9 @@ body {
           margin-left: 5px;
         }
       }
+    }
+    &:hover {
+      transform: translateY(-5px)
     }
   }
 }

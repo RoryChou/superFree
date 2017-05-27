@@ -3,6 +3,9 @@
  */
 $(function () {
     var $document = $(document);
+
+    //检测浏览器
+    $.browser.msie
     //TODO 优化forin
     var search = {
         target:null,
@@ -15,6 +18,7 @@ $(function () {
         suggestionBoxHotel: null,
         selectBoxs: $('.search-contents-selections'),
         searchBtn: $('.search-btn-words'),
+        flightReturn: $('.flight-date-return'),
         calendar:null,
         calendarFlightReturn:null,
         calendarHotel:null,
@@ -24,6 +28,8 @@ $(function () {
         passFlight: true,
         passHotel: true,
         passTicket: true,
+        selectIndex: 0,
+        errorArr:[],
         completeBox: $('.drop-complete'),
         init: function () {
             this.refresh();
@@ -35,7 +41,6 @@ $(function () {
             this.calendarInit();
         },
         refresh: function () {
-            console.log('refresh');
             this.closePop();
             this.currentLi = this.container.find('.search-contents li:visible');
 
@@ -49,7 +54,8 @@ $(function () {
                 //修改completeBox的尺寸
                 this.completeBox.css({
                     width: 285
-                })
+                });
+                this.errorArr = ['combo-from','combo-to','combo-persons-adult','combo-persons-children'].reverse();
             }
             if(this.currentLi.hasClass('search-contents-flight')){
                 this.currentLiName = 'flight';
@@ -91,7 +97,7 @@ $(function () {
             //this.localCity = $('#currentCity').html();
 
             var nextDay = this.dateNow(Date.now(),1);
-            var nextDayPlus = this.dateNow(Date.now(),2);
+            var Day3 = this.dateNow(Date.now(),3);
 
             //填写默认信息
             $('.combo-date input').val(nextDay);
@@ -100,8 +106,8 @@ $(function () {
             this.getWeekday($('.flight-date-start'),nextDay);
             $('.hotel-date-start input').val(nextDay);
             this.getWeekday($('.hotel-date-start'),nextDay);
-            $('.hotel-date-end input').val(nextDayPlus);
-            this.getWeekday($('.hotel-date-end'),nextDayPlus);
+            $('.hotel-date-end input').val(Day3);
+            this.getWeekday($('.hotel-date-end'),Day3);
             $('.ticket-date-start input').val(nextDay);
             this.getWeekday($('.ticket-date-start'),nextDay);
             $('.flight-date-return').find('input').val('YYYY-MM-DD');
@@ -110,12 +116,17 @@ $(function () {
             //默认出发地为本站站点
             $('.combo-from input').val(this.localCity);
             $('.flight-from input').val(this.localCity);
+            $('.hotel-to input').val(this.localCity);
         },
         dateNow: function (set,moveDays) {
+            if(typeof set === 'string'){
+                set = set.replace('-','/');
+            }
             var date = set?new Date(set):new Date();
             var move = moveDays?86400000*moveDays:0;
             date = new Date(date.getTime()+move);
-            var dateArr = date.toLocaleDateString().split('/');
+            //IE下返回2017年01月01日
+            var dateArr = [date.getFullYear(),date.getMonth()+1,date.getDate()];
             //+0
             dateArr[1] = dateArr[1]<10?'0'+dateArr[1]:dateArr[1];
             dateArr[2] = dateArr[2]<10?'0'+dateArr[2]:dateArr[2];
@@ -141,6 +152,9 @@ $(function () {
         },
         getWeekday: function (targetSection,date) {
             //判断星期几并写入info
+            if(typeof date === 'string'){
+                date = date.replace('-','/');
+            }
             var dateObj = new Date(date);
             var week = ['周日','周一','周二','周三','周四','周五','周六']
             var weekDay = week[dateObj.getDay()];
@@ -151,7 +165,6 @@ $(function () {
             //$('.flight-date-return input').val(this.dateNow(date,1));
         },
         calendarInit: function () {
-            //TODO 多日历是否OK
             var self = this;
             //初始化通用日历
             this.calendar = lv.calendar({
@@ -186,6 +199,7 @@ $(function () {
                 template: "small",
                 cascading: true,
                 cascadingNextAuto: false,
+                cascadingOffset: 4,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
                     var date = self.targetSection.find('input').val();
@@ -204,7 +218,8 @@ $(function () {
                 dayPrev: 0,
                 template: "small",
                 cascading: true,
-                cascadingNextAuto: false,
+                cascadingNextAuto: true,
+                cascadingOffset: 2,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
                     var date = self.targetSection.find('input').val();
@@ -227,6 +242,7 @@ $(function () {
                 dayPrev: 0,
                 template: "small",
                 cascading: true,
+                cascadingOffset: 4,
                 cascadingNextAuto: false,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
@@ -239,15 +255,12 @@ $(function () {
             var self = this;
             //点击search-city
             $document.on('click','.search-city',function (e) {
-                console.log('search-city clicked')
                 var data = {
                     channel:'zhuzhan',
                     callback:'receive'
                 };
-                //FIXME 默认ticket,需要后期更新
-                var url = 'data/citys.json';
-                //FIXME nginx hack
-                //url = '/seo_api/departureList/getDepartVo.do';
+                //FIXME MOCK data
+                //url = '/seo_api/departureList/getDepartVo.do';//nginx hack
                 url = 'data/citys.json';
                 var dataType = 'json';
                 self.targetSection = $(e.target).parent('.search-city');
@@ -278,7 +291,6 @@ $(function () {
             });
             //点击酒店关键字
             $document.on('click','.search-keywords',function (e) {
-                var data = {};
                 self.targetSection = $(e.target).parent('.search-keywords');
                 self.target = $(e.target);
                 self.getPosition();
@@ -289,40 +301,17 @@ $(function () {
             });
             //点击search-date,需要在calendar点击前触发
             $document.on('mousedown','.search-date',function (e) {
-                console.log('search-date clicked')
                 self.targetSection = $(e.target).parent('.search-date');
                 self.target = $(e.target);
             });
             //drop中选择城市
             $document.on('mousedown','.drop-city',function (e) {
-                console.log('.drop-city mousedown',self.targetSection);
-                var className = '';
                 var value = $(this).html();
-                //判断触发位置
-                //FIXME 这里可以用attr
-                if(self.targetSection.hasClass('combo-from')){
-                    className = 'combo-from'
-                }
-                if(self.targetSection.hasClass('combo-to')){
-                    className = 'combo-to'
-                }
-                if(self.targetSection.hasClass('flight-from')){
-                    className = 'flight-from'
-                }
-                if(self.targetSection.hasClass('flight-to')){
-                    className = 'flight-to'
-                }
-                if(self.targetSection.hasClass('hotel-to')){
-                    className = 'hotel-to'
-                }
+
                 if(self.targetSection.hasClass('hotel-keywords')){
-                    className = 'hotel-keywords';
                     if($(this).find('.name').length !== 0){
                         value = $(this).find('.name').html();
                     }
-                }
-                if(self.targetSection.hasClass('ticket-keywords')){
-                    className = 'ticket-keywords'
                 }
 
                 //填写在input内
@@ -332,15 +321,16 @@ $(function () {
                 //判断是在哪个tab下，初始化字母分组
                 self.tabSwitchInit(self.currentLi.find('.letter-tabs li'),self.currentLi.find('.letter-city-contents li'));
                 //清除error
-                self.showError('',true,className);
+                self.showError('',true);
                 self.suggestionBox.hide();
                 self.keywordsBox.hide();
                 self.completeBox.hide();
                 self.target = $(e.target);
             });
             //input输入
-            $document.on('input','.section-input input',function (e) {
-                console.log('input')
+            //TODO focus解决？
+            var eventType = $.browser.msie?'keyup':'input';
+            $document.on(eventType,'.section-input input',function (e) {
                 self.targetSection = $(e.target).parent('.section-input');
                 self.target = $(e.target);
                 var value = $(this).val() ;
@@ -360,8 +350,8 @@ $(function () {
                     //判断内容
                     if ($(this).val()===""){
                         //内容为空
-                        //FIXME nginx hack
-                        //var url = '/seo_api/departureList/getDepartVo.do';
+                        //FIXME mock data
+                        //var url = '/seo_api/departureList/getDepartVo.do';//nginx hack
                         var url = 'data/citys.json';
                         var data = {
                             channel:'zhuzhan',
@@ -399,18 +389,11 @@ $(function () {
                 }
                 if($(this).parent('.section-input').hasClass('ticket-keywords')){
                     self.getPosition();
+                    self.getData('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
+                        type:'TICKET',
+                        keyword: value
+                    },'input');
 
-                    //判断内容
-                    if ($(this).val()===""){
-                        //TODO 内容为空
-                        //self.getData('data/keywords.json',{},'reset');
-                    }else {
-                        //正常内容
-                        self.getData('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
-                            type:'TICKET',
-                            keyword: value
-                        },'input');
-                    }
                 }
             });
             //focus
@@ -422,9 +405,7 @@ $(function () {
             });
             //input on blur
             $document.on('blur','.section-input input',function (e) {
-                console.log('blur');
-
-                //TODO 过滤letter-tabs点击
+                // 过滤letter-tabs点击
                 if(!self.target.parent().hasClass('letter-tabs')){
                     self.targetSection = $(e.target).parent('.section-input');
                     self.target = $(e.target);
@@ -446,7 +427,8 @@ $(function () {
 
                 self.completeBox.hide();
                 self.keywordsBox.hide();
-                self.selectBoxs.hide();
+                //self.selectionsInit(true);
+                self.showSelectbox(self.selectFlag);
             });
             //点击加数量
             $document.on('click','.num-add',function () {
@@ -461,16 +443,16 @@ $(function () {
             //机票单程
             $document.on('click','.flight-single',function () {
                 $(this).addClass('current').next().removeClass('current');
-                $('.flight-date-return').removeClass('search-cascading').addClass('disabled');
-                $('.flight-date-return').find('input').val('YYYY-MM-DD');
+                self.flightReturn.removeClass('search-cascading').addClass('disabled');
+                self.flightReturn.find('input').val('YYYY-MM-DD');
             });
             //机票返程
             $document.on('click','.flight-double',function () {
-                var startTime = $('.flight-date-start input').val();
+                var startTime = $('.flight-date-start').find('input').val();
                 $(this).addClass('current').siblings('.flight-single').removeClass('current');
-                $('.flight-date-return').addClass('search-cascading').removeClass('disabled');
-                $('.flight-date-return input').val(self.dateNow(startTime,4));
-                self.getWeekday($('.flight-date-return'),self.dateNow(startTime,4));
+                self.flightReturn.addClass('search-cascading').removeClass('disabled');
+                self.flightReturn.find('input').val(self.dateNow(startTime,4));
+                self.getWeekday(self.flightReturn,self.dateNow(startTime,4));
                 self.calendarFresh();
             });
             //机票切换出发地与到达
@@ -481,12 +463,15 @@ $(function () {
                 var to = toInput.val();
                 toInput.val(start);
                 fromInput.val(to);
-                //TODO 处理error
-
+                // 处理error
+                self.showError('',true,'flight-from');
+                self.showError('',true,'flight-to');
+                if(!self.passFlight){
+                    self.formCheck()
+                }
             });
             //下拉框点击
             $document.on('click','.search-contents-select',function (e) {
-                console.log('search-contents-select clicked')
                 self.selectFlag = !self.selectFlag;
                 self.targetSection = $(this).parent('.section-input');
                 self.target = $(e.target);
@@ -494,16 +479,63 @@ $(function () {
             });
             //下拉框内容确定
             $document.on('mousedown','.search-contents-selections li',function () {
-                $(this).parent().siblings('b').removeClass('active');
+                //$(this).parent().siblings('b').removeClass('active');
                 $(this).parent().parent('.section-input').find('.search-contents-select').val($(this).html());
+                //self.selectionsInit();
+                self.showSelectbox(self.selectFlag);
                 //清除error
                 self.numCheck();
             });
+            //下拉框内容选择
+            $document.on('keydown',document,function (e){
+                if(self.selectFlag){
+                    e.preventDefault();
+                }
+            });
+            //键盘选中下拉框
+            $document.on('keyup',document,function (e) {
+                if(!self.targetSection){
+                    return
+                }
+                var length = 0;
+                e.preventDefault();
+                var which = e.which||e.keyCode;
+                var targetLis = self.targetSection.find('.search-contents-selections li');
+                if(self.targetSection.hasClass('combo-persons-adult')){
+                    length = 9
+
+                }else if(self.targetSection.hasClass('combo-persons-children')){
+                    length = 6
+                }else {
+                    //return;
+                    //获取completeBox
+                    targetLis = self.completeBox.find('li');
+                    length = targetLis.length;
+                }
+
+                //下
+                if(which === 40){
+                    self.selectIndex++;
+                    self.selectIndex = self.selectIndex%length;
+                }
+                //上
+                if(which === 38){
+                    self.selectIndex--;
+                    self.selectIndex = self.selectIndex===-1?(length-1):self.selectIndex;
+                    self.selectIndex = self.selectIndex%length;
+                }
+                targetLis.eq(self.selectIndex).addClass('current').siblings().removeClass('current');
+                //enter
+                if(which === 13){
+                    self.target.val(targetLis.eq(self.selectIndex).html());
+                    self.selectFlag = !self.selectFlag;
+                    self.showSelectbox(self.selectFlag);
+                    self.numCheck();
+                }
+            });
             //blur补充条件=>点击suggestion内部tab
-            $document.on('mousedown',document,function () {
-                console.log(self.target)
-                if(self.target&&self.target.parent().hasClass('letter-tabs')){
-                    console.log(1)
+            $document.on('mousedown',document,function (e) {
+                if(!$(e.target).parent().hasClass('letter-tabs')){
                     self.suggestionBox.hide();
                     self.tabSwitchInit(self.currentLi.find('.letter-tabs li'),self.currentLi.find('.letter-city-contents li'));
                 }else {
@@ -514,9 +546,9 @@ $(function () {
             $document.on('click','.search-btn',function () {
                 //表单验证
                 self.formCheck();
-                //setCookie
+                //TODO setCookie
 
-                //跳转页面
+                //TODO 跳转页面
 
             })
         },
@@ -557,8 +589,10 @@ $(function () {
         showSelectbox: function (flag) {
             if(flag){
                 this.target.siblings('b').addClass('active');
+                this.targetSection.find('.search-contents-selections li').eq(0).addClass('current').siblings().removeClass('current')
                 this.target.siblings('.search-contents-selections').show();
             }else {
+                this.selectIndex = 0;
                 this.target.siblings('b').removeClass('active');
                 this.target.siblings('.search-contents-selections').hide();
             }
@@ -571,45 +605,13 @@ $(function () {
         },
         getData: function (url,data,type,dataType) {
             var self = this;
-            var str = '';
-            var className = '';
             dataType = dataType?dataType:'jsonp';
-            //判断触发位置
-            if(self.targetSection.hasClass('combo-from')){
-                str = '暂不支持该出发地';
-                className = 'combo-from'
-            }
-            if(self.targetSection.hasClass('combo-to')){
-                str = '暂不支持该目的地';
-                className = 'combo-to'
-            }
-            if(self.targetSection.hasClass('flight-from')){
-                str = '暂不支持该目的地';
-                className = 'flight-from'
-            }
-            if(self.targetSection.hasClass('flight-to')){
-                str = '暂不支持该目的地';
-                className = 'flight-to'
-            }
-            if(self.targetSection.hasClass('hotel-to')){
-                str = '暂不支持该目的地';
-                className = 'hotel-to'
-            }
-            if(self.targetSection.hasClass('hotel-keywords')){
-                str = '没有匹配的结果';
-                className = 'hotel-keywords'
-            }
-            if(self.targetSection.hasClass('ticket-keywords')){
-                str = '没有匹配的结果';
-                className = 'ticket-keywords'
-            }
-            //TODO....
 
             //判断类型
             if(type === 'click'||type === 'reset'){
                 if(type === 'reset') {
                     //确定需要reset的className
-                    self.showError('',true,className);
+                    self.showError('',true);
                 }
                 //FIXME mock
                 if(url.match(/\.json/)){
@@ -630,7 +632,6 @@ $(function () {
                         data: data,
                         dataType: dataType,
                         success: function (res) {
-                            console.log(res)
                             self.renderData(res,'suggestion')
                         },
                         error: function (error) {
@@ -663,7 +664,7 @@ $(function () {
                             //如果没有匹配到结果
 
                             //如果匹配到结果
-                            self.showError('',true,className);
+                            self.showError('',true);
                             self.renderData(res,'complete');
                         },
                         error: function (error) {
@@ -674,9 +675,32 @@ $(function () {
             }
         },
         showError: function (info,reset,className) {
-            console.log('showError')
+            var self = this;
             var tipBox = this.currentLi.find('.nova-tip-form');
             var tipContent = tipBox.find('.tip-content');
+            if(className === undefined){
+                if(this.targetSection.hasClass('combo-from')){
+                    className = 'combo-from'
+                }
+                if(this.targetSection.hasClass('combo-to')){
+                    className = 'combo-to'
+                }
+                if(this.targetSection.hasClass('flight-from')){
+                    className = 'flight-from'
+                }
+                if(this.targetSection.hasClass('flight-to')){
+                    className = 'flight-to'
+                }
+                if(this.targetSection.hasClass('hotel-to')){
+                    className = 'hotel-to'
+                }
+                if(this.targetSection.hasClass('hotel-keywords')){
+                    className = 'hotel-keywords';
+                }
+                if(this.targetSection.hasClass('ticket-keywords')){
+                    className = 'ticket-keywords'
+                }
+            }
             var $className = "."+className;
             var targetLi = tipContent.find($className);
             reset = reset===undefined?false:reset;
@@ -691,7 +715,6 @@ $(function () {
                    console.log('still have error')
                 }
             }else {
-                console.log($className)
                 $($className).addClass('error');
                 //判断是否已经存在此error
                 if(targetLi.length === 0){
@@ -704,6 +727,7 @@ $(function () {
                 }else {
                     console.log('error 数量错误')
                 }
+                //TODO error 排序
                 tipBox.show();
             }
         },
@@ -718,12 +742,12 @@ $(function () {
                     var subwayDetails = this.keywordsBox.find('.keywords-subway .keywords-details');
                     transportDetails.empty();
                     subwayDetails.empty();
-                    for(var i in transport){
+                    for(var i=0;i< transport.length;i++){
                         var span = $('<span class="drop-city"></span>');
                         span.html(transport[i].searchValue);
                         transportDetails.append(span)
                     }
-                    for(var j in subway){
+                    for(var j=0;j < subway.length;j++){
                         var span = $('<span class="drop-city"></span>');
                         span.html(subway[j].searchValue);
                         subwayDetails.append(span)
@@ -734,7 +758,14 @@ $(function () {
                     //flight中没有hotcitys
                     if(this.currentLiName !== 'flight'){
                         this.suggestionBox.find('.city-hot').empty();
-                        for(var i in hotCitys){
+                        //判断出发地还是目的地
+                        if(this.target.hasClass('input-city-from')){
+                            this.suggestionBox.find('.drop-title').html('热门出发地')
+                        }
+                        if(this.target.hasClass('input-city-to')){
+                            this.suggestionBox.find('.drop-title').html('热门目的地')
+                        }
+                        for(var i=0;i< hotCitys.length;i++){
                             var li = $('<li class="drop-city"></li>');
                             li.html(hotCitys[i].districtName);
                             this.suggestionBox.find('.city-hot').append(li)
@@ -743,18 +774,20 @@ $(function () {
 
                     var dts = $('.letter-city-contents').find('dt');
                     dts.siblings('dd').remove();
+
                     dts.each(function () {
-                        var letter = $(this).html();
+                        var letter = $(this).html().substr(0,1);//IE7 hack
                         var dl = $(this).parent('dl');
-                        //如果没有对应的城市（dl），则隐藏
-                        if(res[letter].length === 0){
-                            dl.hide();
-                        }else {
-                            for(var j in res[letter]){
+
+                        if(res[letter].length !== 0){
+                            for(var j=0;j<res[letter].length;j++){
                                 var dd = $('<dd class="drop-city"></dd>');
                                 dd.html(res[letter][j].districtName);
                                 dl.append(dd);
                             }
+                        }else {
+                            //如果没有对应的城市（dl），则隐藏
+                            dl.hide();
                         }
                     });
                     this.suggestionBox.show();
@@ -766,7 +799,6 @@ $(function () {
                 this.keywordsBox.hide();
                 //清除当前内容
                 this.completeBox.empty();
-                console.log(res)
                 var matchList = res.matchList;
                 //FIXME hack
                 if(matchList && matchList.length === 0){
@@ -777,9 +809,9 @@ $(function () {
                 }else {
                     this.completeBox.removeClass('error');
 
-                    //TODO 酒店渲染不同
+                    //酒店渲染不同
                     if(this.targetSection.hasClass('search-keywords')){
-                        for(var i in matchList){
+                        for(var i=0;i<matchList.length;i++){
                             var li = $('<li class="drop-city"></li>');
                             var spanName = $('<span class="name"></span>');
                             spanName.html(matchList[i].name);
@@ -794,7 +826,7 @@ $(function () {
                         }
                     }else {
                         //matchList = res.hot;
-                        for(var i in matchList){
+                        for(var i=0;i<matchList.length;i++){
                             var li = $('<li class="drop-city"></li>');
                             li.html(matchList[i].searchValue);
                             this.completeBox.append(li)
@@ -808,7 +840,6 @@ $(function () {
             }
         },
         tabSwitch: function (tabs, details) {
-            console.log('tabSwitch')
             var $tabs,$details;
             if(typeof tabs === 'string'){
                 $tabs = $(tabs)
@@ -829,19 +860,19 @@ $(function () {
             this.tabSwitchInit($tabs, $details);
             //点击切换
             $tabs.mousedown(function (e) {
-                e.stopPropagation();
                 self.target = $(e.target);
-                console.log(2,self.target)
-                $(this).addClass("current").siblings().removeClass("current");//TODO 舍弃了siblings()的选择器筛选
+                $(this).addClass("current").siblings().removeClass("current");//舍弃了siblings()的选择器筛选
                 $details.eq($(this).index()).show().siblings().hide();
             })
         },
         tabSwitchInit: function ($tabs, $details) {
-            console.log('tabSwitchInit');
             $tabs.eq(0).addClass("current").siblings().removeClass("current");
             $details.eq(0).show().siblings().hide();
         },
         formCheck: function () {
+            //清除errorbox
+            this.container.find('.tip-content').empty();
+            this.currentLi.find('.nova-tip-form').hide();
             //逐个判断(empty/notfound/num-error)
             if(this.currentLiName === 'combo'){
                 this.passCombo = true;
@@ -876,19 +907,20 @@ $(function () {
             }
             if(this.currentLiName === 'hotel'){
                 this.passHotel = true;
-                //TODO ...
+                if($('.hotel-to input').val()===''){
+                    this.showError('目的地不能为空',false,'hotel-to')
+                    this.passFlight = false;
+                }
                 if(this.passHotel&&this.currentLi.find('.tip-content').html()===''){
                     alert('hotel pass!')
                 }
             }
             if(this.currentLiName === 'ticket'){
-                //FIXME 主站没有检测
                 this.passTicket = true;
-                /*if($('.ticket-keywords input').val()===''){
+                if($('.ticket-keywords input').val()===''){
                     this.showError('关键字不能为空',false,'ticket-keywords')
-                    this.passFlight = false;
-                }*/
-                //TODO ...
+                    this.passTicket = false;
+                }
                 if(this.passTicket&&this.currentLi.find('.tip-content').html()===''){
                     alert('ticket pass!')
                 }
