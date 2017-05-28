@@ -210,3 +210,13 @@ gulp.task('dest-svn',['urlConcat','cssReplace'],function () {
     gulp.src('dist/'+htmlName+'.html')
         .pipe(gulp.dest(htmlSvn));
 });
+
+gulp.task('test',function () {
+    gulp.src('src/css/*.css')
+        .pipe(spriter({
+            'spriteSheet': './src/imgs/spritesheet.png',
+            'pathToSpriteSheetFromCSS': '../imgs/spritesheet.png',
+            'includeMode':'explicit'
+        }))
+        .pipe(gulp.dest('test'))
+});
