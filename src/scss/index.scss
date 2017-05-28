@@ -19,7 +19,7 @@ body {
     left: 50%;
     margin-left: -110px;
     top: 32px;
-    @include sprite(url('../imgs/sprite/banner-title.png'),url('../imgs/sprite/banner-title@2x.png'));
+    background: url("../imgs/sprite/banner-title.png");
     width: 221px;
     height: 49px;
   }
@@ -74,46 +74,46 @@ body {
     }
     .tab-combo {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-combo.png'),url('../imgs/sprite/icon-tab-combo@2x.png'))
+        background: url("../imgs/sprite/icon-tab-combo.png");
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-combo-cur.png'))
+          background: url("../imgs/sprite/icon-tab-combo-cur.png");
         }
       }
     }
     .tab-flight {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-flight.png'),url('../imgs/sprite/icon-tab-flight@2x.png'))
+        background: url("../imgs/sprite/icon-tab-flight.png");
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-flight-cur.png'),url('../imgs/sprite/icon-tab-flight-cur@2x.png'))
+          background: url("../imgs/sprite/icon-tab-flight-cur.png");
         }
       }
     }
     .tab-hotel {
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-hotel.png'),url('../imgs/sprite/icon-tab-hotel@2x.png'));
+        background: url("../imgs/sprite/icon-tab-hotel.png");
         height: 25px;
         width: 23px;
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-hotel-cur.png'),url('../imgs/sprite/icon-tab-hotel-cur@2x.png'))
+          background: url("../imgs/sprite/icon-tab-hotel-cur.png");
         }
       }
     }
     .tab-ticket {
       border: 0;
       i {
-        @include sprite(url('../imgs/sprite/icon-tab-ticket.png'),url('../imgs/sprite/icon-tab-ticket@2x.png'));
+        background: url("../imgs/sprite/icon-tab-ticket.png");
         width: 26px;
         height: 26px;
       }
       &.current {
         i {
-          @include sprite(url('../imgs/sprite/icon-tab-ticket-cur.png'),url('../imgs/sprite/icon-tab-ticket-cur@2x.png'))
+          background: url("../imgs/sprite/icon-tab-ticket-cur.png");
         }
       }
     }
@@ -158,13 +158,13 @@ body {
         z-index: 9;
         right: 10px;
         width: 16px;
-        @include sprite(url('../imgs/sprite/icon-loaction.png'),url('../imgs/sprite/icon-loaction@2x.png'));
+        background: url("../imgs/sprite/icon-loaction.png");
       }
       .search-contents-icon-calendar {
         @extend .search-contents-icon-location;
         top: 13px;
         height: 15px;
-        @include sprite(url('../imgs/sprite/icon-calendar.png'),url('../imgs/sprite/icon-calendar@2x.png'));
+        background: url("../imgs/sprite/icon-calendar.png");
       }
       .search-contents-title {
         position: absolute;
@@ -193,17 +193,17 @@ body {
         height: 26px;
         top: 6px;
         right: 10px;
-        @include sprite(url('../imgs/sprite/icon-num-add.png'),url('../imgs/sprite/icon-num-add@2x.png'));
+        background: url("../imgs/sprite/icon-num-add.png");
         &.disabled {
-          @include sprite(url('../imgs/sprite/icon-num-add-not.png'),url('../imgs/sprite/icon-num-add-not@2x.png'));
+          background: url("../imgs/sprite/icon-num-add.png");
         }
       }
       .num-minus {
         @extend .num-add;
         right: 175px;
-        @include sprite(url('../imgs/sprite/icon-num-minus.png'),url('../imgs/sprite/icon-num-minus@2x.png'));
+        background: url("../imgs/sprite/icon-num-minus.png");
         &.disabled {
-          @include sprite(url('../imgs/sprite/icon-num-minus-not.png'));
+          background: url("../imgs/sprite/icon-num-minus-not.png");
         }
       }
       .search-contents-select {
@@ -290,7 +290,7 @@ body {
         position: absolute;
         top: 17px;
         right: 10px;
-        @include sprite(url('../imgs/sprite/icon-select.png'),url('../imgs/sprite/icon-select@2x.png'));
+        background: url("../imgs/sprite/icon-select.png");
         width: 12px;
         height: 8px;
         transition: all 0.3s;
@@ -326,7 +326,7 @@ body {
       color: #fff;
       cursor: pointer;
       span {
-        @include sprite(url('../imgs/sprite/flight-not.png'),url('../imgs/sprite/flight-not@2x.png'));
+        background: url("../imgs/sprite/flight-not.png");
         @include inlineblock;
         width: 22px;
         height: 22px;
@@ -334,7 +334,7 @@ body {
       }
       &.current {
         span {
-          @include sprite(url('../imgs/sprite/flight-choose.png'),url('../imgs/sprite/flight-choose@2x.png'));
+          background: url("../imgs/sprite/flight-choose.png");
         }
       }
     }
@@ -353,9 +353,9 @@ body {
         top: 150px;
         color: #fff;
         cursor: pointer;
-        @include sprite(url('../imgs/sprite/flight-change.png'),url('../imgs/sprite/flight-change@2x.png'));
+        background: url("../imgs/sprite/flight-change.png");
         &:hover {
-          @include sprite(url('../imgs/sprite/flight-change-hover.png'),url('../imgs/sprite/flight-change-hover@2x.png'));
+          background: url("../imgs/sprite/flight-change-hover.png");
         }
       }
     }
@@ -438,7 +438,7 @@ body {
       cursor: pointer;
       .icon {
         @include inlineblock;
-        @include sprite(url('../imgs/sprite/search-btn.png'),url('../imgs/sprite/search-btn@2x.png'));
+        background: url("../imgs/sprite/search-btn.png");
         width: 16px;
         height: 19px;
         vertical-align: middle;
@@ -498,7 +498,7 @@ body {
           position: absolute;
           bottom: -2px;
           left: 30px;
-          @include sprite(url('../imgs/sprite/icon-arrow.png'));
+          background: url("../imgs/sprite/icon-arrow.png");
           width: 11px;
           height: 6px;
         }
@@ -632,7 +632,7 @@ body {
   z-index: 100;
   bottom: 20px;
   right: 0px;
-  @include sprite(url('../imgs/sprite/bg-cart.png'),url('../imgs/sprite/bg-cart@2x.png'));
+  background: url("../imgs/sprite/bg-cart.png");
   height: 46px;
   line-height: 46px;
   width: 140px;
@@ -641,7 +641,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   .pro-num {
-    @include sprite(url('../imgs/sprite/icon-cart-num.png'),url('../imgs/sprite/icon-cart-num@2x.png'));
+    background: url("../imgs/sprite/icon-cart-num.png");
     height: 26px;
     line-height: 26px;
     text-align: center;
@@ -651,7 +651,7 @@ body {
     left: 0px;
   }
   i {
-    @include sprite(url('../imgs/sprite/icon-cart.png'),url('../imgs/sprite/icon-cart@2x.png'));
+    background: url("../imgs/sprite/icon-cart.png");
     height: 20px;
     width: 20px;
     @include inlineblock;
@@ -659,7 +659,7 @@ body {
     margin-top: -3px;
   }
   &:hover {
-    @include sprite(url('../imgs/sprite/bg-cart-hover.png'),url('../imgs/sprite/bg-cart-hover@2x.png'));
+    background: url("../imgs/sprite/bg-cart-hover.png");
   }
 }
 .hot-citys-container {
@@ -725,7 +725,8 @@ body {
         text-align: center;
       }
       .pro-icon {
-        @include sprite(url('../imgs/sprite/pro-icon.png'),url('../imgs/sprite/pro-icon@2x.png'));
+       // @include sprite(url('../imgs/sprite/pro-icon.png'),url('../imgs/sprite/pro-icon@2x.png'));
+        background: url("../imgs/sprite/pro-icon.png");
         width: 200px;
         height: 10px;
         margin: 10px 0;

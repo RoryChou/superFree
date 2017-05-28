@@ -12,20 +12,8 @@ $color-hover-orange: #f60;
   *display: inline;
   *zoom: 1
 }
-@mixin sprite($url,$url2x:$url,$repeat:no-repeat,$position:center){
-  /* @meta {"spritesheet": {"include": true}} */
-  background:$url $repeat $position;
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min--moz-device-pixel-ratio: 1.5),
-  only screen and (-o-min-device-pixel-ratio: 3/2),
-  only screen and (min-device-pixel-ratio: 1.5){
-    /* @meta {"spritesheet": {"include": true}} */
-    background:$url2x $repeat $position;
-  }
-}
 @mixin opacity($per){
   opacity: $per;
-  filter: "alpha(opacity=$per*100)";
-  *filter: alpha(opacity=$per*100);
+  filter: alpha(opacity=$per*100);
   *zoom:1;
 }

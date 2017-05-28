@@ -4,8 +4,6 @@
 $(function () {
     var $document = $(document);
 
-    //检测浏览器
-    $.browser.msie
     //TODO 优化forin
     var search = {
         target:null,
@@ -119,7 +117,7 @@ $(function () {
             $('.hotel-to input').val(this.localCity);
         },
         dateNow: function (set,moveDays) {
-            if(typeof set === 'string'){
+            if(typeof set === 'string'&& $.browser.msie){
                 set = set.replace('-','/');
             }
             var date = set?new Date(set):new Date();
@@ -152,7 +150,7 @@ $(function () {
         },
         getWeekday: function (targetSection,date) {
             //判断星期几并写入info
-            if(typeof date === 'string'){
+            if(typeof date === 'string' && $.browser.msie){
                 date = date.replace('-','/');
             }
             var dateObj = new Date(date);
@@ -331,69 +329,73 @@ $(function () {
             //TODO focus解决？
             var eventType = $.browser.msie?'keyup':'input';
             $document.on(eventType,'.section-input input',function (e) {
+                var which = e.which||e.keyCode;
                 self.targetSection = $(e.target).parent('.section-input');
                 self.target = $(e.target);
                 var value = $(this).val() ;
-                if($(this).parent('.section-input').hasClass('search-city')){
-                    self.getPosition();
-                    //判断触发的具体位置
-                    /*if($(e.target).hasClass('input-city-from')){
-                        //出发地
-                        locale = 'city-from'
-                    }else if($(e.target).hasClass('input-city-to')){
-                        //目的地
-                        locale = 'city-to'
-                    }else {
-                        console.log('input事件触发位置异常')
-                    }*/
+                //IE7 hack
+                if(which !== 40&&which !== 38&&which !== 13){
+                    if($(this).parent('.section-input').hasClass('search-city')){
+                        self.getPosition();
+                        //判断触发的具体位置
+                        /*if($(e.target).hasClass('input-city-from')){
+                         //出发地
+                         locale = 'city-from'
+                         }else if($(e.target).hasClass('input-city-to')){
+                         //目的地
+                         locale = 'city-to'
+                         }else {
+                         console.log('input事件触发位置异常')
+                         }*/
 
-                    //判断内容
-                    if ($(this).val()===""){
-                        //内容为空
-                        //FIXME mock data
-                        //var url = '/seo_api/departureList/getDepartVo.do';//nginx hack
-                        var url = 'data/citys.json';
-                        var data = {
-                            channel:'zhuzhan',
-                            callback:'receive'
-                        };
-                        var dataType = 'json';
-                        self.getData(url,data,'click',dataType);
-                    }else {
-                        //正常内容
-                        //FIXME 应该使用套餐与机票的接口
+                        //判断内容
+                        if ($(this).val()===""){
+                            //内容为空
+                            //FIXME mock data
+                            //var url = '/seo_api/departureList/getDepartVo.do';//nginx hack
+                            var url = 'data/citys.json';
+                            var data = {
+                                channel:'zhuzhan',
+                                callback:'receive'
+                            };
+                            var dataType = 'json';
+                            self.getData(url,data,'click',dataType);
+                        }else {
+                            //正常内容
+                            //FIXME 应该使用套餐与机票的接口
+                            self.getData('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
+                                type:'TICKET',
+                                keyword: value
+                            },'input');
+                        }
+                    }
+                    if($(this).parent('.section-input').hasClass('search-keywords')){
+                        self.getPosition();
+
+                        //判断内容
+                        if ($(this).val()===""){
+                            //内容为空
+                            self.getData('http://s.lvmama.com/autocomplete/autoCompleteHotel.do',{
+                                type:'REC',
+                                districtId:9
+                            },'click');
+                        }else {
+                            //正常内容
+                            self.getData('http://s.lvmama.com/autocomplete/autoCompleteHotel.do',{
+                                type:'HOTEL',
+                                keyword: value,
+                                districtId:9
+                            },'input');
+                        }
+                    }
+                    if($(this).parent('.section-input').hasClass('ticket-keywords')){
+                        self.getPosition();
                         self.getData('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
                             type:'TICKET',
                             keyword: value
                         },'input');
-                    }
-                }
-                if($(this).parent('.section-input').hasClass('search-keywords')){
-                    self.getPosition();
 
-                    //判断内容
-                    if ($(this).val()===""){
-                        //内容为空
-                        self.getData('http://s.lvmama.com/autocomplete/autoCompleteHotel.do',{
-                            type:'REC',
-                            districtId:9
-                        },'click');
-                    }else {
-                        //正常内容
-                        self.getData('http://s.lvmama.com/autocomplete/autoCompleteHotel.do',{
-                            type:'HOTEL',
-                            keyword: value,
-                            districtId:9
-                        },'input');
                     }
-                }
-                if($(this).parent('.section-input').hasClass('ticket-keywords')){
-                    self.getPosition();
-                    self.getData('http://s.lvmama.com/autocomplete/autoCompleteNew.do',{
-                        type:'TICKET',
-                        keyword: value
-                    },'input');
-
                 }
             });
             //focus
@@ -420,15 +422,16 @@ $(function () {
                     self.numCalc(0,value)
                 }
                 //下拉菜单旋转箭头
-                if($(this).hasClass('search-contents-select')){
+                /*if($(this).hasClass('search-contents-select')){
                     self.selectFlag = false;
                     self.showSelectbox(false);
-                }
-
+                }*/
+                self.selectFlag = false;
+                self.showSelectbox(false);
                 self.completeBox.hide();
                 self.keywordsBox.hide();
                 //self.selectionsInit(true);
-                self.showSelectbox(self.selectFlag);
+                //self.showSelectbox(self.selectFlag);
             });
             //点击加数量
             $document.on('click','.num-add',function () {
@@ -488,12 +491,15 @@ $(function () {
             });
             //下拉框内容选择
             $document.on('keydown',document,function (e){
-                if(self.selectFlag){
-                    e.preventDefault();
+                if(self.targetSection){
+                    if(self.targetSection.hasClass('combo-persons-adult')||self.targetSection.hasClass('combo-persons-children')){
+                        e.preventDefault();
+                    }
                 }
             });
             //键盘选中下拉框
             $document.on('keyup',document,function (e) {
+                console.log('keyup')
                 if(!self.targetSection){
                     return
                 }
@@ -524,12 +530,18 @@ $(function () {
                     self.selectIndex = self.selectIndex===-1?(length-1):self.selectIndex;
                     self.selectIndex = self.selectIndex%length;
                 }
+                console.log(targetLis.length)
                 targetLis.eq(self.selectIndex).addClass('current').siblings().removeClass('current');
                 //enter
                 if(which === 13){
-                    self.target.val(targetLis.eq(self.selectIndex).html());
+                    if(self.targetSection.hasClass('hotel-keywords')){
+                        self.target.val(targetLis.eq(self.selectIndex).find('.name').html());
+                    }else {
+                        self.target.val(targetLis.eq(self.selectIndex).html());
+                    }
                     self.selectFlag = !self.selectFlag;
                     self.showSelectbox(self.selectFlag);
+
                     self.numCheck();
                 }
             });
@@ -595,6 +607,7 @@ $(function () {
                 this.selectIndex = 0;
                 this.target.siblings('b').removeClass('active');
                 this.target.siblings('.search-contents-selections').hide();
+                this.completeBox.hide();
             }
         },
         freshInfo: function () {
@@ -670,7 +683,7 @@ $(function () {
                         error: function (error) {
                             console.log('error',error)
                         }
-                    });
+                    })
                 }
             }
         },
@@ -832,6 +845,8 @@ $(function () {
                             this.completeBox.append(li)
                         }
                     }
+                    this.selectFlag = true;
+                    this.completeBox.find('li').eq(0).addClass('current');
                     this.completeBox.show();
                 }
 
