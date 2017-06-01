@@ -1,0 +1,23 @@
+
+@import "var";
+
+body {
+  background-color: #f5f5f5;
+}
+.baodian {
+  padding-top: 9px;
+  padding-bottom: 19px;
+  .title {
+    height: 29px;
+    line-height: 29px;
+    font-size: 22px;
+    background-color: #fff;
+    .s-title {
+      vertical-align: middle;
+      @include inlineblock;
+      height: 19px;
+      font-size:14px;
+      color:#666666;
+    }
+  }
+}

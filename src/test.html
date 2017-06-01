@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">
+    <style>
+        input {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<input type="text" class="asd">
+<input type="text" class="dsa">
+
+<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
+<script src="http://pic.lvmama.com/min/index.php?f=/js/lv/calendar.js"></script>
+<script>
+    lv.calendar({
+        autoRender: false,
+        trigger: "input",
+        triggerEvent: "click",
+        bimonthly: true,
+        //定位偏移
+        monthNext: 10,
+        monthPrev: 10,
+        dayPrev: 0,
+        template: "small",
+        cascading: true,
+        cascadingNextAuto: false,
+        cascadingOffset: 2,
+        showNumberOfDays: true,
+        //点击选择日期后的回调函数 默认返回值: calendar对象
+        selectDateCallback: function () {
+            //var date = self.targetSection.find('input').val();
+            //self.getWeekday(self.targetSection,date);
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+$color-lv-pink: #e38;
+$color-hover-orange: #f60;
+
+
+@mixin etc() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin inlineblock() {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
+}
+@mixin opacity($per){
+  opacity: $per;
+  filter: alpha(opacity=$per*100);
+  *zoom:1;
+}
