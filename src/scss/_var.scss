@@ -1,5 +1,8 @@
 $color-lv-pink: #e38;
+$color-lv-pink-hover: #a81c54;
+$color-lv-orange: #f90;
 $color-hover-orange: #f60;
+$color-bg-orange: #fff9ef;
 
 
 @mixin etc() {
@@ -16,4 +19,10 @@ $color-hover-orange: #f60;
   opacity: $per;
   filter: alpha(opacity=$per*100);
   *zoom:1;
+}
+@mixin hover($height:-5px,$time:0.3s){
+  transition: all $time;
+  &:hover {
+    transform: translateY($height);
+  }
 }

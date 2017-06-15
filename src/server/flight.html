@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>酒店</title>
+    <title>Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit"/>
     <!-- build:css -->
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/header_new.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/public/base.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/button.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/tips.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tags.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/paging.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tip.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/dialog.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/icons.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/comment/comment_index.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/public/detail_sale.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/flighthotel/hotel-facilities.css">
-    <link rel="stylesheet" href="http://pic.lvmama.com/styles/detail/destroute/hotel_flight_detail.css">
-    <link rel="stylesheet" href="css/hotel/hotel.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tip.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/lv/dialog.css">
+    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/hotel/hotel_list.css">-->
+    <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/lv/icons.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="css/hotel.css">
 </head>
-<body class="super-free super-free-hotel">
-
+<body class="super-free super-free-flight">
 <div class="wrap">
     <!--面包屑导航-->
     <div class="crumbs">
         <p class="crumbs-link">
             <a href="http://www.lvmama.com">首页</a> &gt;
             <a href="http://s.lvmama.com/group/H9?keyword=三亚">国内游</a> &gt;
-            <a href="http://s.lvmama.com/group/H9?keyword=三亚">超级自由行</a> &gt;
+            <a href="http://s.lvmama.com/group/H9?keyword=三亚">自由行+DIY</a> &gt;
             <a class="current">4天3晚-厦门-优选套餐</a>
         </p>
     </div>
@@ -75,14 +75,14 @@
         <div class="search_nav_box">
             <ul class="search_nav" style="">
                 <li>
-                    <a href="http://pic.lvmama.com/svn/pages/superFree/combo.html">优选套餐</a>
+                    <a href="#">优选套餐</a>
                     <i></i>
                 </li>
                 <li>
-                    <a href="http://pic.lvmama.com/svn/pages/superFree/flight.html">机票</a>
+                    <a href="#">机票</a>
                 </li>
                 <li class="search_li">
-                    <a href="http://pic.lvmama.com/svn/pages/superFree/hotel.html" >酒店</a>
+                    <a href="#" >酒店</a>
                     <i></i>
                 </li>
             </ul>
@@ -90,20 +90,19 @@
 
         <div class="head-wrapper">
             <div class="main_search search-contents-hotel">
-                <div class="search-bar-wrapper">
-                    <div class="default-box clearfix">
+                <div class="default-box clearfix">
                     <div class="city">
                         <i class="icon"></i>
-                        <span class="city-to-str">厦门</span>
+                        厦门
                     </div>
                     <div class="date">
                         <i class="icon"></i>
                         <span>
-                            <b class="hotel-days">3</b>天
-                        </span>
+                                <b class="hotel-days">3</b>天
+                            </span>
                         <p class="date-details">
-                            <span><b class="date-from-str">2017-08-01</b>入住</span>
-                            <span><b class="date-to-str">2017-08-03</b>退房</span>
+                            <span><b>2017-05-01</b>入住</span>
+                            <span><b>2017-05-03</b>退房</span>
                         </p>
                     </div>
                     <div class="btn-wrapper">
@@ -112,178 +111,177 @@
                         </div>
                     </div>
                 </div>
-                    <div class="change-box clearfix">
-                        <div class="city">
-                            <i class="icon"></i>
-                            <div class="input-wrapper">
-                                <div class="hotel-to section-input search-city">
-                                    <div class="search-contents-title">入住城市</div>
-                                    <input type="text" class="input-city-to" placeholder="请输入入住城市">
-                                    <div class="error-box">
-                                        <div class="tip-arrow tip-arrow-left">
-                                            <em>◆</em>
-                                            <i>◆</i>
-                                        </div>
-                                        <i class="error-icon"></i>
-                                        <p>总人数不能超过9人哦！</p>
+                <div class="change-box clearfix">
+                    <div class="city">
+                        <i class="icon"></i>
+                        <div class="input-wrapper">
+                            <div class="hotel-to section-input search-city">
+                                <div class="search-contents-title">出发地</div>
+                                <input type="text" class="input-city-from" placeholder="请输入入住城市">
+                                <div class="error-box">
+                                    <div class="tip-arrow tip-arrow-left">
+                                        <em>◆</em>
+                                        <i>◆</i>
                                     </div>
-                                    <!--<div class="error-box error-box-bottom">
-                                        <div class="tip-arrow tip-arrow-top">
-                                            <em>◆</em>
-                                            <i>◆</i>
-                                        </div>
-                                        <i class="error-icon"></i>
-                                        <p>总人数不能超过9人哦！</p>
-                                    </div>-->
+                                    <i class="error-icon"></i>
+                                    <p>总人数不能超过9人哦！</p>
                                 </div>
-                                <div class="hotel-keywords section-input search-keywords">
-                                    <div class="search-contents-title">关键字</div>
-                                    <input type="text" class="input-city-keywords" placeholder="酒店名/商圈/地标">
-                                </div>
+                                <!--<div class="error-box error-box-bottom">
+                                    <div class="tip-arrow tip-arrow-top">
+                                        <em>◆</em>
+                                        <i>◆</i>
+                                    </div>
+                                    <i class="error-icon"></i>
+                                    <p>总人数不能超过9人哦！</p>
+                                </div>-->
                             </div>
-                        </div>
-                        <div class="date">
-                            <i class="icon"></i>
-                            <div class="input-wrapper">
-                                <div class="hotel-date-start section-input search-date search-cascading-hotel search-date-from">
-                                    <div class="search-contents-title">入住日期</div>
-                                    <div class="search-contents-info"></div>
-                                    <input type="text" readonly="readonly" class="input-date-from">
-                                </div>
-                                <div class="hotel-date-end section-input search-date search-cascading-hotel search-date-to">
-                                    <div class="search-contents-title">退房日期</div>
-                                    <div class="search-contents-info"></div>
-                                    <input type="text" readonly="readonly" class="input-date-to">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-wrapper">
-                            <div class="btn btn-pink search-btn">
-                                搜索
-                            </div>
-                            <div class="btn cancle search-btn-cancle">
-                                取消
-                            </div>
-                        </div>
-                        <div class="drop-suggestion-citys">
-                            <div class="drop-title">热门城市</div>
-                            <ul class="city-hot clearfix">
-                            </ul>
-                            <ul class="letter-tabs clearfix">
-                                <li class="current">
-                                    ABCD
-                                    <i></i>
-                                </li>
-                                <li>EFGH<i></i></li>
-                                <li>JKLM<i></i></li>
-                                <li>NPQRS<i></i></li>
-                                <li>TUVWX<i></i></li>
-                                <li>YZ<i></i></li>
-                            </ul>
-                            <ul class="letter-city-contents">
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>A</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>B</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>C</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>D</dt>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>E</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>F</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>G</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>H</dt>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>J</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>K</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>L</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>M</dt>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>N</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>P</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>Q</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>R</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>S</dt>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>T</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>U</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>V</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>W</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>S</dt>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="clearfix">
-                                        <dt>Y</dt>
-                                    </dl>
-                                    <dl class="clearfix">
-                                        <dt>Z</dt>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="drop-suggestion-keywords">
-                            <div class="keywords-transport clearfix">
-                                <p class="keywords-title">交通枢纽</p>
-                                <p class="keywords-details">
-
-                                </p>
-                            </div>
-                            <div class="keywords-subway">
-                                <p class="keywords-title">地铁站</p>
-                                <p class="keywords-details">
-
-                                </p>
+                            <div class="hotel-keywords section-input search-keywords">
+                                <div class="search-contents-title">关键字</div>
+                                <input type="text" class="input-city-from" placeholder="酒店名/商圈/地标">
                             </div>
                         </div>
                     </div>
-                    <ul class="drop-complete"></ul>
+                    <div class="date">
+                        <i class="icon"></i>
+                        <div class="input-wrapper">
+                            <div class="hotel-date-start section-input search-date search-cascading-hotel">
+                                <div class="search-contents-title">入住日期</div>
+                                <div class="search-contents-info"></div>
+                                <input type="text" readonly="readonly">
+                            </div>
+                            <div class="hotel-date-end section-input search-date search-cascading-hotel">
+                                <div class="search-contents-title">退房日期</div>
+                                <div class="search-contents-info"></div>
+                                <input type="text" readonly="readonly">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrapper">
+                        <div class="btn btn-pink search-btn">
+                            搜索
+                        </div>
+                        <div class="btn cancle search-btn-cancle">
+                            取消
+                        </div>
+                    </div>
+                    <div class="drop-suggestion-citys">
+                        <div class="drop-title">热门城市</div>
+                        <ul class="city-hot clearfix">
+                        </ul>
+                        <ul class="letter-tabs clearfix">
+                            <li class="current">
+                                ABCD
+                                <i></i>
+                            </li>
+                            <li>EFGH<i></i></li>
+                            <li>JKLM<i></i></li>
+                            <li>NPQRS<i></i></li>
+                            <li>TUVWX<i></i></li>
+                            <li>YZ<i></i></li>
+                        </ul>
+                        <ul class="letter-city-contents">
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>A</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>B</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>C</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>D</dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>E</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>F</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>G</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>H</dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>J</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>K</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>L</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>M</dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>N</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>P</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>Q</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>R</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>S</dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>T</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>U</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>V</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>W</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>S</dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="clearfix">
+                                    <dt>Y</dt>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>Z</dt>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="drop-suggestion-keywords">
+                        <div class="keywords-transport clearfix">
+                            <p class="keywords-title">交通枢纽</p>
+                            <p class="keywords-details">
+
+                            </p>
+                        </div>
+                        <div class="keywords-subway">
+                            <p class="keywords-title">地铁站</p>
+                            <p class="keywords-details">
+
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <ul class="drop-complete"></ul>
             </div>
 
             <div class="search_sort clearfix">
@@ -297,15 +295,8 @@
                             <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>三星级/舒适性</a></span>
                             <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>二星级/简约型</a></span>
                             <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
-                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>其他/其他</a></span>
                         </dd>
                     </dl>
-                    <a class="seach_gd_btn js_moreOpt_btn">更多<i class="arrow"></i></a>
                 </div>
                 <div class="search_list clearfix">
                     <div class="search_theme">房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</div>
@@ -324,8 +315,8 @@
                     <div class="search_theme">排&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序</div>
                     <ul class="search_theme_list rank_box clearfix">
                         <li class="active">驴妈妈推荐<b>|</b></li>
-                        <li title="按价格从高到低排序">价格<i></i><b>|</b></li>
-                        <li title="按点评率从高到低排序">点评率<i></i><b>|</b></li>
+                        <li title="按价格从高到低排序">价格<i class="sort_down"></i><b>|</b></li>
+                        <li title="按点评率从高到低排序">点评率<i class="sort_up"></i><b>|</b></li>
                     </ul>
                 </div>
             </div>
@@ -340,26 +331,25 @@
     <!--商品列表-->
     <div class="mainBox mt20 clearfix">
         <div class="mainLeft fl">
-
-            <!--<div class="loading_box">
+            <div class="loading_box">
                 <i class="icon_loading"></i>
                 <span>请稍候，正在为您查询</span>
-            </div>-->
+            </div>
 
             <!-- 列表开始 -->
-            <div class="prdLi" point="118.13,24.5" name="厦门京闽中心酒店">
+            <div class="prdLi" point="116.404,39.915" name="上海宝安大酒店">
 
                 <!-- 酒店主体内容 -->
                 <div class="prdMain clearfix">
-                    <a href="javascript:;" class="proImg js_hotel_name">
+                    <a href="" class="proImg">
                         <img src="http://placehold.it/210x140/ffddff" alt="" width="210" height="140">
                     </a>
 
                     <div class="proInfo">
                         <p class="proTit">
-                            <a href="javascript:;" target="_blank" class="js_hotel_name">
+                            <a href="#" target="_blank">
                                 <span class="hlIcon hlIcon-biao">1</span>
-                                厦门京闽中心酒店厦门京闽中心酒店厦门京闽中心酒店中心酒店
+                                上海外滩高级酒店高级酒店号及酒店按实际按开始
                             </a>
                             <span class="hotel_stars hotel_stars04" title="国家旅游评定为四星级酒店"></span>
                             <span class="djjd_tagsclasses" title="驴妈妈用户评定为高档型酒店">
@@ -406,8 +396,7 @@
                         <p class="price"><b>¥</b><span class="num">550</span>起</p>
                         <p class="evaluate"><span class="num">92%</span>好评率</p>
                         <p class="eval_count">
-                            <a class="num js_hotel_content" href="javascript:;" target="_blank">来自<span>2000</span>条点评</a>
-                        </p>
+                            <a class="num" href="#" target="_blank">来自<span>2000</span>条点评</a></p>
                     </div>
 
                 </div><!-- //prdMain -->
@@ -464,7 +453,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>288
                                         </span>
                                     </div>
@@ -487,7 +476,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -505,7 +494,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -541,7 +530,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>288
                                         </span>
                                     </div>
@@ -578,7 +567,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -615,7 +604,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>1000
                                         </span>
                                     </div>
@@ -638,7 +627,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -676,7 +665,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -697,7 +686,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -714,7 +703,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -735,7 +724,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -774,7 +763,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -795,7 +784,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -812,7 +801,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -833,7 +822,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -870,7 +859,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -891,7 +880,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -908,7 +897,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -929,7 +918,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -943,17 +932,17 @@
 
             </div>
 
-            <div class="prdLi" point="118.13,24.52" name="厦门悦华酒店">
+            <div class="prdLi" point="116.404,39.915" name="厦门希尔顿逸林酒店">
 
                 <!-- 酒店主体内容 -->
                 <div class="prdMain clearfix">
-                    <a href="javascript:;" class="proImg js_hotel_name">
+                    <a href="" class="proImg">
                         <img src="http://placehold.it/210x140/ffddff" alt="" width="210" height="140">
                     </a>
 
                     <div class="proInfo">
                         <p class="proTit">
-                            <a href="javascript:;" target="_blank" class="js_hotel_name">
+                            <a href="#" target="_blank">
                                 <span class="hlIcon hlIcon-biao">2</span>
                                 厦门希尔顿逸林酒店
                             </a>
@@ -1001,8 +990,7 @@
                         <p class="price"><b>¥</b><span class="num">550</span>起</p>
                         <p class="evaluate"><span class="num">92%</span>好评率</p>
                         <p class="eval_count">
-                            <a class="num js_hotel_content" href="javascript:;" target="_blank">来自<span>2000</span>条点评</a>
-                        </p>
+                            <a class="num" href="#" target="_blank">来自<span>2000</span>条点评</a></p>
                     </div>
 
                 </div><!-- //prdMain -->
@@ -1059,7 +1047,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>288
                                         </span>
                                     </div>
@@ -1082,7 +1070,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -1100,7 +1088,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1136,7 +1124,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>288
                                         </span>
                                     </div>
@@ -1173,7 +1161,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1210,7 +1198,7 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price text_b js_date_price">
                                             <dfn>¥</dfn>1000
                                         </span>
                                     </div>
@@ -1233,7 +1221,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1271,7 +1259,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1292,7 +1280,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -1309,7 +1297,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1330,7 +1318,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1369,7 +1357,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1390,7 +1378,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -1407,7 +1395,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1428,7 +1416,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1465,7 +1453,7 @@
                                     <div class="list_td list_td4">收费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">不可退改</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>288</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>288</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1486,7 +1474,7 @@
                                         <div class="yufu">
                                             <span class="text_b js_tips" tip-content="提示内容">预付</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
 
@@ -1503,7 +1491,7 @@
                                     <div class="list_td list_td4">免费宽带</div>
                                     <div class="list_td list_td5"><span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时取消</span></div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price"><dfn>¥</dfn>1080</span>
+                                        <span class="room_price text_b js_date_price"><dfn>¥</dfn>1080</span>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1524,7 +1512,7 @@
                                         <div class="danbao">
                                             <span class="text_b js_tips" tip-content="提示内容">担保</span>
                                         </div>
-                                        <a href="javascript:;" class="btn btn-orange btn-xs btn-add-cart">加入购物车</a>
+                                        <a class="btn btn-orange btn-mini btn-add-cart">加入购物车</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1601,601 +1589,27 @@
         <p>添加失败，请重新添加哦~</p>
     </div>
     <!--加入购物车弹窗END-->
-
-    <!--购物车-->
-    <a href="#" class="cart">
-        <span class="pro-num">6</span>
-        <i></i>
-        超级自由行
-    </a>
-    <!--购物车END-->
-
-    <!-- 遮罩 开始 -->
-    <div class="opacityBox"></div>
-    <!-- 遮罩 结束 -->
-
-    <!-- 酒店介绍弹窗 -->
-    <div class="changeBox cgHotelDetail">
-        <div class="changeHead">
-            <span class="detailIcon detailIcon-close fr"></span>
-        </div>
-        <div class="booking_info_t">
-            <h4 class="js_hotel_name">鼓浪屿清香阁假日酒店</h4>
-            <span class="start_box"><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="c_f90 booking_dp">100.0%</span>
-            <span class="c_999">好评</span>
-        </div>
-
-        <div class="cgDetail_box">
-            <ul class="cgDetail_tab clearfix js_HotelDetail_tab">
-                <li class="active">酒店介绍</li>
-                <li>酒店地图</li>
-                <li>用户点评<span>(45)</span></li>
-            </ul>
-            <!-- 酒店介绍 -->
-            <div class="cgDetail_list" style="display:block;">
-                <!-- 酒店详细信息 -->
-                <div class="cgDetail_info">
-                    <dl class="cgDetail_info_list">
-                        <dt>酒店地址：</dt>
-                        <dd><p class="info_address">厦门鼓浪屿浦东新区川沙迪高扬路128号</p><span class="info_map"><i class="detail_icon detail_icon_map1"></i>地图</span></dd>
-                    </dl>
-                    <dl class="cgDetail_info_list">
-                        <dt>设施服务：</dt>
-                        <dd>
-                            <span class="hotel_icon icon_p1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_p2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_wifi1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_wifi2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_jiesong1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_jiesong2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_pc1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_pc2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_yongchi1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_yongchi2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_canting1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_canting2 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_shangwu1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_jianshen1 js_tip" tip-content="提示文字"></span>
-                            <span class="hotel_icon icon_huiyi1 js_tip" tip-content="提示文字"></span>
-                        </dd>
-                    </dl>
-                    <dl class="cgDetail_info_list">
-                        <dt>酒店电话：</dt>
-                        <dd><span class="hotel_call">021-88888888</span></dd>
-                    </dl>
-                    <dl class="cgDetail_info_list">
-                        <dt>酒店政策：</dt>
-                        <dd>最早到店时间14:00 最晚离店时间12:00</dd>
-                    </dl>
-                    <dl class="cgDetail_info_list">
-                        <dt>酒店简介：</dt>
-                        <dd>厦门中山路海景和颐酒店位于厦门海滨景观带，与厦门着名景点鼓浪屿隔海相望。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，【温馨提示】凡入住人员必须携带有效证件，未成年人员必须携带户口本、证明等相关证明方可入住。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，丰富的餐点温馨提示凡入住人员必须携带有效证件。</dd>
-                    </dl>
-                    <dl class="cgDetail_info_list">
-                        <dt>地理位置：</dt>
-                        <dd>厦门高崎机场T1航站楼    距离酒店15km  <br>厦门南火车站    距离酒店15km  </dd>
-                    </dl>
-                </div>
-
-                <div class="img_type_tab">
-                    <a class="active">所有 <span>(152)</span></a>
-                    <a>外观 <span>(152)</span></a>
-                    <a>内景 <span>(4)</span></a>
-                    <a>房间 <span>(3)</span></a>
-                </div>
-
-                <!-- 所有图片列表 -->
-                <div class="img_scroll_all js_cgDetail_scroll" style="display:block;">
-                    <div class="img_scroll_box">
-                        <ul class="img_scroll_list">
-                            <li><img src="http://placehold.it/454x303/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ee3388" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/cccccc" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/5c19e2" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/799ddf" alt=""></li>
-                        </ul>
-                    </div>
-                    <div class="img_scroll_tab">
-                        <ul class="img_scroll_tab_list">
-                            <li class="active"><img src="http://placehold.it/110x73/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ee3388" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/cccccc" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/5c19e2" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/799ddf" alt=""></li>
-                        </ul>
-                    </div>
-                    <span class="img_scroll_l"><i class="detail_icon"></i></span>
-                    <span class="img_scroll_r"><i class="detail_icon"></i></span>
-                </div>
-
-                <!-- 外观图片列表 -->
-                <div class="img_scroll_all js_cgDetail_scroll">
-                    <div class="img_scroll_box">
-                        <ul class="img_scroll_list">
-                            <li><img src="http://placehold.it/454x303/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ee3388" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/cccccc" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/5c19e2" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/799ddf" alt=""></li>
-                        </ul>
-                    </div>
-
-                    <div class="img_scroll_tab">
-                        <ul class="img_scroll_tab_list">
-                            <li class="active"><img src="http://placehold.it/110x73/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ee3388" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/cccccc" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/5c19e2" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/799ddf" alt=""></li>
-                        </ul>
-                    </div>
-                    <span class="img_scroll_l"><i class="detail_icon"></i></span>
-                    <span class="img_scroll_r"><i class="detail_icon"></i></span>
-                </div>
-
-                <!-- 内景图片列表 -->
-                <div class="img_scroll_all js_cgDetail_scroll">
-                    <div class="img_scroll_box">
-                        <ul class="img_scroll_list">
-                            <li><img src="http://placehold.it/454x303/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ee3388" alt=""></li>
-                        </ul>
-                    </div>
-                    <div class="img_scroll_tab">
-                        <ul class="img_scroll_tab_list">
-                            <li class="active"><img src="http://placehold.it/110x73/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/0099cc" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ee3388" alt=""></li>
-                        </ul>
-                    </div>
-                    <span class="img_scroll_l"><i class="detail_icon"></i></span>
-                    <span class="img_scroll_r"><i class="detail_icon"></i></span>
-                </div>
-
-                <!-- 房间图片列表 -->
-                <div class="img_scroll_all js_cgDetail_scroll">
-                    <div class="img_scroll_box">
-                        <ul class="img_scroll_list">
-                            <li><img src="http://placehold.it/454x303/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/454x303/0099cc" alt=""></li>
-                        </ul>
-                    </div>
-                    <div class="img_scroll_tab">
-                        <ul class="img_scroll_tab_list">
-                            <li class="active"><img src="http://placehold.it/110x73/ffddff" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/ff6600" alt=""></li>
-                            <li><img src="http://placehold.it/90x60/0099cc" alt=""></li>
-                        </ul>
-                    </div>
-                    <span class="img_scroll_l"><i class="detail_icon"></i></span>
-                    <span class="img_scroll_r"><i class="detail_icon"></i></span>
-                </div>
-            </div>
-
-            <!-- 酒店地图 -->
-            <div class="cgDetail_list">
-                <div class="cgDetail_map" id="cgDetail_map"></div>
-            </div>
-
-            <!-- 用户点评 -->
-            <div class="cgDetail_list">
-                <div class="comment_num_box">来自<span class="c_f60">45</span>位驴友的真实点评</div>
-                <div class="comment-list com-all" style="display:block">
-                    <!-- comment-li 开始 -->
-                    <div class="comment-li">
-                        <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
-
-                            <p class="ufeed-score">
-                                <span class="tags tags-red">精华</span>
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
-                                <span class="ufeed-item"> <em>景点&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>酒店&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>服务&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>交通&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-
-                                <span class="ufeed-tag">体验</span>
-                            </p>
-                        </div><!-- //ufeed-info -->
-                        <div class="ufeed-content"> <!-- 展开时加showmore -->
-                            风景很好，酒店设施也很齐全，就是吃东西太贵了。总之这次三亚之行很满意，下次还选驴妈妈
-                        </div>
-
-                        <!-- 点评图片展示 -->
-
-                        <!-- 大图结构 -->
-
-
-                        <!-- 用户信息 -->
-                        <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
-                            <p>
-                                <a href="javascript:;" title="gu219146">gu219146</a>
-                                对 “
-                                <a class="com-proTit" href="javascript:;" title="【三亚自由行】亚龙湾喜来登度假酒店5天4晚 ">【三亚自由行】亚龙湾喜来登度假酒店5天4晚 </a>
-                                ” 发表点评
-                                <em>2014-06-13</em>
-                                <a class="com-user-app" href="javascript:;">
-                                    <i class="iconcom iconcom-mobile"></i>
-                                    <span class="com-msg">该点评来源驴妈妈APP端</span>
-                                </a>
-                            </p>
-                        </div>
-
-                        <!-- 点评回复 -->
-                        <div class="com-answer combd clearfix "> <!-- //如果下面有回复则加 open否则不加 -->
-                            <i class="iconcom iconcom-boxdir"></i>
-                            <div class="com-answer-form">
-                                <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
-                                    <input class="com-answerinput" type="text">
-                                </form>
-                            </div>
-                            <ul class="com-answer-li">
-                            </ul>
-                        </div><!-- //com-answer -->
-                    </div><!-- comment-li 结束 -->
-
-                    <!-- comment-li 开始 -->
-                    <div class="comment-li">
-                        <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
-
-                            <p class="ufeed-score">
-
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
-                                <span class="ufeed-item"> <em>景点&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>酒店&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>服务&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>交通&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-
-                                <span class="ufeed-tag">体验</span>
-                            </p>
-                        </div><!-- //ufeed-info -->
-                        <div class="ufeed-content"> <!-- 展开时加showmore -->
-                            风景很好，酒店设施也很齐全，就是吃东西太贵了。总之这次三亚之行很满意，下次还选驴妈妈
-                        </div>
-
-                        <!-- 点评图片展示 -->
-
-                        <!-- 大图结构 -->
-
-
-                        <!-- 用户信息 -->
-                        <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
-                            <p>
-                                <a href="javascript:;" title="gu219146">gu219146</a>
-                                对 “
-                                <a class="com-proTit" href="javascript:;" title="【三亚自由行】亚龙湾喜来登度假酒店5天4晚 ">【三亚自由行】亚龙湾喜来登度假酒店5天4晚 </a>
-                                ” 发表点评
-                                <em>2014-06-13</em>
-                                <a class="com-user-app" href="javascript:;">
-                                    <i class="iconcom iconcom-mobile"></i>
-                                    <span class="com-msg">该点评来源驴妈妈APP端</span>
-                                </a>
-                            </p>
-                        </div>
-
-                        <!-- 点评回复 -->
-                        <div class="com-answer combd clearfix "> <!-- //如果下面有回复则加 open否则不加 -->
-                            <i class="iconcom iconcom-boxdir"></i>
-                            <div class="com-answer-form">
-                                <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
-                                    <input class="com-answerinput" type="text">
-                                </form>
-                            </div>
-                            <ul class="com-answer-li">
-                            </ul>
-                        </div><!-- //com-answer -->
-                    </div><!-- comment-li 结束 -->
-
-                    <!-- comment-li 开始 -->
-                    <div class="comment-li">
-                        <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
-
-                            <p class="ufeed-score">
-
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
-                                <span class="ufeed-item"> <em>景点&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>酒店&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>服务&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>交通&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-
-                                <span class="ufeed-tag">体验</span>
-                            </p>
-                        </div><!-- //ufeed-info -->
-                        <div class="ufeed-content"> <!-- 展开时加showmore -->
-                            风景很好，酒店设施也很齐全，就是吃东西太贵了。总之这次三亚之行很满意，下次还选驴妈妈
-                        </div>
-
-                        <!-- 点评图片展示 -->
-
-                        <!-- 大图结构 -->
-
-
-                        <!-- 用户信息 -->
-                        <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
-                            <p>
-                                <a href="javascript:;" title="gu219146">gu219146</a>
-                                对 “
-                                <a class="com-proTit" href="javascript:;" title="【三亚自由行】亚龙湾喜来登度假酒店5天4晚 ">【三亚自由行】亚龙湾喜来登度假酒店5天4晚 </a>
-                                ” 发表点评
-                                <em>2014-06-13</em>
-                                <a class="com-user-app" href="javascript:;">
-                                    <i class="iconcom iconcom-mobile"></i>
-                                    <span class="com-msg">该点评来源驴妈妈APP端</span>
-                                </a>
-                            </p>
-                        </div>
-
-                        <!-- 点评回复 -->
-                        <div class="com-answer combd clearfix "> <!-- //如果下面有回复则加 open否则不加 -->
-                            <i class="iconcom iconcom-boxdir"></i>
-                            <div class="com-answer-form">
-                                <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
-                                    <input class="com-answerinput" type="text">
-                                </form>
-                            </div>
-                            <ul class="com-answer-li">
-                            </ul>
-                        </div><!-- //com-answer -->
-                    </div><!-- comment-li 结束 -->
-
-                    <!-- comment-li 开始 -->
-                    <div class="comment-li">
-                        <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
-
-                            <p class="ufeed-score">
-
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
-                                <span class="ufeed-item"> <em>景点&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>酒店&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>服务&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>交通&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-
-                                <span class="ufeed-tag">体验</span>
-                            </p>
-                        </div><!-- //ufeed-info -->
-                        <div class="ufeed-content"> <!-- 展开时加showmore -->
-                            风景很好，酒店设施也很齐全，就是吃东西太贵了。总之这次三亚之行很满意，下次还选驴妈妈
-                        </div>
-
-                        <!-- 点评图片展示 -->
-
-                        <!-- 大图结构 -->
-
-
-                        <!-- 用户信息 -->
-                        <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
-                            <p>
-                                <a href="javascript:;" title="gu219146">gu219146</a>
-                                对 “
-                                <a class="com-proTit" href="javascript:;" title="【三亚自由行】亚龙湾喜来登度假酒店5天4晚 ">【三亚自由行】亚龙湾喜来登度假酒店5天4晚 </a>
-                                ” 发表点评
-                                <em>2014-06-13</em>
-                                <a class="com-user-app" href="javascript:;">
-                                    <i class="iconcom iconcom-mobile"></i>
-                                    <span class="com-msg">该点评来源驴妈妈APP端</span>
-                                </a>
-                            </p>
-                        </div>
-
-                        <!-- 点评回复 -->
-                        <div class="com-answer combd clearfix "> <!-- //如果下面有回复则加 open否则不加 -->
-                            <i class="iconcom iconcom-boxdir"></i>
-                            <div class="com-answer-form">
-                                <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
-                                    <input class="com-answerinput" type="text">
-                                </form>
-                            </div>
-                            <ul class="com-answer-li">
-                            </ul>
-                        </div><!-- //com-answer -->
-                    </div><!-- comment-li 结束 -->
-
-                    <!-- comment-li 开始 -->
-                    <div class="comment-li">
-                        <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
-
-                            <p class="ufeed-score">
-
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
-                                <span class="ufeed-item"> <em>景点&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>酒店&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>服务&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-                                <span class="ufeed-item"> <em>交通&nbsp;</em>
-                                    <i>5 (推荐)</i>
-                                </span>
-
-                                <span class="ufeed-tag">体验</span>
-                            </p>
-                        </div><!-- //ufeed-info -->
-                        <div class="ufeed-content"> <!-- 展开时加showmore -->
-                            风景很好，酒店设施也很齐全，就是吃东西太贵了。总之这次三亚之行很满意，下次还选驴妈妈
-                        </div>
-
-                        <!-- 点评图片展示 -->
-
-                        <!-- 大图结构 -->
-
-
-                        <!-- 用户信息 -->
-                        <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
-                            <p>
-                                <a href="javascript:;" title="gu219146">gu219146</a>
-                                对 “
-                                <a class="com-proTit" href="javascript:;" title="【三亚自由行】亚龙湾喜来登度假酒店5天4晚 ">【三亚自由行】亚龙湾喜来登度假酒店5天4晚 </a>
-                                ” 发表点评
-                                <em>2014-06-13</em>
-                                <a class="com-user-app" href="javascript:;">
-                                    <i class="iconcom iconcom-mobile"></i>
-                                    <span class="com-msg">该点评来源驴妈妈APP端</span>
-                                </a>
-                            </p>
-                        </div>
-
-                        <!-- 点评回复 -->
-                        <div class="com-answer combd clearfix "> <!-- //如果下面有回复则加 open否则不加 -->
-                            <i class="iconcom iconcom-boxdir"></i>
-                            <div class="com-answer-form">
-                                <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
-                                    <input class="com-answerinput" type="text">
-                                </form>
-                            </div>
-                            <ul class="com-answer-li">
-                            </ul>
-                        </div><!-- //com-answer -->
-                    </div><!-- comment-li 结束 -->
-                </div><!-- com-all 结束 -->
-
-                <!--无点评-->
-                <div class="comment-list no-comment" style="display:none">
-                    <span class="pic-lv"></span>
-                    <span>已经有一大波人住过此酒店，可惜他们还在点评的路上哦~</span>
-                </div>
-                <!--无点评END-->
-
-                <!-- 分页 -->
-                <div class="paging orangestyle">    <div class="pagebox"><span class="prevpage"><i class="larr"></i></span> <span class="pagesel" onclick="javascript:loadPaginationOfTrips(1);">1</span><a href="javascript:loadPaginationOfTrips(2);" hidefocus="false">2</a><a href="javascript:loadPaginationOfTrips(3);" hidefocus="false">3</a><a href="javascript:loadPaginationOfTrips(4);" hidefocus="false">4</a><a href="javascript:loadPaginationOfTrips(5);" hidefocus="false">5</a><span class="pagemore">...</span> <a href="javascript:loadPaginationOfTrips(42);" hidefocus="false">42</a><a href="javascript:loadPaginationOfTrips(2);" class="nextpage" hidefocus="false"> <i class="rarr"></i></a>  </div></div>
-
-            </div><!-- 用户点评 结束-->
-        </div>
-    </div>
-
 </div>
 
 <!-- build:js -->
-<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
 <script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>
+<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
 <script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
 <script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>
 <script src="http://pic.lvmama.com/js/lv/calendar.js"></script>
 <script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
-<script src="http://pic.lvmama.com/js/v6/modules/imgScroll1.js"></script>
-<script src="http://pic.lvmama.com/js/v6/modules/mapControl.js"></script>
-<script src="http://pic.lvmama.com/js/public/detail_sale.js"></script>
+
+<!--<script src="http://pic.lvmama.com/js/v6/public/searchComplete.js"></script>
+<script src="http://pic.lvmama.com/js/v6/hotel/hotel_autoComplete.js"></script>-->
+
 <!-- endbuild -->
+<!--<script src="libs/json2.js"></script>-->
+<!--<script src="js/search.js"></script>-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=i2ccGvMLyR86WI0YcodIe7Lu"></script>
-<script src="js/hotel-list.js"></script>
-<script src="js/search-details.js"></script>
-<script src="js/hotel-flight-alert.js"></script>
-<script>
-    //弹出酒店介绍
-    $(document).on('click','.js_hotel_name',function(e){
-        $('.js_HotelDetail_tab li').eq(0).click();
-        changecgHotelDetail.open();
-    });
-
-    //弹出酒店地图
-    $(document).on('click','.prd_map',function(e){
-        $('.js_HotelDetail_tab li').eq(1).click();
-        changecgHotelDetail.open();
-
-
-        //酒店详情页，图片切换
-        $('.js_cgDetail_scroll').each(function(){
-            $(this).imgScroll1({
-                migBox: '.img_scroll_box', //运动列表ul的父级；
-                tabBox: '.img_scroll_tab',   //切换列表ul的父级
-                btnL : '.img_scroll_l',    //左按钮
-                btnR : '.img_scroll_r',    //右按钮
-                tab_name : 'active',  //切换高亮状态的class
-                runStyle : 1         //大图切换方式，1是左右滚动，2是渐变切换
-            });
-        })
-    });
-
-    //弹出酒店点评
-    $(document).on('click','.js_hotel_content',function(e){
-        $('.js_HotelDetail_tab li').eq(2).click();
-        changecgHotelDetail.open();
-    });
-
-    //酒店介绍交通地图
-    lvmap({
-        type: 'baidu',//地图类型,支持google, baidu. 默认google
-        marker: true,//是否显示地图标记. 默认不显示
-        coordinate: { lng: 116.407, lat: 39.9 },//地图中心点的经度(lng)和纬度(lat)
-        zoom: 15,//缩放等级. 默认15,即街道级别. 数值越大,可视区域越小,地标显示越清晰
-        keyType:1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
-        containerID: "cgDetail_map",//地图容器的ID
-        markerTips: { title: '地标', content: '地标内容介绍', maxWidth: 150, maxHeight: 100 }
-        //地图标记信息: marker为true且content有值时显示. 默认不显示. 支持自定义提示框宽高.
-    });
-</script>
+<script src="js/details.js"></script>
+<script src="js/hotel-seach-list.js"></script>
+<script src="http://pic.lvmama.com/js/public/detail_sale.js"></script>
 <!--<script src="http://pic.lvmama.com/js/v5/ibm/eluminate.js"></script>
 <script src="http://pic.lvmama.com/js/v5/ibm/coremetrics-initalize.js"></script>-->
 </body>

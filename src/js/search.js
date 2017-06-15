@@ -27,6 +27,7 @@ $(function () {
         passHotel: true,
         passTicket: true,
         selectIndex: 0,
+        oneDayTime: 86400000,
         errorArr:[],
         completeBox: $('.drop-complete'),
         init: function () {
@@ -131,6 +132,14 @@ $(function () {
             dateArr[2] = dateArr[2]<10?'0'+dateArr[2]:dateArr[2];
             return dateArr.join('-');
         },
+        dateTime: function (dateStr) {
+            if(typeof dateStr === 'string'&& $.browser.msie){
+                dateStr = dateStr.replace('-','/');
+            }
+            var date = dateStr?new Date(dateStr):new Date();
+            date = date.getTime();
+            return date;
+        },
         getPosition: function () {
             //获取container的位置
             var dropT = this.targetSection.offset().top-this.container.offset().top+this.targetSection.height();
@@ -206,6 +215,14 @@ $(function () {
                     if(self.targetSection.hasClass('flight-date-return')){
                         $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                         self.flightReturn.removeClass('disabled');
+                    }else {
+                        //判断是否触发连级日历自动填写
+                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
+                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
+                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
+                            //手动刷新返程机票的星期数
+                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
+                        }
                     }
                 }
             });
@@ -221,13 +238,16 @@ $(function () {
                 dayPrev: 0,
                 template: "small",
                 cascading: true,
-                cascadingNextAuto: false,
+                cascadingNextAuto: true,
                 cascadingOffset: 2,
                 showNumberOfDays: true,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
-                selectDateCallback: function () {
-                    //var date = self.targetSection.find('input').val();
-                    //self.getWeekday(self.targetSection,date);
+                selectDateCallback: function (e) {
+                    var date = self.targetSection.find('input').val();
+                    self.getWeekday(self.targetSection,date);
+                    setTimeout(function () {
+                        self.getWeekday($('.hotel-date-end'),e.cascadingSelected.end);
+                    },50)
                 }
             })
         },
@@ -255,6 +275,14 @@ $(function () {
                     if(self.targetSection.hasClass('flight-date-return')){
                         $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                         self.flightReturn.removeClass('disabled');
+                    }else {
+                        //判断是否触发连级日历自动填写
+                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
+                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
+                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
+                            //手动刷新返程机票的星期数
+                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
+                        }
                     }
                 }
             });
@@ -507,7 +535,8 @@ $(function () {
                         e.preventDefault();
                     }
                 }*/
-                if(self.selectFlag){
+                var which = e.which||e.keyCode;
+                if(self.selectFlag&&(which === 40||which === 38)){
                     e.preventDefault();
                 }
             });
@@ -939,6 +968,13 @@ $(function () {
                     this.showError('目的地不能为空',false,'flight-to')
                     this.passFlight = false;
                 }
+                //判断出发地与目的地是否相同
+                if(this.passFlight){
+                    if($('.flight-from input').val() === $('.flight-to input').val()){
+                        this.showError('出发地与目的地不能相同',false,'flight-to')
+                        this.passFlight = false;
+                    }
+                }
                 if(this.passFlight&&this.currentLi.find('.tip-content').html()===''){
                     alert('flight pass!')
                 }
@@ -947,7 +983,7 @@ $(function () {
                 this.passHotel = true;
                 if($('.hotel-to input').val()===''){
                     this.showError('目的地不能为空',false,'hotel-to')
-                    this.passFlight = false;
+                    this.passHotel = false;
                 }
                 if(this.passHotel&&this.currentLi.find('.tip-content').html()===''){
                     alert('hotel pass!')
