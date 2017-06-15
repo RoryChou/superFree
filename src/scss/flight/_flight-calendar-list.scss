@@ -1,0 +1,195 @@
+.ft-price-calendar a,
+.ft-price-calendar li,
+.ft-price-calendar .ft-pc {
+  float: left;
+  height: 54px;
+  //border: 1px solid #fea1cb;
+  //border-bottom: 2px solid #ee3388;
+  border-top: 1px solid $color-lv-orange;
+  border-bottom: 1px solid #fc6;
+  margin-right: -1px;
+}
+.ft-price-calendar a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  float: left;
+  width: 29px;
+  background: #fff;
+}
+.ft-price-calendar a i {
+  *cursor: pointer;
+  display: block;
+  width: 10px;
+  height: 15px;
+  margin: 20px 0 0 11px;
+  background: url("http://pic.lvmama.com/img/flight/flight.png") -80px -100px;
+}
+.ft-price-calendar .slider-btn-right i {
+  background-position: -90px -100px;
+}
+.ft-price-calendar .slider-btn-disable {
+  cursor: default;
+}
+.ft-price-calendar .slider-btn-disable i {
+  background-position: -80px -120px;
+}
+.ft-price-calendar .slider-btn-right.slider-btn-disable i {
+  background-position: -90px -120px;
+}
+.ft-price-calendar .slider-btn-right.color-e38 {
+  border-left-color: #ee3388;
+}
+.ft-price-calendar li {
+  position: relative;
+  width: 108px;
+  background: $color-bg-orange;
+  text-align: center;
+  cursor: pointer;
+}
+.ft-price-calendar li:hover {
+  background: #fc6;
+}
+.ft-price-calendar li:hover p {
+  color: #fff;
+}
+.ft-price-calendar li.active {
+  z-index: 1;
+  background: #fc6;
+  color: #fff;
+}
+
+.ft-price-calendar li.active .date-info {
+  color: #fff;
+  //margin-top: 3px;
+}
+.ft-price-calendar li.active .price-info {
+  color: #fff;
+  i,b {
+    color: #fff;
+  }
+}
+.ft-price-calendar li.active .price-more {
+  color: #fff;
+}
+.ft-price-calendar li .date-info {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+.ft-price-calendar li .date-info span {
+  margin-left: 5px;
+}
+.ft-price-calendar li .price-info {
+  font-size: 12px;
+  color: #999;
+  margin-left: -2px;
+}
+.ft-price-calendar li .price-info i {
+  display: inline-block;
+  font-size: 14px;
+  color: #f60;
+  width: 12px;
+}
+.ft-price-calendar li .price-info b{
+  color: #f60;
+  font-size:16px;
+  font-weight:normal;
+  margin-right:3px;
+}
+.ft-price-calendar li .price-info span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  color: #fff;
+  line-height: 16px;
+  text-align: center;
+  background: #ff9900;
+  margin-left: 5px;
+  vertical-align: 1px;
+}
+.ft-price-calendar li:hover .price-info b,.ft-price-calendar li:hover .price-info i{
+  color: #fff;
+}
+.ft-price-calendar li.active:hover .price-info b,.ft-price-calendar li.active:hover .price-info i{
+  color: #fff;
+}
+.ft-price-calendar li .price-more {
+  font-size: 14px;
+  color: #999;
+}
+.ft-price-calendar .ft-pc {
+  width: 74px;
+  background: $color-bg-orange;
+  cursor: pointer;
+  //border-right: 1px solid #fea1cb;
+  text-align: center;
+}
+.ft-price-calendar .ft-pc:hover,
+.ft-price-calendar .ft-pc.active {
+  background: #ffcc66;
+  //border-color: #e38;
+}
+.ft-price-calendar .ft-pc:hover i,
+.ft-price-calendar .ft-pc.active i {
+  background: url('../../imgs/flight/sprite/icon-flight-calendar-hover.png') no-repeat center;
+  height: 25px;
+  width: 26px;
+}
+.ft-price-calendar .ft-pc:hover p,
+.ft-price-calendar .ft-pc.active p {
+  color: #fff;
+}
+.ft-price-calendar .ft-pc i {
+  display: block;
+  margin: 6px 0 0 25px;
+  *margin-left: 0;
+  background: url('../../imgs/flight/sprite/icon-flight-calendar.png') no-repeat center;
+  height: 25px;
+  width: 26px;
+}
+.ft-price-calendar .ft-pc p {
+  font-size: 12px;
+  color: #666;
+}
+.ft-price-box {
+  *position: relative;
+  overflow: hidden;
+  width: 1070px;
+  height: 57px;
+  float: left;
+}
+.ft-price-box .ft-price-box-inner {
+  position: relative;
+  left: 0;
+  width: 200%;
+}
+.ft-price-box ul {
+  float: left;
+  width: 50%;
+}
+
+.ft-price-calendar {
+  .slider-btn-left {
+    i {
+      background: url('../../imgs/flight/sprite/flight-left-useful.png') no-repeat center;
+      height: 16px;
+      width: 10px;
+    }
+    &.nomore-calendar {
+      i {
+        background: url('../../imgs/flight/sprite/flight-left-not.png') no-repeat center;
+        height: 16px;
+        width: 10px;
+      }
+    }
+  }
+  .slider-btn-right {
+    i {
+      background: url('../../imgs/flight/sprite/flight-right-useful.png') no-repeat center;
+      height: 16px;
+      width: 10px;
+    }
+  }
+}

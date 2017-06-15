@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机票</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <!-- build:css -->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/header_new.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/public/base.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tags.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/paging.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/flight/v4/tip.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tip.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/dialog.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/icons.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/flighthotel/fh-icon-ac.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/superFree/hotel/hotel.css">
+    <link rel="stylesheet" href="css/flight/flight.css">
+</head>
+<body class="super-free super-free-flight">
+<div class="wrap ft-list">
+    <!--面包屑导航-->
+    <div class="crumbs">
+        <p class="crumbs-link">
+            <a href="http://www.lvmama.com">首页</a> &gt;
+            <a href="http://s.lvmama.com/group/H9?keyword=三亚">国内游</a> &gt;
+            <a href="http://s.lvmama.com/group/H9?keyword=三亚">自由行+DIY</a> &gt;
+            <a class="current">4天3晚-厦门-优选套餐</a>
+        </p>
+    </div>
+    <!--面包屑导航END-->
+
+    <!--旅游宝典-->
+    <div class="baodian">
+        <p class="title">
+            旅游宝典
+            <span class="s-title">我们为您推荐，热门路线玩法</span>
+        </p>
+        <ul class="clearfix">
+            <li>
+                <a href="">
+                    <img src="imgs/placehold/275x184.png" alt="">
+                    <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="imgs/placehold/275x184.png" alt="">
+                    <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="imgs/placehold/275x184.png" alt="">
+                    <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="imgs/placehold/275x184.png" alt="">
+                    <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--旅游宝典END-->
+
+    <!-- 搜索框 -->
+    <div class="ticket_search">
+        <div class="search_nav_box">
+            <ul class="search_nav" style="">
+                <li>
+                    <a href="http://pic.lvmama.com/svn/pages/superFree/combo.html">优选套餐</a>
+                </li>
+                <li class="search_li">
+                    <a href="http://pic.lvmama.com/svn/pages/superFree/flight.html">机票</a>
+                </li>
+                <li>
+                    <a href="http://pic.lvmama.com/svn/pages/superFree/hotel.html" >酒店</a>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="head-wrapper">
+            <div class="main_search search-contents-flight">
+                <div class="search-bar-wrapper">
+                    <div class="default-box clearfix">
+                        <div class="city">
+                            <i class="icon"></i>
+                            <p class="flight-from">
+                                <span class="city-from-str">上海</span>
+                                <span><b class="date-from-str">2017-07-14</b>出发</span>
+                            </p>
+                            <i class="icon-flight-single"></i>
+                            <!--单程icon-->
+                            <!--<i class="icon-flight-single"></i>-->
+                            <!--单程icon END-->
+                            <p class="flight-to">
+                                <span class="city-to-str">厦门</span>
+                                <span> <b class="date-to-str">2017-07-17</b>返回</span>
+                            </p>
+                        </div>
+                        <div class="date">
+                            <i class="icon"></i>
+                            <span>
+                                <b class="hotel-days">3</b>天
+                            </span>
+                        </div>
+                        <div class="btn-wrapper">
+                            <div class="btn btn-change btn-pink">
+                                更改行程
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change-box clearfix">
+                        <div class="city">
+                            <i class="icon"></i>
+                            <div class="input-wrapper">
+                                <div class="flight-tabs">
+                                    <div class="flight-single current">
+                                        <span></span>
+                                        单程
+                                    </div>
+                                    <div class="flight-double">
+                                        <span></span>
+                                        往返
+                                    </div>
+                                </div>
+                                <div class="flight-from section-input search-city">
+                                    <div class="search-contents-title">出发地</div>
+                                    <input type="text" class="input-city-from" placeholder="请输入出发地">
+                                    <div class="error-box">
+                                        <div class="tip-arrow tip-arrow-left">
+                                            <em>◆</em>
+                                            <i>◆</i>
+                                        </div>
+                                        <i class="error-icon"></i>
+                                        <p>总人数不能超过9人哦！</p>
+                                    </div>
+                                    <!--<div class="error-box error-box-bottom">
+                                        <div class="tip-arrow tip-arrow-top">
+                                            <em>◆</em>
+                                            <i>◆</i>
+                                        </div>
+                                        <i class="error-icon"></i>
+                                        <p>总人数不能超过9人哦！</p>
+                                    </div>-->
+                                </div>
+                                <div class="flight-to section-input search-city">
+                                    <div class="search-contents-title">目的地</div>
+                                    <input type="text" class="input-city-to" placeholder="请输入目的地">
+                                    <div class="error-box">
+                                        <div class="tip-arrow tip-arrow-left">
+                                            <em>◆</em>
+                                            <i>◆</i>
+                                        </div>
+                                        <i class="error-icon"></i>
+                                        <p>总人数不能超过9人哦！</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <i class="icon"></i>
+                            <div class="input-wrapper">
+                                <div class="flight-date-start section-input search-date search-cascading search-date-from">
+                                    <div class="search-contents-title">出发日期</div>
+                                    <div class="search-contents-info"></div>
+                                    <input type="text" readonly="readonly" class="input-date-from">
+                                </div>
+                                <div class="flight-date-return section-input search-date search-cascading search-date-to">
+                                    <div class="search-contents-title">返回日期</div>
+                                    <div class="search-contents-info"></div>
+                                    <input type="text" readonly="readonly" class="input-date-to">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-wrapper">
+                            <div class="btn btn-pink search-btn">
+                                搜索
+                            </div>
+                            <div class="btn cancle search-btn-cancle">
+                                取消
+                            </div>
+                        </div>
+                        <div class="drop-suggestion-citys">
+                            <div class="drop-title">热门城市</div>
+                            <ul class="city-hot clearfix">
+                            </ul>
+                            <ul class="letter-tabs clearfix">
+                                <li class="current">
+                                    ABCD
+                                    <i></i>
+                                </li>
+                                <li>EFGH<i></i></li>
+                                <li>JKLM<i></i></li>
+                                <li>NPQRS<i></i></li>
+                                <li>TUVWX<i></i></li>
+                                <li>YZ<i></i></li>
+                            </ul>
+                            <ul class="letter-city-contents">
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>A</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>B</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>C</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>D</dt>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>E</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>F</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>G</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>H</dt>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>J</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>K</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>L</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>M</dt>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>N</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>P</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>Q</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>R</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>S</dt>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>T</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>U</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>V</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>W</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>S</dt>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="clearfix">
+                                        <dt>Y</dt>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>Z</dt>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="drop-suggestion-keywords">
+                            <div class="keywords-transport clearfix">
+                                <p class="keywords-title">交通枢纽</p>
+                                <p class="keywords-details">
+
+                                </p>
+                            </div>
+                            <div class="keywords-subway">
+                                <p class="keywords-title">地铁站</p>
+                                <p class="keywords-details">
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="drop-complete"></ul>
+                </div>
+            </div>
+
+            <!--去返程tab-->
+            <div class="flight-switch-tabs clearfix">
+                <a href="" class="current">
+                    去：
+                    <span class="city-from">上海</span>
+                    -
+                    <span class="city-to">厦门</span>
+                </a>
+                <a href="">
+                    返：
+                    <span class="city-to">厦门</span>
+                    -
+                    <span class="city-from">上海</span>
+                </a>
+            </div>
+            <!--去返程tab END-->
+
+            <!-- 价格日历 ft-price-calendar -->
+            <div class="ft-price-calendar clearfix">
+                <a href="javascript:;" class="slider-btn-left nomore-calendar"><i></i></a>
+                <div class="ft-price-box">
+                    <div class="ft-price-box-inner clearfix">
+                        <ul class="clearfix">
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-more">点击查看</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li class="active">
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起<span>低</span></p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                            <li>
+                                <p class="date-info">01-26<span>周日</span></p>
+                                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                                <i class="arrow-top"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="javascript:;" class="slider-btn-right"><i></i></a>
+                <div class="ft-pc js-pop-calender">
+                    <i></i>
+                    <p>价格日历</p>
+                </div>
+            </div><!-- //价格日历 ft-price-calendar结束 -->
+            <!-- 筛选部分 ft-filter-->
+
+            <div class="search_sort clearfix">
+                <div class="search_list clearfix">
+                    <div class="search_theme">航空公司</div>
+                    <dl class="search_theme_list clearfix">
+                        <dt><a class="select" href="javascript:;">不限</a></dt>
+                        <dd>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>春秋航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>厦门航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>上海航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>东方航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>山东航空</a></span>
+                        </dd>
+                    </dl>
+                    <a class="seach_gd_btn js_moreOpt_btn">更多<i class="arrow"></i></a>
+                </div>
+                <div class="search_list clearfix">
+                    <div class="search_theme">起飞时段</div>
+                    <dl class="search_theme_list clearfix">
+                        <dt><a class="select" href="javascript:;">不限</a></dt>
+                        <dd>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>06:00-18:00</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>08:00-12:00</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>12:00-24:00</a></span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="search_list clearfix">
+                    <div class="search_theme">出发机场</div>
+                    <dl class="search_theme_list clearfix">
+                        <dt><a class="select" href="javascript:;">不限</a></dt>
+                        <dd>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>虹桥机场</a></span>
+                            <span class="navListSpan"><a href="javascript:;"><span class="hlIcon hlIcon-select"></span>浦东机场</a></span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="search_list result_sort clearfix">
+                    <div class="search_theme">排&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序</div>
+                    <ul class="search_theme_list rank_box clearfix">
+                        <li title="按起飞时间从早到晚排序" class="active">当地起飞时间<i></i><b>|</b></li>
+                        <li title="按票价从低到高排序">票价<em class="no-tax">(不含税)</em><i></i><b>|</b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索框END -->
+
+    <div class="search-num">
+        为您找到<span>26</span>个航班(机票价格不含税)
+    </div>
+
+    <!--机票列表-->
+    <div class="ticket-list">
+        <div id="tickets">
+            <!-- 已经加载过的加js-tl-loaded -->
+            <div class="tl-item tl-item-open js-tl-loaded">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">
+                            12:30
+                            <em class="add-one-day" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                        </div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                        立即确认
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-all clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <div class="tl-tips">
+                        <span>机建燃油：<em>￥50/人</em></span>
+                        <span>餐食：<em>有</em></span>
+                        <span>准点率：<em>80%</em></span>
+                    </div>
+                    <!-- 航司产品 data-num=3 默认显示3条 航司产品加JS-tl-ac-part-->
+                    <div class="tl-part JS-tl-ac-part clearfix" data-num="2">
+                        <div class="tlp-title"><span class="icon-ac icon-ac-CA" tip-content="中国国际航空旗舰店产品，提供官方价格"></span></div>
+                        <ul>
+                            <li>
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li>
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 商务优选 data-num=2 默认显示2条-->
+                    <div class="tl-part clearfix" data-num="2">
+                        <div class="tlp-title"><span>旅行特惠</span></div>
+                        <ul>
+                            <li>
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li>
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 商务优选 data-num=2 默认显示2条-->
+                    <div class="tl-part clearfix" data-num="1">
+                        <div class="tlp-title"><span>商务优选</span></div>
+                        <ul>
+                            <li>
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 尊贵专享 data-num=1 默认显示1条-->
+                    <div class="tl-part clearfix" data-num="0" style="display:none;">
+                        <div class="tlp-title"><span>尊贵专享</span></div>
+                        <ul>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                            <li style="display: none;">
+                                <a class="btn btn-xs btn-orange btn-add-cart" href="javascript:;">加入购物车</a>
+                                <span class="tlp-remain">余<i>3</i></span>
+                                <span class="tlp-class">经济舱</span>
+                                <p class="tip-part">
+                                    <span class="tui-gai-qian">退改签</span>
+                                    <span class="reimbursement" tip-content="可提供全额行程单">行程单</span>
+                                    <span class="reimbursement" tip-content="合计20公斤免费行李额度，带入客舱内的手提行李不得超过5公斤，且体积不得超过20X30X40cm">行李额度</span>
+                                </p>
+                                <span class="tlp-discount">6.7<i>折</i></span>
+                                <p class="reduce-price">
+                                    <span class="dis-tip" tip-content="满xx减xx。">已减&yen;30</span>
+                                    <span class="tlp-price"><i>&yen;</i>1711</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--提示语句-->
+                    <div class="tl-part-tips">
+                        <div class="nova-tip nova-tip-normal">
+                            <span class="nova-icon-xs nova-icon-info"></span>
+                            该航班为隔夜航班，请留意您的出行安排
+                        </div>
+                        <a class="tl-more-btn" href="javascript:;">更多舱位（共<em>8</em>个）<i></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">12:30</div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                        立即确认
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-item-loading clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <i class="loading-img"></i>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">12:30</div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                        立即确认
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-item-loading clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <i class="loading-img"></i>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">12:30</div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                        立即确认
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-item-loading clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <i class="loading-img"></i>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">12:30</div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm js-tips" tip-content="立即确认！">
+                        立即确认
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-item-loading clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <i class="loading-img"></i>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-detail clearfix">
+                    <div class="tl-col tl-info">
+                        <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-CA"></i>中国国航</div>
+                        <!-- TODO 机型信息填在对应的data属性中 -->
+                        <div class="tl-bottom"><span>CA1831</span><span class="plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">32A</span><span class="plane-share js-tips" tip-content="实际乘坐：联合航空KH8866。">共享</span></div>
+                    </div>
+                    <div class="tl-col tl-time tl-time-left">
+                        <div class="tl-top">06:15</div>
+                        <div class="tl-bottom">
+                            <em title="浦东国际机场够了">浦东国际机场够了</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-stop">2h45m<br/><i></i>经停</div>
+                    <div class="tl-col tl-time">
+                        <div class="tl-top">12:30</div>
+                        <div class="tl-bottom">
+                            <em>虹桥机场</em>
+                            <span>T2</span>
+                        </div>
+                    </div>
+                    <div class="tl-col tl-confirm tl-confirm-no">
+
+                    </div>
+                    <div class="tl-col tl-duration">
+                        <em>6.7</em>折
+                    </div>
+                    <div class="tl-col tl-price">
+                        <i>&yen;</i><em>711</em>起
+                    </div>
+                    <span class="select-btn"></span>
+                </div>
+                <div class="tl-item-loading clearfix">
+                    <div class="tl-arrow"><span>◆</span><i>◆</i></div>
+                    <i class="loading-img"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--机票列表END-->
+
+
+    <!--加入购物车弹窗-->
+    <div class="alert-cart-success cart-success">
+        <div class="icon"></div>
+        <p>添加成功！</p>
+    </div>
+    <div class="alert-cart-success cart-fail">
+        <div class="icon"></div>
+        <p>添加失败，请重新添加哦~</p>
+    </div>
+    <!--加入购物车弹窗END-->
+
+    <!-- 日期价格模板-->
+    <div class="ft-calendar-template">
+        <ul class="clearfix">
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-more">点击查看</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li class="active">
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起<span>低</span></p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+            <li>
+                <p class="date-info">01-26<span>周日</span></p>
+                <p class="price-info"><i>￥</i><b>1690</b>起</p>
+                <i class="arrow-top"></i>
+            </li>
+        </ul>
+    </div>
+    <!-- //ft-calendar-template结束-->
+
+    <!-- 查看机型 -->
+    <div class="plane-info">
+        <div class="tip-arrow"><em>◆</em><i>◆</i></div>
+        <div class="plane-info-title">
+            <span class="pi-plan">计划机型</span>
+            <span class="pi-name">机型名称</span>
+            <span class="pi-type">类型</span>
+            <span class="pi-min">最少座位数</span>
+            <span class="pi-max">最多座位数</span>
+        </div>
+        <div class="plane-info-detail">
+            <span class="pi-plan"></span>
+            <span class="pi-name"></span>
+            <span class="pi-type"></span>
+            <span class="pi-min"></span>
+            <span class="pi-max"></span>
+        </div>
+    </div>
+    <!-- //plane-info结束 -->
+
+    <!-- 查看退改签 -->
+    <div class="tgq-info">
+        <div class="tip-arrow"><em>◆</em><i>◆</i></div>
+        <p class="tgq-loading">
+            驴妈妈拼命加载中，请稍候...
+        </p>
+        <div class="tgq-info-part tgq-info-part-default">
+            <dl class="clearfix">
+                <dt>退票费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>取消座位时间计算手续费</span></p>
+                    <p class="clearfix"><i></i><span>按照当前舱位票面价收取退票费</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>签转费</dt>
+                <dd>
+                    <p>可以改签</p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>改期费</dt>
+                <dd><p>按照当前舱位票面价收取变更费</p>
+                    <p>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</p></dd>
+            </dl>
+        </div>
+        <div class="tgq-info-part tgq-info-part-ac">
+            <dl class="clearfix">
+                <dt>成人退票手续费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2小时外：100元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞后：260元/人</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>成人同舱改期<br>手续费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2小时外：免费</span></p>
+                    <p class="clearfix"><i></i><span>起飞后：200元/人</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>退改详情</dt>
+                <dd><p>退票：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p><p>改签：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p></dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>备注</dt>
+                <dd><p>备注文案</p></dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- 日历弹层 -->
+    <div class="canderBox1" style="display:none;">
+        <span class="tip-icon nchclose js-close-calender"></span>
+    </div>
+    <!-- 日历弹层 end-->
+
+
+    <!-- 加载弹层 START-->
+    <div class="ft-overlay"></div>
+    <div class="ft-dialog-loading">
+        <div class="ft-dialog-inner clearfix">
+            <div class="ft-dialog-body">
+                <p>驴妈妈拼命加载中，请稍候...</p>
+            </div>
+        </div>
+    </div>
+    <div class="ft-dialog-timeout">
+        <div class="ft-dialog-inner clearfix">
+            <div class="ft-dialog-body">
+                <p>距离您上次搜索已经超过<em>10分钟</em>啦!<br><span>正在为您查询最新价格...</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- 加载弹层 END-->
+
+    <!--购物车-->
+    <a href="#" class="cart">
+        <span class="pro-num">6</span>
+        <i></i>
+        超级自由行
+    </a>
+    <!--购物车END-->
+
+    <!-- 点击加载更多 -->
+    <div class="click-more">
+        点击查看更多机票
+    </div>
+    <!-- 点击加载更多END -->
+
+    <!--到底了-->
+    <div class="nomore">
+        <span>已经到底了哦~</span>
+    </div>
+    <!--到底了END-->
+
+
+    <!-- 搜索无结果 -->
+    <div class="noresult">
+        <span class="hlIcon hlIcon-warning"></span>
+        <div class="noresult-content">
+            <h3 class="noresult-title">抱歉，没有找到符合条件的航班</h3>
+            <p class="noresult-explain">您可以调整行程或筛选条件后重新搜索试试哦~</p>
+        </div>
+    </div>
+    <!-- 搜索无结果 结束 -->
+</div>
+
+<!-- build:js -->
+<script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>
+<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
+<script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
+<script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>
+<script src="http://pic.lvmama.com/js/lv/calendar.js"></script>
+<script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>
+<script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
+<!-- endbuild -->
+<script src="js/search-details.js"></script>
+<script src="js/flight.js"></script>
+<!--<script src="http://pic.lvmama.com/js/v5/ibm/eluminate.js"></script>
+<script src="http://pic.lvmama.com/js/v5/ibm/coremetrics-initalize.js"></script>-->
+</body>
+</html>

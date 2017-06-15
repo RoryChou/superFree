@@ -1,0 +1,894 @@
+@import "../var";
+
+body {
+  #hotel_title_float {
+    z-index: 100;
+  }
+  .search_sort {
+    overflow: visible;
+  }
+  .rank_box {
+    overflow: visible;
+  }
+  .js-tips {
+    cursor: default;
+  }
+  .tip-add-one {
+    color: $color-hover-orange;
+  }
+  .tip-li {
+    border-bottom: 1px dotted #ddd;
+    span {
+      @include inlineblock;
+      width: 120px;
+    }
+    .tip-title {
+      color: $color-lv-orange;
+      width: 50px;
+      vertical-align: top;
+      margin: 0;
+      margin-right: 10px;
+    }
+    &:last-child {
+      border: 0;
+    }
+
+  }
+  //更换酒店
+  .cgHotel {
+    .room_price {
+      font-size: 14px;
+      color: #f60;
+    }
+    .btn_choose {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.search_sort {
+  .search-clear {
+    a {
+      padding-left: 20px;
+      color:#2299ee;
+      &:hover {
+        color: $color-hover-orange;
+      }
+    }
+  }
+}
+
+.main_search {
+  margin-bottom: 0;
+
+  .default-box {
+    .city {
+      height: 42px;
+      .icon {
+        background: url('../../imgs/combo/sprite/icon-combo-place.png') no-repeat center;
+        height: 40px;
+        width: 40px;
+      }
+      .icon-flight-double {
+        @include inlineblock;
+        background: url('../../imgs/combo/sprite/flight-double.png') no-repeat center;
+        height: 13px;
+        width: 52px;
+        margin: 17px 15px 0 15px;
+        vertical-align: top;
+      }
+      .icon-flight-single {
+        @extend .icon-flight-double;
+        background: url('../../imgs/combo/sprite/flight-single.png') no-repeat center;
+        height: 5px;
+        margin-top: 21px;
+      }
+      .flight-from {
+        @include inlineblock;
+        line-height: 30px;
+        span {
+          display: block;
+          font-size:12px;
+          color:#999999;
+          height: 16px;
+          line-height: 16px;
+          font-weight: normal;
+        }
+        .city-from-str,.city-to-str {
+          display: block;
+          height: 26px;
+          line-height: 26px;
+          font-size: 20px;
+          font-weight: 700;
+          color: #333;
+        }
+      }
+      .flight-to {
+        @extend .flight-from;
+      }
+    }
+    .persons {
+      float: left;
+      font-size:20px;
+      font-weight: 700;
+      margin-right: 100px;
+      .icon {
+        @include inlineblock;
+        background: url("../../imgs/combo/sprite/icon-persons.png") no-repeat center;
+        height: 40px;
+        width: 40px;
+        vertical-align: middle;
+        margin-right: 12px;
+      }
+      span {
+        font-size: 16px;
+        font-weight: normal;
+        margin-right: 6px;
+        b {
+          font-size: 20px;
+          font-weight: 700;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+  .change-box {
+    .city,.date {
+      margin-right: 50px;
+    }
+    .city {
+      .icon {
+        background: url('../../imgs/combo/sprite/icon-combo-place.png') no-repeat center;
+      }
+    }
+    .persons-num {
+      float: left;
+      font-size:20px;
+      font-weight: 700;
+      b {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        background: url('../../imgs/combo/sprite/icon-arrow.png') no-repeat center;
+        height: 6px;
+        width: 9px;
+        transition: all 0.3s;
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+      .search-contents-selections {
+        display: none;
+        position: absolute;
+        top: 31px;
+        background-color: #fff;
+        border: 1px solid #ccc\9;
+        *border: 1px solid #ccc;
+        box-shadow: 0px 2px 4px #999;
+        z-index: 21;
+        padding: 10px 0;
+        li {
+          cursor: pointer;
+          width: 126px;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 17px;
+          font-size: 14px;
+          font-family:Arial;
+          &:hover {
+            background-color: #fef2f9;
+            color: $color-lv-pink;
+          }
+          &.current {
+            background-color: #fef2f9;
+            color: $color-lv-pink;
+          }
+        }
+      }
+      .icon {
+        @include inlineblock;
+        background: url("../../imgs/combo/sprite/icon-combo-persons.png") no-repeat center;
+        height: 40px;
+        width: 40px;
+        vertical-align: top;
+        margin-right: 12px;
+      }
+      .section-input {
+        width: 160px;
+      }
+      input {
+        width: 48px;
+        padding-left: 12px;
+      }
+      .search-contents-title {
+        left: 92px;
+      }
+      .combo-persons-adult {
+        .error-box {
+          left: 168px;
+        }
+      }
+      .combo-persons-children {
+        .search-contents-title {
+          left: 48px;
+        }
+        .search-contents-info {
+          right: 32px;
+        }
+        .error-box {
+          left: 0px;
+          top: 38px;
+        }
+      }
+    }
+    .combo-days {
+      input {
+        padding-left: 106px;
+        padding-right: 108px;
+        width: 36px;
+      }
+    }
+    .num-add {
+      position: absolute;
+      z-index: 11;
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      top: 6px;
+      right: 90px;
+      background: url("../../imgs/combo/sprite/icon-num-add.png");
+      &.disabled {
+        background: url("../../imgs/combo/sprite/icon-num-add-not.png");
+      }
+    }
+    .num-minus {
+      @extend .num-add;
+      right: 160px;
+      background: url("../../imgs/combo/sprite/icon-num-minus.png");
+      &.disabled {
+        background: url("../../imgs/combo/sprite/icon-num-minus-not.png");
+      }
+    }
+    .drop-suggestion-keywords {
+      width: 250px;
+      .drop-suggestion-keywords-ul {
+        padding: 8px 20px;
+        li {
+          float: left;
+          cursor: pointer;
+          float: left;
+          color: #666;
+          font-size: 12px;
+          height: 16px;
+          line-height: 16px;
+          margin-right: 20px;
+          &:hover {
+            color: $color-hover-orange;
+          }
+        }
+      }
+      .drop-suggestion-keywords-info {
+        padding: 0 20px;
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+}
+
+.result_sort {
+  .diy {
+    float: left;
+    width: 50px;
+  }
+  .price-low-input,.price-high-input {
+    &:focus {
+      border:1px solid #6cb6f2;
+      box-shadow:0 0 4px 0 #62b1f2;
+    }
+  }
+  //2016-08-24 江圣
+  /*region 价格筛选优化*/
+  .search-filter-price-new {
+    position: relative;
+    height: 26px;
+    width: 156px;
+    float: left;
+  }
+
+  .search-filter-price-new label {
+    float: left;
+    width: 70px;
+  }
+
+  .search-filter-price-new input {
+    border: 1px solid #cccccc;
+    width: 53px;
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+  .search-filter-price-new input.input-error {
+    border: 1px solid #f00;
+  }
+
+  .search-filter-price-new em {
+    float: left;
+    background: #cccccc;
+    height: 1px;
+    width: 6px;
+    margin: 13px 2px 0 7px;
+  }
+
+  .search-filter-price-new-dropdown {
+    background: #f5f5f5;
+    margin: 0 0 0 -10px;
+    position: absolute;
+    top: -7px;
+    width: 169px;
+    overflow: hidden;
+    padding: 6px 0 0 9px;
+    transition: height 200ms;
+    -webkit-transition: height 200ms;
+  }
+
+  .search-filter-price-new-dropdown p {
+    display: none;
+  }
+
+  .search-filter-price-new-dropdown a {
+    color: #0099cc;
+  }
+
+  .search-filter-price-new-dropdown a:hover {
+    color: #ff6600;
+  }
+
+  .search-filter-price-new-dropdown .control {
+    text-align: center;
+    margin: 0px 7px 0 0;
+  }
+
+  .search-filter-price-new-dropdown .btn {
+    margin: 0 5px;
+  }
+
+  .search-filter-price-new-dropdown.active {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin: -1px 0 0 -11px;
+    border: 1px solid #CCC;
+    height: 88px;
+  }
+
+  .search-filter-price-new-dropdown .price-tip {
+    display: none;
+  }
+
+  .search-filter-price-new-dropdown.active .price-tip {
+    color: #999999;
+    display: block;
+    line-height: 28px;
+    text-align: center;
+    height: 28px;
+    overflow: hidden;
+    width: 160px;
+  }
+
+  .search-filter-price-new-dropdown.active .price-low,
+  .search-filter-price-new-dropdown.active .price-high {
+    color: #ff6600;
+  }
+
+  .search-filter-price-new-dropdown.active .price-tip.price-tip-error,
+  .search-filter-price-new-dropdown.active .price-tip.price-tip-error .price-low,
+  .search-filter-price-new-dropdown.active .price-tip.price-tip-error .price-high {
+    color: #ff0000;
+  }
+
+  .search-filter-price-new-dropdown.active p {
+    display: block;
+  }
+}
+
+.main-box {
+  margin-top: 20px;
+}
+.main-list {
+  margin-bottom: 10px;
+}
+.list-prod {
+  box-shadow:0 1px 0 0 rgba(0,0,0,0.09);
+  margin-bottom: 10px;
+  position: relative;
+  background-color: #f9f9f9;
+  &:hover {
+    box-shadow:0 0px 2px 2px rgba(0,0,0,0.1);
+  }
+}
+.list-left {
+  float: left;
+  width: 980px;
+  background-color: #fff;
+  .list-left-wrapper {
+    padding: 0 20px;
+    border-bottom: 1px dotted #ddd;
+  }
+  .list-title {
+    height: 45px;
+    p {
+      float: left;
+    }
+    .pro-num {
+      background:#ffcc66;
+      font-size: 16px;
+      font-weight: 600;
+      width:30px;
+      height:30px;
+      border-radius:100%;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin: 7px 9px;
+      margin-left: 4px;
+      margin-right: 13px;
+    }
+    .list-title-main {
+      height: 45px;
+      line-height: 45px;
+      font-size:18px;
+      color:#333333;
+      font-weight: 700;
+      padding-left: 11px;
+    }
+    .list-title-type {
+      @extend .list-title-main;
+      font-weight: normal;
+      font-size:14px;
+      color:#999999;
+    }
+  }
+  .list-icon {
+    position: absolute;
+    top: 16px;
+    float: left;
+    width: 38px;
+    height: 38px;
+  }
+  .list-main-left {
+    float: left;
+    width: 800px;
+    padding-left: 60px;
+  }
+  .list-main-btns {
+    float: right;
+    padding-top: 10px;
+  }
+  .btn-change-pro-hotel,.btn-change-pro-flight {
+    //margin-top: 10px;
+    padding: 4px 0px;
+    color:#899bad;
+    height: 18px;
+    line-height: 18px;
+    width: 78px;
+    cursor: pointer;
+    i {
+      @include inlineblock;
+      background: url('../../imgs/combo/sprite/icon-change.png') no-repeat center;
+      height: 8px;
+      width: 10px;
+    }
+    &:hover {
+      color: $color-hover-orange;
+      i {
+        background: url('../../imgs/combo/sprite/icon-change-hover.png') no-repeat center;
+      }
+    }
+  }
+  .btn-add-cart-new {
+    display: none;
+    @extend .btn-change-pro-hotel;
+    color: $color-lv-orange;
+    i {
+      background: url('../../imgs/combo/sprite/icon-btn-cart.png') no-repeat center;
+      height: 12px;
+      width: 12px;
+    }
+    &:hover {
+      i {
+        background: url('../../imgs/combo/sprite/icon-btn-cart-hover.png') no-repeat center;
+      }
+    }
+  }
+  .list-icon-notice {
+    float: left;
+    background:#f5f5f5;
+    border-radius:16px;
+    width:43px;
+    height:19px;
+    text-align: center;
+    line-height: 19px;
+    color:#a8a8a8;
+  }
+  .list-info-1 {
+    position: absolute;
+    left: 365px;
+    color: #666;
+  }
+  .list-info-2 {
+    position: absolute;
+    left: 479px;
+    color: #666;
+  }
+  .list-info-3 {
+    position: absolute;
+    left: 542px;
+    color: #666;
+  }
+  .list-info-4 {
+    position: absolute;
+    left: 607px;
+    white-space: nowrap;
+    color: #666;
+  }
+  .list-info-5 {
+    position: absolute;
+    left: 695px;
+    color: #666;
+  }
+  .list-info-6 {
+    position: absolute;
+    left: 743px;
+    color: #666;
+  }
+  //立即确认
+  .tl-confirm {
+    border:1px solid #ff9900;
+    border-radius:2px;
+    width:54px;
+    height:14px;
+    text-align: center;
+    font-size:12px;
+    color:#ff9900;
+    line-height:14px;
+    cursor: default;
+    float: left;
+    margin-left: 9px;
+    margin-top: 2px;
+    margin-right: 10px;
+  }
+  //退改签
+  .list-info-refuse {
+    border-bottom: 1px dashed #999;
+  }
+  //酒店列表
+  .list-hotel {
+    position: relative;
+    &:hover {
+      background-color: #fffcf7;
+    }
+    .list-icon {
+      background: url('../../imgs/combo/sprite/icon-hotel.png') no-repeat center;
+    }
+    .list-hotel-main {
+      padding: 10px 0 10px 60px;
+      .list-hotel-pic {
+        float: left;
+      }
+      .list-main-left-desc {
+        float: left;
+        margin-left: 14px;
+        .hotel-desc-top {
+          height: 24px;
+          line-height: 24px;
+          .list-hotel-title-words {
+            @include inlineblock;
+            font-size:14px;
+            color:#333333;
+            text-decoration: underline;
+            margin-right: 10px;
+            &:hover {
+              color: $color-hover-orange;
+            }
+          }
+          .djjd_tagsclasses {
+            vertical-align: baseline;
+          }
+          .hotel_stars {
+            vertical-align: baseline;
+          }
+          strong {
+            font-family: Simsun,sans-serif;
+            font-size: 12px;
+            display: inline-block;
+            padding: 0 4px;
+            height: 16px;
+            line-height: 16px;
+            border-radius: 2px;
+            vertical-align: top;
+            margin-top: 4px;
+            margin-right: 5px;
+            text-decoration: none;
+            font-weight: 400;
+            color: #fff;
+            background: #74c8fa;
+            border-color: #74c8fa;
+          }
+          .tags-summer-sale {
+            margin-top: 4px;
+          }
+        }
+        .hotel-desc-next {
+          p {
+            @include inlineblock;
+            color:#999999;
+          }
+          .evaluate {
+            height: 14px;
+            line-height: 14px;
+            border-right: 1px solid #ddd;
+            padding-right: 8px;
+          }
+          .eval_count {
+            padding-left: 8px;
+          }
+          .comment-num {
+            color:#999999;
+            span {
+              text-decoration: underline;
+            }
+            &:hover {
+              color: $color-hover-orange;
+            }
+          }
+        }
+      }
+      .list-hotel-details {
+        position: relative;
+        span {
+          float: left;
+          height: 19px;
+          line-height:19px;
+          //color:#666666;
+        }
+        .list-hotel-details-desc {
+          margin-left: 10px;
+          font-size:12px;
+          color:#333333;
+          height: 19px;
+          line-height:19px;
+          width: 144px;
+          @include etc;
+        }
+      }
+    }
+  }
+  //机票列表
+  .list-flight {
+    @extend .list-hotel;
+    .list-icon {
+      background: url('../../imgs/combo/sprite/icon-flight.png') no-repeat center;
+    }
+    &:hover {
+      .btn-change-pro-flight {
+        margin-top: 0px;
+      }
+    }
+    .btn-change-pro-flight {
+      margin-top: 15px;
+    }
+    .btn-add-cart-new {
+
+    }
+    .list-flight-main {
+      padding: 5px 0;
+      padding-left: 60px;
+    }
+    .list-flight-go,.list-flight-return {
+      position: relative;
+      padding: 7px 0;
+      span {
+        float: left;
+        height: 19px;
+        line-height: 19px;
+      }
+    }
+    .list-flight-time {
+      width: 104px;
+      margin-left: 10px;
+      em {
+        font-size:14px;
+        color:#333333;
+        font-weight: 700;
+      }
+      .add-one-day {
+        font-size: 12px;
+        margin-left: 0;
+        vertical-align: 2px;
+      }
+    }
+    .list-flight-company {
+      margin-left: 18px;
+      margin-right: 4px;
+    }
+  }
+  //门票列表
+  .list-ticket {
+    @extend .list-flight;
+    .list-icon {
+      background: url('../../imgs/combo/sprite/icon-ticket.png') no-repeat center;
+    }
+    .list-ticket-main {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .btn-add-cart-new {
+      float: right;
+      padding: 0;
+      margin-right: 20px;
+    }
+    .list-main-left {
+      width: 900px;
+    }
+    .list-left-wrapper {
+      border-bottom: 0;
+    }
+    .list-ticket-li {
+      position: relative;
+      padding: 8px 0;
+      .list-ticket-title {
+        float: left;
+        width: 310px;
+        @include etc;
+      }
+      .list-ticket-calendar {
+        background-color: #fff;
+        float: left;
+        position: absolute;
+        left: 362px;
+        width: 138px;
+        height: 24px;
+        border: 1px solid #ddd;
+        .list-ticket-calendar-input {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 70px;
+          height: 24px;
+          line-height: 24px;
+          padding: 0 10px;
+          padding-right: 58px;
+          z-index: 1;
+          background: url('../../imgs/combo/alpha.gif') repeat;
+        }
+        .list-ticket-calendar-weekday {
+          position: absolute;
+          left: 80px;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          color:#999999;
+        }
+        .list-ticket-calendar-icon {
+          position: absolute;
+          right: 6px;
+          top: 4px;
+          background: url('../../imgs/combo/sprite/icon-calendar.png') no-repeat center;
+          height: 15px;
+          width: 16px;
+        }
+      }
+    }
+    .list-ticket-more {
+      display: block;
+      padding: 10px 0;
+      color: #666;
+      width: 100px;
+      i {
+        padding-left: 5px;
+        @include inlineblock;
+        background: url('../../imgs/combo/sprite/icon-arrow.png') no-repeat center;
+        height: 6px;
+        width: 9px;
+      }
+      &:hover {
+        color: $color-hover-orange;
+        i {
+          background: url('../../imgs/combo/sprite/icon-arrow-hover.png') no-repeat center;
+        }
+      }
+    }
+    .list-ticket-close {
+      i {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+.list-right {
+  float: right;
+  width: (220px - 20*2);
+  padding: 10px 20px;
+  .list-right-info-top {
+    height: 50px;
+    border-bottom: 1px dotted #ddd;
+    padding: 5px 0;
+    p {
+      height: 24px;
+      line-height: 24px;
+      padding: 0px 20px;
+    }
+    .list-money-info-title {
+      float: left;
+      font-size:12px;
+      color:#999999;
+    }
+    .list-money-total-old-value,.list-money-discount-value {
+      float: right;
+      font-size:16px;
+      color:#666666;
+    }
+  }
+  .list-right-info-main {
+    position: absolute;
+    top: 50%;
+    margin-top: -46px;
+    right: 65px;
+    p {
+      text-align: center;
+    }
+    .list-right-info-main-title {
+      font-size:16px;
+      color:#333333;
+      height: 24px;
+      line-height: 24px;
+    }
+    .list-money-total-value {
+      font-size:20px;
+      color:#ff6600;
+      i {
+        font-size: 28px;
+        font-weight: 900;
+      }
+    }
+    .list-right-info-main-title-second {
+      font-size:12px;
+      color:#999999;
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+  .list-right-btns {
+    position: absolute;
+    bottom: 20px;
+    right: 32px;
+    height: 90px;
+    text-align: center;
+    a {
+      display: block;
+      padding: 0px 42px;
+      font-size: 14px;
+      height: 28px;
+      line-height: 28px;
+      margin: 10px 0;
+    }
+    .btn-add-cart {
+      border-color: #ff8800;
+      color: #ff8800;
+      &:hover {
+        border-color: $color-hover-orange;
+        color: $color-hover-orange;
+      }
+    }
+    .btn-add-cart-already {
+      background-color: #fff3e4;
+      border-color: #ffd5a5;
+      color: #ffaa48;
+      cursor: not-allowed;
+    }
+  }
+}

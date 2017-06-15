@@ -1,0 +1,231 @@
+@import "../var";
+
+@import "flight-calendar-list";
+
+@import "flight-list";
+
+@import "flight-calendar";
+
+body {
+  background-color: #f5f5f5;
+  b {
+    font-weight: normal;
+  }
+  .btn {
+    font-weight: normal;
+    padding: 0 20px;
+  }
+  .ticket-list {
+    .btn {
+      font-weight: normal;
+      padding: 0 10px;
+    }
+  }
+  .head-wrapper {
+    box-shadow: none;
+  }
+  .search-num {
+    margin-bottom: 0;
+  }
+}
+
+/*去返程切换*/
+.flight-switch-tabs {
+  background-color: #fff;
+  a {
+    float: left;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 21px;
+    color: #666;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    &:hover {
+      text-decoration: none;
+      background-color: #fc6;
+      color: #fff;
+    }
+    &.current {
+      background-color: #f90;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+/*搜索bar*/
+.search-contents-flight {
+  box-shadow: 0px 0px 4px #ccc;
+  margin-bottom: 11px;
+  .default-box {
+    .city {
+      height: 42px;
+      .icon {
+        background: url('../../imgs/flight/sprite/icon-flight.png') no-repeat center;
+        height: 40px;
+        width: 40px;
+      }
+      .icon-flight-double {
+        @include inlineblock;
+        background: url('../../imgs/flight/sprite/flight-double.png') no-repeat center;
+        height: 13px;
+        width: 52px;
+        margin: 17px 15px 0 15px;
+        vertical-align: top;
+      }
+      .icon-flight-single {
+        @extend .icon-flight-double;
+        background: url('../../imgs/flight/sprite/flight-single.png') no-repeat center;
+        height: 5px;
+        margin-top: 21px;
+      }
+      .flight-from {
+        @include inlineblock;
+        line-height: 30px;
+        span {
+          display: block;
+          font-size:12px;
+          color:#999999;
+          height: 16px;
+          line-height: 16px;
+          font-weight: normal;
+        }
+        .city-from-str,.city-to-str {
+          display: block;
+          height: 26px;
+          line-height: 26px;
+          font-size: 20px;
+          font-weight: 700;
+          color: #333;
+        }
+      }
+      .flight-to {
+        @extend .flight-from;
+      }
+    }
+  }
+  .change-box {
+    .icon {
+      margin-top: 32px;
+    }
+    .flight-tabs {
+      margin: 0 0 12px 0px;
+      .flight-single {
+        @include inlineblock;
+        font-size:12px;
+        color:#666666;
+        cursor: pointer;
+        margin-right: 25px;
+        &.current {
+          color: $color-lv-pink;
+          span {
+            background: url('../../imgs/flight/sprite/icon-flight-chosen.png') no-repeat center;
+            height: 15px;
+            width: 15px;
+          }
+        }
+        span {
+          @include inlineblock;
+          background: url('../../imgs/flight/sprite/icon-flight-not.png') no-repeat center;
+          height: 15px;
+          width: 15px;
+          vertical-align: middle;
+          margin: 2px 6px 0 0;
+        }
+      }
+      .flight-double {
+        @extend .flight-single;
+      }
+    }
+    .city {
+      .icon {
+        background: url('../../imgs/flight/sprite/icon-flight.png') no-repeat center;
+      }
+    }
+    .date {
+      .input-wrapper {
+        padding-top: 36px;
+      }
+    }
+    .flight-date-return {
+      &.search-cascading {
+        input {
+          background: url(../../imgs/home/alpha.gif) repeat;
+        }
+        color: #333;
+        .search-contents-icon-calendar,.search-contents-info {
+          display: block;
+        }
+      }
+      &.disabled {
+        input {
+          background-color: #eee;
+          @include opacity(0.5);
+        }
+        color: #999;
+        .search-contents-icon-calendar,.search-contents-info {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*价格日历=>三角箭头*/
+.ft-price-box-inner {
+  .active {
+    .arrow-top {
+      position: absolute;
+      bottom: -2px;
+      left: 45px;
+      width: 0;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      overflow: hidden;
+      border-color: transparent;
+      border-bottom-color: #fff;
+      border-width: 0 5px 5px 5px ;
+      border-style: solid;
+      font-style: normal;
+      font-weight: 400;
+      _border-style: dashed;
+    }
+  }
+}
+
+/*筛选区 */
+//不含税
+.rank_box li.active, .rank_box li:hover{
+  .no-tax {
+    color: $color-lv-pink;
+  }
+}
+.no-tax {
+  color: #999;
+}
+
+/*日历弹出*/
+.sales-calendar .calmonth[data-offset="0"] .caltitle {
+  width: 476px;
+}
+
+/*详细列表*/
+//添加立即确认
+.tl-confirm {
+  border:1px solid #ff9900;
+  border-radius:2px;
+  width:54px;
+  height:14px;
+  text-align: center;
+  font-size:12px;
+  color:#ff9900;
+  line-height:14px;
+  margin-top: 15px;
+  &.tl-confirm-no {
+    border: 0;
+  }
+}
+
+

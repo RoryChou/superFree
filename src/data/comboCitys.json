@@ -1,0 +1,52 @@
+{
+  "hot":[
+    {
+      "channel": "",
+      "departId": 0,
+      "districtId": 257,
+      "districtName": "三亚",
+      "districtType": "",
+      "isRecomm": "Y",
+      "pinYin": "sanya",
+      "shortPinYin": "sy",
+      "status": "",
+      "urlPinYin": ""
+    },
+    {
+      "channel": "",
+      "departId": 0,
+      "districtId": 155,
+      "districtName": "厦门",
+      "districtType": "",
+      "isRecomm": "",
+      "pinYin": "xiamen",
+      "shortPinYin": "xm",
+      "status": "",
+      "urlPinYin": ""
+    },
+    {
+      "channel": "",
+      "departId": 0,
+      "districtId": 97,
+      "districtName": "长隆",
+      "districtType": "",
+      "isRecomm": "",
+      "pinYin": "cangzhou",
+      "shortPinYin": "cz",
+      "status": "",
+      "urlPinYin": ""
+    },
+    {
+      "channel": "",
+      "departId": 0,
+      "districtId": 256,
+      "districtName": "西安",
+      "districtType": "",
+      "isRecomm": "Y",
+      "pinYin": "xian",
+      "shortPinYin": "xa",
+      "status": "",
+      "urlPinYin": ""
+    }
+  ]
+}
