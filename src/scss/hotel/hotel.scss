@@ -137,6 +137,9 @@ body {
       width: 170px;
       color: #333;
       outline: none;
+      &.placeholder {
+        color: #999;
+      }
     }
     .search-contents-title {
       position: absolute;

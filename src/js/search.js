@@ -364,7 +364,6 @@ $(function () {
                 self.target = $(e.target);
             });
             //input输入
-            //TODO focus解决？
             var eventType = $.browser.msie?'keyup':'input';
             $document.on(eventType,'.section-input input',function (e) {
                 var which = e.which||e.keyCode;
@@ -375,16 +374,6 @@ $(function () {
                 if(which !== 40&&which !== 38&&which !== 13){
                     if($(this).parent('.section-input').hasClass('search-city')){
                         self.getPosition();
-                        //判断触发的具体位置
-                        /*if($(e.target).hasClass('input-city-from')){
-                         //出发地
-                         locale = 'city-from'
-                         }else if($(e.target).hasClass('input-city-to')){
-                         //目的地
-                         locale = 'city-to'
-                         }else {
-                         console.log('input事件触发位置异常')
-                         }*/
 
                         //判断内容
                         if ($(this).val()===""){
