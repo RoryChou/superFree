@@ -49,7 +49,7 @@
 
 .ft-price-calendar li .price-more { font-size: 14px; color: #999; }
 
-.ft-price-calendar .ft-pc { width: 74px; background: #fff9ef; cursor: pointer; text-align: center; }
+.ft-price-calendar .ft-pc { width: 74px; width: 72px\9; background: #fff9ef; cursor: pointer; text-align: center; }
 
 .ft-price-calendar .ft-pc:hover, .ft-price-calendar .ft-pc.active { background: #ffcc66; }
 

@@ -202,7 +202,6 @@ $(function () {
             //获取container的位置
             var dropT = this.targetSection.offset().top-this.container.offset().top+this.targetSection.height();
             var dropL = this.targetSection.offset().left-this.container.offset().left;
-            console.log(this.targetSection.offset().top,this.container.offset().top,this.targetSection.height());
             this.suggestionBox.css({
                 top: dropT+3,
                 left: dropL
@@ -855,7 +854,6 @@ $(function () {
         renderData: function (res,type,error) {
             //根据target判断如何渲染数据
             if(type === 'suggestion'){
-                console.log('renderData-suggestion')
                 //hotel-keywrods中
                 if(this.targetSection.hasClass('hotel-keywords')){
                     var transport = res.traffic;
@@ -1150,7 +1148,7 @@ $(function () {
     $('.btn-add-cart').click(function () {
         //TODO
         $.ajax({
-            url: '../data/cart.json',
+            url: 'data/cart.json',
             data: {
 
             },
@@ -1250,4 +1248,26 @@ $(function () {
         }
     }
 
+    //IE placeholder hack
+    if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+        $('[placeholder]').focus(function() {
+            var input = $(this);
+            if (input.val() == input.attr('placeholder')) {
+                input.val('');
+                input.removeClass('placeholder');
+            }
+        }).blur(function() {
+            var input = $(this);
+            console.log(0)
+            if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                input.addClass('placeholder');
+                input.val(input.attr('placeholder'));
+                console.log(1)
+            }
+            console.log(2)
+        }).blur();
+    };
+    function placeholderSupport() {
+        return 'placeholder' in document.createElement('input');
+    }
 });

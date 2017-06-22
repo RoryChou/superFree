@@ -29,11 +29,11 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .default-box .city { height: 42px; }
 
-.main_search .default-box .city .icon { background: url("../../imgs/combo/sprite/icon-combo-place.png") no-repeat center; height: 40px; width: 40px; }
+.main_search .default-box .city .icon { background: no-repeat center;background-position: 0 0; height: 40px; width: 40px; }
 
-.main_search .default-box .city .icon-flight-double, .main_search .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/combo/sprite/flight-double.png") no-repeat center; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
+.main_search .default-box .city .icon-flight-double, .main_search .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -94px -38px; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
 
-.main_search .default-box .city .icon-flight-single { background: url("../../imgs/combo/sprite/flight-single.png") no-repeat center; height: 5px; margin-top: 21px; }
+.main_search .default-box .city .icon-flight-single { background: no-repeat center;background-position: -54px -102px; height: 5px; margin-top: 21px; }
 
 .main_search .default-box .city .flight-from, .main_search .default-box .city .flight-to { display: inline-block; *display: inline; *zoom: 1; line-height: 30px; }
 
@@ -43,7 +43,7 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .default-box .persons { float: left; font-size: 20px; font-weight: 700; margin-right: 100px; }
 
-.main_search .default-box .persons .icon { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/combo/sprite/icon-persons.png") no-repeat center; height: 40px; width: 40px; vertical-align: middle; margin-right: 12px; }
+.main_search .default-box .persons .icon { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -40px 0; height: 40px; width: 40px; vertical-align: middle; margin-right: 12px; }
 
 .main_search .default-box .persons span { font-size: 16px; font-weight: normal; margin-right: 6px; }
 
@@ -51,11 +51,11 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .change-box .city, .main_search .change-box .date { margin-right: 50px; }
 
-.main_search .change-box .city .icon { background: url("../../imgs/combo/sprite/icon-combo-place.png") no-repeat center; }
+.main_search .change-box .city .icon { background: no-repeat center;background-position: 0 0; }
 
 .main_search .change-box .persons-num { float: left; font-size: 20px; font-weight: 700; }
 
-.main_search .change-box .persons-num b { position: absolute; right: 12px; top: 12px; background: url("../../imgs/combo/sprite/icon-arrow.png") no-repeat center; height: 6px; width: 9px; transition: all 0.3s; }
+.main_search .change-box .persons-num b { position: absolute; right: 12px; top: 12px; background: no-repeat center;background-position: -94px -63px; height: 6px; width: 9px; transition: all 0.3s; }
 
 .main_search .change-box .persons-num b.active { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 
@@ -67,7 +67,7 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .change-box .persons-num .search-contents-selections li.current { background-color: #fef2f9; color: #e38; }
 
-.main_search .change-box .persons-num .icon { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/combo/sprite/icon-combo-persons.png") no-repeat center; height: 40px; width: 40px; vertical-align: top; margin-right: 12px; }
+.main_search .change-box .persons-num .icon { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: 0 -40px; height: 40px; width: 40px; vertical-align: top; margin-right: 12px; }
 
 .main_search .change-box .persons-num .section-input { width: 160px; }
 
@@ -75,7 +75,11 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .change-box .persons-num .search-contents-title { left: 92px; }
 
+.main_search .change-box .persons-num .combo-persons-adult input { padding-right: 100px; }
+
 .main_search .change-box .persons-num .combo-persons-adult .error-box { left: 168px; }
+
+.main_search .change-box .persons-num .combo-persons-children input { padding-right: 100px; }
 
 .main_search .change-box .persons-num .combo-persons-children .search-contents-title { left: 48px; }
 
@@ -85,13 +89,13 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .main_search .change-box .combo-days input { padding-left: 106px; padding-right: 108px; width: 36px; }
 
-.main_search .change-box .num-add, .main_search .change-box .num-minus { position: absolute; z-index: 11; cursor: pointer; width: 16px; height: 16px; top: 6px; right: 90px; background: url("../../imgs/combo/sprite/icon-num-add.png"); }
+.main_search .change-box .num-add, .main_search .change-box .num-minus { position: absolute; z-index: 11; cursor: pointer; width: 16px; height: 16px; top: 6px; right: 90px; background-position: -78px -40px; }
 
-.main_search .change-box .num-add.disabled, .main_search .change-box .disabled.num-minus { background: url("../../imgs/combo/sprite/icon-num-add-not.png"); }
+.main_search .change-box .num-add.disabled, .main_search .change-box .disabled.num-minus { background-position: -40px -78px; }
 
-.main_search .change-box .num-minus { right: 160px; background: url("../../imgs/combo/sprite/icon-num-minus.png"); }
+.main_search .change-box .num-minus { right: 160px; background-position: -56px -78px; }
 
-.main_search .change-box .num-minus.disabled { background: url("../../imgs/combo/sprite/icon-num-minus-not.png"); }
+.main_search .change-box .num-minus.disabled { background-position: -78px -56px; }
 
 .main_search .change-box .drop-suggestion-keywords { width: 250px; }
 
@@ -173,17 +177,17 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .list-left .btn-change-pro-hotel, .list-left .btn-add-cart-new, .list-left .btn-change-pro-flight { padding: 4px 0px; color: #899bad; height: 18px; line-height: 18px; width: 78px; cursor: pointer; }
 
-.list-left .btn-change-pro-hotel i, .list-left .btn-add-cart-new i, .list-left .btn-change-pro-flight i { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/combo/sprite/icon-change.png") no-repeat center; height: 8px; width: 10px; }
+.list-left .btn-change-pro-hotel i, .list-left .btn-add-cart-new i, .list-left .btn-change-pro-flight i { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -54px -94px; height: 8px; width: 10px; }
 
 .list-left .btn-change-pro-hotel:hover, .list-left .btn-add-cart-new:hover, .list-left .btn-change-pro-flight:hover { color: #f60; }
 
-.list-left .btn-change-pro-hotel:hover i, .list-left .btn-add-cart-new:hover i, .list-left .btn-change-pro-flight:hover i { background: url("../../imgs/combo/sprite/icon-change-hover.png") no-repeat center; }
+.list-left .btn-change-pro-hotel:hover i, .list-left .btn-add-cart-new:hover i, .list-left .btn-change-pro-flight:hover i { background: no-repeat center;background-position: -84px -72px; }
 
 .list-left .btn-add-cart-new { display: none; color: #f90; }
 
-.list-left .btn-add-cart-new i { background: url("../../imgs/combo/sprite/icon-btn-cart.png") no-repeat center; height: 12px; width: 12px; }
+.list-left .btn-add-cart-new i { background: no-repeat center;background-position: -72px -78px; height: 12px; width: 12px; }
 
-.list-left .btn-add-cart-new:hover i { background: url("../../imgs/combo/sprite/icon-btn-cart-hover.png") no-repeat center; }
+.list-left .btn-add-cart-new:hover i { background: no-repeat center;background-position: -94px -51px; }
 
 .list-left .list-icon-notice { float: left; background: #f5f5f5; border-radius: 16px; width: 43px; height: 19px; text-align: center; line-height: 19px; color: #a8a8a8; }
 
@@ -207,7 +211,7 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .list-left .list-hotel:hover, .list-left .list-flight:hover, .list-left .list-ticket:hover { background-color: #fffcf7; }
 
-.list-left .list-hotel .list-icon, .list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: url("../../imgs/combo/sprite/icon-hotel.png") no-repeat center; }
+.list-left .list-hotel .list-icon, .list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: no-repeat center;background-position: -80px 0; }
 
 .list-left .list-hotel .list-hotel-main, .list-left .list-flight .list-hotel-main, .list-left .list-ticket .list-hotel-main { padding: 10px 0 10px 60px; }
 
@@ -247,7 +251,7 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .list-left .list-hotel .list-hotel-main .list-hotel-details .list-hotel-details-desc, .list-left .list-flight .list-hotel-main .list-hotel-details .list-hotel-details-desc, .list-left .list-ticket .list-hotel-main .list-hotel-details .list-hotel-details-desc { margin-left: 10px; font-size: 12px; color: #333333; height: 19px; line-height: 19px; width: 144px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-.list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: url("../../imgs/combo/sprite/icon-flight.png") no-repeat center; }
+.list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: no-repeat center;background-position: 0 -80px; }
 
 .list-left .list-flight:hover .btn-change-pro-flight, .list-left .list-ticket:hover .btn-change-pro-flight { margin-top: 0px; }
 
@@ -267,7 +271,7 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .list-left .list-flight .list-flight-company, .list-left .list-ticket .list-flight-company { margin-left: 18px; margin-right: 4px; }
 
-.list-left .list-ticket .list-icon { background: url("../../imgs/combo/sprite/icon-ticket.png") no-repeat center; }
+.list-left .list-ticket .list-icon { background: no-repeat center;background-position: -40px -40px; }
 
 .list-left .list-ticket .list-ticket-main { padding-top: 14px; padding-bottom: 14px; }
 
@@ -287,15 +291,15 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 
 .list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-weekday { position: absolute; left: 80px; width: 24px; height: 24px; line-height: 24px; color: #999999; }
 
-.list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-icon { position: absolute; right: 6px; top: 4px; background: url("../../imgs/combo/sprite/icon-calendar.png") no-repeat center; height: 15px; width: 16px; }
+.list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-icon { position: absolute; right: 6px; top: 4px; background: no-repeat center;background-position: -38px -94px; height: 15px; width: 16px; }
 
 .list-left .list-ticket .list-ticket-more { display: block; padding: 10px 0; color: #666; width: 100px; }
 
-.list-left .list-ticket .list-ticket-more i { padding-left: 5px; display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/combo/sprite/icon-arrow.png") no-repeat center; height: 6px; width: 9px; }
+.list-left .list-ticket .list-ticket-more i { padding-left: 5px; display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -94px -63px; height: 6px; width: 9px; }
 
 .list-left .list-ticket .list-ticket-more:hover { color: #f60; }
 
-.list-left .list-ticket .list-ticket-more:hover i { background: url("../../imgs/combo/sprite/icon-arrow-hover.png") no-repeat center; }
+.list-left .list-ticket .list-ticket-more:hover i { background: no-repeat center;background-position: -64px -94px; }
 
 .list-left .list-ticket .list-ticket-close i { -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
 
@@ -330,3 +334,127 @@ body .cgHotel .btn_choose:hover { color: #fff; }
 .list-right .list-right-btns .btn-add-cart:hover { border-color: #f60; color: #f60; }
 
 .list-right .list-right-btns .btn-add-cart-already { background-color: #fff3e4; border-color: #ffd5a5; color: #ffaa48; cursor: not-allowed; }
+
+
+/* ../../imgs/combo/combo.png */
+.main_search .default-box .city .icon,
+.main_search .default-box .city .icon-flight-double,
+.main_search .default-box .city .icon-flight-single,
+.main_search .default-box .persons .icon,
+.main_search .change-box .city .icon,
+.main_search .change-box .persons-num b,
+.main_search .change-box .persons-num .icon,
+.main_search .change-box .num-add,
+.main_search .change-box .num-minus,
+.main_search .change-box .num-add.disabled,
+.main_search .change-box .disabled.num-minus,
+.main_search .change-box .num-minus.disabled,
+.list-left .btn-change-pro-hotel i,
+.list-left .btn-add-cart-new i,
+.list-left .btn-change-pro-flight i,
+.list-left .btn-change-pro-hotel:hover i,
+.list-left .btn-add-cart-new:hover i,
+.list-left .btn-change-pro-flight:hover i,
+.list-left .list-hotel .list-icon,
+.list-left .list-flight .list-icon,
+.list-left .list-ticket .list-icon,
+.list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-icon,
+.list-left .list-ticket .list-ticket-more i,
+.list-left .list-ticket .list-ticket-more:hover i{
+background-image: url(../../imgs/combo/combo.png);
+}
+
+
+/* ../../imgs/combo/combo@2x.png */
+@media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
+.main_search .default-box .city .icon,
+.main_search .default-box .city .icon-flight-double,
+.main_search .default-box .city .icon-flight-single,
+.main_search .default-box .persons .icon,
+.main_search .change-box .city .icon,
+.main_search .change-box .persons-num b,
+.main_search .change-box .persons-num .icon,
+.main_search .change-box .num-add,
+.main_search .change-box .num-minus,
+.main_search .change-box .num-add.disabled,
+.main_search .change-box .disabled.num-minus,
+.main_search .change-box .num-minus.disabled,
+.list-left .btn-change-pro-hotel i,
+.list-left .btn-add-cart-new i,
+.list-left .btn-change-pro-flight i,
+.list-left .btn-change-pro-hotel:hover i,
+.list-left .btn-add-cart-new:hover i,
+.list-left .btn-change-pro-flight:hover i,
+.list-left .list-hotel .list-icon,
+.list-left .list-flight .list-icon,
+.list-left .list-ticket .list-icon,
+.list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-icon,
+.list-left .list-ticket .list-ticket-more i,
+.list-left .list-ticket .list-ticket-more:hover i{
+background-image: url(../../imgs/combo/combo@2x.png);
+background-size: 146px auto;
+}
+.main_search .default-box .city .icon{
+background-position: 0 0;
+}
+.main_search .default-box .city .icon-flight-double, .main_search .default-box .city .icon-flight-single{
+background-position: -94px -38px;
+}
+.main_search .default-box .city .icon-flight-single{
+background-position: -54px -102px;
+}
+.main_search .default-box .persons .icon{
+background-position: -40px 0;
+}
+.main_search .change-box .city .icon{
+background-position: 0 0;
+}
+.main_search .change-box .persons-num b{
+background-position: -94px -63px;
+}
+.main_search .change-box .persons-num .icon{
+background-position: 0 -40px;
+}
+.main_search .change-box .num-add, .main_search .change-box .num-minus{
+background-position: -78px -40px;
+}
+.main_search .change-box .num-add.disabled, .main_search .change-box .disabled.num-minus{
+background-position: -40px -78px;
+}
+.main_search .change-box .num-minus{
+background-position: -56px -78px;
+}
+.main_search .change-box .num-minus.disabled{
+background-position: -78px -56px;
+}
+.list-left .btn-change-pro-hotel i, .list-left .btn-add-cart-new i, .list-left .btn-change-pro-flight i{
+background-position: -54px -94px;
+}
+.list-left .btn-change-pro-hotel:hover i, .list-left .btn-add-cart-new:hover i, .list-left .btn-change-pro-flight:hover i{
+background-position: -84px -72px;
+}
+.list-left .btn-add-cart-new i{
+background-position: -72px -78px;
+}
+.list-left .btn-add-cart-new:hover i{
+background-position: -94px -51px;
+}
+.list-left .list-hotel .list-icon, .list-left .list-flight .list-icon, .list-left .list-ticket .list-icon{
+background-position: -80px 0;
+}
+.list-left .list-flight .list-icon, .list-left .list-ticket .list-icon{
+background-position: 0 -80px;
+}
+.list-left .list-ticket .list-icon{
+background-position: -40px -40px;
+}
+.list-left .list-ticket .list-ticket-li .list-ticket-calendar .list-ticket-calendar-icon{
+background-position: -38px -94px;
+}
+.list-left .list-ticket .list-ticket-more i{
+background-position: -94px -63px;
+}
+.list-left .list-ticket .list-ticket-more:hover i{
+background-position: -64px -94px;
+} 
+}

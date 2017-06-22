@@ -1,0 +1,285 @@
+@charset "UTF-8";
+body { background-color: #f5f5f5; min-width: 1200px; }
+
+body b { font-weight: normal; }
+
+body .alert-combos-wrapper .nova-dialog-body { padding: 0; }
+
+body .nova-dialog-footer .btn { margin-left: 10px; }
+
+body .icon-checkBox { cursor: pointer; background: url("../../imgs/cart/sprite/icon-checkBox.png") no-repeat center; height: 15px; width: 15px; margin-left: 30px; float: left; }
+
+body .icon-checkBox:hover { background: url("../../imgs/cart/sprite/icon-checkBox-hover.png") no-repeat center; }
+
+body .icon-checkBox.checked { background: url("../../imgs/cart/sprite/icon-checkBox-checked.png") no-repeat center; }
+
+body .choose-all { cursor: pointer; }
+
+body .choose-all:hover { color: #f60; }
+
+body .fix-bottom { position: fixed; bottom: 0; width: 100%; z-index: 100; background: #ffffff; height: 70px; box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.09); margin-top: 55px; }
+
+.wrap .td { float: left; }
+
+/*顶部*/
+.sft-header { background: #ffffff; box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12); height: 80px; position: relative; margin-bottom: 17px; }
+
+.sft-header .sft-header-wrapper { width: 1200px; position: absolute; left: 50%; margin-left: -600px; }
+
+.sft-header .sft-header-left { float: left; margin-top: 9px; }
+
+.sft-header .sft-header-left a { display: inline-block; *display: inline; *zoom: 1; }
+
+.sft-header .sft-header-left .sft-header-logo { background: url("http://s1.lvjs.com.cn/img/logo/v2/lv_logo.png") no-repeat center; width: 175px; height: 57px; margin-right: 15px; vertical-align: bottom; }
+
+.sft-header .sft-header-left .sft-title { height: 40px; line-height: 40px; font-size: 18px; color: #666666; padding-left: 14px; border-left: 1px solid #ccc; vertical-align: middle; }
+
+.sft-header .sft-header-right { float: right; margin-top: 19px; }
+
+.sft-header .sft-header-right .sft-hotLine-title { font-size: 14px; color: #666666; }
+
+.sft-header .sft-header-right .sft-hotLine { font-size: 18px; color: #ff83bb; font-weight: 600; text-align: right; }
+
+/*顶部END*/
+/*购物车图标*/
+.cart-num-container { height: 22px; font-size: 16px; color: #333333; margin-bottom: 14px; }
+
+.cart-num-container .icon-cart { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/cart/sprite/icon-cart.png") no-repeat center; height: 22px; width: 22px; vertical-align: -2px; }
+
+.cart-num-container .cart-num { color: #f90; font-weight: 600; }
+
+/*购物车图标END*/
+/*顶部操作Bar*/
+.cart-top-bar { background-color: #fff; height: 16px; padding: 12px 0; margin-bottom: 10px; }
+
+.cart-top-bar .choose-all { color: #333; }
+
+.cart-top-bar .td { height: 16px; line-height: 16px; color: #999; }
+
+.cart-top-bar .choose-all { margin-left: 20px; color: #333; }
+
+.cart-top-bar .title-proinfo { margin-left: 38px; }
+
+.cart-top-bar .title-rules { margin-left: 529px; }
+
+.cart-top-bar .title-price-single { margin-left: 39px; }
+
+.cart-top-bar .title-num { margin-left: 42px; }
+
+.cart-top-bar .title-money { margin-left: 121px; }
+
+.cart-top-bar .title-operate { margin-left: 56px; }
+
+/*顶部操作Bar END*/
+/*cart-section*/
+.cart-section { background-color: #fff; margin-bottom: 20px; }
+
+.cart-section .cart-section-title { height: 16px; line-height: 16px; padding: 14px 0; border-bottom: 1px solid #ddd; }
+
+.cart-section .cart-section-title .cart-section-title-main { font-size: 14px; margin-left: 20px; color: #333333; font-weight: 600; font-family: "Microsoft YaHei"; }
+
+.cart-section .cart-section-title .cart-section-money-total { float: right; margin-right: 151px; }
+
+.cart-section .cart-section-title .cart-section-money-total i { display: inline-block; *display: inline; *zoom: 1; }
+
+.cart-section .cart-section-title .cart-section-money-total .cart-section-money-total-title { font-size: 14px; color: #666666; vertical-align: 2px; }
+
+.cart-section .cart-section-title .cart-section-money-total .cart-section-money-total-num { font-size: 18px; color: #ff6600; }
+
+.cart-section .cart-section-title .cart-section-money-total .cart-section-money-total-num b { font-size: 20px; }
+
+.cart-section .cart-section-details { background-color: #fff; }
+
+.cart-section .cart-section-details .cart-section-pro-wrapper { padding: 14px 0; margin: 0 22px; border-bottom: 1px dotted #e3e3e3; }
+
+.cart-section .cart-section-details > div:last-child .cart-section-pro-wrapper { border-bottom: 0; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .icon-checkBox, .cart-section .cart-section-details .cart-section-pro-flight .icon-checkBox, .cart-section .cart-section-details .cart-section-pro-ticket .icon-checkBox { margin-top: 15px; margin-left: 8px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .icon-hotel, .cart-section .cart-section-details .cart-section-pro-flight .icon-hotel, .cart-section .cart-section-details .cart-section-pro-ticket .icon-hotel { margin-top: 8px; margin-left: 20px; background: url("../../imgs/cart/sprite/icon-hotel.png") no-repeat center; height: 32px; width: 32px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .hotel-date-container, .cart-section .cart-section-details .cart-section-pro-flight .hotel-date-container, .cart-section .cart-section-details .cart-section-pro-ticket .hotel-date-container { margin-left: 21px; width: 100px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .hotel-date-container p, .cart-section .cart-section-details .cart-section-pro-flight .hotel-date-container p, .cart-section .cart-section-details .cart-section-pro-ticket .hotel-date-container p { font-size: 14px; color: #333333; height: 24px; line-height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .hotel-info-container, .cart-section .cart-section-details .cart-section-pro-flight .hotel-info-container, .cart-section .cart-section-details .cart-section-pro-ticket .hotel-info-container { margin-left: 74px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .hotel-info-container p, .cart-section .cart-section-details .cart-section-pro-flight .hotel-info-container p, .cart-section .cart-section-details .cart-section-pro-ticket .hotel-info-container p { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; color: #333333; height: 24px; line-height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .hotel-info-container .hotel-stars, .cart-section .cart-section-details .cart-section-pro-flight .hotel-info-container .hotel-stars, .cart-section .cart-section-details .cart-section-pro-ticket .hotel-info-container .hotel-stars { font-size: 12px; color: #999999; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-details-container, .cart-section .cart-section-details .cart-section-pro-flight .pro-details-container, .cart-section .cart-section-details .cart-section-pro-ticket .pro-details-container { margin-left: 16px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-details-container p, .cart-section .cart-section-details .cart-section-pro-flight .pro-details-container p, .cart-section .cart-section-details .cart-section-pro-ticket .pro-details-container p { max-width: 72px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: #333333; line-height: 24px; height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-sevice, .cart-section .cart-section-details .cart-section-pro-flight .pro-sevice, .cart-section .cart-section-details .cart-section-pro-ticket .pro-sevice { margin-left: 50px; width: 76px; font-size: 12px; color: #666666; height: 24px; line-height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-notice, .cart-section .cart-section-details .cart-section-pro-flight .pro-notice, .cart-section .cart-section-details .cart-section-pro-ticket .pro-notice { font-size: 12px; color: #666666; line-height: 24px; height: 24px; width: 87px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-notice span, .cart-section .cart-section-details .cart-section-pro-flight .pro-notice span, .cart-section .cart-section-details .cart-section-pro-ticket .pro-notice span { border-bottom: 1px dashed #999; color: #666666; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-price-single, .cart-section .cart-section-details .cart-section-pro-flight .pro-price-single, .cart-section .cart-section-details .cart-section-pro-ticket .pro-price-single { width: 70px; font-size: 14px; color: #333333; line-height: 24px; height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .select-container, .cart-section .cart-section-details .cart-section-pro-flight .select-container, .cart-section .cart-section-details .cart-section-pro-ticket .select-container { float: left; width: 77px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .select-container .pro-num, .cart-section .cart-section-details .cart-section-pro-flight .select-container .pro-num, .cart-section .cart-section-details .cart-section-pro-ticket .select-container .pro-num { border: 1px solid #dddddd; width: 77px; height: 28px; line-height: 28px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .select-container .pro-num-notice, .cart-section .cart-section-details .cart-section-pro-flight .select-container .pro-num-notice, .cart-section .cart-section-details .cart-section-pro-ticket .select-container .pro-num-notice { display: none; width: 77px; text-align: center; height: 24px; line-height: 24px; font-size: 12px; color: #666666; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-money, .cart-section .cart-section-details .cart-section-pro-flight .pro-money, .cart-section .cart-section-details .cart-section-pro-ticket .pro-money { width: 84px; margin-left: 58px; font-size: 14px; color: #ff6600; line-height: 24px; height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-money span, .cart-section .cart-section-details .cart-section-pro-flight .pro-money span, .cart-section .cart-section-details .cart-section-pro-ticket .pro-money span { font-size: 16px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-operations, .cart-section .cart-section-details .cart-section-pro-flight .pro-operations, .cart-section .cart-section-details .cart-section-pro-ticket .pro-operations { width: 72px; font-size: 12px; color: #666666; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-operations p, .cart-section .cart-section-details .cart-section-pro-flight .pro-operations p, .cart-section .cart-section-details .cart-section-pro-ticket .pro-operations p { height: 20px; line-height: 20px; cursor: pointer; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel .pro-operations p:hover, .cart-section .cart-section-details .cart-section-pro-flight .pro-operations p:hover, .cart-section .cart-section-details .cart-section-pro-ticket .pro-operations p:hover { color: #f60; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.active, .cart-section .cart-section-details .active.cart-section-pro-flight, .cart-section .cart-section-details .active.cart-section-pro-ticket { background-color: #fffdf8; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket { background: #f9f9f9; color: #999999; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled p, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight p, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket p, .cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled i, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight i, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket i, .cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled b, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight b, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket b, .cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled span, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight span, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket span, .cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled div, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight div, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket div, .cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled em, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight em, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket em { color: #999999; border-color: #999; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled .icon-checkBox-disabled, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight .icon-checkBox-disabled, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket .icon-checkBox-disabled { font-size: 14px; color: #999999; width: 30px; height: 24px; line-height: 24px; background: none; margin-left: 3px; margin-right: -10px; margin-top: 10px; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled.cart-section-pro-hotel .icon-hotel, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight .icon-hotel, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket .icon-hotel { background: url("../../imgs/cart/sprite/icon-hotel-not.png") no-repeat center; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled.cart-section-pro-flight .icon-flight, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight .icon-flight, .cart-section .cart-section-details .pro-disabled.cart-section-pro-flight.cart-section-pro-ticket .icon-flight { background: url("../../imgs/cart/sprite/icon-flight-not.png") no-repeat center; }
+
+.cart-section .cart-section-details .cart-section-pro-hotel.pro-disabled.cart-section-pro-ticket .icon-ticket, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket.cart-section-pro-flight .icon-ticket, .cart-section .cart-section-details .pro-disabled.cart-section-pro-ticket .icon-ticket { background: url("../../imgs/cart/sprite/icon-ticket-not.png") no-repeat center; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .cart-section-pro-wrapper { padding-bottom: 4px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .icon-flight { margin-top: 8px; margin-left: 20px; background: url("../../imgs/cart/sprite/icon-flight.png") no-repeat center; height: 32px; width: 32px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .section-pro-flight-block { padding-left: 75px; padding-bottom: 10px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .icon-flight-notice { background: #f5f5f5; border-radius: 16px; width: 43px; height: 20px; line-height: 20px; font-size: 12px; color: #aaaaaa; text-align: center; margin-bottom: 6px; margin-left: 21px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-main-container { margin-left: 21px; width: 174px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-main-citys .icon-flight-arrow { display: inline-block; *display: inline; *zoom: 1; margin: 0; float: none; margin-left: 4px; margin-right: 4px; vertical-align: 2px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-info-container { width: 200px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-info-from { float: left; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-time-from { font-size: 16px; color: #333333; height: 24px; line-height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-airport-from { font-size: 12px; color: #666666; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .icon-flight-arrow { float: left; background: url("../../imgs/cart/sprite/icon-cart-arrow.png") no-repeat center; height: 4px; width: 13px; margin: 10px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-info-to { float: left; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-time-to { font-size: 16px; color: #333333; height: 24px; line-height: 24px; }
+
+.cart-section .cart-section-details .cart-section-pro-flight .flight-airport-to { font-size: 12px; color: #666666; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket .cart-section-pro-wrapper { padding-top: 16px; padding-bottom: 10px; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket .icon-checkBox { margin-top: 5px; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket .icon-ticket { margin-top: -4px; margin-left: 20px; background: url("../../imgs/cart/sprite/icon-ticket.png") no-repeat center; height: 32px; width: 32px; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket .ticket-date { width: 174px; margin-left: 20px; height: 24px; line-height: 24px; font-size: 14px; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket .ticket-name { width: 414px; height: 24px; line-height: 24px; font-size: 14px; }
+
+.cart-section .cart-section-details .cart-section-pro-ticket.pro-disabled .icon-checkBox-disabled { margin-top: 0px; }
+
+.cart-section-my .cart-section-title-main b { font-weight: 600; }
+
+.cart-section-my .cart-section-my-info { float: left; font-size: 14px; color: #666666; font-weight: 600; margin-left: 10px; }
+
+.cart-section-my .cart-section-my-info span { margin-right: 4px; }
+
+.cart-section-my .cart-section-my-info b { font-weight: 600; }
+
+/*cart-section END*/
+/*底部结算bar*/
+.sft-bottom-bar-container { position: relative; background: #ffffff; height: 70px; box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.09); margin-top: 55px; }
+
+.sft-bottom-bar .sft-bottom-bar-tips { position: absolute; background: #fff; border: 1px solid #ddd; box-shadow: 0 0px 2px 0 #aaa; width: 187px; height: 30px; top: -40px; left: 50%; margin-left: -600px; }
+
+.sft-bottom-bar .sft-bottom-bar-tips .tip-arrow-top { top: 23px; }
+
+.sft-bottom-bar .sft-bottom-bar-tips .tip-arrow-top em { color: #fff; }
+
+.sft-bottom-bar .sft-bottom-bar-tips .error-icon { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/cart/sprite/icon-notice.png") no-repeat center; height: 24px; width: 24px; vertical-align: middle; margin-left: 4px; }
+
+.sft-bottom-bar .sft-bottom-bar-tips p { display: inline-block; *display: inline; *zoom: 1; height: 28px; line-height: 28px; }
+
+.sft-bottom-bar .sft-bottom-bar-wrapper { position: absolute; width: 1200px; left: 50%; margin-left: -600px; top: 0; }
+
+.sft-bottom-bar .bottom-bar-left { float: left; height: 16px; margin-top: 28px; }
+
+.sft-bottom-bar .bottom-bar-left span { float: left; }
+
+.sft-bottom-bar .bottom-bar-left .choose-all, .sft-bottom-bar .bottom-bar-left .cart-delete, .sft-bottom-bar .bottom-bar-left .cart-move, .sft-bottom-bar .bottom-bar-left .bottom-bar-clear { margin-left: 20px; height: 16px; line-height: 16px; cursor: pointer; }
+
+.sft-bottom-bar .bottom-bar-left .choose-all:hover, .sft-bottom-bar .bottom-bar-left .cart-delete:hover, .sft-bottom-bar .bottom-bar-left .cart-move:hover, .sft-bottom-bar .bottom-bar-left .bottom-bar-clear:hover { color: #f60; }
+
+.sft-bottom-bar .bottom-bar-right { float: right; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-top { height: 40px; line-height: 40px; font-size: 18px; color: #666666; text-align: right; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-top span { display: inline-block; *display: inline; *zoom: 1; font-size: 20px; color: #ff6600; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-top b { font-size: 32px; font-weight: 600; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom { height: 24px; line-height: 24px; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-total-old, .sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-off { color: #666666; margin-left: 6px; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-total-old b, .sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-off b { font-size: 12px; color: #333; }
+
+.sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-total-old i, .sft-bottom-bar .bottom-bar-right .bottom-bar-right-bottom .money-off i { font-size: 14px; color: #333; }
+
+.sft-bottom-bar .bottom-bar-button { float: right; background: #f90; width: 152px; height: 70px; line-height: 70px; text-align: center; font-size: 18px; color: #ffffff; cursor: pointer; margin-left: 24px; }
+
+.sft-bottom-bar .bottom-bar-button:hover { background-color: #f60; }
+
+.sft-bottom-bar .bottom-bar-button.disabled { background: #ff8800; opacity: 0.5; }
+
+/*底部结算bar END*/
+/*套餐弹出框*/
+.alert-combos-container { height: 240px; overflow: auto; padding: 20px 30px; display: none; }
+
+.alert-combos-container li { display: block; background: #f5f5f5; border-radius: 4px; width: 391px; height: 38px; padding: 14px; cursor: pointer; margin-top: 15px; }
+
+.alert-combos-container li:hover { background-color: #f90; color: #fff; }
+
+.alert-combos-container li:hover .combos-main, .alert-combos-container li:hover .combos-details { color: #fff; }
+
+.alert-combos-container li .combos-main { font-weight: 600; font-size: 16px; color: #666666; height: 21px; line-height: 21px; }
+
+.alert-combos-container li .combos-details { height: 16px; line-height: 16px; }
+
+.alert-combos-container .combos-diy .combos-main { font-weight: 600; font-size: 16px; color: #666666; height: 38px; line-height: 38px; }
+
+/*套餐弹出框 END*/
+/*移入套餐toast*/
+.alert-toast { display: none; background: #ffffff; width: 421px; height: 158px; padding-top: 10px; }
+
+.alert-toast .icon-lv-container { text-align: center; }
+
+.alert-toast .icon-lv-container i { display: inline-block; *display: inline; *zoom: 1; }
+
+.alert-toast .icon-lv-container i.icon-lv-fail { background: url("../../imgs/cart/sprite/icon-lv-fail.png") no-repeat center; height: 81px; width: 89px; }
+
+.alert-toast .icon-lv-container i.icon-lv-notice { background: url("../../imgs/cart/sprite/icon-lv-notice.png") no-repeat center; height: 82px; width: 89px; }
+
+.alert-toast p { text-align: center; font-size: 16px; color: #333333; height: 28px; line-height: 28px; }
+
+/*移入套餐toast END*/
+/*alert内容*/
+.alert-content { display: none; padding-left: 62px; }
+
+.alert-content .icon-notice { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/cart/sprite/icon-notice-reverse.png") no-repeat center; height: 32px; width: 32px; vertical-align: top; }
+
+.alert-content .icon-words { display: inline-block; *display: inline; *zoom: 1; padding-left: 8px; width: 220px; line-height: 24px; font-size: 14px; color: #333333; }
+
+/*alert内容 END*/

@@ -206,11 +206,17 @@ body {
         left: 92px;
       }
       .combo-persons-adult {
+        input {
+          padding-right: 100px;
+        }
         .error-box {
           left: 168px;
         }
       }
       .combo-persons-children {
+        input {
+          padding-right: 100px;
+        }
         .search-contents-title {
           left: 48px;
         }

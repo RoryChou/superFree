@@ -197,9 +197,7 @@ function LoadHotelList(){
                             $(this).addClass('num_this').siblings().removeClass('num_this');
                         }
                     });
-                    //console.log(new BMap.Point(xy1[0],xy1[1]))
                     map.panTo(new BMap.Point(xy[0],xy[1]));
-                    //map.centerAndZoom(new BMap.Point(xy1[0],xy1[1]),14);
                 }
             },function(){
                 hoverIn = true;
