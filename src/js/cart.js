@@ -142,10 +142,11 @@ $(function () {
                 var $this = $(this);
                 self.getProducts($this);
                 self.novaDialogCombos = nova.dialog({
+                    title: '选择要移入的套餐',
                     wrapClass: "alert-combos-wrapper",
                     content: $(".alert-combos-container"),
                     width: 479,
-                    height: 350
+                    height: 416
                 });
             });
             //点击套餐弹窗中的套餐
@@ -157,19 +158,20 @@ $(function () {
         getData: function (proId) {
             var self = this;
             $.ajax({
-                url: '../data/cart.json',
+                url: 'data/cart.json',
                 data: {},
                 dataType: 'json',
                 success: function (res) {
                     if(res.success){
                         for(var i in self.proObj){
                             for(var j = 0;j < self.proObj[i].length;j++){
+                                self.proObj[i][j].find('.icon-checkBox').removeClass('checked');
+                                self.proObj[i][j].find('.icon-checkBox').data('checked', false);
                                 $('#'+proId).find('.cart-section-'+i+'-container').append(self.proObj[i][j]);
                             }
                         }
                         //刷新checkBox
-                        checkBox.whetherTriggerSection();
-                        checkBox.whetherTriggerAll();
+                        checkBox.checkFinish();
 
                         //判断是否套餐为空
                         emptyCombo();
@@ -242,26 +244,32 @@ $(function () {
                 self.getProducts($this);
                 self.getData($this)
             })
+            //清空购物车
+            $('.cart-clear-all').click(function () {
+                self.format()
+                var $this = $(this);
+                var data = {}
+                self.getProducts($this);
+                self.getData(data)
+            })
         },
         getProducts: function ($this) {
             var self = this;
-            if($this.parent().hasClass('bottom-bar-left')){
-                //多产品
-                $('.cart-section-details .icon-checkBox').each(function () {
-                    if($(this).data('checked')){
-                        self.proArr.push($(this).parent().parent())
-                    }
+            if($this.hasClass('cart-clear-all')){
+                //清空购物车
+                $('.cart-section-details .pro-price-single').each(function () {
+                    self.proArr.push($(this).parent().parent())
                 })
             }else {
                 //单产品
                 self.proArr.push($this.parents('.cart-section-pro-wrapper').parent())
             }
         },
-        getData: function () {
+        getData: function (data) {
             var self = this;
             $.ajax({
-                url: '../data/cart.json',
-                data: {},
+                url: 'data/cart.json',
+                data: data,
                 dataType: 'json',
                 success: function (res) {
                     if(res.success){
@@ -286,19 +294,13 @@ $(function () {
             //删除产品
             for(var i = 0;i < this.proArr.length;i++){
                 var $thisContainer = this.proArr[i];
-                var $thisDetails = $thisContainer.parents('.cart-section-details');
-                var $thisSection = $thisContainer.parents('.cart-section');
                 $thisContainer.remove();
-                //判断是否套餐为空
-                emptyCombo();
             }
-
-            //计算总价
-            checkBox.moneyCalc();
+            //判断是否套餐为空
+            emptyCombo();
 
             //刷新checkBox
-            checkBox.whetherTriggerSection();
-            checkBox.whetherTriggerAll();
+            checkBox.checkFinish();
 
             //计算底部bar
             var searchBar = $('.sft-bottom-bar'),
@@ -319,7 +321,7 @@ $(function () {
             content: $('.alert-clear-content'),
             okCallback: function () {
                 $.ajax({
-                    url:'../data/cart.json',
+                    url:'data/cart.json',
                     data:{},
                     dataType: 'json',
                     success: function (res) {
@@ -357,20 +359,12 @@ $(function () {
     var buyNow = {
         noticeArr: [],
         init: function () {
-
             this.bindEvent()
         },
         bindEvent: function () {
             var self = this;
             $('.bottom-bar-button').click(function () {
-                var $this = $(this);
-                //判断是否勾选了商品
-                if($this.hasClass('disabled')){
-                    self.novaDialog('time',$('.alert-choose-none'))
-                }else {
-                    self.checkBoxLimit();
-                    self.sendData()
-                }
+                self.checkBoxLimit($(this));
             })
         },
         novaDialog: function (type,content,okCallback) {
@@ -392,59 +386,40 @@ $(function () {
                 });
             }
         },
-        checkBoxLimit: function () {
-            var self = this;
+        checkBoxLimit: function ($this) {
             var checkedBoxs = $('.cart-section-details .icon-checkBox.checked');
-            var kucuns = checkedBoxs.parents('.cart-section-pro-wrapper').find('.pro-num-notice');
             var checkedSections = checkedBoxs.parents('.cart-section');
-            if(checkedSections.length > 1){
+            if($this.hasClass('disabled')){
+                //判断是否勾选了商品
+                this.novaDialog('time',$('.alert-choose-none'))
+            }else if(checkedSections.length > 1){
+                //判断是否跨套餐
                 this.novaDialog('time',$('.alert-only'))
-            }else if(true){
-                //判断行程是否冲突
-
             }else{
-                //判断数量是否不足
-                kucuns.each(function () {
-                    var $this = $(this);
-                    if($this.html() !== ''){
-                        var num = $this.prev().val();
-                        var proWrapper = $this.parents('.cart-section-pro-wrapper');
-                        var comboId = $this.parents('.cart-section').attr('id');
-                        var info = '';
-                        var comboName = '';
-                        var base = '我的套餐1中航班HNBS数量只能预订2张';
-                        var str = '';
-
-
-                        var comboIdArr = comboId.split('-');
-                        if(comboIdArr[1] === 'diy'){
-                            comboName = '自选单品'
-                        }else {
-                            comboName = '我的套餐'+comboIdArr[2]
-                        }
-
-                        if(proWrapper.find('.hotel-name').length !== 0){
-                            info = proWrapper.find('.hotel-name').html();
-                            str = comboName+'中航班'+ info +'数量只能预订'+ num +'张'
-                        }else if(proWrapper.find('.ticket-name').length !== 0){
-                            info = proWrapper.find('.ticket-name').html();
-                            str = comboName+'中'+ info +'数量只能预订'+ num +'张'
-                        }else {
-                            info = proWrapper.find('.flight-plane-num').html();
-                            str = comboName+'中航班'+ info +'数量只能预订'+ num +'张'
-                        }
-
-                        self.noticeArr.push(obj);
-                    }
-                })
+                this.sendData();
             }
         },
         sendData: function () {
+            var self = this;
             $.ajax({
-                url: '',
+                url: 'data/cart.json',
                 data: {},
                 dataType: 'json',
                 success: function (res) {
+                    //TODO 判断是否行程冲突
+                    if(res.flightConflict){
+                        self.novaDialog('time',$('.alert-conflict'))
+                    }else {
+                        if(res.notice){
+                            self.novaDialog('confirm',$('.alert-num-notEnough'),function () {
+                                alert('填单页go')
+                            })
+                        }else {
+                            alert('填单页go')
+                        }
+                    }
+                },
+                error: function (error) {
 
                 }
             })
@@ -465,7 +440,6 @@ $(function () {
             $document.on('click', '.icon-checkBox', function (e) {
                 var $this = $(this);
                 self.target = $(e.target);
-                $this.addClass('current-checkBox');
                 if ($this.hasClass('checked')) {
                     self.chooseSingle(false)
                 } else {
@@ -490,9 +464,21 @@ $(function () {
             return flag;
         },
         chooseSingle: function (type) {
+            var targetSection = this.target.parents('.cart-section');
+            var siblingsSection = targetSection.siblings('.cart-section');
             if (type) {
                 this.target.addClass('checked');
                 this.target.data('checked', true);
+
+                //清除其他套餐checkBox
+                targetSection.addClass('current-section');
+                siblingsSection.removeClass('current-section');
+                siblingsSection.find('.icon-checkBox').each(function(){
+                    var $this = $(this);
+                    $this.removeClass('checked');
+                    $this.data('checked', false);
+                })
+
             } else {
                 this.target.removeClass('checked');
                 this.target.data('checked', false);
@@ -502,14 +488,17 @@ $(function () {
                 var titleBox = this.target.parents('.cart-section').find('.cart-section-title').find('.icon-checkBox');
                 //判断是否为title
                 this.chooseSection(titleBox,type);
-            } else if (this.target.hasClass('icon-checkBox-all')) {
-                //判断是否为全选
-                this.chooseAll(type);
             } else {
-                this.whetherTriggerSection();
                 //checkBox结束
                 this.checkFinish();
             }
+        },
+        checkCurSection: function () {
+            $('.cart-section').each(function(){
+                if($(this).find('.checked').length === 0){
+                    $(this).removeClass('current-section');
+                }
+            })
         },
         chooseSection: function (titleBox,type,reset) {
             var childBoxs = titleBox.parents('.cart-section').find('.cart-section-details').find('.icon-checkBox');
@@ -527,25 +516,6 @@ $(function () {
                     childBoxs.removeClass('checked');
                     titleBox.data('checked', false);
                     childBoxs.data('checked', false);
-                }
-            }
-            //判断是否触发全选
-            this.whetherTriggerAll();
-            //checkBox结束
-            this.checkFinish();
-        },
-        chooseAll: function (type,reset) {
-            var allBoxs = $('.icon-checkBox');
-            if (type) {
-                allBoxs.addClass('checked');
-                allBoxs.data('checked', true);
-            } else {
-                if(reset){
-                    this.chooseAllBox.removeClass('checked');
-                    this.chooseAllBox.data('checked', false);
-                }else {
-                    allBoxs.removeClass('checked');
-                    allBoxs.data('checked', false);
                 }
             }
             //checkBox结束
@@ -569,26 +539,38 @@ $(function () {
                 }
             })
         },
-        whetherTriggerAll: function () {
-            var targetBoxs = $('.cart-section-title .icon-checkBox');
-            if(this.each(targetBoxs)){
-                this.chooseAll(true)
-            }else {
-                this.chooseAll(false,true)
-            }
-        },
         checkFinish: function () {
+            //判断是否触发section
+            this.whetherTriggerSection();
             //计算价格
             this.moneyCalc();
-            //去除class
-            this.target && this.target.removeClass('current-checkBox')
             //刷新预定按钮
             this.checkBtn();
+            //刷新当前section
+            this.checkCurSection()
         },
         moneyCalc: function () {
             var checkBoxs = $('.cart-section-pro-wrapper .icon-checkBox');
+            var sections = $('.cart-section');
             var checkedBoxs = [];
             var totalMoneyOld = 0;
+
+            sections.each(function () {
+                var totalMoneySec = 0;
+                var $this = $(this);
+                var sectionCheckBoxs = $this.find('.cart-section-pro-wrapper .icon-checkBox');
+                var sectionTitleBox = $this.find('.cart-section-title span').eq(0);
+                sectionCheckBoxs.each(function () {
+                    totalMoneySec += ($(this).parent().find('.pro-money').find('span').html()) / 1;
+                });
+                if(sectionCheckBoxs.length === 0){
+                    sectionTitleBox.removeClass('icon-checkBox').addClass('icon-checkBox-disabled');
+                }else {
+                    sectionTitleBox.removeClass('icon-checkBox-disabled').addClass('icon-checkBox');
+                }
+                $this.find('.cart-section-money-total-num b').html(totalMoneySec);
+            })
+
             checkBoxs.each(function () {
                 if ($(this).data('checked')) {
                     checkedBoxs.push($(this))
@@ -621,22 +603,25 @@ $(function () {
             var $singlePrice = $this.parent().siblings('.pro-price-single').html().substring(1);
             var $proMoney = $this.parent().siblings('.pro-money').find('span');
             $.ajax({
-                url:'../data/cart.json',
+                url:'data/cart.json',
                 data: {},
                 dataType: 'json',
                 success: function(res){
                     if(res.success){
+
+                        if($this.hasClass('pro-num-flightGo')){
+                            var flightReturn = $this.parents('.cart-section-pro-wrapper').find('.pro-num-flightReturn');
+                            var $flightReturnSinglePrice = flightReturn.parent().siblings('.pro-price-single').html().substring(1);
+                            flightReturn.val($thisNum);
+                            flightReturn.parent().siblings('.pro-money').find('span').html($flightReturnSinglePrice*$thisNum)
+                        }
+
                         //计算商品价格
                         $proMoney.html($singlePrice*$thisNum)
+
                         //计算总价
                         checkBox.moneyCalc()
-                        //库存不足
-                        if(res.proNum < $thisNum){
-                            $thisError.html('库存不足'+ $thisNum +'份')
-                            $thisError.show()
-                        }else {
-                            $thisError.hide()
-                        }
+
                     }
                 },
                 error: function(mes){
@@ -650,6 +635,10 @@ $(function () {
         var searchBar = $('.sft-bottom-bar'),
             clientH = $(window).height(),
             searchBarTop = $('.sft-bottom-bar-container').offset().top;
+        $(window).resize(function () {
+            clientH = $(window).height();
+            searchBarTop = $('.sft-bottom-bar-container').offset().top;
+        })
         $(window).scroll(function () {
             searchBarTop = $('.sft-bottom-bar-container').offset().top;
             scrollTop(searchBar,searchBarTop,clientH)
@@ -658,7 +647,8 @@ $(function () {
     };
     function scrollTop(searchBar,searchBarTop,clientH) {
         var scrollTop = $(window).scrollTop();
-        if (searchBarTop > scrollTop +clientH) {
+        //searchBar高度为70px
+        if (searchBarTop > scrollTop +clientH-70) {
             if (!searchBar.hasClass('fix-bottom')) {
                 searchBar.addClass('fix-bottom');
             }

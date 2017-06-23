@@ -7,19 +7,10 @@
     <meta name="renderer" content="webkit"/>
     <!-- build:css -->
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/header_new.css">
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/public/base.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/calendar.css">-->
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tags.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/paging.css">-->
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tip.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/flight/v4/tip.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/dialog.css">
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/icons.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/comment/comment_index.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/flighthotel/hotel-facilities.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/detail/destroute/hotel_flight_detail.css">-->
-    <!--<link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/public/common_box.css">-->
     <!-- endbuild -->
     <link rel="stylesheet" href="css/hotel/hotel.css">
     <link rel="stylesheet" href="css/cart/cart.css">
@@ -48,8 +39,6 @@
             <span class="cart-num">16</span>
         </div>
         <div class="cart-top-bar">
-            <span class="icon-checkBox td icon-checkBox-all" data-checked="false"></span>
-            <span class="choose-all td">全选</span>
             <span class="title-proinfo td">商品信息</span>
             <span class="title-rules td">退改规则</span>
             <span class="title-price-single td">单价</span>
@@ -70,7 +59,7 @@
             </div>
             <div class="loading_box">
                 <i class="icon_loading"></i>
-                <span>请稍候，正在为您查询</span>
+                <span>亲，小驴正在为您准备，请耐心等待下哦～</span>
             </div>
             <div class="cart-section-details">
                 <div class="cart-section-hotel-container">
@@ -102,17 +91,17 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice"></p>
                             </div>
 
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
@@ -148,17 +137,17 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice"></p>
                             </div>
 
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
@@ -208,16 +197,16 @@
                                     <span class="tui-gai-qian" >退改签</span>
                                 </div>
                                 <span class="pro-price-single td">¥240</span>
-                                <div class="select-container">
-                                    <select class="pro-num td" name="" id="">
+                                <div class="select-container td">
+                                    <select class="pro-num pro-num-flightGo" name="" id="" >
                                         <option value="1">1</option>
-                                        <option value="2">2</option>
+                                        <option value="2" selected="selected">2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <p class="pro-num-notice">库存不足</p>
+                                    <p class="pro-num-notice"></p>
                                 </div>
                                 <div class="pro-money td">
-                                    ¥<span>1000</span>
+                                    ¥<span>480</span>
                                 </div>
                                 <div class="pro-operations td">
                                     <p class="cart-delete">删除</p>
@@ -260,20 +249,16 @@
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
                                 <span class="pro-price-single td">¥240</span>
-                                <div class="select-container">
-                                    <select class="pro-num td" name="" id="">
+                                <div class="select-container td">
+                                    <select class="pro-num pro-num-flightReturn" name="" id="" disabled>
                                         <option value="1">1</option>
-                                        <option value="2">2</option>
+                                        <option value="2" selected="selected">2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <p class="pro-num-notice">库存不足</p>
+                                    <p class="pro-num-notice"></p>
                                 </div>
                                 <div class="pro-money td">
-                                    ¥<span>1000</span>
-                                </div>
-                                <div class="pro-operations td">
-                                    <p class="cart-delete">删除</p>
-                                    <p class="cart-move">移入其他套餐</p>
+                                    ¥<span>480</span>
                                 </div>
                             </div>
                         </div>
@@ -290,16 +275,16 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice">库存不足2份</p>
                             </div>
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
@@ -364,16 +349,16 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice"></p>
                             </div>
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
@@ -424,16 +409,16 @@
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
                                 <span class="pro-price-single td">¥240</span>
-                                <div class="select-container">
-                                    <select class="pro-num td" name="" id="">
+                                <div class="select-container td">
+                                    <select class="pro-num" name="" id="">
                                         <option value="1">1</option>
-                                        <option value="2">2</option>
+                                        <option value="2" selected="selected">2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <p class="pro-num-notice">库存不足</p>
+                                    <p class="pro-num-notice"></p>
                                 </div>
                                 <div class="pro-money td">
-                                    ¥<span>1000</span>
+                                    ¥<span>480</span>
                                 </div>
                                 <div class="pro-operations td">
                                     <p class="cart-delete">删除</p>
@@ -454,20 +439,46 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" >
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice"></p>
                             </div>
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
                                 <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-section-pro-ticket pro-disabled">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox-disabled td" data-checked="false">失效</span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" disabled>
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
                             </div>
                         </div>
                     </div>
@@ -476,7 +487,7 @@
         </div>
         <div class="cart-section cart-section-my" id="combos-my-4">
             <div class="cart-section-title">
-                <span class="icon-checkBox-disabled td" data-checked="false"></span>
+                <span class="icon-checkBox td" data-checked="false"></span>
                 <span class="cart-section-title-main td">
                     我的套餐<b>4</b>
                 </span>
@@ -528,20 +539,19 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice">库存不足2份</p>
                             </div>
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
-                                <!--<p class="cart-move">移入其他套餐</p>-->
                             </div>
                         </div>
                     </div>
@@ -588,20 +598,19 @@
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
                                 <span class="pro-price-single td">¥240</span>
-                                <div class="select-container">
-                                    <select class="pro-num td" name="" id="">
+                                <div class="select-container td">
+                                    <select class="pro-num" name="" id="" disabled>
                                         <option value="1">1</option>
-                                        <option value="2">2</option>
+                                        <option value="2" selected>2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <p class="pro-num-notice">库存不足</p>
+                                    <p class="pro-num-notice"></p>
                                 </div>
                                 <div class="pro-money td">
-                                    ¥<span>1000</span>
+                                    ¥<span>480</span>
                                 </div>
                                 <div class="pro-operations td">
                                     <p class="cart-delete">删除</p>
-                                    <!--<p class="cart-move">移入其他套餐</p>-->
                                 </div>
                             </div>
                         </div>
@@ -618,20 +627,46 @@
                                 <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
                             </div>
                             <span class="pro-price-single td">¥240</span>
-                            <div class="select-container">
-                                <select class="pro-num td" name="" id="">
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" disabled>
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <p class="pro-num-notice">库存不足</p>
+                                <p class="pro-num-notice"></p>
                             </div>
                             <div class="pro-money td">
-                                ¥<span>1000</span>
+                                ¥<span>480</span>
                             </div>
                             <div class="pro-operations td">
                                 <p class="cart-delete">删除</p>
-                                <!--<p class="cart-move">移入其他套餐</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-section-pro-ticket clearfix">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" >
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
                             </div>
                         </div>
                     </div>
@@ -654,9 +689,7 @@
             </div>
             <div class="sft-bottom-bar-wrapper clearfix">
                 <div class="bottom-bar-left clearfix">
-                    <span class="icon-checkBox icon-checkBox-all"></span>
-                    <span class="choose-all">全选</span>
-                    <span class="cart-delete">删除</span>
+                    <span class="cart-clear-all">清空购物车</span>
                     <span class="cart-move">移入其他套餐</span>
                     <span class="bottom-bar-clear">清除失效商品</span>
                 </div>
@@ -855,14 +888,14 @@
     </div>
     <!--只能买一个套餐toast END-->
 
-    <!--请分开下单toast-->
-    <div class="alert-separate alert-toast">
+    <!--行程冲突toast-->
+    <div class="alert-conflict alert-toast">
         <div class="icon-lv-container">
             <i class="icon-lv-notice"></i>
         </div>
         <p>您购买的行程不同，请分开下单吧</p>
     </div>
-    <!--请分开下单toast END-->
+    <!--行程冲突toast END-->
 
     <!--删除alert-->
     <div class="alert-delete-content alert-content">
@@ -878,45 +911,22 @@
     </div>
     <!--清除失效alert END-->
 
-    <!--机票数量alert-->
-    <div class="alert-flight-content alert-content">
+    <!--产品数量不足alert-->
+    <div class="alert-num-notEnough alert-content">
         <span class="icon-notice"></span>
         <span class="icon-words">
-            我的套餐<b>1</b>中航班<i>HNBS</i>数量只能预订<em>2</em>张，您确认要继续预订吗？
+            我的套餐<b>1</b>中航班<i>HNBS</i>数量只能预订<em>2</em>张，<i>XX</i>酒店只剩<em>2</em>间,<i>XX</i>门票只剩<em>2</em>张您确认要继续预订吗？
         </span>
     </div>
-    <!--机票数量alert END-->
+    <!--产品数量不足alert END-->
 
-    <!--酒店房间alert-->
-    <div class="alert-hotel-content alert-content">
-        <span class="icon-notice"></span>
-        <span class="icon-words">
-            我的套餐<b>1</b>中<i>HNBS</i>酒店只剩<em>2</em>间，您确认要继续预订吗？
-        </span>
-    </div>
-    <!--酒店房间alert END-->
-
-    <!--门票数量alert-->
-    <div class="alert-delete-combo alert-content">
-        <span class="icon-notice"></span>
-        <span class="icon-words">
-            我的套餐<b>1</b>中<i>HNBS</i>门票只剩<em>2</em>张，您确认要继续预订吗？
-        </span>
-    </div>
-    <!--门票数量alert END-->
 
 <!-- build:js -->
 <script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
 <script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>
 <script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
 <script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>
-<!--<script src="http://pic.lvmama.com/js/lv/calendar.js"></script>-->
-<!--<script src="http://pic.lvmama.com/js/lv/ui.js"></script>-->
-<!--<script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>-->
 <script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
-<!--<script src="http://pic.lvmama.com/js/v6/modules/imgScroll1.js"></script>-->
-<!--<script src="http://pic.lvmama.com/js/v6/modules/mapControl.js"></script>-->
-<!--<script src="http://pic.lvmama.com/js/public/detail_sale.js"></script>-->
 <!-- endbuild -->
     <script src="js/cart.js"></script>
 </body>

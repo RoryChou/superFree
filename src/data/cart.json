@@ -1,4 +1,6 @@
 {
   "proNum":2,
-  "success": true
+  "success": true,
+  "flightConflict": false,
+  "notice": true
 }

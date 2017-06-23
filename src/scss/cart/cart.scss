@@ -46,6 +46,13 @@ body {
     box-shadow:0 0 3px 0 rgba(0,0,0,0.09);
     margin-top: 55px;
   }
+  .loading_box {
+    border: 0;
+    border-bottom: 1px solid #e3e3e3;
+    span {
+      font-size: 16px;
+    }
+  }
 }
 
 .wrap {
@@ -121,7 +128,7 @@ body {
     vertical-align: -2px;
   }
   .cart-num {
-    color: $color-lv-orange;
+    color: #f60;
     font-weight: 600;
   }
 }
@@ -133,6 +140,9 @@ body {
   height:(40px - 12*2);
   padding: 12px 0;
   margin-bottom: 10px;
+  .icon-checkBox {
+    height: 16px;
+  }
   .choose-all {
     color: #333;
   }
@@ -146,7 +156,7 @@ body {
     color: #333;
   }
   .title-proinfo {
-    margin-left: 38px;
+    margin-left: 130px;
   }
   .title-rules {
     margin-left: 529px;
@@ -170,11 +180,23 @@ body {
 .cart-section {
   background-color: #fff;
   margin-bottom: 20px;
+  &.current-section {
+    transition: box-shadow 400ms;
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.1);
+  }
   .cart-section-title {
     height:16px;
     line-height: 16px;
     padding: 14px 0;
     border-bottom: 1px solid #ddd;
+    .icon-checkBox-disabled {
+      float: left;
+      cursor: not-allowed;
+      margin-left: 30px;
+      background: url('../../imgs/cart/sprite/icon-checkBox-not.png') no-repeat center;
+      width: 15px;
+      height: 15px;
+    }
     .cart-section-title-main {
       font-size:14px;
       margin-left: 20px;
@@ -198,6 +220,7 @@ body {
         color:#ff6600;
         b {
           font-size: 20px;
+          font-weight: 600;
         }
       }
     }
@@ -228,7 +251,7 @@ body {
       }
       .hotel-date-container {
         margin-left: 21px;
-        width: 100px;
+        width: 174px;
         p {
           font-size:14px;
           color:#333333;
@@ -237,7 +260,6 @@ body {
         }
       }
       .hotel-info-container {
-        margin-left: 74px;
         p {
           max-width: 200px;
           @include etc;
@@ -298,13 +320,13 @@ body {
           line-height: 28px;
         }
         .pro-num-notice {
-          display: none;
           width: 77px;
           text-align: center;
-          height: 24px;
-          line-height: 24px;
+          height: 16px;
+          line-height: 16px;
           font-size:12px;
           color:#666666;
+          margin-top: 8px;
         }
       }
       .pro-money {
@@ -337,11 +359,18 @@ body {
       &.pro-disabled {
         background:#f9f9f9;
         color:#999999;
-        p,i,b,span,div,em {
+        p,i,b,span,div,em,.pro-num-notice {
           color:#999999;
-          border-color: #999;
+          border-color: #e3e3e3;
+        }
+        .pro-num {
+          color:#999999;
+        }
+        select {
+          background-color: #fff;
         }
         .icon-checkBox-disabled {
+          float: left;
           font-size:14px;
           color:#999999;
           width: 30px;
@@ -383,6 +412,7 @@ body {
       }
       .section-pro-flight-block {
         padding-left: 75px;
+        *padding-left: 0px;
         padding-bottom: 10px;
       }
       .icon-flight-notice {
@@ -529,21 +559,22 @@ body {
     .tip-arrow-top {
       top:23px;
       em {
-        color: #fff;
+        top: 3px;
       }
     }
     .error-icon {
       @include inlineblock;
       background: url('../../imgs/cart/sprite/icon-notice.png') no-repeat center;
-      height: 24px;
-      width: 24px;
+      height: 14px;
+      width: 14px;
       vertical-align: middle;
-      margin-left: 4px;
+      margin-left: 10px;
     }
     p {
       @include inlineblock;
       height: 28px;
       line-height: 28px;
+      vertical-align: middle;
     }
   }
   .sft-bottom-bar-wrapper {
@@ -560,7 +591,7 @@ body {
     span {
       float: left;
     }
-    .choose-all,.cart-delete,.cart-move,.bottom-bar-clear {
+    .choose-all,.cart-clear-all,.cart-move,.bottom-bar-clear {
       margin-left: 20px;
       height: 16px;
       line-height: 16px;
@@ -607,7 +638,7 @@ body {
   }
   .bottom-bar-button {
     float: right;
-    background:$color-lv-orange;
+    background:#ff8800;
     width:152px;
     height:70px;
     line-height: 70px;
@@ -629,7 +660,7 @@ body {
 
 /*套餐弹出框*/
 .alert-combos-container {
-  height: 240px;
+  height: 316px;
   overflow: auto;
   padding: 20px 30px;
   display: none;
@@ -655,10 +686,12 @@ body {
       color:#666666;
       height: 21px;
       line-height: 21px;
+      margin-bottom: 3px;
     }
     .combos-details {
       height: 16px;
       line-height: 16px;
+      color: #666;
     }
   }
   .combos-diy {

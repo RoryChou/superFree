@@ -1,0 +1,128 @@
+@import "../var";
+
+body {
+
+}
+
+.bd-pro-container {
+  .bd-pro-title {
+    .bd-pro-title-main {
+      float: left;
+      font-size:32px;
+      color:#333333;
+      height: 42px;
+      line-height: 42px;
+      margin-right: 24px;
+    }
+    .bd-pro-title-labels {
+      float: left;
+      padding-top: 12px;
+      span {
+        float: left;
+        padding: 0 12px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        font-size:12px;
+        color:#ff9900;
+        border-radius: 9px;
+        border: 1px solid #ff9900;
+        margin-right: 10px;
+      }
+    }
+  }
+  .bd-pro-title-details {
+    .bd-pro-title-details-words {
+      float: left;
+      width: 925px;
+      font-size:20px;
+      color:#666666;
+      line-height:30px;
+    }
+    .bd-pro-title-details-right {
+      float: right;
+      .bd-title-icon-container {
+        float: left;
+        margin-left: 40px;
+        i {
+          @include inlineblock;
+
+        }
+        p {
+          @include inlineblock;
+          span {
+            display: block;
+            font-size:12px;
+            color:#999999;
+          }
+          b {
+            font-size:14px;
+            color:#666666;
+          }
+        }
+      }
+    }
+  }
+  .bd-pro-main {
+    .bd-pro-imgs {
+      float: left;
+      position: relative;
+      width: 480px;
+      height: 320px;
+      img {
+        width: 480px;
+        height: 320px;
+      }
+      .bd-pro-imgs-num {
+        position: absolute;
+        @include inlineblock;
+        width: 60px;
+        height: 22px;
+        line-height: 22px;
+        text-align: center;
+        color: #fff;
+        background-color: #4a4a4a;
+        border-radius: 11px;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+    .bd-pro-desc {
+      float: left;
+      .bd-desc-top {
+        width: 684px;
+        padding: 12px 0;
+        border-bottom: 1px solid #e3e3e3;
+        border-top: 1px solid #e3e3e3;
+      }
+      .bd-desc-top-container {
+        float: left;
+        height: 33px;
+        width: 226px;
+        border-right: 1px solid #e3e3e3;
+        &:last-child {
+          border: 0;
+        }
+        p {
+          margin-left: 88px;
+        }
+        .bd-desc-top-title {
+          font-size:12px;
+          color:#999999;
+          height: 16px;
+          line-height: 16px;
+        }
+        .bd-desc-nums {
+          font-size: 20px;
+          color: #666;
+          b {
+            color:#ff9900;
+          }
+        }
+      }
+      .bd-pro-guide {
+        
+      }
+    }
+  }
+}
