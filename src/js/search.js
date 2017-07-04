@@ -4,7 +4,6 @@
 $(function () {
     var $document = $(document);
 
-    //TODO 优化forin
     var search = {
         target:null,
         targetSection:null,
@@ -101,17 +100,14 @@ $(function () {
 
             //填写默认信息
             $('.combo-date input').val(nextDay);
-            this.getWeekday($('.combo-date'),nextDay);
             $('.flight-date-start input').val(nextDay);
-            this.getWeekday($('.flight-date-start'),nextDay);
             $('.hotel-date-start input').val(nextDay);
-            this.getWeekday($('.hotel-date-start'),nextDay);
             $('.hotel-date-end input').val(Day3);
-            this.getWeekday($('.hotel-date-end'),Day3);
             $('.ticket-date-start input').val(nextDay);
-            this.getWeekday($('.ticket-date-start'),nextDay);
             $('.flight-date-return').find('input').attr('placeholder','YYYY-MM-DD');
-            this.freshInfo();
+
+            //刷新weekday
+            this.getWeekday();
 
             //默认出发地为本站站点
             $('.combo-from input').val(this.localCity);
@@ -158,74 +154,43 @@ $(function () {
                 left: dropL
             });
         },
-        getWeekday: function (targetSection,date) {
-            //判断星期几并写入info
-            if(typeof date === 'string' && $.browser.msie){
-                date = date.replace('-','/');
-            }
-            var dateObj = new Date(date);
+        getWeekday: function () {
+            var infos = $('.search-date .search-contents-info');
             var week = ['周日','周一','周二','周三','周四','周五','周六']
-            var weekDay = week[dateObj.getDay()];
-            targetSection.find('.search-contents-info').html(weekDay);
-            //刷新返程时间info
+            infos.each(function () {
+                var $this = $(this);
+                var $date = $this.siblings('input').val();
+                if(typeof $date === 'string' && $.browser.msie){
+                    $date = $date.replace('-','/');
+                }
+                var dateObj = new Date($date);
+                var weekDay = week[dateObj.getDay()];
+                $this.html(weekDay);
+            });
             this.freshInfo();
-            //刷新返程的日历起始时间
-            //$('.flight-date-return input').val(this.dateNow(date,1));
         },
         calendarInit: function () {
             var self = this;
             //初始化通用日历
             this.calendar = lv.calendar({
-                date: self.dateNow(),
                 autoRender: false,
-                trigger: ".search-calendar-common",
+                trigger: ".search-calendar-common input",
                 triggerEvent: "click",
                 bimonthly: true,
                 //定位偏移
                 monthNext: 10,
                 monthPrev: 10,
-                dayPrev: 0,
                 template: "small",
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
                     for(var i in this.selected){
                         self.targetSection.find('input').val(i)
-                        self.getWeekday(self.targetSection,i);
+                        self.getWeekday();
                     }
                 }
             });
-            //初始化连级日历
-            this.calendarFlightReturn = lv.calendar({
-                autoRender: false,
-                trigger: ".search-cascading input",
-                triggerEvent: "click",
-                bimonthly: true,
-                //定位偏移
-                monthNext: 10,
-                monthPrev: 10,
-                dayPrev: 0,
-                template: "small",
-                cascading: true,
-                cascadingNextAuto: false,
-                cascadingOffset: 4,
-                //点击选择日期后的回调函数 默认返回值: calendar对象
-                selectDateCallback: function () {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
-                    if(self.targetSection.hasClass('flight-date-return')){
-                        $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
-                        self.flightReturn.removeClass('disabled');
-                    }else {
-                        //判断是否触发连级日历自动填写
-                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
-                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
-                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
-                            //手动刷新返程机票的星期数
-                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
-                        }
-                    }
-                }
-            });
+            //初始化flight日历
+            this.calendarFresh();
             //初始化连级日历-hotel
             this.calendarHotel = lv.calendar({
                 autoRender: false,
@@ -243,17 +208,18 @@ $(function () {
                 showNumberOfDays: true,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function (e) {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
-                    setTimeout(function () {
-                        self.getWeekday($('.hotel-date-end'),e.cascadingSelected.end);
-                    },50)
+                    self.getWeekday();
                 }
             })
         },
         calendarFresh: function () {
             var self = this;
-            this.calendarFlightReturn.destroy();
+            this.calendarFlightReturn && this.calendarFlightReturn.destroy();
+            //判断单程还是返程
+            var cascadingNextAutoFlag = true;
+            if($('.flight-single').hasClass('current')){
+                cascadingNextAutoFlag = false;
+            }
             //初始化连级日历
             this.calendarFlightReturn = lv.calendar({
                 autoRender: false,
@@ -267,23 +233,14 @@ $(function () {
                 template: "small",
                 cascading: true,
                 cascadingOffset: 4,
-                cascadingNextAuto: false,
+                cascadingNextAuto: cascadingNextAutoFlag,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
                     if(self.targetSection.hasClass('flight-date-return')){
                         $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                         self.flightReturn.removeClass('disabled');
-                    }else {
-                        //判断是否触发连级日历自动填写
-                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
-                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
-                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
-                            //手动刷新返程机票的星期数
-                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
-                        }
                     }
+                    self.getWeekday();
                 }
             });
         },
@@ -339,6 +296,7 @@ $(function () {
             $document.on('mousedown','.search-date',function (e) {
                 self.targetSection = $(e.target).parent('.search-date');
                 self.target = $(e.target);
+                self.calendarFresh();
             });
             //drop中选择城市
             $document.on('mousedown','.drop-city',function (e) {
@@ -472,19 +430,11 @@ $(function () {
             });
             //机票单程
             $document.on('click','.flight-single',function () {
-                $(this).addClass('current').next().removeClass('current');
-                self.flightReturn.addClass('disabled');
-                self.flightReturn.find('input').val('').attr('placeholder','YYYY-MM-DD');
-                self.calendarFresh();
+                self.fillInputFlight('single')
             });
             //机票返程
             $document.on('click','.flight-double',function () {
-                var startTime = $('.flight-date-start').find('input').val();
-                $(this).addClass('current').siblings('.flight-single').removeClass('current');
-                self.flightReturn.removeClass('disabled');
-                self.flightReturn.find('input').val(self.dateNow(startTime,4));
-                self.getWeekday(self.flightReturn,self.dateNow(startTime,4));
-                self.calendarFresh();
+                self.fillInputFlight()
             });
             //机票切换出发地与到达
             $document.on('click','.flight-change',function () {
@@ -649,6 +599,19 @@ $(function () {
             var period = parseInt($('.combo-days input').val());
             var returnDate = this.dateNow(startDateStr,period).substring(5);
             $('.combo-days .search-contents-info').html(returnDate+'返回')
+        },
+        fillInputFlight: function (type) {
+            var startTime = $('.flight-date-start').find('input').val();
+            if(type === 'single'){
+                $('.flight-single').addClass('current').siblings('.flight-double').removeClass('current');
+                this.flightReturn.addClass('disabled');
+            }else {
+                $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
+                this.flightReturn.removeClass('disabled');
+                this.flightReturn.find('input').val(this.dateNow(startTime,4));
+            }
+            this.getWeekday();
+            this.calendarFresh();
         },
         getData: function (url,data,type,dataType) {
             var self = this;

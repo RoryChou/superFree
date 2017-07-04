@@ -631,7 +631,7 @@
 .ticket-list .tl-item-open:hover {
   background: #ffffff;
 }
-.ticket-list .tl-item-open .select-btn i {
+.ticket-list .tl-item-open .select-btn-flight i {
   background-position: -90px -45px;
 }
 .ticket-list .tl-item-open .tl-all,
@@ -703,199 +703,202 @@
   vertical-align: -1px;
   margin: 0 3px;
 }
-.tl-col {
-  float: left;
-  min-height: 1px;
-}
-.tl-col .tl-top,
-.tl-col .tl-bottom {
-  font-size: 12px;
-  color: #333;
-  line-height: 16px;
-}
-.tl-col .tl-bottom {
-  margin-top: 4px;
-}
-.tl-info {
-  width: 125px;
-  padding-left: 15px;
-}
-.tl-info .tl-top {
-  margin-top: 4px;
-}
-.tl-info .tl-bottom {
-  color: #666;
-  margin-left: 20px;
-}
-.tl-info .tl-bottom span {
-  margin-right: 5px;
-}
-.tl-info .tl-bottom .plane-type {
-  margin-right: 0;
-  border-bottom: 1px dashed #666;
-  cursor: default;
-  line-height: 18px;
-}
-.tl-info .fh-icon-ac {
-  *vertical-align: -2px;
-}
-.tl-time {
-  width: 104px;
-  text-align:left;
-}
-.tl-time .tl-top {
-  font-size: 24px;
-  line-height: 22px;
-  margin-top: 0px;
-}
-.tl-time .tl-bottom em {
-  display: inline-block;
-  max-width: 85px;
-  vertical-align: top;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #666;
-}
-.tl-time-left{
-  text-align: right;
-  margin-right: 20px;
-}
-.tl-time .tl-bottom span {
-  *vertical-align: -2px;
-  color: #666;
-}
-.tl-stop {
-  width: 95px;
-  text-align: center;
-  position: relative;
-  margin: 2px 20px 0px 0px;
-  height: 43px;
-  font-size: 12px;
-  color: #bbb;
-}
-.tl-stop i {
-  display: block;
-  width:91px;
-  height: 9px;
-  position: absolute;
-  left:2px;
-  bottom: 20px;
-  background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -332px;
-}
-.tl-duration {
-  width: 70px;
-  margin-left: 30px;
-}
-.tl-price {
-  width: 100px;
-  margin-left: 90px;
-}
-.tl-price em {
-  color: #bbb;
-}
-.tl-price .tl-top {
-  font-size: 12px;
-  color: #999;
-  margin-top: 2px;
-}
-.tl-price .tl-top i {
-  font-size: 14px;
-  color: #f60;
-  vertical-align: -1px;
-}
-.tl-price .tl-top em {
-  font-size: 20px;
-  color: #f60;
-  vertical-align: -2px;
-}
-.tl-price .tl-top b {
-  font-size: 12px;
-  color: #fff;
-  line-height: 16px;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  background: #ff9900;
-  text-align: center;
-  font-weight: normal;
-  margin-left: 6px;
-  vertical-align: 2px;
-}
-.tl-price .tl-bottom {
-  font-size: 12px;
-  color: #999;
-  margin: 6px 0 0 15px;
-  *margin-top: 12px;
-}
-.tl-price .tl-bottom em {
-  font-size: 14px;
-  font-weight: normal;
-  vertical-align: -1px;
-  margin-right: 3px;
-}
-.tl-item {
-  padding: 22px 10px 22px 10px;
-  border-bottom: 1px solid #ddd;
-}
-.tl-item .tl-detail {
-  padding-left: 10px;
-}
-.tl-item .tl-duration {
-  line-height:43px;
-  width: 75px;
-  margin-left:110px;
-  margin-top: 2px;
-  font-size:14px;
-  color: #999;
-}
-.tl-item .tl-duration span {
-  color: #999;
-}
-.tl-item .tl-duration .tl-bottom {
-  margin-top: 9px;
-}
-.tl-item .tl-info {
-  width: 213px;
-  padding-left: 0;
-}
-.tl-item .tl-price {
-  width: 110px;
-  margin-left: 90px;
-  line-height: 43px;
-  font-size:12px;
-  color: #999;
-  height:43px;
-  overflow: hidden;
-}
-.tl-item .tl-price em{
-  color: #ff6600;
-  font-size:28px;
-}
-.tl-item .tl-price i{
-  color: #ff6600;
-  font-size:20px;
-}
-.tl-item .select-btn {
-  display: block;
-  float: left;
-  margin: 26px 0 0 140px;
-  *margin-right: 16px;
-  width:11px;
-  height:6px;
-  background:url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px;
-}
-.tl-item .select-btn.up{
-  background-position: 0px -400px;
-}
-.tl-item .select-btn i {
-  display: inline-block;
-  width: 9px;
-  height: 5px;
-  margin-left: 9px;
-  vertical-align: 2px;
-  *vertical-align: 5px;
-  background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px;
+
+.ticket-list {
+  .tl-item {
+    padding: 22px 10px 22px 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .tl-item .tl-detail {
+    padding-left: 10px;
+  }
+  .tl-item .tl-duration {
+    line-height:43px;
+    width: 75px;
+    margin-left:110px;
+    margin-top: 2px;
+    font-size:14px;
+    color: #999;
+  }
+  .tl-item .tl-duration span {
+    color: #999;
+  }
+  .tl-item .tl-duration .tl-bottom {
+    margin-top: 9px;
+  }
+  .tl-item .tl-info {
+    width: 213px;
+    padding-left: 0;
+  }
+  .tl-item .tl-price {
+    width: 110px;
+    margin-left: 90px;
+    line-height: 43px;
+    font-size:12px;
+    color: #999;
+    height:43px;
+    overflow: hidden;
+  }
+  .tl-item .tl-price em{
+    color: #ff6600;
+    font-size:28px;
+  }
+  .tl-item .tl-price i{
+    color: #ff6600;
+    font-size:20px;
+  }
+  .tl-item .select-btn-flight {
+    display: block;
+    float: left;
+    margin: 26px 0 0 140px;
+    *margin-right: 16px;
+    width:11px;
+    height:6px;
+    background:url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px;
+  }
+  .tl-item .select-btn-flight.up{
+    background-position: 0px -400px;
+  }
+  .tl-item .select-btn-flight i {
+    display: inline-block;
+    width: 9px;
+    height: 5px;
+    margin-left: 9px;
+    vertical-align: 2px;
+    *vertical-align: 5px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px;
+  }
+  .tl-col {
+    float: left;
+    min-height: 1px;
+  }
+  .tl-col .tl-top,
+  .tl-col .tl-bottom {
+    font-size: 12px;
+    color: #333;
+    line-height: 16px;
+  }
+  .tl-col .tl-bottom {
+    margin-top: 4px;
+  }
+  .tl-info {
+    width: 125px;
+    padding-left: 15px;
+  }
+  .tl-info .tl-top {
+    margin-top: 4px;
+  }
+  .tl-info .tl-bottom {
+    color: #666;
+    margin-left: 20px;
+  }
+  .tl-info .tl-bottom span {
+    margin-right: 5px;
+  }
+  .tl-info .tl-bottom .plane-type {
+    margin-right: 0;
+    border-bottom: 1px dashed #666;
+    cursor: default;
+    line-height: 18px;
+  }
+  .tl-info .fh-icon-ac {
+    *vertical-align: -2px;
+  }
+  .tl-time {
+    width: 104px;
+    text-align:left;
+  }
+  .tl-time .tl-top {
+    font-size: 24px;
+    line-height: 22px;
+    margin-top: 0px;
+  }
+  .tl-time .tl-bottom em {
+    display: inline-block;
+    max-width: 85px;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666;
+  }
+  .tl-time-left{
+    text-align: right;
+    margin-right: 20px;
+  }
+  .tl-time .tl-bottom span {
+    *vertical-align: -2px;
+    color: #666;
+  }
+  .tl-stop {
+    width: 95px;
+    text-align: center;
+    position: relative;
+    margin: 2px 20px 0px 0px;
+    height: 43px;
+    font-size: 12px;
+    color: #bbb;
+  }
+  .tl-stop i {
+    display: block;
+    width:91px;
+    height: 9px;
+    position: absolute;
+    left:2px;
+    bottom: 20px;
+    background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -332px;
+  }
+  .tl-duration {
+    width: 70px;
+    margin-left: 30px;
+  }
+  .tl-price {
+    width: 100px;
+    margin-left: 90px;
+  }
+  .tl-price em {
+    color: #bbb;
+  }
+  .tl-price .tl-top {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+  }
+  .tl-price .tl-top i {
+    font-size: 14px;
+    color: #f60;
+    vertical-align: -1px;
+  }
+  .tl-price .tl-top em {
+    font-size: 20px;
+    color: #f60;
+    vertical-align: -2px;
+  }
+  .tl-price .tl-top b {
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: #ff9900;
+    text-align: center;
+    font-weight: normal;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+  .tl-price .tl-bottom {
+    font-size: 12px;
+    color: #999;
+    margin: 6px 0 0 15px;
+    *margin-top: 12px;
+  }
+  .tl-price .tl-bottom em {
+    font-size: 14px;
+    font-weight: normal;
+    vertical-align: -1px;
+    margin-right: 3px;
+  }
 }
 .flight-warning {
   margin: 12px 0 0 10px;
@@ -2131,7 +2134,7 @@
   height: 6px;
   width: 9px;
 }
-.tl-item-open .select-btn{
+.tl-item-open .select-btn-flight{
   background-position: 0px -360px;
 }
 .ft-authentication{

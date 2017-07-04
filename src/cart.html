@@ -2,11 +2,968 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>购物车</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit"/>
+    <!-- build:css -->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/header_new.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/buttons.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tip.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/flight/v4/tip.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/dialog.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/dialog.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/common/poplogin.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="css/hotel/hotel.css">
+    <link rel="stylesheet" href="css/cart/cart.css">
 </head>
 <body>
+    <!--顶部-->
+    <div class="sft-header clearfix">
+        <div class="sft-header-wrapper">
+            <div class="sft-header-left">
+                <a href="http://www.lvmama.com" class="sft-header-logo"></a>
+                <a href="http://www.lvmama.com" class="sft-title">超级自由行</a>
+            </div>
+            <div class="sft-header-right">
+                <p class="sft-hotLine-title">24小时服务热线</p>
+                <p class="sft-hotLine">1010-6060</p>
+            </div>
+        </div>
+    </div>
+    <!--顶部END-->
 
+    <!--主要内容-->
+    <div class="wrap">
+        <div class="cart-num-container">
+            <i class="icon-cart"></i>
+            购物车
+            <span class="cart-num">16</span>
+        </div>
+        <div class="cart-top-bar">
+            <span class="title-proinfo td">商品信息</span>
+            <span class="title-rules td">退改规则</span>
+            <span class="title-price-single td">单价</span>
+            <span class="title-num td">数量</span>
+            <span class="title-money td">金额</span>
+            <span class="title-operate td">操作</span>
+        </div>
+        <div class="cart-section cart-section-diy" id="combos-diy">
+            <div class="cart-section-title">
+                <span class="icon-checkBox td" data-checked="false"></span>
+                <span class="cart-section-title-main td">自选单品</span>
+                <div class="cart-section-money-total td">
+                    <i class="cart-section-money-total-title">套餐总价：</i>
+                    <i class="cart-section-money-total-num">
+                        ¥<b>5450</b>
+                    </i>
+                </div>
+            </div>
+            <div class="loading_box">
+                <i class="icon_loading"></i>
+                <span>亲，小驴正在为您准备，请耐心等待下哦～</span>
+            </div>
+            <div class="cart-section-details">
+                <div class="cart-section-hotel-container">
+                    <div class="cart-section-pro-hotel">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-hotel td"></span>
+                            <div class="hotel-date-container td">
+                                <p class="hotel-date-start">
+                                    <span>2017-08-01</span>入住
+                                </p>
+                                <p class="hotel-date-end">
+                                    <span>2017-08-04</span>退房
+                                </p>
+                            </div>
+                            <div class="hotel-info-container td">
+                                <p class="hotel-name" title="厦门希尔顿逸林酒店厦门希尔顿逸林酒店">厦门希尔顿逸林酒店厦门希尔顿逸林酒店</p>
+                                <p class="hotel-stars">五星级</p>
+                            </div>
+                            <div class="pro-details-container td">
+                                <p class="hotel-room-type">豪华大床房房</p>
+                                <p class="hotel-room-info">
+                                    <span>1</span>间
+                                    <span>3</span>晚
+                                </p>
+                            </div>
+                            <span class="pro-sevice td">双早</span>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-section-pro-hotel">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-hotel td"></span>
+                            <div class="hotel-date-container td">
+                                <p class="hotel-date-start">
+                                    <span>2017-08-01</span>入住
+                                </p>
+                                <p class="hotel-date-end">
+                                    <span>2017-08-04</span>退房
+                                </p>
+                            </div>
+                            <div class="hotel-info-container td">
+                                <p class="hotel-name" title="厦门希尔顿逸林酒店厦门希尔顿逸林酒店">厦门希尔顿逸林酒店厦门希尔顿逸林酒店</p>
+                                <p class="hotel-stars">五星级</p>
+                            </div>
+                            <div class="pro-details-container td">
+                                <p class="hotel-room-type">豪华大床房房</p>
+                                <p class="hotel-room-info">
+                                    <span>1</span>间
+                                    <span>3</span>晚
+                                </p>
+                            </div>
+                            <span class="pro-sevice td">双早</span>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-flight-container">
+                    <div class="cart-section-pro-flight">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-flight td"></span>
+                            <div class="section-pro-flight-block clearfix">
+                                <div class="flight-icon-route-go">去程</div>
+                                <div class="flight-main-container td">
+                                    <p class="flight-main-citys">
+                                        <span class="flight-city-from">阿拉斯加</span>
+                                        <i class="icon-flight-arrow"></i>
+                                        <span class="flight-city-to">斯里兰卡</span>
+                                    </p>
+                                    <p class="flight-date-start">2017-08-01</p>
+                                </div>
+                                <div class="flight-info-container clearfix td">
+                                    <div class="flight-info-from">
+                                        <p class="flight-time-from">16:30</p>
+                                        <p class="flight-airport-from">浦东国际机场</p>
+                                    </div>
+                                    <div class="icon-flight-arrow"></div>
+                                    <div class="flight-info-to">
+                                        <p class="flight-time-to">
+                                            16:30
+                                            <em class="add-one-day js-tips" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                                        </p>
+                                        <p class="flight-airport-to">浦东国际机场</p>
+                                    </div>
+                                </div>
+                                <div class="pro-details-container td">
+                                    <p class="flight-company">六个字六个字</p>
+                                    <p class="flight-plane-info">
+                                        <span class="flight-plane-num">HO1221</span>
+                                        <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">772</span>
+                                    </p>
+                                </div>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-kid"></p>
+                                </span>
+                                <div class="pro-notice td">
+                                    <span class="tui-gai-qian" >退改签</span>
+                                </div>
+                                <span class="pro-price-single td">¥240</span>
+                                <div class="select-container td">
+                                    <select class="pro-num pro-num-flightGo" name="" id="" >
+                                        <option value="1">1</option>
+                                        <option value="2" selected="selected">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <p class="pro-num-notice"></p>
+                                </div>
+                                <div class="pro-money td">
+                                    ¥<span>480</span>
+                                </div>
+                                <div class="pro-operations td">
+                                    <p class="cart-delete">删除</p>
+                                    <p class="cart-move">移入其他套餐</p>
+                                </div>
+                            </div>
+                            <div class="section-pro-flight-block clearfix">
+                                <div class="flight-icon-route-back">返程</div>
+                                <div class="flight-main-container td">
+                                    <p class="flight-main-citys">
+                                        <span class="flight-city-from">阿拉斯加</span>
+                                        <i class="icon-flight-arrow"></i>
+                                        <span class="flight-city-to">斯里兰卡</span>
+                                    </p>
+                                    <p class="flight-date-start">2017-08-01</p>
+                                </div>
+                                <div class="flight-info-container clearfix td">
+                                    <div class="flight-info-from">
+                                        <p class="flight-time-from">16:30</p>
+                                        <p class="flight-airport-from">浦东国际机场</p>
+                                    </div>
+                                    <div class="icon-flight-arrow"></div>
+                                    <div class="flight-info-to">
+                                        <p class="flight-time-to">
+                                            16:30
+                                            <em class="add-one-day js-tips" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                                        </p>
+                                        <p class="flight-airport-to">浦东国际机场</p>
+                                    </div>
+                                </div>
+                                <div class="pro-details-container td">
+                                    <p class="flight-company">六个字六个字</p>
+                                    <p class="flight-plane-info">
+                                        <span class="flight-plane-num">HO1221</span>
+                                        <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">772</span>
+                                    </p>
+                                </div>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-adult"></p>
+                                </span>
+                                <div class="pro-notice td">
+                                    <span class="tui-gai-qian">退改签</span>
+                                </div>
+                                <span class="pro-price-single td">¥240</span>
+                                <div class="select-container td">
+                                    <select class="pro-num pro-num-flightReturn" name="" id="" disabled>
+                                        <option value="1">1</option>
+                                        <option value="2" selected="selected">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <p class="pro-num-notice"></p>
+                                </div>
+                                <div class="pro-money td">
+                                    ¥<span>480</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-ticket-container">
+                    <div class="cart-section-pro-ticket">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice">库存不足2份</p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-section cart-section-my" id="combos-my-3">
+            <div class="cart-section-title">
+                <span class="icon-checkBox td" data-checked="false"></span>
+                <span class="cart-section-title-main td">
+                    我的套餐<b>3</b>
+                </span>
+                <p class="cart-section-my-info">
+                    <span class="my-info-citys">
+                        <b class="my-info-citys-from">上海</b>
+                        -
+                        <b class="my-info-citys-to">厦门</b>
+                    </span>
+                    <span class="my-info-days">4天3晚</span>
+                    <span class="my-info-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+                <div class="cart-section-money-total td">
+                    <i class="cart-section-money-total-title">套餐总价：</i>
+                    <i class="cart-section-money-total-num">
+                        ¥<b>5450</b>
+                    </i>
+                </div>
+            </div>
+            <div class="cart-section-details">
+                <div class="cart-section-hotel-container">
+                    <div class="cart-section-pro-hotel clearfix">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-hotel td"></span>
+                            <div class="hotel-date-container td">
+                                <p class="hotel-date-start">
+                                    <span>2017-08-01</span>入住
+                                </p>
+                                <p class="hotel-date-end">
+                                    <span>2017-08-04</span>退房
+                                </p>
+                            </div>
+                            <div class="hotel-info-container td">
+                                <p class="hotel-name" title="厦门希尔顿逸林酒店厦门希尔顿逸林酒店">厦门希尔顿逸林酒店厦门希尔顿逸林酒店</p>
+                                <p class="hotel-stars">五星级</p>
+                            </div>
+                            <div class="pro-details-container td">
+                                <p class="hotel-room-type">豪华大床房房</p>
+                                <p class="hotel-room-info">
+                                    <span>1</span>间
+                                    <span>3</span>晚
+                                </p>
+                            </div>
+                            <span class="pro-sevice td">双早</span>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-flight-container">
+                    <div class="cart-section-pro-flight clearfix">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-flight td"></span>
+                            <div class="section-pro-flight-block clearfix">
+                                <div class="flight-main-container td">
+                                    <p class="flight-main-citys">
+                                        <span class="flight-city-from">阿拉斯加</span>
+                                        <i class="icon-flight-arrow"></i>
+                                        <span class="flight-city-to">斯里兰卡</span>
+                                    </p>
+                                    <p class="flight-date-start">2017-08-01</p>
+                                </div>
+                                <div class="flight-info-container clearfix td">
+                                    <div class="flight-info-from">
+                                        <p class="flight-time-from">16:30</p>
+                                        <p class="flight-airport-from">浦东国际机场</p>
+                                    </div>
+                                    <div class="icon-flight-arrow"></div>
+                                    <div class="flight-info-to">
+                                        <p class="flight-time-to">
+                                            16:30
+                                            <em class="add-one-day js-tips"
+                                                tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                                        </p>
+                                        <p class="flight-airport-to">浦东国际机场</p>
+                                    </div>
+                                </div>
+                                <div class="pro-details-container td">
+                                    <p class="flight-company">六个字六个字</p>
+                                    <p class="flight-plane-info">
+                                        <span class="flight-plane-num">HO1221</span>
+                                        <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中"
+                                              data-min="167" data-max="167">772</span>
+                                    </p>
+                                </div>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-kid"></p>
+                                </span>
+                                <div class="pro-notice td">
+                                    <span class="tui-gai-qian">退改签</span>
+                                </div>
+                                <span class="pro-price-single td">¥240</span>
+                                <div class="select-container td">
+                                    <select class="pro-num" name="" id="">
+                                        <option value="1">1</option>
+                                        <option value="2" selected="selected">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <p class="pro-num-notice"></p>
+                                </div>
+                                <div class="pro-money td">
+                                    ¥<span>480</span>
+                                </div>
+                                <div class="pro-operations td">
+                                    <p class="cart-delete">删除</p>
+                                    <p class="cart-move">移入其他套餐</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-ticket-container">
+                    <div class="cart-section-pro-ticket clearfix">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" >
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-section-pro-ticket pro-disabled">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox-disabled td" data-checked="false">失效</span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" disabled>
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-section cart-section-my" id="combos-my-4">
+            <div class="cart-section-title">
+                <span class="icon-checkBox td" data-checked="false"></span>
+                <span class="cart-section-title-main td">
+                    我的套餐<b>4</b>
+                </span>
+                <p class="cart-section-my-info">
+                    <span class="my-info-citys">
+                        <b class="my-info-citys-from">上海</b>
+                        -
+                        <b class="my-info-citys-to">厦门</b>
+                    </span>
+                    <span class="my-info-days">4天3晚</span>
+                    <span class="my-info-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+                <div class="cart-section-money-total td">
+                    <i class="cart-section-money-total-title">套餐总价：</i>
+                    <i class="cart-section-money-total-num">
+                        ¥<b>5450</b>
+                    </i>
+                </div>
+            </div>
+            <div class="cart-section-details">
+                <div class="cart-section-hotel-container">
+                    <div class="cart-section-pro-hotel pro-disabled">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox-disabled td" data-checked="false">失效</span>
+                            <span class="icon-hotel td"></span>
+                            <div class="hotel-date-container td">
+                                <p class="hotel-date-start">
+                                    <span>2017-08-01</span>入住
+                                </p>
+                                <p class="hotel-date-end">
+                                    <span>2017-08-04</span>退房
+                                </p>
+                            </div>
+                            <div class="hotel-info-container td">
+                                <p class="hotel-name" title="厦门希尔顿逸林酒店厦门希尔顿逸林酒店">厦门希尔顿逸林酒店厦门希尔顿逸林酒店</p>
+                                <p class="hotel-stars">五星级</p>
+                            </div>
+                            <div class="pro-details-container td">
+                                <p class="hotel-room-type">豪华大床房房</p>
+                                <p class="hotel-room-info">
+                                    <span>1</span>间
+                                    <span>3</span>晚
+                                </p>
+                            </div>
+                            <span class="pro-sevice td">双早</span>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice">库存不足2份</p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-flight-container">
+                    <div class="cart-section-pro-flight pro-disabled">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox-disabled td" data-checked="false">失效</span>
+                            <span class="icon-flight td"></span>
+                            <div class="section-pro-flight-block clearfix">
+                                <div class="flight-main-container td">
+                                    <p class="flight-main-citys">
+                                        <span class="flight-city-from">阿拉斯加</span>
+                                        <i class="icon-flight-arrow"></i>
+                                        <span class="flight-city-to">斯里兰卡</span>
+                                    </p>
+                                    <p class="flight-date-start">2017-08-01</p>
+                                </div>
+                                <div class="flight-info-container clearfix td">
+                                    <div class="flight-info-from">
+                                        <p class="flight-time-from">16:30</p>
+                                        <p class="flight-airport-from">浦东国际机场</p>
+                                    </div>
+                                    <div class="icon-flight-arrow"></div>
+                                    <div class="flight-info-to">
+                                        <p class="flight-time-to">
+                                            16:30
+                                            <em class="add-one-day js-tips"
+                                                tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</em>
+                                        </p>
+                                        <p class="flight-airport-to">浦东国际机场</p>
+                                    </div>
+                                </div>
+                                <div class="pro-details-container td">
+                                    <p class="flight-company">六个字六个字</p>
+                                    <p class="flight-plane-info">
+                                        <span class="flight-plane-num">HO1221</span>
+                                        <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中"
+                                              data-min="167" data-max="167">772</span>
+                                    </p>
+                                </div>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-adult"></p>
+                                </span>
+                                <div class="pro-notice td">
+                                    <span class="tui-gai-qian">退改签</span>
+                                </div>
+                                <span class="pro-price-single td">¥240</span>
+                                <div class="select-container td">
+                                    <select class="pro-num" name="" id="" disabled>
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <p class="pro-num-notice"></p>
+                                </div>
+                                <div class="pro-money td">
+                                    ¥<span>480</span>
+                                </div>
+                                <div class="pro-operations td">
+                                    <p class="cart-delete">删除</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-section-ticket-container">
+                    <div class="cart-section-pro-ticket pro-disabled">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox-disabled td" data-checked="false">失效</span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" disabled>
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-section-pro-ticket clearfix">
+                        <div class="cart-section-pro-wrapper clearfix">
+                            <span class="icon-checkBox td" data-checked="false"></span>
+                            <span class="icon-ticket td"></span>
+                            <p class="ticket-date td">2017-08-01</p>
+                            <p class="ticket-name td">厦门植物园</p>
+                            <div class="pro-notice td">
+                                <span class="js-tips" tip-content="不可退改!!!">不可退改</span>
+                            </div>
+                            <span class="pro-price-single td">¥240</span>
+                            <div class="select-container td">
+                                <select class="pro-num" name="" id="" >
+                                    <option value="1">1</option>
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <p class="pro-num-notice"></p>
+                            </div>
+                            <div class="pro-money td">
+                                ¥<span>480</span>
+                            </div>
+                            <div class="pro-operations td">
+                                <p class="cart-delete">删除</p>
+                                <p class="cart-move">移入其他套餐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--空购物车-->
+        <div class="cart-empty-container">
+            <div class="cart-empty-icon"></div>
+            <p class="cart-empty-words">购物车还是空的呢，快去挑选商品吧</p>
+            <p class="cart-empty-words-signin">还未登录哦，<span class="login_btn">现在登录</span>看看您账户下的商品吧～</p>
+            <a class="btn btn-orange btn-goshopping" href="">去选购</a>
+        </div>
+        <!--空购物车END-->
+    </div>
+    <!--主要内容END-->
+
+    <!--底部结算bar-->
+    <div class="sft-bottom-bar-container">
+        <div class="sft-bottom-bar">
+            <div class="sft-bottom-bar-tips">
+                <div class="tip-arrow tip-arrow-top">
+                    <em>◆</em>
+                    <i>◆</i>
+                </div>
+                <i class="error-icon"></i>
+                <p>一次只能购买一个套餐哦～</p>
+            </div>
+            <div class="sft-bottom-bar-wrapper clearfix">
+                <div class="bottom-bar-left clearfix">
+                    <span class="cart-clear-all">清空购物车</span>
+                    <span class="cart-move">移入其他套餐</span>
+                    <span class="bottom-bar-clear">清除失效商品</span>
+                </div>
+                <div class="bottom-bar-button">
+                    立即预订
+                </div>
+                <div class="bottom-bar-right">
+                    <p class="bottom-bar-right-top">
+                        应付：<span>¥<b>5450</b></span>
+                    </p>
+                    <p class="bottom-bar-right-bottom">
+                   <span class="money-total-old">
+                       订单总价：<b>¥</b><i>6000</i>
+                   </span>
+                        <span class="money-off">
+                       套餐立减：<b>¥</b><i>240</i>
+                   </span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--底部结算bar END-->
+
+
+
+
+    <!-- 查看退改签 -->
+    <div class="tgq-info">
+        <div class="tip-arrow"><em>◆</em><i>◆</i></div>
+        <p class="tgq-loading">
+            驴妈妈拼命加载中，请稍候...
+        </p>
+        <div class="tgq-info-part tgq-info-part-default">
+            <dl class="clearfix">
+                <dt>退票费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>取消座位时间计算手续费</span></p>
+                    <p class="clearfix"><i></i><span>按照当前舱位票面价收取退票费</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>签转费</dt>
+                <dd>
+                    <p>可以改签</p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>改期费</dt>
+                <dd><p>按照当前舱位票面价收取变更费</p>
+                    <p>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</p></dd>
+            </dl>
+        </div>
+        <div class="tgq-info-part tgq-info-part-ac">
+            <dl class="clearfix">
+                <dt>成人退票手续费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2小时外：100元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞后：260元/人</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>成人同舱改期<br>手续费</dt>
+                <dd>
+                    <p class="clearfix"><i></i><span>起飞前2小时内：200元/人</span></p>
+                    <p class="clearfix"><i></i><span>起飞前2小时外：免费</span></p>
+                    <p class="clearfix"><i></i><span>起飞后：200元/人</span></p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>退改详情</dt>
+                <dd><p>退票：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p><p>改签：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p></dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>备注</dt>
+                <dd><p>备注文案</p></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 查看退改签 END-->
+
+    <!-- 查看机型 -->
+    <div class="plane-info">
+        <div class="tip-arrow"><em>◆</em><i>◆</i></div>
+        <div class="plane-info-title">
+            <span class="pi-plan">计划机型</span>
+            <span class="pi-name">机型名称</span>
+            <span class="pi-type">类型</span>
+            <span class="pi-min">最少座位数</span>
+            <span class="pi-max">最多座位数</span>
+        </div>
+        <div class="plane-info-detail">
+            <span class="pi-plan"></span>
+            <span class="pi-name"></span>
+            <span class="pi-type"></span>
+            <span class="pi-min"></span>
+            <span class="pi-max"></span>
+        </div>
+        <img class="plane-info-loading" src="http://pic.lvmama.com/img/new_v/ui_scrollLoading/loading.gif" alt="">
+    </div>
+    <!-- //plane-info结束 -->
+
+    <!--套餐弹出框-->
+    <div class="alert-combos-container">
+        <ul>
+            <li class="combos-diy">
+                <p class="combos-main">自选单品</p>
+            </li>
+            <li class="combos-my-1">
+                <p class="combos-main">我的套餐1</p>
+                <p class="combos-details">
+                    <span class="combos-citys">
+                        <b class="combos-citys-from">上海</b>
+                        -
+                        <b class="combos-citys-to">厦门</b>
+                    </span>
+                    <span class="combos-days">4天3晚</span>
+                    <span class="combos-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+            </li>
+            <li class="combos-my-2">
+                <p class="combos-main">我的套餐2</p>
+                <p class="combos-details">
+                    <span class="combos-citys">
+                        <b class="combos-citys-from">上海</b>
+                        -
+                        <b class="combos-citys-to">厦门</b>
+                    </span>
+                    <span class="combos-days">4天3晚</span>
+                    <span class="combos-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+            </li>
+            <li class="combos-my-3">
+                <p class="combos-main">我的套餐3</p>
+                <p class="combos-details">
+                    <span class="combos-citys">
+                        <b class="combos-citys-from">上海</b>
+                        -
+                        <b class="combos-citys-to">厦门</b>
+                    </span>
+                    <span class="combos-days">4天3晚</span>
+                    <span class="combos-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+            </li>
+            <li class="combos-my-4">
+                <p class="combos-main">我的套餐4</p>
+                <p class="combos-details">
+                    <span class="combos-citys">
+                        <b class="combos-citys-from">上海</b>
+                        -
+                        <b class="combos-citys-to">厦门</b>
+                    </span>
+                    <span class="combos-days">4天3晚</span>
+                    <span class="combos-date-start">
+                        <b>05月10日</b>出发
+                    </span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!--套餐弹出框 END-->
+
+    <!--移入套餐失败toast-->
+    <div class="alert-move-fail alert-toast">
+        <div class="icon-lv-container">
+            <i class="icon-lv-fail"></i>
+        </div>
+        <p>移入失败，请重新移入哦~</p>
+    </div>
+    <!--移入套餐失败toast END-->
+
+    <!--无勾选toast-->
+    <div class="alert-choose-none alert-toast">
+        <div class="icon-lv-container">
+            <i class="icon-lv-notice"></i>
+        </div>
+        <p>请选择商品哦~</p>
+    </div>
+    <!--无勾选toast END-->
+
+    <!--只能买一个套餐toast-->
+    <div class="alert-only alert-toast">
+        <div class="icon-lv-container">
+            <i class="icon-lv-notice"></i>
+        </div>
+        <p>一次只能购买 1 个套餐哦，请分开下单吧~</p>
+    </div>
+    <!--只能买一个套餐toast END-->
+
+    <!--行程冲突toast-->
+    <div class="alert-conflict alert-toast">
+        <div class="icon-lv-container">
+            <i class="icon-lv-notice"></i>
+        </div>
+        <p>您购买的行程不同，请分开下单吧</p>
+    </div>
+    <!--行程冲突toast END-->
+
+    <!--删除alert-->
+    <div class="alert-delete-content alert-content">
+        <span class="icon-notice"></span>
+        <span class="icon-words">删除该商品则无套餐组合优惠了，你确定要删除该商品吗？</span>
+    </div>
+    <!--删除alert END-->
+
+    <!--清除失效alert-->
+    <div class="alert-clear-content alert-content">
+        <span class="icon-notice"></span>
+        <span class="icon-words">您确定要清除所有失效商品吗？</span>
+    </div>
+    <!--清除失效alert END-->
+
+    <!--产品数量不足alert-->
+    <div class="alert-num-notEnough alert-content">
+        <span class="icon-notice"></span>
+        <span class="icon-words">
+            我的套餐<b>1</b>中航班<i>HNBS</i>数量只能预订<em>2</em>张，<i>XX</i>酒店只剩<em>2</em>间,<i>XX</i>门票只剩<em>2</em>张您确认要继续预订吗？
+        </span>
+    </div>
+    <!--产品数量不足alert END-->
+
+
+<!-- build:js -->
+<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
+<script src="http://pic.lvmama.com/js/v6/public/footer.js"></script>
+<script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
+<script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>
+<script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
+<!--<script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>-->
+<script src="http://pic.lvmama.com/js/v4/modules/pandora-dialog.js"></script>
+<!--<script src="http://pic.lvmama.com/js/lv/ui.js,"></script>-->
+<script src="http://pic.lvmama.com/js/common/poplogin.js"></script>
+<!-- endbuild -->
+    <script src="js/cart.js"></script>
+    <script>
+        //<editor-fold desc="登陆调用">
+        $('.login_btn').bind('click', function () {
+            showLogin(function () {
+                alert('登陆成功')
+            });  //登录成功后执行回调函数
+        });
+        //</editor-fold>
+    </script>
 </body>
 </html>

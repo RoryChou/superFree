@@ -1,0 +1,655 @@
+@import "../var";
+
+body {
+  b {
+    font-weight: normal;
+  }
+  img {
+    display: block;
+  }
+  .opacityBox {
+    @include opacity(0.3)
+  }
+  .js-img-show {
+    position: relative;
+    cursor: pointer;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .bd-pro-imgs-num {
+      position: absolute;
+      @include inlineblock;
+      width: 60px;
+      height: 22px;
+      line-height: 22px;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 11px;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+
+}
+/*顶部产品信息*/
+.bd-pro-container {
+  background-color: #fff;
+  padding-bottom: 50px;
+  box-shadow:0 2px 8px 0 rgba(0,0,0,0.12);
+  margin-bottom: 22px;
+  .bd-pro-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .bd-pro-title {
+    margin-bottom: 12px;
+    .bd-pro-title-main {
+      float: left;
+      font-size:32px;
+      color:#333333;
+      height: 42px;
+      line-height: 42px;
+      margin-right: 24px;
+    }
+    .bd-pro-title-labels {
+      float: left;
+      padding-top: 14px;
+      span {
+        float: left;
+        padding: 0 4px;
+        height: 14px;
+        line-height: 14px;
+        text-align: center;
+        font-size:12px;
+        color:#ff9900;
+        border-radius: 3px;
+        border: 1px solid #ff9900;
+        margin-right: 10px;
+      }
+    }
+  }
+  .bd-pro-title-details {
+    margin-bottom: 16px;
+    .bd-pro-title-details-words {
+      float: left;
+      width: 925px;
+      font-size:20px;
+      color:#666666;
+      line-height:30px;
+    }
+    .bd-pro-title-details-right {
+      float: right;
+      .bd-title-icon-container {
+        float: left;
+        margin-left: 40px;
+        i {
+          @include inlineblock;
+          cursor: pointer;
+          margin-right: 6px;
+          &.icon-bd-views {
+            background: url('../../imgs/baodian/sprite/icon-view.png') no-repeat center;
+            height: 24px;
+            width: 30px;
+          }
+          &.icon-bd-hearts {
+            background: url('../../imgs/baodian/sprite/icon-hearts.png') no-repeat center;
+            height: 25px;
+            width: 28px;
+            &.active,&:hover {
+              background: url('../../imgs/baodian/sprite/icon-hearts-choose.png') no-repeat center;
+            }
+          }
+        }
+        p {
+          @include inlineblock;
+          span {
+            display: block;
+            font-size:12px;
+            color:#999999;
+            height: 14px;
+            line-height: 14px;
+          }
+          b {
+            font-size:14px;
+            color:#666666;
+          }
+        }
+        .icon-plus {
+          visibility: hidden;
+          position: relative;
+          top:0;
+          font-size: 18px;
+          color: $color-hover-orange;
+          transition: all 1s;
+          &.active {
+            visibility: visible;
+            top:-25px;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .bd-pro-main {
+    .bd-pro-imgs {
+      float: left;
+      position: relative;
+      width: 480px;
+      height: 320px;
+      img {
+        width: 480px;
+        height: 320px;
+      }
+    }
+    .bd-pro-desc {
+      float: right;
+      margin-right: 12px;
+      .bd-desc-top {
+        width: 684px;
+        padding: 12px 0;
+        border-bottom: 1px solid #e3e3e3;
+        border-top: 1px solid #e3e3e3;
+      }
+      .bd-desc-top-container {
+        float: left;
+        height: 33px;
+        width: 226px;
+        border-right: 1px solid #e3e3e3;
+        &:last-child {
+          border: 0;
+        }
+        p {
+          margin-left: 88px;
+        }
+        .bd-desc-top-title {
+          font-size:12px;
+          color:#999999;
+          height: 16px;
+          line-height: 16px;
+        }
+        .bd-desc-nums {
+          font-size: 12px;
+          color: #999;
+          b {
+            color:#ff9900;
+            font-size: 20px;
+            margin-right: 6px;
+          }
+        }
+      }
+      .bd-pro-guide {
+        padding: 18px 6px;
+        padding-bottom: 10px;
+        .bd-pro-guide-title {
+          padding-left: 32px;
+          font-size:18px;
+          color:#aabbcc;
+          font-weight: 600;
+          height: 24px;
+          line-height: 24px;
+        }
+        .bd-pro-guide-icon-left {
+          float: left;
+          background: url('../../imgs/baodian/sprite/icon-yinhao.png') no-repeat center;
+          height: 15px;
+          width: 19px;
+          margin-top: 10px;
+        }
+        .bd-pro-guide-details {
+          width: 610px;
+          margin: 7px;
+          font-size:14px;
+          color:#999999;
+          line-height:26px;
+          margin-left: 26px;
+        }
+        .bd-pro-guide-icon-right {
+          background: url('../../imgs/baodian/sprite/icon-yinhao-down.png') no-repeat center;
+          width: 19px;
+          height: 15px;
+          margin-top: -24px;
+          margin-left: 650px;
+        }
+      }
+      .bd-pro-prepare {
+        font-size:14px;
+        color:#999999;
+        margin-left: 31px;
+        margin-bottom: 30px;
+        span {
+          color: #666;
+          margin-right: 4px;
+          border-bottom: 1px dashed #666;
+        }
+      }
+      .btn-check-combo {
+        margin-left: 31px;
+        background:#ee3388;
+        border-radius:3px;
+        width:93px;
+        height:42px;
+        line-height: 42px;
+        font-size:18px;
+        &:hover {
+          background-color: #d37;
+        }
+      }
+    }
+  }
+}
+/*顶部产品信息END*/
+
+/*就这么玩*/
+.play-how-container {
+  background-color: #fff;
+  margin-bottom: 20px;
+  .title-box {
+    height: 60px;
+    border-bottom: 1px solid #e3e3e3;
+    p {
+      float: left;
+      line-height: 60px;
+      font-size:24px;
+      color:#333333;
+      padding-left: 20px;
+    }
+    .play-btns-box {
+      float: right;
+      margin: 15px;
+      width: 156px;
+      height: 28px;
+      border-radius: 14px;
+      border:1px solid #cedbe8;
+      .play-btn {
+        float: left;
+        width: 64px;
+        height: 28px;
+        border-radius: 14px;
+        color:#aabbcc;
+        padding-left: 14px;
+        cursor: pointer;
+        transition: color 0.5s;
+        &.active{
+          height: 30px;
+          margin-top: -1px;
+          margin-left: -1px;
+          background-color: $color-lv-pink;
+          color: #fff;
+          &.play-btn-details {
+            margin-left: 1px;
+            margin-right: -1px;
+          }
+          .icon-overview {
+            background: url('../../imgs/baodian/sprite/icon-overview-hover.png') no-repeat center;
+          }
+          .icon-details {
+            background: url('../../imgs/baodian/sprite/icon-tuwen-hover.png') no-repeat center;
+          }
+        }
+        i,span {
+          @include inlineblock;
+          vertical-align: middle;
+          margin-top: 4px;
+          margin-left: 2px;
+          height: 14px;
+          line-height: 14px;
+        }
+        .icon-overview {
+          background: url('../../imgs/baodian/sprite/icon-overview.png') no-repeat center;
+          height: 14px;
+          width: 18px;
+        }
+        .icon-details {
+          background: url('../../imgs/baodian/sprite/icon-tuwen.png') no-repeat center;
+          width: 17px;
+          height: 14px;
+        }
+      }
+    }
+  }
+  .play-main-overview {
+    //display: none;
+    .play-main-section-left {
+      float: left;
+    }
+    .play-main-section-day:last-child {
+      .play-main-section-day-right {
+        padding-bottom: 50px;
+      }
+    }
+    .play-main-section-day-left {
+      position: relative;
+      float: left;
+      min-height: 26px;
+      padding-top: 30px;
+      padding-left: 20px;
+      width: 65px;
+      p {
+        height: 26px;
+        line-height: 26px;
+        font-size:16px;
+        color:#666666;
+        font-weight: 600;
+      }
+      .icon-round {
+        position: absolute;
+        background-color: #fff;
+        top:38px;
+        right: -5px;
+        border:1px solid #e3e3e3;
+        width:8px;
+        height:8px;
+        border-radius:100%;
+      }
+    }
+    .play-main-section-day-right {
+      float: left;
+      border-left: 1px solid #e3e3e3;
+      min-height: 26px;
+      line-height: 26px;
+      padding-top: 30px;
+      padding-left: 20px;
+      font-size:16px;
+      color:#333333;
+      width: 518px;
+    }
+    .play-main-section-imgs {
+      float: right;
+      position: relative;
+      margin-top: 28px;
+      margin-right: 20px;
+      width: 364px;
+      height: 262px;
+      img {
+        width: 364px;
+        height: 262px;
+      }
+    }
+  }
+  .play-main-details {
+    display: none;
+    position: relative;
+    .play-main-details-left {
+      position: absolute;
+      //top:0;
+      left: 0;
+      padding-top: 20px;
+      padding-right: 22px;
+      padding-bottom: 20px;
+      background-color: #fff;
+      &.fix-top-days {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        margin-left: -600px;
+      }
+      &.fix-top-days-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .play-main-details-day {
+        margin-bottom: 7px;
+        margin-left: 24px;
+        position: relative;
+        &.current {
+          p {
+            opacity:1;
+            background: url('../../imgs/baodian/sprite/icon-days.png') no-repeat center;
+            width: 29px;
+            height: 34px;
+            color: #fff;
+            font-weight: 600;
+            border: 0;
+            text-align: left;
+            padding-left: 9px;
+            &:hover {
+              color: #fff;
+            }
+          }
+          .icon-round {
+            display: block;
+          }
+        }
+        p {
+          cursor: pointer;
+          opacity:0.5;
+          border:1px solid #aabbcc;
+          width:33px;
+          height:33px;
+          border-radius:100%;
+          font-size:14px;
+          color:#aabbcc;
+          text-align: center;
+          line-height: 33px;
+          &:hover {
+            border-color: $color-lv-orange;
+            color: $color-lv-orange;
+          }
+        }
+        .icon-round {
+          display: none;
+          position: absolute;
+          top: 12px;
+          right: -27px;
+          background:#ffffff;
+          border:1px solid #e3e3e3;
+          width:8px;
+          height:8px;
+          border-radius:100%;
+        }
+      }
+    }
+    .play-main-details-right {
+      border-left: 1px solid #e3e3e3;
+      float: left;
+      padding: 0 12px;
+      margin-left: 84px;
+      .play-main-details-day-wrapper {
+        padding-bottom: 13px;
+        padding-left: 10px;
+        border-bottom: 1px dotted #ddd;
+      }
+      .play-main-details-right-title {
+        p {
+          float: left;
+          height: 75px;
+          line-height: 75px;
+          margin-right: 15px;
+          font-size:20px;
+          color:#ff9900;
+          font-weight: 600;
+        }
+      }
+      .play-main-details-main {
+        float: left;
+      }
+      .play-main-details-main-section {
+        margin-bottom: 22px;
+        .play-main-details-main-section-title {
+          height: 28px;
+          line-height: 28px;
+          font-size:14px;
+          color:#666666;
+          font-weight: 600;
+        }
+        .play-main-details-main-section-desc {
+          font-size:14px;
+          color:#666666;
+          line-height:26px;
+          width: 680px;
+        }
+      }
+      .play-main-details-main-imgs {
+        position: relative;
+        float: right;
+        margin-right: 9px;
+        margin-top: 6px;
+        width: 364px;
+        height: 242px;
+        margin-left: 28px;
+        img {
+          width: 364px;
+          height: 242px;
+        }
+      }
+    }
+  }
+}
+/*就这么玩END*/
+
+/*图片弹窗*/
+.img-alert-container {
+  display: none;
+  position: fixed;
+  background:#ffffff;
+  box-shadow:0 0 8px 3px rgba(0,0,0,0.08);
+  width:675px;
+  height:522px;
+  padding: 25px;
+  top: 50%;
+  left: 50%;
+  margin-top: -(572px/2);
+  margin-left: -(725px/2);
+  z-index: 500;
+  .img-alert-close {
+    position: absolute;
+    top: 0;
+    right: -32px;
+    cursor: pointer;
+    @include opacity(0.64);
+    background:#000000;
+    width:32px;
+    height:32px;
+    span {
+      background: url('../../imgs/baodian/sprite/icon-close.png') no-repeat center;
+      height: 16px;
+      width: 18px;
+      display: block;
+      margin-top: 8px;
+      margin-left: 7px;
+    }
+    &:hover {
+      @include opacity(1);
+    }
+  }
+  .img-alert-main {
+
+  }
+  .img-alert-big {
+    position: relative;
+    width:675px;
+    height:450px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    .bd-pro-imgs-num {
+      position: absolute;
+      opacity:0.5;
+      background:#000000;
+      border-radius:21px;
+      width:60px;
+      height:22px;
+      line-height: 22px;
+      font-size:12px;
+      color:#ffffff;
+      left: 10px;
+      top:11px;
+      text-align: center;
+    }
+    .img-alert-big-list {
+      width: (675px*5);
+      height: 450px;
+      li {
+        float: left;
+        img {
+          display: block;
+          width: 675px;
+          height: 450px;
+        }
+      }
+    }
+  }
+  .img-alert-list-container {
+    .img-alert-list-left {
+      float: left;
+      opacity:0.5;
+      background:#000000;
+      width:23px;
+      height:66px;
+      cursor: pointer;
+      &:hover {
+        opacity:0.7;
+      }
+      span {
+        display: block;
+        background: url('../../imgs/baodian/sprite/icon-btn-left.png') no-repeat center;
+        height: 20px;
+        width: 11px;
+        margin-top: 22px;
+        margin-left: 5px;
+      }
+    }
+    .img-alert-list-right {
+      @extend .img-alert-list-left;
+      span {
+        background: url('../../imgs/baodian/sprite/icon-btn-right.png') no-repeat center;
+      }
+    }
+    .img-alert-small-list-wrapper {
+      float: left;
+      width: 619px;
+      margin: 0 5px;
+      overflow: hidden;
+      .img-alert-small-list {
+        li {
+          img {
+            width: 99px;
+            height: 66px;
+          }
+          float: left;
+          margin-right: 5px;
+          background-color: rgba(0,0,0,0.4);
+          position: relative;
+          cursor: pointer;
+          span {
+            position: absolute;
+            display: block;
+            width: 99px;
+            height: 66px;
+            top:0 ;
+            left: 0;
+            background-color: rgba(0,0,0,0.4);
+          }
+          &:hover {
+            span {
+              background-color: rgba(0,0,0,0);
+            }
+          }
+          &.current {
+            span {
+              background-color: rgba(0,0,0,0);
+              width: 95px;
+              height: 62px;
+              border: 2px solid #f90;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+/*图片弹窗END*/
+
+.ticket-search-title {
+  height: 56px;
+  line-height: 56px;
+  font-size:24px;
+  color:#333333;
+  padding-left: 23px;
+  border-bottom:1px solid #e3e3e3;
+  background-color: #fff;
+}

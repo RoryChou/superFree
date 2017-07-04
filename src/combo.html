@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/detail/destroute/hotel_flight_detail.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/public/common_box.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v6/flighthotel/fh-icon-ac.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/superFree/hotel/hotel.css">
+    <link rel="stylesheet" href="css/flight/flight.css">
     <link rel="stylesheet" href="css/combo/combo.css">
 </head>
 <body class="super-free super-free-combo">
@@ -85,7 +87,7 @@
                     <i></i>
                 </li>
                 <li>
-                    <a href="http://pic.lvmama.com/svn/pages/superFree/hotel.html" >酒店</a>
+                    <a href="http://pic.lvmama.com/svn/pages/superFree/hotel.html">酒店</a>
                     <i></i>
                 </li>
             </ul>
@@ -402,9 +404,9 @@
                     <div class="search_theme">排&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序</div>
                     <ul class="search_theme_list rank_box clearfix">
                         <li class="active">推荐<b>|</b></li>
-                        <li title="按人气从高到低排序">人气<i></i><b>|</b></li>
-                        <li title="按销量从高到低排序">销量<i></i><b>|</b></li>
-                        <li title="按价格从高到低排序">价格<i></i><b>|</b></li>
+                        <li title="按人气从低到高排序">人气<i></i><b>|</b></li>
+                        <li title="按销量从低到高排序">销量<i></i><b>|</b></li>
+                        <li title="按价格从高到低排序" class="tl-col-down">价格<i></i><b>|</b></li>
                         <li title="自定义">
                             <p class="diy">自定义</p>
                             <div class="search-filter-price-new">
@@ -422,7 +424,8 @@
                                         本次价格区间<span class="price-low">200</span>至<span class="price-high">3888</span>
                                     </p>
                                     <p class="control">
-                                        <span class="btn btn-sm JS_btn_cls btn-disabled">清除</span><span class="btn JS_btn_ok btn-sm btn-orange btn-disabled" id="priceBtn">确定</span>
+                                        <span class="btn btn-sm JS_btn_cls btn-disabled">清除</span><span
+                                            class="btn JS_btn_ok btn-sm btn-orange btn-disabled" id="priceBtn">确定</span>
                                     </p>
                                 </div>
                             </div>
@@ -442,8 +445,8 @@
     <!--商品列表-->
     <div class="main-box">
         <div class="loading_box">
-                <i class="icon_loading"></i>
-                <span>请稍候，正在为您查询</span>
+            <i class="icon_loading"></i>
+            <span>请稍候，正在为您查询</span>
         </div>
         <!-- 列表开始 -->
         <div class="main-list">
@@ -521,7 +524,8 @@
                                     <em class="list-flight-time-start">16:30</em>
                                     -
                                     <em class="list-flight-time-arrive">19:50</em>
-                                    <i class="add-one-day js-tips" tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</i>
+                                    <i class="add-one-day js-tips"
+                                       tip-content="航班到达日期为起飞日期<span class='tip-add-one'>+1天</span>。">+1</i>
                                 </span>
                                     <span class="list-flight-company">吉祥航空</span>
                                     <span class="list-flight-num">HO1221</span>
@@ -532,7 +536,8 @@
                                     <em class="list-airport-to">厦门国际机场</em>
                                 </span>
                                     <span class="list-flight-class list-info-3">经济舱</span>
-                                    <span class="list-info-4 list-info-refuse tui-gai-qian" tip-content="不可退改!!!">退改签</span>
+                                    <span class="list-info-4 list-info-refuse tui-gai-qian"
+                                          tip-content="不可退改!!!">退改签</span>
                                     <span class="list-info-hotel-num list-info-5">
                                     <i>2</i>
                                     份
@@ -555,7 +560,8 @@
                                     <em class="list-airport-to">普通机场T2</em>
                                 </span>
                                     <span class="list-flight-class list-info-3">经济舱</span>
-                                    <span class="list-info-4 list-info-refuse tui-gai-qian" tip-content="不可退改!!!">退改签</span>
+                                    <span class="list-info-4 list-info-refuse tui-gai-qian"
+                                          tip-content="不可退改!!!">退改签</span>
                                     <span class="list-info-hotel-num list-info-5">
                                     <i>2</i>
                                     份
@@ -581,7 +587,8 @@
                                 <div class="list-ticket-li clearfix">
                                     <p class="list-ticket-title">厦门海底世界－成人门票</p>
                                     <div class="list-ticket-calendar">
-                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly" readonly="readonly" value="2017-05-06">
+                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly"
+                                               readonly="readonly" value="2017-05-06">
                                         <span class="list-ticket-calendar-weekday">周二</span>
                                         <span class="list-ticket-calendar-icon"></span>
                                     </div>
@@ -598,7 +605,8 @@
                                 <div class="list-ticket-li clearfix">
                                     <p class="list-ticket-title">厦门海底世界－成人门票</p>
                                     <div class="list-ticket-calendar">
-                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly" readonly="readonly" value="2017-05-06">
+                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly"
+                                               readonly="readonly" value="2017-05-06">
                                         <span class="list-ticket-calendar-weekday">周二</span>
                                         <span class="list-ticket-calendar-icon"></span>
                                     </div>
@@ -615,7 +623,8 @@
                                 <div class="list-ticket-li clearfix">
                                     <p class="list-ticket-title">厦门海底世界－成人门票</p>
                                     <div class="list-ticket-calendar">
-                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly" readonly="readonly" value="2017-05-06">
+                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly"
+                                               readonly="readonly" value="2017-05-06">
                                         <span class="list-ticket-calendar-weekday">周二</span>
                                         <span class="list-ticket-calendar-icon"></span>
                                     </div>
@@ -632,7 +641,8 @@
                                 <div class="list-ticket-li clearfix" style="display:none;">
                                     <p class="list-ticket-title">厦门海底世界－成人门票厦门海底世界－成人门票厦门海底世界－成人门票厦门海底世界－成人门票</p>
                                     <div class="list-ticket-calendar">
-                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly" value="2017-05-06">
+                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly"
+                                               value="2017-05-06">
                                         <span class="list-ticket-calendar-weekday">周二</span>
                                         <span class="list-ticket-calendar-icon"></span>
                                     </div>
@@ -649,7 +659,8 @@
                                 <div class="list-ticket-li clearfix" style="display:none;">
                                     <p class="list-ticket-title">厦门海底世界－成人门票厦门海底世界－成人门票厦门海底世界－成人门票厦门海底世界－成人门票</p>
                                     <div class="list-ticket-calendar">
-                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly" value="2017-05-06">
+                                        <input type="text" class="list-ticket-calendar-input" readonly="readonly"
+                                               value="2017-05-06">
                                         <span class="list-ticket-calendar-weekday">周二</span>
                                         <span class="list-ticket-calendar-icon"></span>
                                     </div>
@@ -748,7 +759,8 @@
                 <dd>
                     <p class="clearfix"><i></i><span>取消座位时间计算手续费</span></p>
                     <p class="clearfix"><i></i><span>按照当前舱位票面价收取退票费</span></p>
-                    <p class="clearfix"><i></i><span>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</span></p>
+                    <p class="clearfix">
+                        <i></i><span>起飞前2.0小时（含）以外收取当前舱位票面价的20.0%退票费，起飞前2.0小时以内及起飞后收取当前舱位票面价的30.0%退票费</span></p>
                 </dd>
             </dl>
             <dl class="clearfix">
@@ -782,7 +794,8 @@
             </dl>
             <dl class="clearfix">
                 <dt>退改详情</dt>
-                <dd><p>退票：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p><p>改签：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p></dd>
+                <dd><p>退票：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p>
+                    <p>改签：以上为低折扣、高限制舱位、仅限网上订票，网上支付，不得签转、不得变更、不得退票，若退票仅限退还已经代为实际征收的机场建设费和燃油附加费。</p></dd>
             </dl>
             <dl class="clearfix">
                 <dt>备注</dt>
@@ -819,7 +832,7 @@
     </div>
     <div class="map_container">
         <div class="title">酒店地图</div>
-        <div id="baidu_map_big" class="map"><img src="http://placehold.it/940x480/ffddff" /></div>
+        <div id="baidu_map_big" class="map"><img src="http://placehold.it/940x480/ffddff"/></div>
         <i class="hlIcon hlIcon-mapClose js_mapClose"></i>
     </div>
     <!--弹出地图END-->
@@ -863,7 +876,8 @@
                 <div class="cgDetail_info">
                     <dl class="cgDetail_info_list">
                         <dt>酒店地址：</dt>
-                        <dd><p class="info_address">厦门鼓浪屿浦东新区川沙迪高扬路128号</p><span class="info_map"><i class="detail_icon detail_icon_map1"></i>地图</span></dd>
+                        <dd><p class="info_address">厦门鼓浪屿浦东新区川沙迪高扬路128号</p><span class="info_map"><i
+                                class="detail_icon detail_icon_map1"></i>地图</span></dd>
                     </dl>
                     <dl class="cgDetail_info_list">
                         <dt>设施服务：</dt>
@@ -895,11 +909,13 @@
                     </dl>
                     <dl class="cgDetail_info_list">
                         <dt>酒店简介：</dt>
-                        <dd>厦门中山路海景和颐酒店位于厦门海滨景观带，与厦门着名景点鼓浪屿隔海相望。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，【温馨提示】凡入住人员必须携带有效证件，未成年人员必须携带户口本、证明等相关证明方可入住。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，丰富的餐点温馨提示凡入住人员必须携带有效证件。</dd>
+                        <dd>
+                            厦门中山路海景和颐酒店位于厦门海滨景观带，与厦门着名景点鼓浪屿隔海相望。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，【温馨提示】凡入住人员必须携带有效证件，未成年人员必须携带户口本、证明等相关证明方可入住。酒店地处厦门繁华的购物区中山路商圈交通便利，徒步可至公交枢纽站及轮渡码头，拥有各类客房171间，是世界知名设计公司美国Gensler与如家酒店集团合作设计的高端商务酒店。酒店配备餐厅、会议室。和颐舒适的睡床，丰富的餐点，丰富的餐点温馨提示凡入住人员必须携带有效证件。
+                        </dd>
                     </dl>
                     <dl class="cgDetail_info_list">
                         <dt>地理位置：</dt>
-                        <dd>厦门高崎机场T1航站楼    距离酒店15km  <br>厦门南火车站    距离酒店15km  </dd>
+                        <dd>厦门高崎机场T1航站楼 距离酒店15km <br>厦门南火车站 距离酒店15km</dd>
                     </dl>
                 </div>
 
@@ -1022,12 +1038,15 @@
                     <!-- comment-li 开始 -->
                     <div class="comment-li">
                         <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
 
                             <p class="ufeed-score">
                                 <span class="tags tags-red">精华</span>
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
+                                <span class="ufeed-level"><i data-level="5" data-mark=""
+                                                             style="width: 100%;"></i></span>
                                 <span class="ufeed-item"> <em>景点&nbsp;</em>
                                     <i>5 (推荐)</i>
                                 </span>
@@ -1055,8 +1074,10 @@
 
                         <!-- 用户信息 -->
                         <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
+                            <a href="javascript:;" class="JS_reply fr com-dcom"><i
+                                    class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
+                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy"
+                               id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
                             <p>
                                 <a href="javascript:;" title="gu219146">gu219146</a>
                                 对 “
@@ -1075,7 +1096,8 @@
                             <i class="iconcom iconcom-boxdir"></i>
                             <div class="com-answer-form">
                                 <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
+                                    <a data-cid="1329570" data-ctype="" data-reply="0"
+                                       class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
                                     <input class="com-answerinput" type="text">
                                 </form>
                             </div>
@@ -1087,12 +1109,15 @@
                     <!-- comment-li 开始 -->
                     <div class="comment-li">
                         <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
 
                             <p class="ufeed-score">
 
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
+                                <span class="ufeed-level"><i data-level="5" data-mark=""
+                                                             style="width: 100%;"></i></span>
                                 <span class="ufeed-item"> <em>景点&nbsp;</em>
                                     <i>5 (推荐)</i>
                                 </span>
@@ -1120,8 +1145,10 @@
 
                         <!-- 用户信息 -->
                         <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
+                            <a href="javascript:;" class="JS_reply fr com-dcom"><i
+                                    class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
+                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy"
+                               id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
                             <p>
                                 <a href="javascript:;" title="gu219146">gu219146</a>
                                 对 “
@@ -1140,7 +1167,8 @@
                             <i class="iconcom iconcom-boxdir"></i>
                             <div class="com-answer-form">
                                 <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
+                                    <a data-cid="1329570" data-ctype="" data-reply="0"
+                                       class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
                                     <input class="com-answerinput" type="text">
                                 </form>
                             </div>
@@ -1152,12 +1180,15 @@
                     <!-- comment-li 开始 -->
                     <div class="comment-li">
                         <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
 
                             <p class="ufeed-score">
 
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
+                                <span class="ufeed-level"><i data-level="5" data-mark=""
+                                                             style="width: 100%;"></i></span>
                                 <span class="ufeed-item"> <em>景点&nbsp;</em>
                                     <i>5 (推荐)</i>
                                 </span>
@@ -1185,8 +1216,10 @@
 
                         <!-- 用户信息 -->
                         <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
+                            <a href="javascript:;" class="JS_reply fr com-dcom"><i
+                                    class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
+                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy"
+                               id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
                             <p>
                                 <a href="javascript:;" title="gu219146">gu219146</a>
                                 对 “
@@ -1205,7 +1238,8 @@
                             <i class="iconcom iconcom-boxdir"></i>
                             <div class="com-answer-form">
                                 <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
+                                    <a data-cid="1329570" data-ctype="" data-reply="0"
+                                       class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
                                     <input class="com-answerinput" type="text">
                                 </form>
                             </div>
@@ -1217,12 +1251,15 @@
                     <!-- comment-li 开始 -->
                     <div class="comment-li">
                         <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
 
                             <p class="ufeed-score">
 
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
+                                <span class="ufeed-level"><i data-level="5" data-mark=""
+                                                             style="width: 100%;"></i></span>
                                 <span class="ufeed-item"> <em>景点&nbsp;</em>
                                     <i>5 (推荐)</i>
                                 </span>
@@ -1250,8 +1287,10 @@
 
                         <!-- 用户信息 -->
                         <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
+                            <a href="javascript:;" class="JS_reply fr com-dcom"><i
+                                    class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
+                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy"
+                               id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
                             <p>
                                 <a href="javascript:;" title="gu219146">gu219146</a>
                                 对 “
@@ -1270,7 +1309,8 @@
                             <i class="iconcom iconcom-boxdir"></i>
                             <div class="com-answer-form">
                                 <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
+                                    <a data-cid="1329570" data-ctype="" data-reply="0"
+                                       class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
                                     <input class="com-answerinput" type="text">
                                 </form>
                             </div>
@@ -1282,12 +1322,15 @@
                     <!-- comment-li 开始 -->
                     <div class="comment-li">
                         <div class="ufeed-info">
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
-                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金" tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评送积分"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得积分。"><em>送</em><i>100分</i></span>
+                            <span class="fr tagsback tagsback-orange" tip-title="写体验点评返现金"
+                                  tip-content="预订此产品，游玩后发表体验点评，内容通过审核，即可获得<span>148</span>元点评奖金返现。"><em>点评</em><i>148元</i></span>
 
                             <p class="ufeed-score">
 
-                                <span class="ufeed-level"><i data-level="5" data-mark="" style="width: 100%;"></i></span>
+                                <span class="ufeed-level"><i data-level="5" data-mark=""
+                                                             style="width: 100%;"></i></span>
                                 <span class="ufeed-item"> <em>景点&nbsp;</em>
                                     <i>5 (推荐)</i>
                                 </span>
@@ -1315,8 +1358,10 @@
 
                         <!-- 用户信息 -->
                         <div class="com-userinfo">
-                            <a href="javascript:;" class="JS_reply fr com-dcom"><i class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
-                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy" id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
+                            <a href="javascript:;" class="JS_reply fr com-dcom"><i
+                                    class="iconcom iconcom-dcom"></i>评论<em>0</em></a>
+                            <a href="javascript:Comment.addUsefulCount('1','1329570','');" class="fr com-enjoy"
+                               id="userfulCount__1329570"><i class="iconcom iconcom-enjoy"></i>喜欢<em>1</em></a>
                             <p>
                                 <a href="javascript:;" title="gu219146">gu219146</a>
                                 对 “
@@ -1335,7 +1380,8 @@
                             <i class="iconcom iconcom-boxdir"></i>
                             <div class="com-answer-form">
                                 <form action="">
-                                    <a data-cid="1329570" data-ctype="" data-reply="0" class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
+                                    <a data-cid="1329570" data-ctype="" data-reply="0"
+                                       class="com-answer-submit radio5 fr" href="javascript:;">回复</a>
                                     <input class="com-answerinput" type="text">
                                 </form>
                             </div>
@@ -1353,7 +1399,17 @@
                 <!--无点评END-->
 
                 <!-- 分页 -->
-                <div class="paging orangestyle">    <div class="pagebox"><span class="prevpage"><i class="larr"></i></span> <span class="pagesel" onclick="javascript:loadPaginationOfTrips(1);">1</span><a href="javascript:loadPaginationOfTrips(2);" hidefocus="false">2</a><a href="javascript:loadPaginationOfTrips(3);" hidefocus="false">3</a><a href="javascript:loadPaginationOfTrips(4);" hidefocus="false">4</a><a href="javascript:loadPaginationOfTrips(5);" hidefocus="false">5</a><span class="pagemore">...</span> <a href="javascript:loadPaginationOfTrips(42);" hidefocus="false">42</a><a href="javascript:loadPaginationOfTrips(2);" class="nextpage" hidefocus="false"> <i class="rarr"></i></a>  </div></div>
+                <div class="paging orangestyle">
+                    <div class="pagebox"><span class="prevpage"><i class="larr"></i></span> <span class="pagesel"
+                                                                                                  onclick="javascript:loadPaginationOfTrips(1);">1</span><a
+                            href="javascript:loadPaginationOfTrips(2);" hidefocus="false">2</a><a
+                            href="javascript:loadPaginationOfTrips(3);" hidefocus="false">3</a><a
+                            href="javascript:loadPaginationOfTrips(4);" hidefocus="false">4</a><a
+                            href="javascript:loadPaginationOfTrips(5);" hidefocus="false">5</a><span class="pagemore">...</span>
+                        <a href="javascript:loadPaginationOfTrips(42);" hidefocus="false">42</a><a
+                                href="javascript:loadPaginationOfTrips(2);" class="nextpage" hidefocus="false"> <i
+                                class="rarr"></i></a></div>
+                </div>
 
             </div><!-- 用户点评 结束-->
         </div>
@@ -1408,7 +1464,7 @@
                                     <span class="btn_choose choose_ok">
                                     已选
                                     <i class="detail_icon detail_icon_gou"></i>
-                                    <!--<a href="javascript:;">取消</a>-->
+                                        <!--<a href="javascript:;">取消</a>-->
                                     </span>
                                 </td>
                             </tr>
@@ -1422,7 +1478,8 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price">+¥120</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                             <tr style="display:none;">
                                 <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
@@ -1434,7 +1491,8 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price c_green">-¥120</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                             <tr style="display:none;">
                                 <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
@@ -1446,11 +1504,13 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price">--</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                         </table>
 
-                        <span class="btn_list_more" data-type="房型">更多房型<i class="detail_icon detail_icon_jt1"></i></span>
+                        <span class="btn_list_more" data-type="房型">更多房型<i
+                                class="detail_icon detail_icon_jt1"></i></span>
 
                     </div>
                 </div>
@@ -1491,7 +1551,8 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price">+¥120</span></td>
-                                <td><span class="btn_choose choose_ok">已选<i class="detail_icon detail_icon_gou"></i><!--<a href="javascript:;">取消</a>--></span></td>
+                                <td><span class="btn_choose choose_ok">已选<i class="detail_icon detail_icon_gou"></i>
+                                    <!--<a href="javascript:;">取消</a>--></span></td>
                             </tr>
                             <tr style="display:none;">
                                 <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
@@ -1503,7 +1564,8 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price">+¥120</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                             <tr style="display:none;">
                                 <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
@@ -1515,7 +1577,8 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price c_green">-¥120</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                             <tr style="display:none;">
                                 <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
@@ -1527,17 +1590,124 @@
                                     <span class="room_num">1</span>间
                                 </td>
                                 <td><span class="room_price">--</span></td>
-                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
                             </tr>
                         </table>
 
-                        <span class="btn_list_more" data-type="房型">更多房型<i class="detail_icon detail_icon_jt1"></i></span>
+                        <span class="btn_list_more" data-type="房型">更多房型<i
+                                class="detail_icon detail_icon_jt1"></i></span>
 
                     </div>
                 </div>
             </div>
 
+            <div class="booking_hotel_list">
+                <div class="booking_info_all clearfix">
+                    <div class="booking_info_img">
+                        <img src="http://placehold.it/200x133/00aacc" width="200" height="133" alt="">
+                    </div>
+                    <div class="booking_info_r">
+                        <div class="booking_info_t">
+                            <h4 class="js_hotel_name">鼓浪屿清香阁假日酒店</h4>
+                            <div class="booking_list_map">
+                                <p>厦门鼓浪屿浦东新区川沙迪高扬路128号</p>
+                                <span class="js_hotel_map"><i class="detail_icon detail_icon_map1"></i>地图</span>
+                            </div>
+                        </div>
 
+                        <table class="booking_list_table">
+                            <tr>
+                                <th>房型</th>
+                                <th width="80">床型</th>
+                                <th width="40">早餐</th>
+                                <th width="40">宽带</th>
+                                <th width="60">退改规则</th>
+                                <th width="80">数量</th>
+                                <th width="50">差价</th>
+                                <th width="62">选择</th>
+                            </tr>
+                            <tr>
+                                <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
+                                <td>大床房大床房</td>
+                                <td>双早</td>
+                                <td>免费</td>
+                                <td>退改规则</td>
+                                <td>
+                                    <span class="room_num">1</span>间
+                                </td>
+                                <td><span class="room_price">+¥120</span></td>
+                                <td><span class="btn_choose choose_ok">已选<i class="detail_icon detail_icon_gou"></i>
+                                    <!--<a href="javascript:;">取消</a>--></span></td>
+                            </tr>
+                            <tr style="display:none;">
+                                <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
+                                <td>大床房大床房</td>
+                                <td>双早</td>
+                                <td>免费</td>
+                                <td>退改规则</td>
+                                <td>
+                                    <span class="room_num">1</span>间
+                                </td>
+                                <td><span class="room_price">+¥120</span></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
+                            </tr>
+                            <tr style="display:none;">
+                                <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
+                                <td>大床房大床房</td>
+                                <td>双早</td>
+                                <td>免费</td>
+                                <td>退改规则</td>
+                                <td>
+                                    <span class="room_num">1</span>间
+                                </td>
+                                <td><span class="room_price c_green">-¥120</span></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
+                            </tr>
+                            <tr style="display:none;">
+                                <td><a class="table_list_name" href="javascript:;">高级海景大床房大床房大床房</a></td>
+                                <td>大床房大床房</td>
+                                <td>双早</td>
+                                <td>免费</td>
+                                <td>退改规则</td>
+                                <td>
+                                    <span class="room_num">1</span>间
+                                </td>
+                                <td><span class="room_price">--</span></td>
+                                <td><a href="#" class="btn_choose">选择<i class="detail_icon detail_icon_gou"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <span class="btn_list_more" data-type="房型">更多房型<i
+                                class="detail_icon detail_icon_jt1"></i></span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="paging orangestyle">
+                <span class="gopage">到第 <input type="text" class="input-text"> 页
+                    <button type="button" class="btn btn-gray btn-small btn-change-page">确定</button>
+                </span>
+                <div class="pagebox">
+                    <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
+                    <a class="prevpage" href="#">
+                        <i class="larr"></i>上一页
+                    </a>
+                    <a href="#">1</a>
+                    <span class="pagemore">...</span>
+                    <a href="#">16</a>
+                    <a href="#">17</a>
+                    <span class="pagesel">18</span>
+                    <a href="#">19</a>
+                    <a class="nextpage" href="#">
+                        <i class="rarr"></i>下一页
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- //cgHotel-scroll 酒店列表盒子 结束 -->
 
@@ -1564,11 +1734,15 @@
 
     <!-- 更换航班弹窗 开始 -->
     <div class="changeBox cgFlightAll">
+
         <div class="changeHead">
             <span class="detailIcon detailIcon-close fr"></span>
             <strong>更换航班</strong>
         </div>
-
+        <div class="loading_box" style="display: none;">
+            <img src="http://s1.lvjs.com.cn/img/new_v/ui_scrollLoading/loadingGIF46px.gif" alt="">
+            <span>正在玩命加载中...</span>
+        </div>
         <div class="cgFlight-info">
             <i class="cgFlight-tip fr"><span class="detailIcon detailIcon-i"></span>机票价格中已含民航发展基金，燃油费及税费等</i>
             <ul class="cgFlightAll_tab">
@@ -1631,11 +1805,13 @@
                     <li class="tb-info">航班信息</li>
 
                     <!-- 默认向上，向下加 tb-col-down 选中加 tb-current-->
-                    <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span class="detailIcon detailIcon-upDown"></span></a></li>
+                    <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span
+                            class="detailIcon detailIcon-upDown"></span></a></li>
                     <li class="tb-time">当地降落时间</li>
                     <li class="tb-duration">飞行时长</li>
                     <li class="tb-splace">舱位</li>
-                    <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span class="detailIcon detailIcon-upDown"></span></a></li>
+                    <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span
+                            class="detailIcon detailIcon-upDown"></span></a></li>
                 </ul>
 
 
@@ -1655,16 +1831,30 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_go">去</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_go">去</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
                             </div>
                         </div>
@@ -1672,22 +1862,37 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_back">返</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_back">返</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
 
                             </div>
                         </div>
                         <div class="tl-col tl-pri">+ ¥1120</div>
-                        <a href="javascript:;" flightno="MU5111" class="groupBtn select-btn">已选<span class="detailIcon detailIcon-selected"></span></a>
+                        <a href="javascript:;" flightno="MU5111" class="groupBtn select-btn">已选<span
+                                class="detailIcon detailIcon-selected"></span></a>
                     </div>
                     <!-- 优惠推荐列表 结束 -->
 
@@ -1697,16 +1902,30 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_go">去</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_go">去</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
                             </div>
                         </div>
@@ -1714,16 +1933,30 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_back">返</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_back">返</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
 
                             </div>
@@ -1737,16 +1970,30 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_go">去</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_go">去</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
                             </div>
                         </div>
@@ -1754,16 +2001,30 @@
                         <div class="tl-detail">
                             <div class="detail-mast clearfix">
                                 <div class="tl-col tl-info">
-                                    <div class="tl-top"><span class="flight_back">返</span><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
+                                    <div class="tl-top"><span class="flight_back">返</span><i
+                                            class="fh-icon-ac fh-icon-ac-MU"></i>东方航空
+                                    </div>
 
                                     <!-- TODO 机型信息填在对应的data属性中 -->
-                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333" data-name="空客 A330-300" data-type="大" data-min="228" data-max="420">333</span></div>
+                                    <div class="tl-bottom"><span>MU5127</span><span class="plane-type" data-plan="333"
+                                                                                    data-name="空客 A330-300"
+                                                                                    data-type="大" data-min="228"
+                                                                                    data-max="420">333</span></div>
                                 </div>
 
-                                <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">14:00</div>
+                                    <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                </div>
                                 <div class="tl-col tl-stop"><i></i></div>
-                                <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                <div class="tl-col tl-time">
+                                    <div class="tl-top">16:20</div>
+                                    <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                </div>
+                                <div class="tl-col tl-duration">
+                                    <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                    <div class="tl-bottom">含餐食</div>
+                                </div>
                                 <div class="tl-col tl-space">经济舱</div>
 
                             </div>
@@ -1773,9 +2034,6 @@
                     </div><!-- 优惠推荐列表 结束 -->
                 </div>
                 <!-- 航班list 结束 -->
-
-
-
 
 
             </div>
@@ -1799,7 +2057,8 @@
                         <dd style="display: none"><span class="detailIcon detailIcon-check"></span>海南航空</dd>
                         <dd style="display: none"><span class="detailIcon detailIcon-check"></span>中国航空</dd>
                         <dd style="display: none"><span class="detailIcon detailIcon-check"></span>南方航空</dd>
-                        <dd class="cgFlight-showAll JS_menuMore">展开全部<span class="detailIcon detailIcon-arrow"></span></dd>
+                        <dd class="cgFlight-showAll JS_menuMore">展开全部<span class="detailIcon detailIcon-arrow"></span>
+                        </dd>
                     </dl>
 
                     <dl>
@@ -1859,7 +2118,8 @@
 
 
                 <ul class="cgFlight-goback-tb">
-                    <li class="active">选择去程<span>上海 — 厦门 （2016-12-20 周三）</span><i class="detail_icon detail_icon_jt5"></i></li>
+                    <li class="active">选择去程<span>上海 — 厦门 （2016-12-20 周三）</span><i
+                            class="detail_icon detail_icon_jt5"></i></li>
                     <li>选择返程<span>厦门 — 上海 （2016-12-20 周三）</span><i class="detail_icon detail_icon_jt5"></i></li>
                 </ul>
 
@@ -1869,11 +2129,13 @@
                         <li class="tb-info">航班信息</li>
 
                         <!-- 默认向上，向下加 tb-col-down 选中加 tb-current-->
-                        <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span class="detailIcon detailIcon-upDown"></span></a></li>
+                        <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span
+                                class="detailIcon detailIcon-upDown"></span></a></li>
                         <li class="tb-time">当地降落时间</li>
                         <li class="tb-duration">飞行时长</li>
                         <li class="tb-splace">舱位</li>
-                        <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span class="detailIcon detailIcon-upDown"></span></a></li>
+                        <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span
+                                class="detailIcon detailIcon-upDown"></span></a></li>
                     </ul>
 
                     <!-- 航班list 开始 -->
@@ -1885,20 +2147,35 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
                                     <div class="tl-col tl-time">
                                         <div class="tl-top">20:00</div>
                                         <div class="tl-bottom"><em>上海东方明珠机场</em><span>T2</span></div>
                                     </div>
-                                    <div class="tl-col tl-stop"><span class="JS_tlStopTip tlStopTip" tip-content="经停机场：首都机场<br>经停时间：2h20m">经停</span><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">22:20<em class="add-one-day js_tip" tip-content="<span class='nova-icon-xs nova-icon-info'></span>到达日期为起飞日的后一天，请留意您酒店的入住日期！">+1</em></div><div class="tl-bottom"><em>浦东国际机场浦东国际机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-stop"><span class="JS_tlStopTip tlStopTip"
+                                                                      tip-content="经停机场：首都机场<br>经停时间：2h20m">经停</span><i></i>
+                                    </div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">22:20<em class="add-one-day js_tip"
+                                                                     tip-content="<span class='nova-icon-xs nova-icon-info'></span>到达日期为起飞日的后一天，请留意您酒店的入住日期！">+1</em>
+                                        </div>
+                                        <div class="tl-bottom"><em>浦东国际机场浦东国际机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
-                                    <a href="javascript:;" flightno="MU5111" class="select-btn">已选<span class="detailIcon detailIcon-selected"></span></a>
+                                    <a href="javascript:;" flightno="MU5111" class="select-btn">已选<span
+                                            class="detailIcon detailIcon-selected"></span></a>
                                 </div>
 
                                 <!-- 更多舱位 -->
@@ -1916,7 +2193,8 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为去程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
@@ -1927,13 +2205,26 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-FM"></i>上海航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
-                                    <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">14:00</div>
+                                        <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                    </div>
                                     <div class="tl-col tl-stop"><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">16:20</div>
+                                        <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
@@ -1954,7 +2245,8 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为去程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
@@ -1965,13 +2257,26 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-FM"></i>上海航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
-                                    <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">14:00</div>
+                                        <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                    </div>
                                     <div class="tl-col tl-stop"><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">16:20</div>
+                                        <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
@@ -1992,7 +2297,8 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为去程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
@@ -2001,18 +2307,19 @@
                 </div>
 
 
-
                 <!-- 选择去程 -->
                 <div class="cgFlight-goback-list">
                     <ul class="cgFlight-tb clearfix">
                         <li class="tb-info">航班信息</li>
 
                         <!-- 默认向上，向下加 tb-col-down 选中加 tb-current-->
-                        <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span class="detailIcon detailIcon-upDown"></span></a></li>
+                        <li class="tb-time tb-timeStop"><a href="javascript:;">当地起飞时间<span
+                                class="detailIcon detailIcon-upDown"></span></a></li>
                         <li class="tb-time">当地降落时间</li>
                         <li class="tb-duration">飞行时长</li>
                         <li class="tb-splace">舱位</li>
-                        <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span class="detailIcon detailIcon-upDown"></span></a></li>
+                        <li class="tb-pri tb-col-down tb-current"><a href="javascript:;">差价<span
+                                class="detailIcon detailIcon-upDown"></span></a></li>
                     </ul>
 
                     <!-- 航班无结果 开始 -->
@@ -2032,20 +2339,35 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-MU"></i>东方航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
                                     <div class="tl-col tl-time">
                                         <div class="tl-top">17:00</div>
                                         <div class="tl-bottom"><em>上海东方明珠机场</em><span>T2</span></div>
                                     </div>
-                                    <div class="tl-col tl-stop"><span class="JS_tlStopTip tlStopTip" tip-content="经停机场：首都机场<br>经停时间：2h20m">经停</span><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">19:10<em class="add-one-day js_tip" tip-content="<span class='nova-icon-xs nova-icon-info'></span>到达日期为起飞日的后一天，请留意您酒店的入住日期！">+1</em></div><div class="tl-bottom"><em>浦东国际机场浦东国际机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-stop"><span class="JS_tlStopTip tlStopTip"
+                                                                      tip-content="经停机场：首都机场<br>经停时间：2h20m">经停</span><i></i>
+                                    </div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">19:10<em class="add-one-day js_tip"
+                                                                     tip-content="<span class='nova-icon-xs nova-icon-info'></span>到达日期为起飞日的后一天，请留意您酒店的入住日期！">+1</em>
+                                        </div>
+                                        <div class="tl-bottom"><em>浦东国际机场浦东国际机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
-                                    <a href="javascript:;" flightno="MU5111" class="select-btn">已选<span class="detailIcon detailIcon-selected"></span></a>
+                                    <a href="javascript:;" flightno="MU5111" class="select-btn">已选<span
+                                            class="detailIcon detailIcon-selected"></span></a>
                                 </div>
 
                                 <!-- 更多舱位 -->
@@ -2063,7 +2385,8 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为返程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
@@ -2074,13 +2397,26 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-FM"></i>上海航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
-                                    <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">14:00</div>
+                                        <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                    </div>
                                     <div class="tl-col tl-stop"><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">16:20</div>
+                                        <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
@@ -2101,7 +2437,8 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为返程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
@@ -2112,13 +2449,26 @@
                                 <div class="detail-mast clearfix">
                                     <div class="tl-col tl-info">
                                         <div class="tl-top"><i class="fh-icon-ac fh-icon-ac-FM"></i>上海航空</div>
-                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type" data-plan="73E" data-name="波音 737-900ER" data-type="中" data-min="92" data-max="189">73E</span></div>
+                                        <div class="tl-bottom"><span>FM9103</span><span class="plane-type"
+                                                                                        data-plan="73E"
+                                                                                        data-name="波音 737-900ER"
+                                                                                        data-type="中" data-min="92"
+                                                                                        data-max="189">73E</span></div>
                                     </div>
 
-                                    <div class="tl-col tl-time"><div class="tl-top">14:00</div><div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">14:00</div>
+                                        <div class="tl-bottom"><em>虹桥机场</em><span>T2</span></div>
+                                    </div>
                                     <div class="tl-col tl-stop"><i></i></div>
-                                    <div class="tl-col tl-time"><div class="tl-top">16:20</div><div class="tl-bottom"><em>首都机场</em><span>T2</span></div></div>
-                                    <div class="tl-col tl-duration"><div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div><div class="tl-bottom">含餐食</div></div>
+                                    <div class="tl-col tl-time">
+                                        <div class="tl-top">16:20</div>
+                                        <div class="tl-bottom"><em>首都机场</em><span>T2</span></div>
+                                    </div>
+                                    <div class="tl-col tl-duration">
+                                        <div class="tl-top"><span class="detailIcon detailIcon-clock"></span>2h20m</div>
+                                        <div class="tl-bottom">含餐食</div>
+                                    </div>
                                     <div class="tl-col tl-space">经济舱</div>
                                     <div class="tl-col tl-pri">+ ¥1120</div>
                                     <div class="tl-col tl-surplus">余6</div>
@@ -2139,16 +2489,14 @@
                                         <a href="javascript:;" flightno="MU5111" class="select-btn">选为返程</a>
                                     </li>
                                 </ul>
-                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span class="detailIcon detailIcon-arrow"></span></a>
+                                <a href="javascript:;" class="btn-moreSpace JS_moreSpace">更多舱位<span
+                                        class="detailIcon detailIcon-arrow"></span></a>
                             </div>
                         </div>
 
                     </div>
                     <!-- 航班list 结束 -->
                 </div>
-
-
-
 
 
             </div>
@@ -2172,9 +2520,9 @@
 <script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
 <script src="http://pic.lvmama.com/js/v6/modules/imgScroll1.js"></script>
-<script src="http://pic.lvmama.com/js/v6/modules/mapControl.js"></script>
 <script src="http://pic.lvmama.com/js/public/detail_sale.js"></script>
 <!-- endbuild -->
+<script src="js/mapControl.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=i2ccGvMLyR86WI0YcodIe7Lu"></script>
 <script src="js/search-details.js"></script>
 <script src="js/hotel-flight-alert.js"></script>
@@ -2312,13 +2660,17 @@
                 low: priceLimit.low,
                 high: priceLimit.high
             };
-            var priceLowInput = parseInt($priceLowInput.val(), 10);
-            var priceHighInput = parseInt($priceHighInput.val(), 10);
+            var priceLowInput = ($priceLowInput.val() - 0)//parseInt($priceLowInput.val(), 10);
+            var priceHighInput = ($priceHighInput.val() - 0)//parseInt($priceHighInput.val(), 10);
             if ($.isNumeric(priceLowInput)) {
                 price.low = priceLowInput;
+            } else {
+                price.low = -1;
             }
             if ($.isNumeric(priceHighInput)) {
                 price.high = priceHighInput;
+            } else {
+                price.high = priceLimit.high + 1;
             }
 
             //当最低价和最高价数值大小颠倒时，则搜索加载后的页面，
@@ -2360,68 +2712,68 @@
     //endregion
 
     //弹出酒店介绍
-    $(document).on('click','.js_hotel_name',function(e){
+    $(document).on('click', '.js_hotel_name', function (e) {
         $('.js_HotelDetail_tab li').eq(0).click();
         changecgHotelDetail.open();
     });
 
     //弹出酒店地图
-    $(document).on('click','.prd_map',function(e){
+    $(document).on('click', '.prd_map', function (e) {
         $('.js_HotelDetail_tab li').eq(1).click();
         changecgHotelDetail.open();
 
 
         //酒店详情页，图片切换
-        $('.js_cgDetail_scroll').each(function(){
+        $('.js_cgDetail_scroll').each(function () {
             $(this).imgScroll1({
                 migBox: '.img_scroll_box', //运动列表ul的父级；
                 tabBox: '.img_scroll_tab',   //切换列表ul的父级
-                btnL : '.img_scroll_l',    //左按钮
-                btnR : '.img_scroll_r',    //右按钮
-                tab_name : 'active',  //切换高亮状态的class
-                runStyle : 1         //大图切换方式，1是左右滚动，2是渐变切换
+                btnL: '.img_scroll_l',    //左按钮
+                btnR: '.img_scroll_r',    //右按钮
+                tab_name: 'active',  //切换高亮状态的class
+                runStyle: 1         //大图切换方式，1是左右滚动，2是渐变切换
             });
         })
     });
 
     //弹出酒店点评
-    $(document).on('click','.js_hotel_content',function(e){
+    $(document).on('click', '.js_hotel_content', function (e) {
         $('.js_HotelDetail_tab li').eq(2).click();
         changecgHotelDetail.open();
     });
 
     //弹出更换酒店
-    $(document).on('click','.btn-change-pro-hotel',function(e){
+    $(document).on('click', '.btn-change-pro-hotel', function (e) {
         changeHotel.open();
-        if(!$('.btn_list_more').hasClass('list_more_close')){
+        if (!$('.btn_list_more').hasClass('list_more_close')) {
             $('.btn_list_more').click();
         }
     });
 
     //hover酒店标题展示信息
-    $(document).on('mouseover','.table_list_name',function(e){
-        window.titleHover($(this),$('#hotel_title_float'));//hover的对象，显示的对象
+    $(document).on('mouseover', '.table_list_name', function (e) {
+        window.titleHover($(this), $('#hotel_title_float'));//hover的对象，显示的对象
     });
 
 
     //弹出更换航班
-    $(document).on('click','.btn-change-pro-flight',function(e){
+    $(document).on('click', '.btn-change-pro-flight', function (e) {
         changeFlightAll.open();
     });
     /*$(document).on('click','.detailIcon-close',function(e){
-        changeFlightAll.close();
-    });*/
+     changeFlightAll.close();
+     });*/
 
 
     //酒店介绍交通地图
     lvmap({
         type: 'baidu',//地图类型,支持google, baidu. 默认google
         marker: true,//是否显示地图标记. 默认不显示
-        coordinate: { lng: 116.407, lat: 39.9 },//地图中心点的经度(lng)和纬度(lat)
+        coordinate: {lng: 116.407, lat: 39.9},//地图中心点的经度(lng)和纬度(lat)
         zoom: 15,//缩放等级. 默认15,即街道级别. 数值越大,可视区域越小,地标显示越清晰
-        keyType:1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
+        keyType: 1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
         containerID: "cgDetail_map",//地图容器的ID
-        markerTips: { title: '地标', content: '地标内容介绍', maxWidth: 150, maxHeight: 100 }
+        markerTips: {title: '地标', content: '地标内容介绍', maxWidth: 150, maxHeight: 100}
         //地图标记信息: marker为true且content有值时显示. 默认不显示. 支持自定义提示框宽高.
     });
 </script>

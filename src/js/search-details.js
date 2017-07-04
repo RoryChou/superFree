@@ -103,7 +103,7 @@ $(function () {
             if(this.currentLi.hasClass('search-contents-combo')){
                 this.currentLiName = 'combo';
                 //修改btn内容
-                this.searchBtn.html('搜索自由行套餐')
+                //this.searchBtn.html('搜索自由行套餐')
                 //修改completeBox的尺寸
                 /*this.completeBox.css({
                     width: 285
@@ -162,12 +162,13 @@ $(function () {
             changeBox.find('.input-city-from').val(cityFrom);
             changeBox.find('.input-city-to').val(cityTo);
             changeBox.find('.input-date-from').val(dateFrom);
-            this.getWeekday($('.search-date-from'),dateFrom);
             changeBox.find('.input-date-to').val(dateTo);
-            this.getWeekday($('.search-date-to'),dateTo);
             changeBox.find('.input-days').val(days+'天');
             changeBox.find('.combo-persons-adult .search-contents-select').val(adultNum);
             changeBox.find('.combo-persons-children .search-contents-select').val(kidNum);
+
+            //刷新weekday
+            this.getWeekday();
 
             //判断机票单程返程
             if($('.search-contents-flight .flight-from').next().hasClass('icon-flight-double')){
@@ -215,25 +216,26 @@ $(function () {
                 left: dropL
             });
         },
-        getWeekday: function (targetSection,date) {
-            //判断星期几并写入info
-            if(typeof date === 'string' && $.browser.msie){
-                date = date.replace('-','/');
-            }
-            var dateObj = new Date(date);
+        getWeekday: function () {
+            var infos = $('.search-date .search-contents-info');
             var week = ['周日','周一','周二','周三','周四','周五','周六']
-            var weekDay = week[dateObj.getDay()];
-            targetSection.find('.search-contents-info').html(weekDay);
-            //刷新返程时间info
+            infos.each(function () {
+                var $this = $(this);
+                var $date = $this.siblings('input').val();
+                if(typeof $date === 'string' && $.browser.msie){
+                    $date = $date.replace('-','/');
+                }
+                var dateObj = new Date($date);
+                var weekDay = week[dateObj.getDay()];
+                $this.html(weekDay);
+            });
             this.freshInfo();
-            //刷新返程的日历起始时间
-            //$('.flight-date-return input').val(this.dateNow(date,1));
         },
         calendarInit: function () {
             var self = this;
             //初始化通用日历
             this.calendar = lv.calendar({
-                date: self.dateNow(),
+                //date: self.dateNow(),
                 autoRender: false,
                 trigger: ".search-calendar-common",
                 triggerEvent: "click",
@@ -247,43 +249,12 @@ $(function () {
                 selectDateCallback: function () {
                     for(var i in this.selected){
                         self.targetSection.find('input').val(i)
-                        self.getWeekday(self.targetSection,i);
+                        self.getWeekday();
                     }
                 }
             });
-            //初始化连级日历
-            this.calendarFlightReturn = lv.calendar({
-                autoRender: false,
-                trigger: ".search-cascading input",
-                triggerEvent: "click",
-                bimonthly: true,
-                //定位偏移
-                monthNext: 10,
-                monthPrev: 10,
-                dayPrev: 0,
-                template: "small",
-                cascading: true,
-                cascadingNextAuto: false,
-                showNumberOfDays: true,
-                cascadingOffset: 4,
-                //点击选择日期后的回调函数 默认返回值: calendar对象
-                selectDateCallback: function () {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
-                    if(self.targetSection.hasClass('flight-date-return')){
-                        $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
-                        self.flightReturn.removeClass('disabled');
-                    }else {
-                        //判断是否触发连级日历自动填写
-                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
-                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
-                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
-                            //手动刷新返程机票的星期数
-                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
-                        }
-                    }
-                }
-            });
+            //机票日历
+            this.calendarFresh();
             //初始化连级日历-hotel
             this.calendarHotel = lv.calendar({
                 autoRender: false,
@@ -300,18 +271,19 @@ $(function () {
                 cascadingOffset: 2,
                 showNumberOfDays: true,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
-                selectDateCallback: function (e) {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
-                    setTimeout(function () {
-                        self.getWeekday($('.hotel-date-end'),e.cascadingSelected.end);
-                    },50)
+                selectDateCallback: function () {
+                    self.getWeekday();
                 }
             })
         },
         calendarFresh: function () {
             var self = this;
-            this.calendarFlightReturn.destroy();
+            this.calendarFlightReturn && this.calendarFlightReturn.destroy();
+            //判断单程还是返程
+            var cascadingNextAutoFlag = true;
+            if($('.flight-single').hasClass('current')){
+                cascadingNextAutoFlag = false;
+            }
             //初始化连级日历
             this.calendarFlightReturn = lv.calendar({
                 autoRender: false,
@@ -324,24 +296,15 @@ $(function () {
                 dayPrev: 0,
                 template: "small",
                 cascading: true,
-                cascadingOffset: 4,
-                cascadingNextAuto: false,
+                cascadingOffset: 1,
+                cascadingNextAuto: cascadingNextAutoFlag,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
-                    var date = self.targetSection.find('input').val();
-                    self.getWeekday(self.targetSection,date);
                     if(self.targetSection.hasClass('flight-date-return')){
                         $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                         self.flightReturn.removeClass('disabled');
-                    }else {
-                        //判断是否触发连级日历自动填写
-                        var oldVal = self.dateTime(self.targetSection.next().find('input').val());
-                        var startVal = self.dateTime(self.targetSection.next().find('input').val());
-                        if(oldVal-startVal-self.oneDayTime*4 <= 0){
-                            //手动刷新返程机票的星期数
-                            self.getWeekday(self.flightReturn,self.dateNow(date,4));
-                        }
                     }
+                    self.getWeekday();
                 }
             });
         },
@@ -397,6 +360,7 @@ $(function () {
             $document.on('mousedown','.search-date',function (e) {
                 self.targetSection = $(e.target).parent('.search-date');
                 self.target = $(e.target);
+                self.calendarFresh();
             });
             //drop中选择城市
             $document.on('mousedown','.drop-city',function (e) {
@@ -432,16 +396,6 @@ $(function () {
                 if(which !== 40&&which !== 38&&which !== 13){
                     if($(this).parent('.section-input').hasClass('search-city')){
                         self.getPosition();
-                        //判断触发的具体位置
-                        /*if($(e.target).hasClass('input-city-from')){
-                         //出发地
-                         locale = 'city-from'
-                         }else if($(e.target).hasClass('input-city-to')){
-                         //目的地
-                         locale = 'city-to'
-                         }else {
-                         console.log('input事件触发位置异常')
-                         }*/
 
                         //判断内容
                         if ($(this).val()===""){
@@ -546,19 +500,10 @@ $(function () {
             });
             //机票单程
             $document.on('click','.flight-single',function () {
-                /*$(this).addClass('current').next().removeClass('current');
-                self.flightReturn.addClass('disabled');
-                self.calendarFresh();*/
                 self.fillInputFlight('single')
             });
             //机票返程
             $document.on('click','.flight-double',function () {
-                /*var startTime = $('.flight-date-start').find('input').val();
-                $(this).addClass('current').siblings('.flight-single').removeClass('current');
-                self.flightReturn.removeClass('disabled');
-                self.flightReturn.find('input').val(self.dateNow(startTime,self.hotelDays));
-                self.getWeekday(self.flightReturn,self.dateNow(startTime,self.hotelDays));
-                self.calendarFresh();*/
                 self.fillInputFlight()
             });
             //机票切换出发地与到达
@@ -721,6 +666,7 @@ $(function () {
             }
         },
         freshInfo: function () {
+            //刷新combo-days返回日期
             var startDateStr = $('.combo-date').find('input').val();
             var period = parseInt($('.combo-days input').val());
             var returnDate = this.dateNow(startDateStr,period).substring(5);
@@ -731,12 +677,12 @@ $(function () {
                 $('.flight-single').addClass('current').siblings('.flight-double').removeClass('current');
                 this.flightReturn.addClass('disabled');
             }else {
-                var startTime = $('.flight-date-start').find('input').val();
+                //var startTime = $('.flight-date-start').find('input').val();
                 $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                 this.flightReturn.removeClass('disabled');
-                this.flightReturn.find('input').val(this.dateNow(startTime,this.hotelDays));
-                this.getWeekday(this.flightReturn,this.dateNow(startTime,this.hotelDays));
+                //this.flightReturn.find('input').val(this.dateNow(startTime,this.hotelDays));
             }
+            this.getWeekday();
             this.calendarFresh();
         },
         getData: function (url,data,type,dataType) {
@@ -811,7 +757,6 @@ $(function () {
             }
         },
         showError: function (info,reset,className) {
-            console.log(info,className)
             var self = this;
             var tipBox;
             if(className === undefined){
@@ -1109,7 +1054,7 @@ $(function () {
         if($('.main_search').hasClass('fix-top')){
             $("html,body").animate({
                 scrollTop:$(".ticket_search").offset().top
-            },0)
+            },500,'swing')
         }
     });
 
@@ -1130,6 +1075,7 @@ $(function () {
     $document.on("click", ".rank_box li", function(){
         var $this = $(this);
         var title = $this.attr("title");
+        $this.addClass('active').siblings().removeClass('active');
         if($this.hasClass('active') && !$this.hasClass('tl-overall')){
             if($this.hasClass("tl-col-down")){
                 $this.attr("title", title.replace("从晚到早", "从早到晚").replace("从高到低", "从低到高").replace("从长到短", "从短到长"));
@@ -1139,7 +1085,11 @@ $(function () {
                 $this.addClass("tl-col-down");
             }
         }
-        $this.addClass('active').siblings().removeClass('active');
+        //清除自定义过滤
+        if($this.find('.search-filter-price-new').length === 0){
+            $('.search-filter-price-new').find('input').val('').removeClass("input-error");
+            $(".price-tip").removeClass("price-tip-error")
+        }
     });
 
     //加入购物车
@@ -1223,6 +1173,9 @@ $(function () {
         var searchBar = $('.main_search'),
             searchSortBar = searchBar.next(),
             searchBarTop = searchBar.offset().top;
+        $(window).on('searchBarChange',function(e){
+            searchBarTop = searchBar.offset().top;
+        })
         $(window).scroll(function () {
             scrollTop(searchBar,searchBarTop,searchSortBar)
         });
@@ -1258,13 +1211,10 @@ $(function () {
             }
         }).blur(function() {
             var input = $(this);
-            console.log(0)
             if (input.val() == '' || input.val() == input.attr('placeholder')) {
                 input.addClass('placeholder');
                 input.val(input.attr('placeholder'));
-                console.log(1)
             }
-            console.log(2)
         }).blur();
     };
     function placeholderSupport() {
