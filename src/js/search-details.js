@@ -334,7 +334,7 @@ $(function () {
                 }
                 if(self.targetSection.hasClass('combo-to')) {
                     //data = {};
-                    url = 'data/comboCitys.json';
+                    //url = 'data/comboCitys.json';
                 }
                 if(self.targetSection.hasClass('flight-to')) {
                     //data = {};
@@ -818,7 +818,7 @@ $(function () {
                         subwayDetails.append(span)
                     }
                     this.keywordsBox.show();
-                }else if(this.targetSection.hasClass('combo-to')){
+                }/*else if(this.targetSection.hasClass('combo-to')){
                     var hotCitys = res.hot,
                         hotCitysBox = this.keywordsBox.find('.drop-suggestion-keywords-ul');
 
@@ -829,7 +829,7 @@ $(function () {
                         hotCitysBox.append(li)
                     }
                     this.keywordsBox.show();
-                }else {
+                }*/else {
                     var hotCitys = res.hot;
                     //flight中没有hotcitys
                     if(this.currentLiName !== 'flight'){
@@ -1041,7 +1041,7 @@ $(function () {
     };
 
     //更改行程
-    $('.btn-change').click(function () {
+    $document.on('click','.btn-change',function () {
         $('.default-box').hide();
         if(!searchFlag) {
             search.init();
@@ -1059,15 +1059,13 @@ $(function () {
     });
 
     //酒店间数选择
-    $('.select-num').click(function () {
-        var selectionsBox = $(this).siblings('.select-num-selections');
-        selectionsBox.show();
+    $document.on('click','.select-num',function () {
+        $(this).siblings('.select-num-selections').show();
     });
-    $('.select-num').blur(function () {
-        var selectionsBox = $(this).siblings('.select-num-selections');
-        selectionsBox.hide();
+    $document.on('blur','.select-num',function () {
+        $(this).siblings('.select-num-selections').hide();
     });
-    $('.select-num-selections li').mousedown(function () {
+    $document.on('mousedown','.select-num-selections li',function () {
         $(this).parent().siblings('input').val($(this).html());
     });
 
@@ -1095,7 +1093,7 @@ $(function () {
     //加入购物车
     var success = $('.cart-success');
     var fail = $('.cart-fail');
-    $('.btn-add-cart').click(function () {
+    $document.on('click','.btn-add-cart',function () {
         //TODO
         $.ajax({
             url: 'data/cart.json',
@@ -1166,7 +1164,7 @@ $(function () {
                 });
             }
         });
-    });
+    })
 
     // 搜索条固定
     function searchBar() {

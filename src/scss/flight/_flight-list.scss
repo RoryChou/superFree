@@ -710,7 +710,7 @@
     border-bottom: 1px solid #ddd;
   }
   .tl-item .tl-detail {
-    padding-left: 10px;
+    padding-left: 20px;
   }
   .tl-item .tl-duration {
     line-height:43px;
@@ -749,8 +749,9 @@
   }
   .tl-item .select-btn-flight {
     display: block;
-    float: left;
-    margin: 26px 0 0 140px;
+    float: right;
+    margin-top: 18px;
+    margin-right: 42px;
     *margin-right: 16px;
     width:11px;
     height:6px;
@@ -920,6 +921,7 @@
   display: none;
   position: relative;
   margin: 8px 0px -5px;
+  margin-left: 182px;
 }
 .tl-all .tl-more-btn {
   position: absolute;
@@ -957,7 +959,7 @@
   width: 16px;
   height: 10px;
   position: absolute;
-  right:122px;
+  right:230px;
   top: -7px;
 }
 .tl-all .tl-arrow span,
@@ -969,8 +971,8 @@
   top: 0px;
   color: #e3e3e3;
   display: block;
-  line-height: 14px;
-  font-size: 14px;
+  line-height: 12px;
+  font-size: 24px;
 }
 .tl-all .tl-arrow i,
 .tl-item-loading .tl-arrow i {
@@ -1004,7 +1006,7 @@
 }
 .tl-part ul {
   float: left;
-  margin-left: 126px;
+  //margin-left: 126px;
   width: 1040px;
   margin-top: -1px;
 }
@@ -1023,7 +1025,7 @@
   *zoom: 1;
 }
 .tl-part ul li .tlp-class {
-  margin-left: 14px;
+  margin-left: 25px;
   width: 70px;
   color: #666;
   line-height: 26px;
