@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/tip.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/flight/v4/tip.css">
     <link rel="stylesheet" href="http://pic.lvmama.com/styles/lv/dialog.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/v5/modules/dialog.css">
+    <link rel="stylesheet" href="http://pic.lvmama.com/styles/common/poplogin.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="css/hotel/hotel.css">
     <link rel="stylesheet" href="css/cart/cart.css">
@@ -162,7 +164,7 @@
                             <span class="icon-checkBox td" data-checked="false"></span>
                             <span class="icon-flight td"></span>
                             <div class="section-pro-flight-block clearfix">
-                                <div class="icon-flight-notice">去程</div>
+                                <div class="flight-icon-route-go">去程</div>
                                 <div class="flight-main-container td">
                                     <p class="flight-main-citys">
                                         <span class="flight-city-from">阿拉斯加</span>
@@ -192,7 +194,10 @@
                                         <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">772</span>
                                     </p>
                                 </div>
-                                <span class="pro-sevice td">经济舱</span>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-kid"></p>
+                                </span>
                                 <div class="pro-notice td">
                                     <span class="tui-gai-qian" >退改签</span>
                                 </div>
@@ -214,7 +219,7 @@
                                 </div>
                             </div>
                             <div class="section-pro-flight-block clearfix">
-                                <div class="icon-flight-notice">返程</div>
+                                <div class="flight-icon-route-back">返程</div>
                                 <div class="flight-main-container td">
                                     <p class="flight-main-citys">
                                         <span class="flight-city-from">阿拉斯加</span>
@@ -244,7 +249,10 @@
                                         <span class="flight-plane-type" data-plan="32A" data-name="空客321" data-type="中" data-min="167" data-max="167">772</span>
                                     </p>
                                 </div>
-                                <span class="pro-sevice td">经济舱</span>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-adult"></p>
+                                </span>
                                 <div class="pro-notice td">
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
@@ -404,7 +412,10 @@
                                               data-min="167" data-max="167">772</span>
                                     </p>
                                 </div>
-                                <span class="pro-sevice td">经济舱</span>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-kid"></p>
+                                </span>
                                 <div class="pro-notice td">
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
@@ -593,7 +604,10 @@
                                               data-min="167" data-max="167">772</span>
                                     </p>
                                 </div>
-                                <span class="pro-sevice td">经济舱</span>
+                                <span class="pro-sevice td">
+                                    经济舱
+                                    <p class="flight-ticket-type-adult"></p>
+                                </span>
                                 <div class="pro-notice td">
                                     <span class="tui-gai-qian">退改签</span>
                                 </div>
@@ -673,6 +687,15 @@
                 </div>
             </div>
         </div>
+
+        <!--空购物车-->
+        <div class="cart-empty-container">
+            <div class="cart-empty-icon"></div>
+            <p class="cart-empty-words">购物车还是空的呢，快去挑选商品吧</p>
+            <p class="cart-empty-words-signin">还未登录哦，<span class="login_btn">现在登录</span>看看您账户下的商品吧～</p>
+            <a class="btn btn-orange btn-goshopping" href="">去选购</a>
+        </div>
+        <!--空购物车END-->
     </div>
     <!--主要内容END-->
 
@@ -927,7 +950,20 @@
 <script src="http://pic.lvmama.com/js/v6/header_new.js"></script>
 <script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/lv/dialog.js"></script>
+<!--<script src="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js"></script>-->
+<script src="http://pic.lvmama.com/js/v4/modules/pandora-dialog.js"></script>
+<!--<script src="http://pic.lvmama.com/js/lv/ui.js,"></script>-->
+<script src="http://pic.lvmama.com/js/common/poplogin.js"></script>
 <!-- endbuild -->
     <script src="js/cart.js"></script>
+    <script>
+        //<editor-fold desc="登陆调用">
+        $('.login_btn').bind('click', function () {
+            showLogin(function () {
+                alert('登陆成功')
+            });  //登录成功后执行回调函数
+        });
+        //</editor-fold>
+    </script>
 </body>
 </html>

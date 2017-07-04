@@ -179,10 +179,12 @@
       width: 10px;
     }
     &.nomore-calendar {
+      cursor: not-allowed;
       i {
         background: url('../../imgs/flight/sprite/flight-left-not.png') no-repeat center;
         height: 16px;
         width: 10px;
+
       }
     }
   }
@@ -191,6 +193,15 @@
       background: url('../../imgs/flight/sprite/flight-right-useful.png') no-repeat center;
       height: 16px;
       width: 10px;
+    }
+    &.nomore-calendar {
+      cursor: not-allowed;
+      i {
+        background: url('../../imgs/flight/sprite/flight-right-not.png') no-repeat center;
+        height: 16px;
+        width: 10px;
+
+      }
     }
   }
 }

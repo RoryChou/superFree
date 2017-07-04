@@ -1,6 +1,6 @@
 #一.CSS
 ##1.IE7中z-index有BUG，父元素如果有position属性，则子元素的zindex就失效了，不想解决这个问题。
-###解决办法：为父元素也添加zindex属性
+###解决办法：为父元素也添加z-index属性
 ##2.flight引用了hotel的css，如何处理图片问题
 ##3.scss嵌套过深导致后面覆盖困难
 ##4.用border来代替IE的box-shadow时，会导致尺寸变化
@@ -37,8 +37,42 @@ $.ajax({
             }
         });
 ```
-##2.
-
+##2.在实现吸顶效果时，由于某元素的位置变化，又分别在两个不同的js文件中，所以使用了自定义事件来解决作用域的问题
+```js
+$(function(){
+    // 搜索条固定
+        function searchBar() {
+            var searchBar = $('.main_search'),
+                searchSortBar = searchBar.next(),
+                searchBarTop = searchBar.offset().top;
+            $(window).on('searchBarChange',function(e){ //监听事件
+                searchBarTop = searchBar.offset().top;
+            })
+            $(window).scroll(function () {
+                scrollTop(searchBar,searchBarTop,searchSortBar)
+            });
+            scrollTop(searchBar,searchBarTop,searchSortBar);
+        };
+})
+$(function(){
+    //就这么玩切换
+        $('.play-btn').click(function () {
+            var $this = $(this);
+            if($this.hasClass('play-btn-overview')){
+                $('.play-main-overview').show();
+                $('.play-main-details').hide();
+            }else {
+                $('.play-main-details').show();
+                $('.play-main-overview').hide();
+                //宝典图文滚动
+                bottomBarFix();
+            }
+            //重新计算searchBar
+            $(window).trigger('searchBarChange'); //触发事件
+            $this.addClass('active').siblings().removeClass('active');
+        });
+})
+```
 #一.html
 ##1.通过srcset属性来处理html中的retina图片问题
 ##2.IE9及以下不支持Input的placeholder属性，IE10的字体颜色也有问题

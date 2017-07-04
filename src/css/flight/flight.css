@@ -53,11 +53,11 @@
 
 .ft-price-calendar .ft-pc:hover, .ft-price-calendar .ft-pc.active { background: #ffcc66; }
 
-.ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i { background: no-repeat center;background-position: -40px -76px; height: 25px; width: 26px; }
+.ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i { background: no-repeat center;background-position: -70px -30px; height: 25px; width: 26px; }
 
 .ft-price-calendar .ft-pc:hover p, .ft-price-calendar .ft-pc.active p { color: #fff; }
 
-.ft-price-calendar .ft-pc i { display: block; margin: 6px 0 0 25px; *margin-left: 0; background: no-repeat center;background-position: -70px -30px; height: 25px; width: 26px; }
+.ft-price-calendar .ft-pc i { display: block; margin: 6px 0 0 25px; *margin-left: 0; background: no-repeat center;background-position: -40px -76px; height: 25px; width: 26px; }
 
 .ft-price-calendar .ft-pc p { font-size: 12px; color: #666; }
 
@@ -67,11 +67,17 @@
 
 .ft-price-box ul { float: left; width: 50%; }
 
-.ft-price-calendar .slider-btn-left i { background: no-repeat center;background-position: -70px -55px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-left i { background: no-repeat center;background-position: -20px -87px; height: 16px; width: 10px; }
 
-.ft-price-calendar .slider-btn-left.nomore-calendar i { background: no-repeat center;background-position: -10px -87px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-left.nomore-calendar { cursor: not-allowed; }
 
-.ft-price-calendar .slider-btn-right i { background: no-repeat center;background-position: 0 -87px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-left.nomore-calendar i { background: no-repeat center;background-position: -70px -55px; height: 16px; width: 10px; }
+
+.ft-price-calendar .slider-btn-right i { background: no-repeat center;background-position: -10px -87px; height: 16px; width: 10px; }
+
+.ft-price-calendar .slider-btn-right.nomore-calendar { cursor: not-allowed; }
+
+.ft-price-calendar .slider-btn-right.nomore-calendar i { background: no-repeat center;background-position: 0 -87px; height: 16px; width: 10px; }
 
 .ft-list { background: #f5f5f5; }
 
@@ -328,7 +334,7 @@
 
 .ticket-list .tl-item-open:hover { background: #ffffff; }
 
-.ticket-list .tl-item-open .select-btn i { background-position: -90px -45px; }
+.ticket-list .tl-item-open .select-btn-flight i { background-position: -90px -45px; }
 
 .ticket-list .tl-item-open .tl-all, .ticket-list .tl-item-open .tl-item-loading { display: block; }
 
@@ -360,79 +366,79 @@
 
 .sort .ft-total em { font-size: 18px; color: #f60; vertical-align: -1px; margin: 0 3px; }
 
-.tl-col { float: left; min-height: 1px; }
+.ticket-list .tl-item { padding: 22px 10px 22px 10px; border-bottom: 1px solid #ddd; }
 
-.tl-col .tl-top, .tl-col .tl-bottom { font-size: 12px; color: #333; line-height: 16px; }
+.ticket-list .tl-item .tl-detail { padding-left: 10px; }
 
-.tl-col .tl-bottom { margin-top: 4px; }
+.ticket-list .tl-item .tl-duration { line-height: 43px; width: 75px; margin-left: 110px; margin-top: 2px; font-size: 14px; color: #999; }
 
-.tl-info { width: 125px; padding-left: 15px; }
+.ticket-list .tl-item .tl-duration span { color: #999; }
 
-.tl-info .tl-top { margin-top: 4px; }
+.ticket-list .tl-item .tl-duration .tl-bottom { margin-top: 9px; }
 
-.tl-info .tl-bottom { color: #666; margin-left: 20px; }
+.ticket-list .tl-item .tl-info { width: 213px; padding-left: 0; }
 
-.tl-info .tl-bottom span { margin-right: 5px; }
+.ticket-list .tl-item .tl-price { width: 110px; margin-left: 90px; line-height: 43px; font-size: 12px; color: #999; height: 43px; overflow: hidden; }
 
-.tl-info .tl-bottom .plane-type { margin-right: 0; border-bottom: 1px dashed #666; cursor: default; line-height: 18px; }
+.ticket-list .tl-item .tl-price em { color: #ff6600; font-size: 28px; }
 
-.tl-info .fh-icon-ac { *vertical-align: -2px; }
+.ticket-list .tl-item .tl-price i { color: #ff6600; font-size: 20px; }
 
-.tl-time { width: 104px; text-align: left; }
+.ticket-list .tl-item .select-btn-flight { display: block; float: left; margin: 26px 0 0 140px; *margin-right: 16px; width: 11px; height: 6px; background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px; }
 
-.tl-time .tl-top { font-size: 24px; line-height: 22px; margin-top: 0px; }
+.ticket-list .tl-item .select-btn-flight.up { background-position: 0px -400px; }
 
-.tl-time .tl-bottom em { display: inline-block; max-width: 85px; vertical-align: top; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #666; }
+.ticket-list .tl-item .select-btn-flight i { display: inline-block; width: 9px; height: 5px; margin-left: 9px; vertical-align: 2px; *vertical-align: 5px; background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px; }
 
-.tl-time-left { text-align: right; margin-right: 20px; }
+.ticket-list .tl-col { float: left; min-height: 1px; }
 
-.tl-time .tl-bottom span { *vertical-align: -2px; color: #666; }
+.ticket-list .tl-col .tl-top, .ticket-list .tl-col .tl-bottom { font-size: 12px; color: #333; line-height: 16px; }
 
-.tl-stop { width: 95px; text-align: center; position: relative; margin: 2px 20px 0px 0px; height: 43px; font-size: 12px; color: #bbb; }
+.ticket-list .tl-col .tl-bottom { margin-top: 4px; }
 
-.tl-stop i { display: block; width: 91px; height: 9px; position: absolute; left: 2px; bottom: 20px; background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -332px; }
+.ticket-list .tl-info { width: 125px; padding-left: 15px; }
 
-.tl-duration { width: 70px; margin-left: 30px; }
+.ticket-list .tl-info .tl-top { margin-top: 4px; }
 
-.tl-price { width: 100px; margin-left: 90px; }
+.ticket-list .tl-info .tl-bottom { color: #666; margin-left: 20px; }
 
-.tl-price em { color: #bbb; }
+.ticket-list .tl-info .tl-bottom span { margin-right: 5px; }
 
-.tl-price .tl-top { font-size: 12px; color: #999; margin-top: 2px; }
+.ticket-list .tl-info .tl-bottom .plane-type { margin-right: 0; border-bottom: 1px dashed #666; cursor: default; line-height: 18px; }
 
-.tl-price .tl-top i { font-size: 14px; color: #f60; vertical-align: -1px; }
+.ticket-list .tl-info .fh-icon-ac { *vertical-align: -2px; }
 
-.tl-price .tl-top em { font-size: 20px; color: #f60; vertical-align: -2px; }
+.ticket-list .tl-time { width: 104px; text-align: left; }
 
-.tl-price .tl-top b { font-size: 12px; color: #fff; line-height: 16px; width: 16px; height: 16px; display: inline-block; background: #ff9900; text-align: center; font-weight: normal; margin-left: 6px; vertical-align: 2px; }
+.ticket-list .tl-time .tl-top { font-size: 24px; line-height: 22px; margin-top: 0px; }
 
-.tl-price .tl-bottom { font-size: 12px; color: #999; margin: 6px 0 0 15px; *margin-top: 12px; }
+.ticket-list .tl-time .tl-bottom em { display: inline-block; max-width: 85px; vertical-align: top; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #666; }
 
-.tl-price .tl-bottom em { font-size: 14px; font-weight: normal; vertical-align: -1px; margin-right: 3px; }
+.ticket-list .tl-time-left { text-align: right; margin-right: 20px; }
 
-.tl-item { padding: 22px 10px 22px 10px; border-bottom: 1px solid #ddd; }
+.ticket-list .tl-time .tl-bottom span { *vertical-align: -2px; color: #666; }
 
-.tl-item .tl-detail { padding-left: 10px; }
+.ticket-list .tl-stop { width: 95px; text-align: center; position: relative; margin: 2px 20px 0px 0px; height: 43px; font-size: 12px; color: #bbb; }
 
-.tl-item .tl-duration { line-height: 43px; width: 75px; margin-left: 110px; margin-top: 2px; font-size: 14px; color: #999; }
+.ticket-list .tl-stop i { display: block; width: 91px; height: 9px; position: absolute; left: 2px; bottom: 20px; background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -332px; }
 
-.tl-item .tl-duration span { color: #999; }
+.ticket-list .tl-duration { width: 70px; margin-left: 30px; }
 
-.tl-item .tl-duration .tl-bottom { margin-top: 9px; }
+.ticket-list .tl-price { width: 100px; margin-left: 90px; }
 
-.tl-item .tl-info { width: 213px; padding-left: 0; }
+.ticket-list .tl-price em { color: #bbb; }
 
-.tl-item .tl-price { width: 110px; margin-left: 90px; line-height: 43px; font-size: 12px; color: #999; height: 43px; overflow: hidden; }
+.ticket-list .tl-price .tl-top { font-size: 12px; color: #999; margin-top: 2px; }
 
-.tl-item .tl-price em { color: #ff6600; font-size: 28px; }
+.ticket-list .tl-price .tl-top i { font-size: 14px; color: #f60; vertical-align: -1px; }
 
-.tl-item .tl-price i { color: #ff6600; font-size: 20px; }
+.ticket-list .tl-price .tl-top em { font-size: 20px; color: #f60; vertical-align: -2px; }
 
-.tl-item .select-btn { display: block; float: left; margin: 26px 0 0 140px; *margin-right: 16px; width: 11px; height: 6px; background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px; }
+.ticket-list .tl-price .tl-top b { font-size: 12px; color: #fff; line-height: 16px; width: 16px; height: 16px; display: inline-block; background: #ff9900; text-align: center; font-weight: normal; margin-left: 6px; vertical-align: 2px; }
 
-.tl-item .select-btn.up { background-position: 0px -400px; }
+.ticket-list .tl-price .tl-bottom { font-size: 12px; color: #999; margin: 6px 0 0 15px; *margin-top: 12px; }
 
-.tl-item .select-btn i { display: inline-block; width: 9px; height: 5px; margin-left: 9px; vertical-align: 2px; *vertical-align: 5px; background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px; }
+.ticket-list .tl-price .tl-bottom em { font-size: 14px; font-weight: normal; vertical-align: -1px; margin-right: 3px; }
 
 .flight-warning { margin: 12px 0 0 10px; font-size: 12px; color: #999; line-height: 16px; }
 
@@ -868,17 +874,17 @@
 
 .tl-all .tl-part-tips .tl-more-btn { color: #666; bottom: 0px; right: 15px; width: auto; height: auto; border: 0px; }
 
-.tl-all .tl-part-tips .tl-more-btn i { background: no-repeat center;background-position: -70px -71px; height: 6px; width: 9px; }
+.tl-all .tl-part-tips .tl-more-btn i { background: no-repeat center;background-position: -30px -93px; height: 6px; width: 9px; }
 
 .tl-all .tl-part-tips .tl-more-btn:hover { color: #f60; }
 
-.tl-all .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -80px -55px; height: 6px; width: 9px; }
+.tl-all .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -30px -87px; height: 6px; width: 9px; }
 
 .tl-all-open .tl-part-tips .tl-more-btn i { -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
 
-.tl-all-open .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -80px -55px; height: 6px; width: 9px; }
+.tl-all-open .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -30px -87px; height: 6px; width: 9px; }
 
-.tl-item-open .select-btn { background-position: 0px -360px; }
+.tl-item-open .select-btn-flight { background-position: 0px -360px; }
 
 .ft-authentication { padding: 15px 26px 13px 15px; width: 199px; background: #fff; }
 
@@ -944,13 +950,13 @@
 
 .canderBox1 .ui-calendar .calmonth[data-offset='1'] .caltitle { border-color: #ee3388; line-height: 30px; height: 30px; margin-left: -6px; }
 
-.canderBox1 .ui-calendar .month-prev { top: 0px; left: 0px; background-position: -62px 0; height: 30px; width: 30px; }
+.canderBox1 .ui-calendar .month-prev { top: 0px; left: 0px; background-position: -40px -46px; height: 30px; width: 30px; }
 
-.canderBox1 .ui-calendar .month-next { top: 0px; right: 0px; background-position: -40px -46px; height: 30px; width: 30px; }
+.canderBox1 .ui-calendar .month-next { top: 0px; right: 0px; background-position: -62px 0; height: 30px; width: 30px; }
 
-.canderBox1 .ui-calendar .month-prev:hover { background-position: -62px 0; height: 30px; width: 30px; background-color: #a81c54; }
+.canderBox1 .ui-calendar .month-prev:hover { background-position: -40px -46px; height: 30px; width: 30px; background-color: #a81c54; }
 
-.canderBox1 .ui-calendar .month-next:hover { background-position: -40px -46px; height: 30px; width: 30px; background-color: #a81c54; }
+.canderBox1 .ui-calendar .month-next:hover { background-position: -62px 0; height: 30px; width: 30px; background-color: #a81c54; }
 
 .canderBox1 .ui-calendar .caldate, .canderBox1 .ui-calendar .caldate:hover, .canderBox1 .ui-calendar .nodate, .canderBox1 .ui-calendar .date { width: 64px; height: 59px; }
 
@@ -1006,9 +1012,9 @@ body .search-num { margin-bottom: 0; }
 
 .search-contents-flight .default-box .city .icon { background: no-repeat center;background-position: 0 -47px; height: 40px; width: 40px; }
 
-.search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -92px -15px; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
+.search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -80px -55px; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
 
-.search-contents-flight .default-box .city .icon-flight-single { background: no-repeat center;background-position: -96px -28px; height: 5px; margin-top: 21px; }
+.search-contents-flight .default-box .city .icon-flight-single { background: no-repeat center;background-position: -70px -71px; height: 5px; margin-top: 21px; }
 
 .search-contents-flight .default-box .city .flight-from, .search-contents-flight .default-box .city .flight-to { display: inline-block; *display: inline; *zoom: 1; line-height: 30px; }
 
@@ -1024,9 +1030,9 @@ body .search-num { margin-bottom: 0; }
 
 .search-contents-flight .change-box .flight-tabs .flight-single.current, .search-contents-flight .change-box .flight-tabs .current.flight-double { color: #e38; }
 
-.search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span { background: no-repeat center;background-position: -20px -87px; height: 15px; width: 15px; }
+.search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span { background: no-repeat center;background-position: -92px 0; height: 15px; width: 15px; }
 
-.search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -92px 0; height: 15px; width: 15px; vertical-align: middle; margin: 2px 6px 0 0; }
+.search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -92px -15px; height: 15px; width: 15px; vertical-align: middle; margin: 2px 6px 0 0; }
 
 .search-contents-flight .change-box .city .icon { background: no-repeat center;background-position: 0 -47px; }
 
@@ -1068,6 +1074,7 @@ body .search-num { margin-bottom: 0; }
 .ft-price-calendar .slider-btn-left i,
 .ft-price-calendar .slider-btn-left.nomore-calendar i,
 .ft-price-calendar .slider-btn-right i,
+.ft-price-calendar .slider-btn-right.nomore-calendar i,
 .tl-all .tl-part-tips .tl-more-btn i,
 .tl-all .tl-part-tips .tl-more-btn:hover i,
 .tl-all-open .tl-part-tips .tl-more-btn:hover i,
@@ -1097,6 +1104,7 @@ background-image: url(../../imgs/flight/flight.png);
 .ft-price-calendar .slider-btn-left i,
 .ft-price-calendar .slider-btn-left.nomore-calendar i,
 .ft-price-calendar .slider-btn-right i,
+.ft-price-calendar .slider-btn-right.nomore-calendar i,
 .tl-all .tl-part-tips .tl-more-btn i,
 .tl-all .tl-part-tips .tl-more-btn:hover i,
 .tl-all-open .tl-part-tips .tl-more-btn:hover i,
@@ -1115,43 +1123,46 @@ background-image: url(../../imgs/flight/flight.png);
 .search-contents-flight .change-box .flight-tabs .flight-double span,
 .search-contents-flight .change-box .city .icon{
 background-image: url(../../imgs/flight/flight@2x.png);
-background-size: 148px auto;
+background-size: 132px auto;
 }
 .ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i{
-background-position: -40px -76px;
-}
-.ft-price-calendar .ft-pc i{
 background-position: -70px -30px;
 }
+.ft-price-calendar .ft-pc i{
+background-position: -40px -76px;
+}
 .ft-price-calendar .slider-btn-left i{
-background-position: -70px -55px;
+background-position: -20px -87px;
 }
 .ft-price-calendar .slider-btn-left.nomore-calendar i{
-background-position: -10px -87px;
+background-position: -70px -55px;
 }
 .ft-price-calendar .slider-btn-right i{
+background-position: -10px -87px;
+}
+.ft-price-calendar .slider-btn-right.nomore-calendar i{
 background-position: 0 -87px;
 }
 .tl-all .tl-part-tips .tl-more-btn i{
-background-position: -70px -71px;
+background-position: -30px -93px;
 }
 .tl-all .tl-part-tips .tl-more-btn:hover i{
-background-position: -80px -55px;
+background-position: -30px -87px;
 }
 .tl-all-open .tl-part-tips .tl-more-btn:hover i{
-background-position: -80px -55px;
+background-position: -30px -87px;
 }
 .canderBox1 .ui-calendar .month-prev{
-background-position: -62px 0;
+background-position: -40px -46px;
 }
 .canderBox1 .ui-calendar .month-next{
-background-position: -40px -46px;
-}
-.canderBox1 .ui-calendar .month-prev:hover{
 background-position: -62px 0;
 }
-.canderBox1 .ui-calendar .month-next:hover{
+.canderBox1 .ui-calendar .month-prev:hover{
 background-position: -40px -46px;
+}
+.canderBox1 .ui-calendar .month-next:hover{
+background-position: -62px 0;
 }
 .canderBox1 .nchclose{
 background-position: 0 0;
@@ -1163,16 +1174,16 @@ background-position: -32px 0;
 background-position: 0 -47px;
 }
 .search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single{
-background-position: -92px -15px;
+background-position: -80px -55px;
 }
 .search-contents-flight .default-box .city .icon-flight-single{
-background-position: -96px -28px;
+background-position: -70px -71px;
 }
 .search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span{
-background-position: -20px -87px;
+background-position: -92px 0;
 }
 .search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span{
-background-position: -92px 0;
+background-position: -92px -15px;
 }
 .search-contents-flight .change-box .city .icon{
 background-position: 0 -47px;
