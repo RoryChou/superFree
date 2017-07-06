@@ -143,6 +143,10 @@
     }
     a {
       display: block;
+      img {
+        width: 275px;
+        height: 184px;
+      }
       &:hover {
         text-decoration: none;
         p {
