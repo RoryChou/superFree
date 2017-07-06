@@ -201,8 +201,9 @@ $(function () {
         },
         getPosition: function () {
             //获取container的位置
-            var dropT = this.targetSection.offset().top-this.container.offset().top+this.targetSection.height();
-            var dropL = this.targetSection.offset().left-this.container.offset().left;
+            var wrapper = this.container.find('.search-bar-wrapper');
+            var dropT = this.targetSection.offset().top-wrapper.offset().top+this.targetSection.height();
+            var dropL = this.targetSection.offset().left-wrapper.offset().left;
             this.suggestionBox.css({
                 top: dropT+3,
                 left: dropL
