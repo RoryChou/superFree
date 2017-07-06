@@ -750,15 +750,18 @@
   .tl-item .select-btn-flight {
     display: block;
     float: right;
-    margin-top: 18px;
+    margin-top: 12px;
     margin-right: 42px;
     *margin-right: 16px;
-    width:11px;
-    height:6px;
-    background:url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px;
+    background: url('../../imgs/flight/sprite/icon-arrow-down.png') no-repeat center;
+    height: 26px;
+    width: 26px;
+    transition: all 0.3s;
   }
   .tl-item .select-btn-flight.up{
-    background-position: 0px -400px;
+    background: url('../../imgs/flight/sprite/icon-arrow-up.png') no-repeat center;
+    height: 26px;
+    width: 26px;
   }
   .tl-item .select-btn-flight i {
     display: inline-block;
@@ -1001,17 +1004,17 @@
 }
 .tl-part {
   position: relative;
-  border-bottom: 1px solid #e3e3e3;
+  //border-bottom: 1px solid #e3e3e3;
   overflow: hidden;
 }
 .tl-part ul {
   float: left;
   //margin-left: 126px;
-  width: 1040px;
+  //width: 1040px;
   margin-top: -1px;
 }
 .tl-part ul li {
-  border-top: 1px dashed #ddd;
+  //border-top: 1px dashed #ddd;
   padding: 15px 0;
   //width: 790px;
   font-size: 12px;
@@ -1026,12 +1029,12 @@
 }
 .tl-part ul li .tlp-class {
   margin-left: 25px;
-  width: 70px;
+  width: 106px;
   color: #666;
   line-height: 26px;
 }
 .tl-part ul li .tlp-discount {
-  margin-left:198px;
+  margin-left:106px;
   width: 44px;
   color: #999;
 }
@@ -1053,6 +1056,7 @@
   color: #ff0000;
   float: right;
   margin: 2px 10px 0 0;
+  margin-left: 60px;
 }
 .tl-part ul li .tlp-remain i {
   margin-left: 1px;
@@ -1061,7 +1065,7 @@
 .tl-part ul li a {
   display: block;
   float: right;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 .tl-part ul li .tagsback {
   vertical-align: -3px;
@@ -1464,10 +1468,10 @@
 .dis-tip {
   height: 16px;
   padding: 0 4px;
-  border: 1px solid #ff8800;
+  border: 1px solid #ff9900;
   border-radius: 2px;
   font-size: 12px;
-  color: #f80;
+  color: #f90;
   line-height: 16px;
 }
 .ft-overlay {
@@ -2136,8 +2140,11 @@
   height: 6px;
   width: 9px;
 }
-.tl-item-open .select-btn-flight{
-  background-position: 0px -360px;
+.ticket-list .tl-item-open .select-btn-flight{
+  /*background: url('../../imgs/flight/sprite/icon-arrow-up.png') no-repeat center;
+  height: 26px;
+  width: 26px;*/
+  transform: rotateX(180deg);
 }
 .ft-authentication{
   padding:15px 26px 13px 15px;
@@ -2258,6 +2265,7 @@
 .reduce-price .dis-tip{
   /*float: left;*/
   vertical-align: middle;
+  margin-left: 30px;
 }
 .reduce-price .tlp-price{
   float: right;
