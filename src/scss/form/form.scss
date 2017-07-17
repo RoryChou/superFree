@@ -205,6 +205,19 @@ dfn {
         color: #666;
       }
     }
+    .tl-time{
+      .tl-top,.tl-bottom {
+        text-align: right;
+      }
+      .tl-bottom em {
+        max-width: 62px;
+      }
+    }
+    .tl-time-return{
+      .tl-top,.tl-bottom {
+        text-align: left;
+      }
+    }
   }
   .tl-top {
     b.js_tip {

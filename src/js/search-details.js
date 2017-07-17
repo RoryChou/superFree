@@ -558,7 +558,7 @@ $(function () {
                     length = 9
 
                 }else if(self.targetSection.hasClass('combo-persons-children')){
-                    length = 6
+                    length = 7
                 }else {
                     //return;
                     //获取completeBox

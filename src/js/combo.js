@@ -133,23 +133,6 @@ $(function () {
         }
     })
 
-    //日历选择
-    lv.calendar({
-        //date: self.dateNow(),
-        autoRender: false,
-        trigger: ".list-ticket-calendar-input",
-        triggerEvent: "click",
-        bimonthly: true,
-        //定位偏移
-        monthNext: 10,
-        monthPrev: 10,
-        dayPrev: 0,
-        template: "small",
-        //点击选择日期后的回调函数 默认返回值: calendar对象
-        selectDateCallback: function () {
-
-        }
-    });
 
     //hover出现加入购物车按钮
     $document.on('mouseover','.list-left-wrapper',function () {
