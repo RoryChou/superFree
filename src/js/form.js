@@ -83,13 +83,18 @@ $(function () {
         monthNext: 0,
         dayPrev: -1,
         dayNext: 0,
-        zIndex:29
+        zIndex:29,
+        //点击选择日期后的回调函数 默认返回值: calendar对象
+        selectDateCallback: function () {
+            var self = this;
+            lv_validation.thisYz(self.$trigger,false);
+        }
     });
     //</editor-fold>
 
     //<editor-fold desc="右侧模块悬浮">
     (function floatSide() {
-        var $orderInfo = $('.orderInfo'),
+        var $orderInfo = $('.orderTicketInfo-fix'),
             oldT = $orderInfo.offset().top,
             oldL = $orderInfo.offset().left,
             // $main_r_fixed = $('.orderInfo'),
@@ -105,9 +110,9 @@ $(function () {
             var moveH = $(document.body).height() - newT - right_H;
             if (newT >= oldT) {
                 if (moveH > 230) {
-                    $orderInfo.css({'position': 'fixed', 'top': 0, 'left': '50%','margin-left':300})
+                    $orderInfo.css({'position': 'fixed', 'top': 0})
                 } else {
-                    $orderInfo.css({'position': 'fixed', 'top': moveH - 230, 'left': '50%','margin-left':300});
+                    $orderInfo.css({'position': 'fixed', 'top': moveH - 230});
                 }
 
             } else {

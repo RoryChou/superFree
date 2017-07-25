@@ -206,6 +206,7 @@ $(function () {
                 cascadingNextAuto: true,
                 cascadingOffset: 2,
                 showNumberOfDays: true,
+                cascadingMax: 20,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function (e) {
                     self.getWeekday();

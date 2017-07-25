@@ -200,7 +200,7 @@ $(function(){
     $(document).on('click','.cgDetail_tab li',function(e){
         var num = $(this).index();
         $(this).addClass('active').siblings().removeClass('active');
-        $(this).parent().siblings('.cgDetail_list').eq(num).show().siblings('.cgDetail_list').hide();
+        $(this).parent().siblings('.cgDetail_list').eq(num).fadeIn(400).siblings('.cgDetail_list').hide();
     });
 
 

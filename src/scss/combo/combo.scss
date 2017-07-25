@@ -433,6 +433,9 @@ body {
     padding: 0 20px;
     border-bottom: 1px dotted #ddd;
     position: relative;
+    &:hover {
+      background-color: #fffcf7;
+    }
   }
   .list-title {
     height: 45px;
@@ -584,9 +587,6 @@ body {
   //酒店列表
   .list-hotel {
     position: relative;
-    &:hover {
-      background-color: #fffcf7;
-    }
     .list-icon {
       background: url('../../imgs/combo/sprite/icon-hotel.png') no-repeat center;
     }
@@ -689,9 +689,11 @@ body {
     .list-icon {
       background: url('../../imgs/combo/sprite/icon-flight.png') no-repeat center;
     }
-    &:hover {
-      .btn-change-pro-flight {
-        margin-top: 0px;
+    .list-left-wrapper {
+      &:hover {
+        .btn-change-pro-flight {
+          margin-top: 0px;
+        }
       }
     }
     .btn-change-pro-flight {
@@ -760,6 +762,10 @@ body {
         float: left;
         width: 310px;
         @include etc;
+        &:hover {
+          color: #f60;
+          cursor: pointer;
+        }
       }
       .list-ticket-calendar {
         background-color: #fff;

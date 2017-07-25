@@ -60,7 +60,7 @@ $(function () {
     var search = {
         target:null,
         targetSection:null,
-        container:$('.main_search'),
+        container:$('.main_search:visible'),
         currentLi:null,
         currentLiName:null,
         suggestionBox: null,
@@ -87,12 +87,14 @@ $(function () {
             this.calendarInit();
             this.refresh();
             this.bindEvent();
-            this.tabSwitch('.main_search .letter-tabs li','.main_search .letter-city-contents li');
         },
         refresh: function () {
             this.currentLi = this.container;
             this.getDefaultInfo();
             this.closePop();
+            //初始化tabSwitch
+            this.tabSwitch(this.container.find('.letter-tabs li'),this.container.find('.letter-city-contents li'));
+
             //去除所有error
             $('.section-input').removeClass('error');
             $('.error-box').hide();
@@ -103,11 +105,11 @@ $(function () {
             if(this.currentLi.hasClass('search-contents-combo')){
                 this.currentLiName = 'combo';
                 //修改btn内容
-                //this.searchBtn.html('搜索自由行套餐')
+                this.searchBtn.html('搜索自由行套餐')
                 //修改completeBox的尺寸
                 /*this.completeBox.css({
-                    width: 285
-                });*/
+                 width: 285
+                 });*/
                 //this.errorArr = ['combo-from','combo-to','combo-persons-adult','combo-persons-children'].reverse();
             }
             if(this.currentLi.hasClass('search-contents-flight')){
@@ -116,8 +118,8 @@ $(function () {
                 //this.searchBtn.html('开始搜索')
                 //修改completeBox的尺寸
                 /*this.completeBox.css({
-                    width: 255
-                })*/
+                 width: 255
+                 })*/
             }
             if(this.currentLi.hasClass('search-contents-hotel')){
                 this.currentLiName = 'hotel';
@@ -126,8 +128,8 @@ $(function () {
                 //this.searchBtn.html('开始搜索')
                 //修改completeBox的尺寸
                 /*this.completeBox.css({
-                    width: 418
-                })*/
+                 width: 418
+                 })*/
             }
             if(this.currentLi.hasClass('search-contents-ticket')){
                 this.currentLiName = 'ticket';
@@ -135,8 +137,8 @@ $(function () {
                 //this.searchBtn.html('开始搜索')
                 //修改completeBox的尺寸
                 /*this.completeBox.css({
-                    width: 585
-                })*/
+                 width: 585
+                 })*/
             }
         },
         closePop: function () {
@@ -236,7 +238,7 @@ $(function () {
             var self = this;
             //初始化通用日历
             this.calendar = lv.calendar({
-                //date: self.dateNow(),
+                // date: self.dateNow(),
                 autoRender: false,
                 trigger: ".search-calendar-common",
                 triggerEvent: "click",
@@ -271,6 +273,7 @@ $(function () {
                 cascadingNextAuto: true,
                 cascadingOffset: 2,
                 showNumberOfDays: true,
+                cascadingMax: 20,
                 //点击选择日期后的回调函数 默认返回值: calendar对象
                 selectDateCallback: function () {
                     self.getWeekday();
@@ -282,7 +285,7 @@ $(function () {
             this.calendarFlightReturn && this.calendarFlightReturn.destroy();
             //判断单程还是返程
             var cascadingNextAutoFlag = true;
-            if($('.flight-single').hasClass('current')){
+            if(this.container.find('.flight-single').hasClass('current')){
                 cascadingNextAutoFlag = false;
             }
             //初始化连级日历
@@ -678,10 +681,10 @@ $(function () {
                 $('.flight-single').addClass('current').siblings('.flight-double').removeClass('current');
                 this.flightReturn.addClass('disabled');
             }else {
-                //var startTime = $('.flight-date-start').find('input').val();
+                // var startTime = $('.flight-date-start').find('input').val();
                 $('.flight-double').addClass('current').siblings('.flight-single').removeClass('current');
                 this.flightReturn.removeClass('disabled');
-                //this.flightReturn.find('input').val(this.dateNow(startTime,this.hotelDays));
+                // this.flightReturn.find('input').val(this.dateNow(startTime,this.hotelDays));
             }
             this.getWeekday();
             this.calendarFresh();
@@ -1074,7 +1077,6 @@ $(function () {
     $document.on("click", ".rank_box li", function(){
         var $this = $(this);
         var title = $this.attr("title");
-        $this.addClass('active').siblings().removeClass('active');
         if($this.hasClass('active') && !$this.hasClass('tl-overall')){
             if($this.hasClass("tl-col-down")){
                 $this.attr("title", title.replace("从晚到早", "从早到晚").replace("从高到低", "从低到高").replace("从长到短", "从短到长"));
@@ -1084,12 +1086,33 @@ $(function () {
                 $this.addClass("tl-col-down");
             }
         }
+        $this.addClass('active').siblings().removeClass('active');
         //清除自定义过滤
         if($this.find('.search-filter-price-new').length === 0){
             $('.search-filter-price-new').find('input').val('').removeClass("input-error");
             $(".price-tip").removeClass("price-tip-error")
         }
     });
+
+    //IE placeholder hack
+    if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+        $('[placeholder]').focus(function() {
+            var input = $(this);
+            if (input.val() == input.attr('placeholder')) {
+                input.val('');
+                input.removeClass('placeholder');
+            }
+        }).blur(function() {
+            var input = $(this);
+            if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                input.addClass('placeholder');
+                input.val(input.attr('placeholder'));
+            }
+        }).blur();
+    };
+    function placeholderSupport() {
+        return 'placeholder' in document.createElement('input');
+    }
 
     //加入购物车
     var success = $('.cart-success');
@@ -1200,23 +1223,5 @@ $(function () {
         }
     }
 
-    //IE placeholder hack
-    if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
-        $('[placeholder]').focus(function() {
-            var input = $(this);
-            if (input.val() == input.attr('placeholder')) {
-                input.val('');
-                input.removeClass('placeholder');
-            }
-        }).blur(function() {
-            var input = $(this);
-            if (input.val() == '' || input.val() == input.attr('placeholder')) {
-                input.addClass('placeholder');
-                input.val(input.attr('placeholder'));
-            }
-        }).blur();
-    };
-    function placeholderSupport() {
-        return 'placeholder' in document.createElement('input');
-    }
+
 });

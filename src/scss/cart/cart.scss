@@ -40,6 +40,7 @@ body {
     position: fixed;
     bottom:0;
     width: 100%;
+    min-width: 1200px;
     z-index: 100;
     background:#ffffff;
     height:70px;
@@ -272,11 +273,15 @@ body {
           font-size:12px;
           color:#999999;
         }
+        .hotel-name:hover {
+          color: #f60;
+          cursor: pointer;
+        }
       }
       .pro-details-container {
         margin-left: 16px;
         p {
-          max-width: 72px;
+          width: 72px;
           @include etc();
           font-size:12px;
           color:#333333;
@@ -410,6 +415,7 @@ body {
             background: url('../../imgs/cart/sprite/icon-ticket-not.png') no-repeat center;
           }
         }
+
       }
     }
     .cart-section-pro-flight {
@@ -533,6 +539,10 @@ body {
         height: 24px;
         line-height: 24px;
         font-size:14px;
+        &:hover {
+          color: #f60;
+          cursor: pointer;
+        }
       }
       &.pro-disabled {
         .icon-checkBox-disabled {

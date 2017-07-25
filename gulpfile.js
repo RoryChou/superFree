@@ -20,7 +20,7 @@ const gulp = require('gulp'),
       collector = require('gulp-rev-collector');
 
 let htmlNameArr = ['home','flight','hotel','combo','baodian','cart','form'],
-    htmlName = 'form',
+    htmlName = 'hotel',
     htmlSvn = 'E:/svn/pages/superFree',
     cssSvn = 'E:/svn/pic/styles/superFree/'+htmlName,
     jsSvn = 'E:/svn/pic/js/superFree',
@@ -35,7 +35,7 @@ let htmlNameArr = ['home','flight','hotel','combo','baodian','cart','form'],
     obj = {
         css:[],
         js:[],
-        domains:['s1.lvjs.com.cn','s2.lvjs.com.cn','s3.lvjs.com.cn'],
+        domains:['s1.lvjs.com.cn'],
         protocol:'http://'
     };
 
