@@ -53,11 +53,11 @@
 
 .ft-price-calendar .ft-pc:hover, .ft-price-calendar .ft-pc.active { background: #ffcc66; }
 
-.ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i { background: no-repeat center;background-position: -70px -30px; height: 25px; width: 26px; }
+.ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i { background: url("../../imgs/flight/sprite/icon-flight-calendar-hover.png") no-repeat center; height: 25px; width: 26px; }
 
 .ft-price-calendar .ft-pc:hover p, .ft-price-calendar .ft-pc.active p { color: #fff; }
 
-.ft-price-calendar .ft-pc i { display: block; margin: 6px 0 0 25px; *margin-left: 0; background: no-repeat center;background-position: -40px -76px; height: 25px; width: 26px; }
+.ft-price-calendar .ft-pc i { display: block; margin: 6px 0 0 25px; *margin-left: 0; background: url("../../imgs/flight/sprite/icon-flight-calendar.png") no-repeat center; height: 25px; width: 26px; }
 
 .ft-price-calendar .ft-pc p { font-size: 12px; color: #666; }
 
@@ -67,17 +67,17 @@
 
 .ft-price-box ul { float: left; width: 50%; }
 
-.ft-price-calendar .slider-btn-left i { background: no-repeat center;background-position: -20px -87px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-left i { background: url("../../imgs/flight/sprite/flight-left-useful.png") no-repeat center; height: 16px; width: 10px; }
 
 .ft-price-calendar .slider-btn-left.nomore-calendar { cursor: not-allowed; }
 
-.ft-price-calendar .slider-btn-left.nomore-calendar i { background: no-repeat center;background-position: -70px -55px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-left.nomore-calendar i { background: url("../../imgs/flight/sprite/flight-left-not.png") no-repeat center; height: 16px; width: 10px; }
 
-.ft-price-calendar .slider-btn-right i { background: no-repeat center;background-position: -10px -87px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-right i { background: url("../../imgs/flight/sprite/flight-right-useful.png") no-repeat center; height: 16px; width: 10px; }
 
 .ft-price-calendar .slider-btn-right.nomore-calendar { cursor: not-allowed; }
 
-.ft-price-calendar .slider-btn-right.nomore-calendar i { background: no-repeat center;background-position: 0 -87px; height: 16px; width: 10px; }
+.ft-price-calendar .slider-btn-right.nomore-calendar i { background: url("../../imgs/flight/sprite/flight-right-not.png") no-repeat center; height: 16px; width: 10px; }
 
 .ft-list { background: #f5f5f5; }
 
@@ -368,7 +368,7 @@
 
 .ticket-list .tl-item { padding: 22px 10px 22px 10px; border-bottom: 1px solid #ddd; }
 
-.ticket-list .tl-item .tl-detail { padding-left: 10px; }
+.ticket-list .tl-item .tl-detail { padding-left: 20px; }
 
 .ticket-list .tl-item .tl-duration { line-height: 43px; width: 75px; margin-left: 110px; margin-top: 2px; font-size: 14px; color: #999; }
 
@@ -384,9 +384,9 @@
 
 .ticket-list .tl-item .tl-price i { color: #ff6600; font-size: 20px; }
 
-.ticket-list .tl-item .select-btn-flight { display: block; float: left; margin: 26px 0 0 140px; *margin-right: 16px; width: 11px; height: 6px; background: url("http://pic.lvmama.com/img/flight/flight.png") 0px -380px; }
+.ticket-list .tl-item .select-btn-flight { display: block; float: right; margin-top: 12px; margin-right: 42px; *margin-right: 16px; background: url("../../imgs/flight/sprite/icon-arrow-down.png") no-repeat center; height: 26px; width: 26px; transition: all 0.3s; }
 
-.ticket-list .tl-item .select-btn-flight.up { background-position: 0px -400px; }
+.ticket-list .tl-item .select-btn-flight.up { background: url("../../imgs/flight/sprite/icon-arrow-up.png") no-repeat center; height: 26px; width: 26px; }
 
 .ticket-list .tl-item .select-btn-flight i { display: inline-block; width: 9px; height: 5px; margin-left: 9px; vertical-align: 2px; *vertical-align: 5px; background: url("http://pic.lvmama.com/img/flight/flight.png") -90px -35px; }
 
@@ -444,7 +444,7 @@
 
 .flight-warning i { display: inline-block; width: 14px; height: 14px; background: url("http://pic.lvmama.com/img/flight/flight.png") -65px -20px; vertical-align: -3px; margin-right: 5px; }
 
-.tl-all { border: 1px solid #e3e3e3; border-bottom: none; display: none; position: relative; margin: 8px 0px -5px; }
+.tl-all { border: 1px solid #e3e3e3; border-bottom: none; display: none; position: relative; margin: 8px 0px -5px; margin-left: 182px; }
 
 .tl-all .tl-more-btn { position: absolute; z-index: 2; bottom: -32px; right: -1px; width: 84px; height: 31px; border: 1px solid #e3e3e3; border-top-color: #fff; line-height: 31px; color: #0099cc; background: #fff; text-align: center; }
 
@@ -454,9 +454,9 @@
 
 .tl-all .tl-more-btn:hover i { background-position: -79px -85px; }
 
-.tl-all .tl-arrow, .tl-item-loading .tl-arrow { font-family: "SimSun", sans-serif; display: block; width: 16px; height: 10px; position: absolute; right: 122px; top: -7px; }
+.tl-all .tl-arrow, .tl-item-loading .tl-arrow { font-family: "SimSun", sans-serif; display: block; width: 16px; height: 10px; position: absolute; right: 230px; top: -7px; }
 
-.tl-all .tl-arrow span, .tl-item-loading .tl-arrow span, .tl-all .tl-arrow i, .tl-item-loading .tl-arrow i { position: absolute; left: 0px; top: 0px; color: #e3e3e3; display: block; line-height: 14px; font-size: 14px; }
+.tl-all .tl-arrow span, .tl-item-loading .tl-arrow span, .tl-all .tl-arrow i, .tl-item-loading .tl-arrow i { position: absolute; left: 0px; top: 0px; color: #e3e3e3; display: block; line-height: 12px; font-size: 24px; }
 
 .tl-all .tl-arrow i, .tl-item-loading .tl-arrow i { top: 1px; color: #fff; }
 
@@ -468,19 +468,19 @@
 
 .tl-all-open .tl-more-btn:hover i { background-position: -86px -85px; }
 
-.tl-part { position: relative; border-bottom: 1px solid #e3e3e3; overflow: hidden; }
+.tl-part { position: relative; overflow: hidden; }
 
-.tl-part ul { float: left; margin-left: 126px; width: 1040px; margin-top: -1px; }
+.tl-part ul { float: left; margin-top: -1px; }
 
-.tl-part ul li { border-top: 1px dashed #ddd; padding: 15px 0; font-size: 12px; }
+.tl-part ul li { padding: 15px 0; font-size: 12px; }
 
 .tl-part ul li:hover { background: #fffaee; }
 
 .tl-part ul li span { display: inline-block; *display: inline; *zoom: 1; }
 
-.tl-part ul li .tlp-class { margin-left: 14px; width: 70px; color: #666; line-height: 26px; }
+.tl-part ul li .tlp-class { margin-left: 25px; width: 106px; color: #666; line-height: 26px; }
 
-.tl-part ul li .tlp-discount { margin-left: 198px; width: 44px; color: #999; }
+.tl-part ul li .tlp-discount { margin-left: 106px; width: 44px; color: #999; }
 
 .tl-part ul li .tlp-discount i { margin-left: 3px; }
 
@@ -488,11 +488,11 @@
 
 .tl-part ul li .tlp-price i { font-size: 14px; }
 
-.tl-part ul li .tlp-remain { font-size: 12px; color: #ff0000; float: right; margin: 2px 10px 0 0; }
+.tl-part ul li .tlp-remain { font-size: 12px; color: #ff0000; float: right; margin: 2px 10px 0 0; margin-left: 60px; }
 
 .tl-part ul li .tlp-remain i { margin-left: 1px; vertical-align: -1px; }
 
-.tl-part ul li a { display: block; float: right; margin-right: 10px; }
+.tl-part ul li a { display: block; float: right; margin-right: 0px; }
 
 .tl-part ul li .tagsback { vertical-align: -3px; }
 
@@ -650,7 +650,7 @@
 
 .tip-part .dis-tip { margin-right: 5px; }
 
-.dis-tip { height: 16px; padding: 0 4px; border: 1px solid #ff8800; border-radius: 2px; font-size: 12px; color: #f80; line-height: 16px; }
+.dis-tip { height: 16px; padding: 0 4px; border: 1px solid #ff9900; border-radius: 2px; font-size: 12px; color: #f90; line-height: 16px; }
 
 .ft-overlay { position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 999; background-color: #000; opacity: 0.4; filter: alpha(opacity=40); display: none; }
 
@@ -874,17 +874,17 @@
 
 .tl-all .tl-part-tips .tl-more-btn { color: #666; bottom: 0px; right: 15px; width: auto; height: auto; border: 0px; }
 
-.tl-all .tl-part-tips .tl-more-btn i { background: no-repeat center;background-position: -30px -93px; height: 6px; width: 9px; }
+.tl-all .tl-part-tips .tl-more-btn i { background: url("../../imgs/flight/sprite/icon-arrow.png") no-repeat center; height: 6px; width: 9px; }
 
 .tl-all .tl-part-tips .tl-more-btn:hover { color: #f60; }
 
-.tl-all .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -30px -87px; height: 6px; width: 9px; }
+.tl-all .tl-part-tips .tl-more-btn:hover i { background: url("../../imgs/flight/sprite/icon-arrow-hover.png") no-repeat center; height: 6px; width: 9px; }
 
 .tl-all-open .tl-part-tips .tl-more-btn i { -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
 
-.tl-all-open .tl-part-tips .tl-more-btn:hover i { background: no-repeat center;background-position: -30px -87px; height: 6px; width: 9px; }
+.tl-all-open .tl-part-tips .tl-more-btn:hover i { background: url("../../imgs/flight/sprite/icon-arrow-hover.png") no-repeat center; height: 6px; width: 9px; }
 
-.tl-item-open .select-btn-flight { background-position: 0px -360px; }
+.ticket-list .tl-item-open .select-btn-flight { /*background: url('../../imgs/flight/sprite/icon-arrow-up.png') no-repeat center; height: 26px; width: 26px;*/ -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
 
 .ft-authentication { padding: 15px 26px 13px 15px; width: 199px; background: #fff; }
 
@@ -928,7 +928,7 @@
 
 .reduce-price { width: 194px; display: inline-block; *display: inline; *zoom: 1; }
 
-.reduce-price .dis-tip { /*float: left;*/ vertical-align: middle; }
+.reduce-price .dis-tip { /*float: left;*/ vertical-align: middle; margin-left: 30px; }
 
 .reduce-price .tlp-price { float: right; }
 
@@ -950,19 +950,19 @@
 
 .canderBox1 .ui-calendar .calmonth[data-offset='1'] .caltitle { border-color: #ee3388; line-height: 30px; height: 30px; margin-left: -6px; }
 
-.canderBox1 .ui-calendar .month-prev { top: 0px; left: 0px; background-position: -40px -46px; height: 30px; width: 30px; }
+.canderBox1 .ui-calendar .month-prev { top: 0px; left: 0px; background-image: url("../../imgs/flight/sprite/icon-calendar-left.png"); height: 30px; width: 30px; }
 
-.canderBox1 .ui-calendar .month-next { top: 0px; right: 0px; background-position: -62px 0; height: 30px; width: 30px; }
+.canderBox1 .ui-calendar .month-next { top: 0px; right: 0px; background-image: url("../../imgs/flight/sprite/icon-calendar-right.png"); height: 30px; width: 30px; }
 
-.canderBox1 .ui-calendar .month-prev:hover { background-position: -40px -46px; height: 30px; width: 30px; background-color: #a81c54; }
+.canderBox1 .ui-calendar .month-prev:hover { background-image: url("../../imgs/flight/sprite/icon-calendar-left.png"); height: 30px; width: 30px; background-color: #a81c54; }
 
-.canderBox1 .ui-calendar .month-next:hover { background-position: -62px 0; height: 30px; width: 30px; background-color: #a81c54; }
+.canderBox1 .ui-calendar .month-next:hover { background-image: url("../../imgs/flight/sprite/icon-calendar-right.png"); height: 30px; width: 30px; background-color: #a81c54; }
 
 .canderBox1 .ui-calendar .caldate, .canderBox1 .ui-calendar .caldate:hover, .canderBox1 .ui-calendar .nodate, .canderBox1 .ui-calendar .date { width: 64px; height: 59px; }
 
-.canderBox1 .nchclose { position: absolute; top: -47px; right: 0px; cursor: pointer; background: no-repeat center;background-position: 0 0; height: 47px; width: 32px; }
+.canderBox1 .nchclose { position: absolute; top: -47px; right: 0px; cursor: pointer; background: url("../../imgs/flight/sprite/icon-calendar-close.png") no-repeat center; height: 47px; width: 32px; }
 
-.canderBox1 .nchclose:hover { background: no-repeat center;background-position: -32px 0; height: 47px; width: 32px; }
+.canderBox1 .nchclose:hover { background: url("../../imgs/flight/sprite/icon-calendar-close-hover.png") no-repeat center; height: 47px; width: 32px; }
 
 .canderBox1 .ui-calendar { width: auto; }
 
@@ -1010,11 +1010,11 @@ body .search-num { margin-bottom: 0; }
 
 .search-contents-flight .default-box .city { height: 42px; }
 
-.search-contents-flight .default-box .city .icon { background: no-repeat center;background-position: 0 -47px; height: 40px; width: 40px; }
+.search-contents-flight .default-box .city .icon { background: url("../../imgs/flight/sprite/icon-flight.png") no-repeat center; height: 40px; width: 40px; }
 
-.search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -80px -55px; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
+.search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/flight/sprite/flight-double.png") no-repeat center; height: 13px; width: 52px; margin: 17px 15px 0 15px; vertical-align: top; }
 
-.search-contents-flight .default-box .city .icon-flight-single { background: no-repeat center;background-position: -70px -71px; height: 5px; margin-top: 21px; }
+.search-contents-flight .default-box .city .icon-flight-single { background: url("../../imgs/flight/sprite/flight-single.png") no-repeat center; height: 5px; margin-top: 21px; }
 
 .search-contents-flight .default-box .city .flight-from, .search-contents-flight .default-box .city .flight-to { display: inline-block; *display: inline; *zoom: 1; line-height: 30px; }
 
@@ -1030,11 +1030,11 @@ body .search-num { margin-bottom: 0; }
 
 .search-contents-flight .change-box .flight-tabs .flight-single.current, .search-contents-flight .change-box .flight-tabs .current.flight-double { color: #e38; }
 
-.search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span { background: no-repeat center;background-position: -92px 0; height: 15px; width: 15px; }
+.search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span { background: url("../../imgs/flight/sprite/icon-flight-chosen.png") no-repeat center; height: 15px; width: 15px; }
 
-.search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -92px -15px; height: 15px; width: 15px; vertical-align: middle; margin: 2px 6px 0 0; }
+.search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/flight/sprite/icon-flight-not.png") no-repeat center; height: 15px; width: 15px; vertical-align: middle; margin: 2px 6px 0 0; }
 
-.search-contents-flight .change-box .city .icon { background: no-repeat center;background-position: 0 -47px; }
+.search-contents-flight .change-box .city .icon { background: url("../../imgs/flight/sprite/icon-flight.png") no-repeat center; }
 
 .search-contents-flight .change-box .date .input-wrapper { padding-top: 36px; }
 
@@ -1065,127 +1065,3 @@ body .search-num { margin-bottom: 0; }
 .tl-confirm { border: 1px solid #ff9900; border-radius: 2px; width: 54px; height: 14px; text-align: center; font-size: 12px; color: #ff9900; line-height: 14px; margin-top: 15px; }
 
 .tl-confirm.tl-confirm-no { border: 0; }
-
-
-/* ../../imgs/flight/flight.png */
-.ft-price-calendar .ft-pc:hover i,
-.ft-price-calendar .ft-pc.active i,
-.ft-price-calendar .ft-pc i,
-.ft-price-calendar .slider-btn-left i,
-.ft-price-calendar .slider-btn-left.nomore-calendar i,
-.ft-price-calendar .slider-btn-right i,
-.ft-price-calendar .slider-btn-right.nomore-calendar i,
-.tl-all .tl-part-tips .tl-more-btn i,
-.tl-all .tl-part-tips .tl-more-btn:hover i,
-.tl-all-open .tl-part-tips .tl-more-btn:hover i,
-.canderBox1 .ui-calendar .month-prev,
-.canderBox1 .ui-calendar .month-next,
-.canderBox1 .ui-calendar .month-prev:hover,
-.canderBox1 .ui-calendar .month-next:hover,
-.canderBox1 .nchclose,
-.canderBox1 .nchclose:hover,
-.search-contents-flight .default-box .city .icon,
-.search-contents-flight .default-box .city .icon-flight-double,
-.search-contents-flight .default-box .city .icon-flight-single,
-.search-contents-flight .change-box .flight-tabs .flight-single.current span,
-.search-contents-flight .change-box .flight-tabs .current.flight-double span,
-.search-contents-flight .change-box .flight-tabs .flight-single span,
-.search-contents-flight .change-box .flight-tabs .flight-double span,
-.search-contents-flight .change-box .city .icon{
-background-image: url(../../imgs/flight/flight.png);
-}
-
-
-/* ../../imgs/flight/flight@2x.png */
-@media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
-.ft-price-calendar .ft-pc:hover i,
-.ft-price-calendar .ft-pc.active i,
-.ft-price-calendar .ft-pc i,
-.ft-price-calendar .slider-btn-left i,
-.ft-price-calendar .slider-btn-left.nomore-calendar i,
-.ft-price-calendar .slider-btn-right i,
-.ft-price-calendar .slider-btn-right.nomore-calendar i,
-.tl-all .tl-part-tips .tl-more-btn i,
-.tl-all .tl-part-tips .tl-more-btn:hover i,
-.tl-all-open .tl-part-tips .tl-more-btn:hover i,
-.canderBox1 .ui-calendar .month-prev,
-.canderBox1 .ui-calendar .month-next,
-.canderBox1 .ui-calendar .month-prev:hover,
-.canderBox1 .ui-calendar .month-next:hover,
-.canderBox1 .nchclose,
-.canderBox1 .nchclose:hover,
-.search-contents-flight .default-box .city .icon,
-.search-contents-flight .default-box .city .icon-flight-double,
-.search-contents-flight .default-box .city .icon-flight-single,
-.search-contents-flight .change-box .flight-tabs .flight-single.current span,
-.search-contents-flight .change-box .flight-tabs .current.flight-double span,
-.search-contents-flight .change-box .flight-tabs .flight-single span,
-.search-contents-flight .change-box .flight-tabs .flight-double span,
-.search-contents-flight .change-box .city .icon{
-background-image: url(../../imgs/flight/flight@2x.png);
-background-size: 132px auto;
-}
-.ft-price-calendar .ft-pc:hover i, .ft-price-calendar .ft-pc.active i{
-background-position: -70px -30px;
-}
-.ft-price-calendar .ft-pc i{
-background-position: -40px -76px;
-}
-.ft-price-calendar .slider-btn-left i{
-background-position: -20px -87px;
-}
-.ft-price-calendar .slider-btn-left.nomore-calendar i{
-background-position: -70px -55px;
-}
-.ft-price-calendar .slider-btn-right i{
-background-position: -10px -87px;
-}
-.ft-price-calendar .slider-btn-right.nomore-calendar i{
-background-position: 0 -87px;
-}
-.tl-all .tl-part-tips .tl-more-btn i{
-background-position: -30px -93px;
-}
-.tl-all .tl-part-tips .tl-more-btn:hover i{
-background-position: -30px -87px;
-}
-.tl-all-open .tl-part-tips .tl-more-btn:hover i{
-background-position: -30px -87px;
-}
-.canderBox1 .ui-calendar .month-prev{
-background-position: -40px -46px;
-}
-.canderBox1 .ui-calendar .month-next{
-background-position: -62px 0;
-}
-.canderBox1 .ui-calendar .month-prev:hover{
-background-position: -40px -46px;
-}
-.canderBox1 .ui-calendar .month-next:hover{
-background-position: -62px 0;
-}
-.canderBox1 .nchclose{
-background-position: 0 0;
-}
-.canderBox1 .nchclose:hover{
-background-position: -32px 0;
-}
-.search-contents-flight .default-box .city .icon{
-background-position: 0 -47px;
-}
-.search-contents-flight .default-box .city .icon-flight-double, .search-contents-flight .default-box .city .icon-flight-single{
-background-position: -80px -55px;
-}
-.search-contents-flight .default-box .city .icon-flight-single{
-background-position: -70px -71px;
-}
-.search-contents-flight .change-box .flight-tabs .flight-single.current span, .search-contents-flight .change-box .flight-tabs .current.flight-double span{
-background-position: -92px 0;
-}
-.search-contents-flight .change-box .flight-tabs .flight-single span, .search-contents-flight .change-box .flight-tabs .flight-double span{
-background-position: -92px -15px;
-}
-.search-contents-flight .change-box .city .icon{
-background-position: 0 -47px;
-} 
-}

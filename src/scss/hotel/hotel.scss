@@ -69,11 +69,9 @@ body {
     z-index: 30;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     padding: 0;
-    .search-bar-wrapper {
-      padding: 14px 30px 13px 28px;
-      width: (1200px - 58);
-      margin: 0 auto;
-    }
+  }
+  img {
+    background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repeat center center #f6f6f6;
   }
 }
 
@@ -93,10 +91,14 @@ body {
   margin-bottom: 20px;
 }
 .main_search {
-  position: relative;
-  padding: 14px 30px 13px 28px;
   border-bottom:1px solid #e3e3e3;
   background-color: #fff;
+  .search-bar-wrapper {
+    position: relative;
+    padding: 14px 30px 13px 28px;
+    width: (1200px - 58);
+    margin: 0 auto;
+  }
   .default-box {
     .city,.date {
       height: 41px;

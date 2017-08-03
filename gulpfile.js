@@ -20,7 +20,7 @@ const gulp = require('gulp'),
       collector = require('gulp-rev-collector');
 
 let htmlNameArr = ['home','flight','hotel','combo','baodian','cart','form'],
-    htmlName = 'home',//
+    htmlName = 'hotel',
     htmlSvn = 'E:/svn/pages/superFree',
     cssSvn = 'E:/svn/pic/styles/superFree/'+htmlName,
     jsSvn = 'E:/svn/pic/js/superFree',
@@ -35,7 +35,7 @@ let htmlNameArr = ['home','flight','hotel','combo','baodian','cart','form'],
     obj = {
         css:[],
         js:[],
-        domains:['s1.lvjs.com.cn','s2.lvjs.com.cn','s3.lvjs.com.cn','pic.lvmama.com'],
+        domains:['s1.lvjs.com.cn'],
         protocol:'http://'
     };
 
@@ -213,8 +213,8 @@ gulp.task('getUrl',['urlReplace'],function () {
 gulp.task('urlConcat',['getUrl'],function () {
     return gulp.src('dist/'+htmlName+'.html')
         .pipe(htmlReplace({
-            'css':'<link rel="stylesheet" href="'+ obj.protocol +obj.domains[Math.floor(Math.random()*4)] + '/min/index.php?f=' + obj.css.join(',') +'">',
-            'js':'<script src="'+ obj.protocol +obj.domains[Math.floor(Math.random()*4)] + '/min/index.php?f=' + obj.js.join(',') +'"></script>'
+            'css':'<link rel="stylesheet" href="'+ obj.protocol +obj.domains[Math.floor(Math.random()*obj.domains.length)] + '/min/index.php?f=' + obj.css.join(',') +'">',
+            'js':'<script src="'+ obj.protocol +obj.domains[Math.floor(Math.random()*obj.domains.length)] + '/min/index.php?f=' + obj.js.join(',') +'"></script>'
         }))
         .pipe(gulp.dest('dist'))
 });

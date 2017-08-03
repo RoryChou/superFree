@@ -40,6 +40,7 @@ body {
     position: fixed;
     bottom:0;
     width: 100%;
+    min-width: 1200px;
     z-index: 100;
     background:#ffffff;
     height:70px;
@@ -261,7 +262,7 @@ body {
       }
       .hotel-info-container {
         p {
-          max-width: 200px;
+          width: 200px;
           @include etc;
           font-size:14px;
           color:#333333;
@@ -272,16 +273,24 @@ body {
           font-size:12px;
           color:#999999;
         }
+        .hotel-name:hover {
+          color: #f60;
+          cursor: pointer;
+        }
       }
       .pro-details-container {
         margin-left: 16px;
         p {
-          max-width: 72px;
+          width: 72px;
           @include etc();
           font-size:12px;
           color:#333333;
           line-height:24px;
           height: 24px;
+        }
+        .flight-plane-num {
+          @include inlineblock;
+          width: 46px;
         }
       }
       .pro-sevice {
@@ -406,6 +415,7 @@ body {
             background: url('../../imgs/cart/sprite/icon-ticket-not.png') no-repeat center;
           }
         }
+
       }
     }
     .cart-section-pro-flight {
@@ -476,10 +486,13 @@ body {
         color:#333333;
         height: 24px;
         line-height: 24px;
+        text-align: right;
       }
-      .flight-airport-from {
+      .flight-airport-from,.flight-airport-to {
         font-size:12px;
         color:#666666;
+        width: 73px;
+        @include etc;
       }
       .icon-flight-arrow {
         float: left;
@@ -496,10 +509,6 @@ body {
         color:#333333;
         height: 24px;
         line-height: 24px;
-      }
-      .flight-airport-to {
-        font-size:12px;
-        color:#666666;
       }
     }
     .cart-section-pro-ticket {
@@ -530,6 +539,10 @@ body {
         height: 24px;
         line-height: 24px;
         font-size:14px;
+        &:hover {
+          color: #f60;
+          cursor: pointer;
+        }
       }
       &.pro-disabled {
         .icon-checkBox-disabled {

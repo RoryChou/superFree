@@ -159,9 +159,11 @@ body .btn-change-page { height: 24px; line-height: 24px; }
 
 .list-prod:hover { box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.1); }
 
-.list-left { float: left; width: 980px; background-color: #fff; }
+.list-left { float: left; width: 980px; background-color: #fff; min-height: 250px; }
 
-.list-left .list-left-wrapper { padding: 0 20px; border-bottom: 1px dotted #ddd; }
+.list-left .list-left-wrapper { padding: 0 20px; border-bottom: 1px dotted #ddd; position: relative; }
+
+.list-left .list-left-wrapper:hover { background-color: #fffcf7; }
 
 .list-left .list-title { height: 45px; }
 
@@ -213,8 +215,6 @@ body .btn-change-page { height: 24px; line-height: 24px; }
 
 .list-left .list-hotel, .list-left .list-flight, .list-left .list-ticket { position: relative; }
 
-.list-left .list-hotel:hover, .list-left .list-flight:hover, .list-left .list-ticket:hover { background-color: #fffcf7; }
-
 .list-left .list-hotel .list-icon, .list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: no-repeat center;background-position: -80px 0; }
 
 .list-left .list-hotel .list-hotel-main, .list-left .list-flight .list-hotel-main, .list-left .list-ticket .list-hotel-main { padding: 10px 0 10px 60px; }
@@ -257,7 +257,7 @@ body .btn-change-page { height: 24px; line-height: 24px; }
 
 .list-left .list-flight .list-icon, .list-left .list-ticket .list-icon { background: no-repeat center;background-position: 0 -80px; }
 
-.list-left .list-flight:hover .btn-change-pro-flight, .list-left .list-ticket:hover .btn-change-pro-flight { margin-top: 0px; }
+.list-left .list-flight .list-left-wrapper:hover .btn-change-pro-flight, .list-left .list-ticket .list-left-wrapper:hover .btn-change-pro-flight { margin-top: 0px; }
 
 .list-left .list-flight .btn-change-pro-flight, .list-left .list-ticket .btn-change-pro-flight { margin-top: 15px; }
 
@@ -288,6 +288,8 @@ body .btn-change-page { height: 24px; line-height: 24px; }
 .list-left .list-ticket .list-ticket-li { position: relative; padding: 8px 0; }
 
 .list-left .list-ticket .list-ticket-li .list-ticket-title { float: left; width: 310px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.list-left .list-ticket .list-ticket-li .list-ticket-title:hover { color: #f60; cursor: pointer; }
 
 .list-left .list-ticket .list-ticket-li .list-ticket-calendar { background-color: #fff; float: left; position: absolute; left: 362px; width: 138px; height: 24px; border: 1px solid #ddd; }
 

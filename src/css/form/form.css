@@ -39,11 +39,11 @@ dfn { font-weight: normal; }
 
 .order-product-dl dt .order-icon { margin-left: 0; }
 
-.order-product-dl dt .order-icon-hotel { background: no-repeat center;background-position: 0 0; height: 30px; width: 30px; }
+.order-product-dl dt .order-icon-hotel { background: url("../../imgs/form/sprite/icon-hotel.png") no-repeat center; height: 30px; width: 30px; }
 
-.order-product-dl dt .order-icon-plane { background: no-repeat center;background-position: -30px 0; height: 30px; width: 30px; }
+.order-product-dl dt .order-icon-plane { background: url("../../imgs/form/sprite/icon-flight.png") no-repeat center; height: 30px; width: 30px; }
 
-.order-product-dl dt .order-icon-ticket { background: no-repeat center;background-position: 0 -30px; height: 30px; width: 30px; }
+.order-product-dl dt .order-icon-ticket { background: url("../../imgs/form/sprite/icon-tickets.png") no-repeat center; height: 30px; width: 30px; }
 
 .order-product-dl dd .order-product-name { vertical-align: middle; }
 
@@ -75,7 +75,7 @@ dfn { font-weight: normal; }
 
 .order-product-dl .flight-notice { margin-bottom: 12px; }
 
-.order-product-dl .flight-notice .icon-flight-notice { float: left; background: no-repeat center;background-position: -60px -16px; height: 15px; width: 14px; margin-right: 4px; }
+.order-product-dl .flight-notice .icon-flight-notice { float: left; background: url("../../imgs/form/sprite/icon-notice.png") no-repeat center; height: 15px; width: 14px; margin-right: 4px; }
 
 .order-product-dl .flight-notice span { float: left; height: 16px; line-height: 16px; }
 
@@ -84,6 +84,12 @@ dfn { font-weight: normal; }
 .order-product-dl .tl-item .tl-detail { padding-left: 50px; }
 
 .order-product-dl .tl-item .tl-detail .tl-bottom em { color: #666; }
+
+.order-product-dl .tl-item .tl-detail .tl-time .tl-top, .order-product-dl .tl-item .tl-detail .tl-time .tl-bottom { text-align: right; }
+
+.order-product-dl .tl-item .tl-detail .tl-time .tl-bottom em { max-width: 62px; }
+
+.order-product-dl .tl-item .tl-detail .tl-time-return .tl-top, .order-product-dl .tl-item .tl-detail .tl-time-return .tl-bottom { text-align: left; }
 
 .order-product-dl .tl-top b.js_tip { display: inline; position: absolute; margin-left: 4px; }
 
@@ -111,19 +117,19 @@ dfn { font-weight: normal; }
 
 .order-product-dl .tl-stop { width: 57px; }
 
-.order-product-dl .tl-stop i { background: no-repeat center;background-position: -30px -58px; height: 11px; width: 57px; }
+.order-product-dl .tl-stop i { background: url("../../imgs/form/sprite/icon-line.png") no-repeat center; height: 11px; width: 57px; }
 
-.order-product-dl .flight-ticket-type-adult, .order-product-dl .flight-ticket-type-kid { background: no-repeat center;background-position: 0 -60px; height: 16px; width: 28px; margin-top: 4px; }
+.order-product-dl .flight-ticket-type-adult, .order-product-dl .flight-ticket-type-kid { background: url("../../imgs/form/sprite/adult.png") no-repeat center; height: 16px; width: 28px; margin-top: 4px; }
 
-.order-product-dl .flight-ticket-type-kid { background: no-repeat center;background-position: -60px 0; }
+.order-product-dl .flight-ticket-type-kid { background: url("../../imgs/form/sprite/kid.png") no-repeat center; }
 
-.order-product-dl .flight-from-to { background: no-repeat center;background-position: -59px -30px; height: 4px; width: 36px; }
+.order-product-dl .flight-from-to { background: url("../../imgs/form/sprite/icon-flight-line.png") no-repeat center; height: 4px; width: 36px; }
 
 .order-product-dl .oag-traffic { padding-bottom: 15px; border-bottom: 1px solid #ddd; padding-top: 5px; }
 
 .order-product-dl .oag-traffic:nth-child(2) { border: none; padding-bottom: 0px; }
 
-.orderInfo { width: 300px; font-family: "Microsoft YaHei"; }
+.orderInfo { width: 300px; font-family: "Microsoft YaHei"; box-shadow: none; }
 
 .orderInfo li { height: auto; }
 
@@ -137,7 +143,9 @@ dfn { font-weight: normal; }
 
 .orderInfo li span { float: left; font-size: 12px; color: #999; }
 
-.orderMain .oag-icon-insurance-sf { background: no-repeat center;background-position: -30px -30px; height: 28px; width: 29px; margin-left: 10px; margin-top: 10px; }
+.orderTicketInfo-fix { width: 300px; background-color: #fff; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15); }
+
+.orderMain .oag-icon-insurance-sf { background: url("../../imgs/form/sprite/icon-insurance.png") no-repeat center; height: 28px; width: 29px; margin-left: 10px; margin-top: 10px; }
 
 .oag-rows .ensurance-type { float: left; width: 100px; font-size: 14px; color: #666666; margin-left: 21px; }
 
@@ -216,61 +224,3 @@ dfn { font-weight: normal; }
 
 /*alert内容 END*/
 .orderTicketInfo li.primary dfn i { padding-right: 0; }
-
-
-/* ../../imgs/form/form.png */
-.order-product-dl dt .order-icon-hotel,
-.order-product-dl dt .order-icon-plane,
-.order-product-dl dt .order-icon-ticket,
-.order-product-dl .flight-notice .icon-flight-notice,
-.order-product-dl .tl-stop i,
-.order-product-dl .flight-ticket-type-adult,
-.order-product-dl .flight-ticket-type-kid,
-.order-product-dl .flight-from-to,
-.orderMain .oag-icon-insurance-sf{
-background-image: url(../../imgs/form/form.png);
-}
-
-
-/* ../../imgs/form/form@2x.png */
-@media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
-.order-product-dl dt .order-icon-hotel,
-.order-product-dl dt .order-icon-plane,
-.order-product-dl dt .order-icon-ticket,
-.order-product-dl .flight-notice .icon-flight-notice,
-.order-product-dl .tl-stop i,
-.order-product-dl .flight-ticket-type-adult,
-.order-product-dl .flight-ticket-type-kid,
-.order-product-dl .flight-from-to,
-.orderMain .oag-icon-insurance-sf{
-background-image: url(../../imgs/form/form@2x.png);
-background-size: 95px auto;
-}
-.order-product-dl dt .order-icon-hotel{
-background-position: 0 0;
-}
-.order-product-dl dt .order-icon-plane{
-background-position: -30px 0;
-}
-.order-product-dl dt .order-icon-ticket{
-background-position: 0 -30px;
-}
-.order-product-dl .flight-notice .icon-flight-notice{
-background-position: -60px -16px;
-}
-.order-product-dl .tl-stop i{
-background-position: -30px -58px;
-}
-.order-product-dl .flight-ticket-type-adult, .order-product-dl .flight-ticket-type-kid{
-background-position: 0 -60px;
-}
-.order-product-dl .flight-ticket-type-kid{
-background-position: -60px 0;
-}
-.order-product-dl .flight-from-to{
-background-position: -59px -30px;
-}
-.orderMain .oag-icon-insurance-sf{
-background-position: -30px -30px;
-} 
-}

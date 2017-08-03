@@ -44,25 +44,25 @@
         <ul class="clearfix">
             <li>
                 <a href="">
-                    <img src="imgs/placehold/275x184.png" alt="">
+                    <img src="imgs/placehold/275x184.png" alt="" width="275" height="184">
                     <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <img src="imgs/placehold/275x184.png" alt="">
+                    <img src="imgs/placehold/275x184.png" alt="" width="275" height="184">
                     <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <img src="imgs/placehold/275x184.png" alt="">
+                    <img src="imgs/placehold/275x184.png" alt="" width="275" height="184">
                     <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <img src="imgs/placehold/275x184.png" alt="">
+                    <img src="imgs/placehold/275x184.png" alt="" width="275" height="184">
                     <p class="desc" title="">宝典主题宝典主题宝典主题宝典主题</p>
                 </a>
             </li>
@@ -464,9 +464,88 @@
                                         <span class="text_b js_tips" tip-content="在2014-01-02 18：00前您可免费取消/变更订单，超时取消/变更订单将扣除全额房费或部分房费">限时退改</span>
                                     </div>
                                     <div class="list_td list_td6">
-                                        <span class="room_price js_date_price">
+                                        <span class="room_price js_date_price room_price_days">
                                             <dfn>¥</dfn>288
                                         </span>
+                                        <!--引入文字提示 时间价格表提示-->
+                                        <div class="time_price_in_resort_hotel" style="display: none;">
+                                            <div class="tip_arrow">
+                                                <em>◆</em>
+                                                <i>◆</i>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-26</p>
+                                                        <p>星期三</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-22</p>
+                                                        <p>星期六</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-21</p>
+                                                        <p>星期五</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-23</p>
+                                                        <p>星期日</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-20</p>
+                                                        <p>星期四</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-25</p>
+                                                        <p>星期二</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="head">
+                                                        <p>2017-07-24</p>
+                                                        <p>星期一</p>
+                                                    </div>
+                                                    <div class="price_wrap">
+                                                        <p class="price"><b>¥</b>938</p>
+                                                        <p class="detail">有早</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="list_td list_td7">
                                         <input class="select-num" value="2" readonly="readonly">
@@ -1585,7 +1664,7 @@
     </div>
     <div class="map_container">
         <div class="title">酒店地图</div>
-        <div id="baidu_map_big" class="map"><img src="http://placehold.it/940x480/ffddff" /></div>
+        <div id="baidu_map_big" class="map"><img src="http://placehold.it/940x480/ffddff" width="940" height="480" /></div>
         <i class="hlIcon hlIcon-mapClose js_mapClose"></i>
     </div>
     <!--弹出地图END-->
@@ -2133,6 +2212,12 @@
         </div>
     </div>
 
+    <!--文字提示 时间价格表提示-->
+    <div class="tip_content tip_date">
+    </div>
+    <!--文字提示 时间价格表提示 END-->
+
+
 </div>
 
 <!-- build:js -->
@@ -2152,11 +2237,81 @@
 <script src="js/search-details.js"></script>
 <script src="js/hotel-flight-alert.js"></script>
 <script>
+
+    var $document = $(document);
+
+    //酒店价格hover
+    $document.on('mouseover','.room_price_days',function () {
+        $(".tip_content.tip_date").html("");
+        var timePriceHtml=$(this).siblings(".time_price_in_resort_hotel").html();
+        if(timePriceHtml!=null && timePriceHtml!=""){
+            $(".tip_content.tip_date").html(timePriceHtml);
+        }
+
+        //修正时间价格表指向样式
+        var $this = $(this);
+        var offsetX = $this.offset().left;
+        var offsetY = $this.offset().top;
+        var $dateTip = $(".tip_content.tip_date");
+        $dateTip.show();
+        $dateTip.css({
+            "top": offsetY + $this.outerHeight() + 10,
+            "left": offsetX - $dateTip.width() / 2
+        });
+
+
+        var isHtmlEmpty = null;
+        if($(".tip_content.tip_date").html()!=null){
+            isHtmlEmpty = $(".tip_content.tip_date").html().replace(/[\r\n]/g,"");//去掉回车换行
+        }
+        if($(".tip_content.tip_date").html()==null || isHtmlEmpty==""){
+            $(".tip_content.tip_date").css('display','none');
+        }
+    });
+
+    $document.on('mouseleave','.room_price_days',function () {
+        $(".tip_content.tip_date").css('display','none');
+    });
+
+
+
+    //酒店介绍交通地图初始化
+    var map = lvmap({
+        type: 'baidu',//地图类型,支持google, baidu. 默认google
+        marker: true,//是否显示地图标记. 默认不显示
+        coordinate: { lng: 116.407, lat: 39.9 },//地图中心点的经度(lng)和纬度(lat)
+        zoom: 15,//缩放等级. 默认15,即街道级别. 数值越大,可视区域越小,地标显示越清晰
+        keyType:1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
+        containerID: "cgDetail_map",//地图容器的ID
+        markerTips: { title: '地标', content: '地标内容介绍', maxWidth: 150, maxHeight: 100 }
+        //地图标记信息: marker为true且content有值时显示. 默认不显示. 支持自定义提示框宽高.
+    });
+
     //弹出酒店介绍
     $(document).on('click','.js_hotel_name',function(e){
         $('.js_HotelDetail_tab li').eq(0).click();
         changecgHotelDetail.open();
+
     });
+
+    //调用不同酒店地图
+    $('.js_HotelDetail_tab li').unbind();
+    $('.js_HotelDetail_tab li').eq(1).click(function(){
+        setTimeout(function () {
+            //酒店地图切换位置
+            map.baiduMapInit({
+                type: 'baidu',//地图类型,支持google, baidu. 默认google
+                marker: true,//是否显示地图标记. 默认不显示
+                coordinate: { lng: 110.407, lat: 34.9 },//地图中心点的经度(lng)和纬度(lat)
+                zoom: 15,//缩放等级. 默认15,即街道级别. 数值越大,可视区域越小,地标显示越清晰
+                keyType:1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
+                containerID: "cgDetail_map",//地图容器的ID
+                markerTips: { title: '0.0', content: '地标内容介绍', maxWidth: 150, maxHeight: 100 }
+                //地图标记信息: marker为true且content有值时显示. 默认不显示. 支持自定义提示框宽高.
+            })
+        },100)
+    });
+
 
     //弹出酒店地图
     $(document).on('click','.prd_map',function(e){
@@ -2183,17 +2338,7 @@
         changecgHotelDetail.open();
     });
 
-    //酒店介绍交通地图
-    lvmap({
-        type: 'baidu',//地图类型,支持google, baidu. 默认google
-        marker: true,//是否显示地图标记. 默认不显示
-        coordinate: { lng: 116.407, lat: 39.9 },//地图中心点的经度(lng)和纬度(lat)
-        zoom: 15,//缩放等级. 默认15,即街道级别. 数值越大,可视区域越小,地标显示越清晰
-        keyType:1,//key的类型仅在google地图有效，0是没有key(默认是0)，1是频道页的key
-        containerID: "cgDetail_map",//地图容器的ID
-        markerTips: { title: '地标', content: '地标内容介绍', maxWidth: 150, maxHeight: 100 }
-        //地图标记信息: marker为true且content有值时显示. 默认不显示. 支持自定义提示框宽高.
-    });
+
 </script>
 <!--<script src="http://pic.lvmama.com/js/v5/ibm/eluminate.js"></script>
 <script src="http://pic.lvmama.com/js/v5/ibm/coremetrics-initalize.js"></script>-->

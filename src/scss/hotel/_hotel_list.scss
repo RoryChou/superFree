@@ -1292,6 +1292,9 @@ a:hover .hlIcon-room {
   color: #f60;
   cursor: default;
   font-family: Arial;
+  &.room_price_days {
+    border-bottom: #f60 dashed 1px;
+  }
 }
 
 .room_price dfn {

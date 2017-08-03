@@ -360,6 +360,7 @@ body {
       float: right;
       position: relative;
       margin-top: 28px;
+      margin-bottom: 28px;
       margin-right: 20px;
       width: 364px;
       height: 262px;
@@ -470,11 +471,12 @@ body {
       .play-main-details-main-section {
         margin-bottom: 22px;
         .play-main-details-main-section-title {
-          height: 28px;
+          min-height: 28px;
           line-height: 28px;
           font-size:14px;
           color:#666666;
           font-weight: 600;
+          width: 680px;
         }
         .play-main-details-main-section-desc {
           font-size:14px;

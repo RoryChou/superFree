@@ -410,6 +410,8 @@ a:hover .hlIcon-room { background-position: -108px 0; }
 
 .room_price { margin-right: 10px; font-size: 20px; color: #f60; cursor: default; font-family: Arial; }
 
+.room_price.room_price_days { border-bottom: #f60 dashed 1px; }
+
 .room_price dfn { padding-right: 2px; font-size: 18px; font-family: "Arial", "微软雅黑"; }
 
 .yufu, .danbao { height: 22px; padding: 0 5px; display: inline-block; *display: inline; *zoom: 1; line-height: 22px; }
@@ -842,9 +844,11 @@ li.divide-line .hotel-place-type, li.divide-line .hotel-place-type, li.divide-li
 
 .baodian ul li:hover { -webkit-transform: translateY(-5px); transform: translateY(-5px); }
 
-.baodian ul li p { font-size: 14px; color: #333333; }
+.baodian ul li p { font-size: 14px; color: #333333; width: 275px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .baodian ul a { display: block; }
+
+.baodian ul a img { width: 275px; height: 184px; }
 
 .baodian ul a:hover { text-decoration: none; }
 
@@ -874,7 +878,7 @@ body .cart:hover { background-position: -89px -140px; }
 
 body .fix-top { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); padding: 0; }
 
-body .fix-top .search-bar-wrapper { padding: 14px 30px 13px 28px; width: 1142px; margin: 0 auto; }
+body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repeat center center #f6f6f6; }
 
 .ui-calendar { z-index: 40; }
 
@@ -884,7 +888,9 @@ body .fix-top .search-bar-wrapper { padding: 14px 30px 13px 28px; width: 1142px;
 
 .head-wrapper { border: 1px solid #ccc \9; margin-bottom: 20px; }
 
-.main_search { position: relative; padding: 14px 30px 13px 28px; border-bottom: 1px solid #e3e3e3; background-color: #fff; }
+.main_search { border-bottom: 1px solid #e3e3e3; background-color: #fff; }
+
+.main_search .search-bar-wrapper { position: relative; padding: 14px 30px 13px 28px; width: 1142px; margin: 0 auto; }
 
 .main_search .default-box .city, .main_search .default-box .date, .main_search .default-box .date { height: 41px; line-height: 41px; }
 

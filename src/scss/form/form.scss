@@ -205,6 +205,19 @@ dfn {
         color: #666;
       }
     }
+    .tl-time{
+      .tl-top,.tl-bottom {
+        text-align: right;
+      }
+      .tl-bottom em {
+        max-width: 62px;
+      }
+    }
+    .tl-time-return{
+      .tl-top,.tl-bottom {
+        text-align: left;
+      }
+    }
   }
   .tl-top {
     b.js_tip {
@@ -304,6 +317,7 @@ dfn {
 .orderInfo {
   width: 300px;
   font-family: "Microsoft YaHei";
+  box-shadow: none;
   li{
     height: auto;
     dfn {
@@ -331,6 +345,12 @@ dfn {
       color: #999;
     }
   }
+}
+
+.orderTicketInfo-fix {
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
 }
 
 .orderMain {

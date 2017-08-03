@@ -137,10 +137,16 @@
       p {
         font-size:14px;
         color:#333333;
+        width: 275px;
+        @include etc();
       }
     }
     a {
       display: block;
+      img {
+        width: 275px;
+        height: 184px;
+      }
       &:hover {
         text-decoration: none;
         p {

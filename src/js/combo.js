@@ -3,8 +3,6 @@
  */
 $(function () {
 
-    //
-
     //poptip
     $('.js-tips').poptip({
         offsetX : -26
@@ -122,7 +120,7 @@ $(function () {
     });
 
     //点击展开
-    $('.list-ticket-more').click(function () {
+    $document.on('click','.list-ticket-more',function () {
         var $this = $(this);
         if(!$this.hasClass('list-ticket-close')){
             $this.siblings('.list-ticket-li').show();
@@ -135,35 +133,21 @@ $(function () {
         }
     })
 
-    //日历选择
-    lv.calendar({
-        //date: self.dateNow(),
-        autoRender: false,
-        trigger: ".list-ticket-calendar-input",
-        triggerEvent: "click",
-        bimonthly: true,
-        //定位偏移
-        monthNext: 10,
-        monthPrev: 10,
-        dayPrev: 0,
-        template: "small",
-        //点击选择日期后的回调函数 默认返回值: calendar对象
-        selectDateCallback: function () {
-
-        }
-    });
 
     //hover出现加入购物车按钮
-    $('.list-left-wrapper').hover(function () {
-        if(!$(this).parent().hasClass('list-ticket')){
+    $document.on('mouseover','.list-left-wrapper',function () {
+        if (!$(this).parent().hasClass('list-ticket')) {
             $(this).find('.btn-add-cart-new').show();
         }
-    },function () {
+    });
+    $document.on('mouseout','.list-left-wrapper',function () {
         $(this).find('.btn-add-cart-new').hide();
     });
-    $('.list-ticket-li').hover(function () {
+
+    $document.on('mouseover','.list-ticket-li',function () {
         $(this).find('.btn-add-cart-new').show();
-    },function () {
+    });
+    $document.on('mouseout','.list-ticket-li',function () {
         $(this).find('.btn-add-cart-new').hide();
-    })
+    });
 });
