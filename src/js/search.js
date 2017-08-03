@@ -598,7 +598,7 @@ $(function () {
         freshInfo: function () {
             var startDateStr = $('.combo-date').find('input').val();
             var period = parseInt($('.combo-days input').val());
-            var returnDate = this.dateNow(startDateStr, period).substring(5);
+            var returnDate = this.dateNow(startDateStr, (period-1)).substring(5);
             $('.combo-days .search-contents-info').html(returnDate + '返回')
         },
         fillInputFlight: function (type) {

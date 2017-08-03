@@ -165,9 +165,16 @@ $(function () {
                     if(res.success){
                         for(var i in self.proObj){
                             for(var j = 0;j < self.proObj[i].length;j++){
-                                self.proObj[i][j].find('.icon-checkBox').removeClass('checked');
-                                self.proObj[i][j].find('.icon-checkBox').data('checked', false);
-                                $('#'+proId).find('.cart-section-'+i+'-container').append(self.proObj[i][j]);
+                                var targetPro = self.proObj[i][j];
+                                var targetSection = $('#'+proId);
+                                var targetSectionClass = targetSection.find('.cart-section-'+i+'-container');
+
+                                targetSectionClass.append(targetPro);
+
+                                if(targetPro.find('.icon-checkBox').data('checked')===true){
+                                    //刷新section
+                                    checkBox.chooseCurSection(targetSection)
+                                }
                             }
                         }
                         //刷新checkBox
@@ -446,13 +453,7 @@ $(function () {
                     self.chooseSingle(true)
                 }
             })
-            $document.on('click', '.choose-all', function () {
-                if ($(this).prev().hasClass('checked')) {
-                    self.chooseAll(false)
-                } else {
-                    self.chooseAll(true)
-                }
-            })
+            //移除全选
         },
         each: function (elements) {
             var flag = true;
@@ -460,24 +461,18 @@ $(function () {
                 if (!$(this).data('checked')) {
                     flag = false;
                 }
-            })
+            });
             return flag;
         },
         chooseSingle: function (type) {
             var targetSection = this.target.parents('.cart-section');
-            var siblingsSection = targetSection.siblings('.cart-section');
+            //var siblingsSection = targetSection.siblings('.cart-section');
             if (type) {
                 this.target.addClass('checked');
                 this.target.data('checked', true);
 
                 //清除其他套餐checkBox
-                targetSection.addClass('current-section');
-                siblingsSection.removeClass('current-section');
-                siblingsSection.find('.icon-checkBox').each(function(){
-                    var $this = $(this);
-                    $this.removeClass('checked');
-                    $this.data('checked', false);
-                })
+                this.chooseCurSection(targetSection);
 
             } else {
                 this.target.removeClass('checked');
@@ -563,8 +558,12 @@ $(function () {
                 sectionCheckBoxs.each(function () {
                     totalMoneySec += ($(this).parent().find('.pro-money').find('span').html()) / 1;
                 });
+                //判断是否section为可用状态
                 if(sectionCheckBoxs.length === 0){
                     sectionTitleBox.removeClass('icon-checkBox').addClass('icon-checkBox-disabled');
+                    //去除选中效果
+                    sectionTitleBox.removeClass('checked');
+                    sectionTitleBox.data('checked', false);
                 }else {
                     sectionTitleBox.removeClass('icon-checkBox-disabled').addClass('icon-checkBox');
                 }
@@ -588,6 +587,16 @@ $(function () {
             }else {
                 $('.bottom-bar-button').addClass('disabled')
             }
+        },
+        chooseCurSection: function (targetJqElem) {//targetJqElem为目标section
+            //选择目标section，并去除其他section
+            targetJqElem.addClass('current-section');
+            targetJqElem.siblings('.cart-section').removeClass('current-section');
+            targetJqElem.siblings('.cart-section').find('.icon-checkBox').each(function(){
+                var $this = $(this);
+                $this.removeClass('checked');
+                $this.data('checked', false);
+            })
         }
     };
     checkBox.init();
