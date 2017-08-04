@@ -234,8 +234,10 @@ body {
       border-top: 1px dotted #e3e3e3;
     }
     &>div:first-child {
-      .cart-section-pro-wrapper {
-        border-bottom: 0;
+      &>div:first-child{
+        .cart-section-pro-wrapper {
+          border-top: 0;
+        }
       }
     }
     .cart-section-pro-hotel {
