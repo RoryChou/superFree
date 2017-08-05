@@ -105,3 +105,11 @@ $(function(){
 ##1.使用gulp-css-spritesmith替代原来的gulp-css-spriter，因为它可以处理retina图片问题（通过@media）
 ##2.build资源路径合并时，内部不能有注释
 ##3.dist-img经常出错
+
+  * 1.九周年滚动监听优化
+  * 2.css垂直居中，专题
+  * 3.弹框组件是否定制化
+  * 4.看与开发的聊天记录
+  * 5.iconfont使用
+  * 4.看与开发的聊天记录
+  * 4.看与开发的聊天记录

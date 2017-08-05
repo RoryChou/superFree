@@ -230,17 +230,17 @@ a:hover .hlIcon-select { background-position: -15px 0; }
 /*排序*/
 .rank_box li { float: left; cursor: pointer; }
 
-.rank_box li i { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -121px -81px; height: 7px; width: 7px; margin-left: 8px; }
+.rank_box li i { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/hotel/sprite/icon-arrow-black-up.png") no-repeat center; height: 7px; width: 7px; margin-left: 8px; }
 
 .rank_box li b { padding: 0 19px; font-size: 14px; font-family: sans-serif; font-weight: normal; color: #ccc; }
 
 .rank_box li.active, .rank_box li:hover { color: #e38; }
 
-.rank_box li.active i, .rank_box li:hover i { background: no-repeat center;background-position: -100px -81px; height: 7px; width: 7px; }
+.rank_box li.active i, .rank_box li:hover i { background: url("../../imgs/hotel/sprite/icon-arrow-pink.png") no-repeat center; height: 7px; width: 7px; }
 
-.rank_box li.tl-col-down i { background: no-repeat center;background-position: -114px -81px; height: 7px; width: 7px; }
+.rank_box li.tl-col-down i { background: url("../../imgs/hotel/sprite/icon-arrow-black-down.png") no-repeat center; height: 7px; width: 7px; }
 
-.rank_box li.tl-col-down.active i, .rank_box li.tl-col-down:hover i { background: no-repeat center;background-position: -107px -81px; height: 7px; width: 7px; }
+.rank_box li.tl-col-down.active i, .rank_box li.tl-col-down:hover i { background: url("../../imgs/hotel/sprite/icon-arrow-pink-down.png") no-repeat center; height: 7px; width: 7px; }
 
 /*排序END*/
 .shaixuan li { margin-right: 30px; float: left; }
@@ -291,7 +291,7 @@ a:hover .hlIcon-select { background-position: -15px 0; }
 
 .proTit a:hover { color: #f60; text-decoration: none; }
 
-.proTit a:hover .hlIcon-biao { background: no-repeat center;background-position: -189px 0; height: 27px; width: 24px; }
+.proTit a:hover .hlIcon-biao { background: url("../../imgs/hotel/sprite/hotel-num-hover.png") no-repeat center; height: 27px; width: 24px; }
 
 .hlIcon-biao { position: absolute; left: 0; top: 5px; width: 24px; height: 27px; background-position: 0 -15px; text-align: center; color: #fff; font: bold 13px/24px Arial; }
 
@@ -348,7 +348,7 @@ a:hover .hlIcon-select { background-position: -15px 0; }
 
 .room_list dt a:hover { color: #f60; }
 
-.room_list dt a:hover .icon-arrow { background: no-repeat center;background-position: -128px -81px; width: 9px; height: 6px; }
+.room_list dt a:hover .icon-arrow { background: url("../../imgs/hotel/sprite/icon-arrow-hover.png") no-repeat center; width: 9px; height: 6px; }
 
 .room_list dt .icon_arrow { border-color: #999 #fff #fff #fff; border-width: 4px; right: -12px; top: 9px; transition: all 0s linear 0s; }
 
@@ -428,7 +428,7 @@ a:hover .hlIcon-room { background-position: -108px 0; }
 
 .btn_list_show { float: left; position: relative; color: #666; cursor: pointer; }
 
-.btn_list_show:hover .icon-arrow { background: no-repeat center;background-position: -128px -81px; width: 9px; height: 6px; }
+.btn_list_show:hover .icon-arrow { background: url("../../imgs/hotel/sprite/icon-arrow-hover.png") no-repeat center; width: 9px; height: 6px; }
 
 .btn_list_show.room_up .icon-arrow { -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
 
@@ -618,7 +618,7 @@ li.divide-line .hotel-place-type, li.divide-line .hotel-place-type, li.divide-li
 
 .pagebox span { background: none; }
 
-.hlIcon-warning { position: absolute; left: 145px; top: 48px; background: no-repeat center;background-position: -89px -92px; height: 48px; width: 48px; }
+.hlIcon-warning { position: absolute; left: 145px; top: 48px; background: url("../../imgs/hotel/sprite/no-result.png") no-repeat center; height: 48px; width: 48px; }
 
 .noresult { border: 1px solid #ddd; position: relative; padding: 50px 0 50px 200px; background: #fff; margin-bottom: 15px; }
 
@@ -868,13 +868,13 @@ body #goTopBtn { bottom: 120px; }
 
 body #Feedback { bottom: 80px; }
 
-body .cart { position: fixed; display: block; z-index: 20; bottom: 20px; right: 0px; background-position: -137px -81px; height: 46px; line-height: 46px; width: 140px; text-align: center; color: #fff; font-size: 14px; cursor: pointer; }
+body .cart { position: fixed; display: block; z-index: 20; bottom: 20px; right: 0px; background: url("../../imgs/hotel/sprite/bg-cart.png"); height: 46px; line-height: 46px; width: 140px; text-align: center; color: #fff; font-size: 14px; cursor: pointer; }
 
-body .cart .pro-num { background-position: -189px -27px; height: 26px; line-height: 26px; text-align: center; width: 26px; position: absolute; top: -13px; left: 0px; }
+body .cart .pro-num { background: url("../../imgs/hotel/sprite/icon-cart-num.png"); height: 26px; line-height: 26px; text-align: center; width: 26px; position: absolute; top: -13px; left: 0px; }
 
-body .cart i { background-position: -189px -53px; height: 20px; width: 20px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; margin-top: -3px; }
+body .cart i { background: url("../../imgs/hotel/sprite/icon-cart.png"); height: 20px; width: 20px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; margin-top: -3px; }
 
-body .cart:hover { background-position: -89px -140px; }
+body .cart:hover { background: url("../../imgs/hotel/sprite/bg-cart-hover.png"); }
 
 body .fix-top { position: fixed; top: 0; left: 0; width: 100%; z-index: 30; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); padding: 0; }
 
@@ -912,7 +912,7 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .main_search .change-box .error-box, .main_search .change-box .error-box-bottom { position: absolute; display: none; top: -4px; left: 256px; background: #ffffff; border: 1px solid #dddddd; box-shadow: 0 2px 4px 0 #aaa; width: 165px; height: 34px; z-index: 20; }
 
-.main_search .change-box .error-box .error-icon, .main_search .change-box .error-box-bottom .error-icon { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -80px -186px; height: 14px; width: 14px; margin-left: 10px; vertical-align: middle; }
+.main_search .change-box .error-box .error-icon, .main_search .change-box .error-box-bottom .error-icon { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/hotel/sprite/icon-error.png") no-repeat center; height: 14px; width: 14px; margin-left: 10px; vertical-align: middle; }
 
 .main_search .change-box .error-box p, .main_search .change-box .error-box-bottom p { display: inline-block; *display: inline; *zoom: 1; font-size: 12px; line-height: 34px; text-align: right; }
 
@@ -924,11 +924,11 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .main_search .city, .main_search .date { float: left; font-size: 20px; font-weight: 700; margin-right: 100px; }
 
-.main_search .city .icon, .main_search .date .icon { display: inline-block; *display: inline; *zoom: 1; background: no-repeat center;background-position: -40px -173px; height: 39px; width: 39px; vertical-align: top; margin-right: 12px; }
+.main_search .city .icon, .main_search .date .icon { display: inline-block; *display: inline; *zoom: 1; background: url("../../imgs/hotel/sprite/icon-hotel.png") no-repeat center; height: 39px; width: 39px; vertical-align: top; margin-right: 12px; }
 
 .main_search .date .hotel-days { font-weight: 700; vertical-align: top; margin-right: 2px; font-size: 22px; }
 
-.main_search .date .icon { background: no-repeat center;background-position: 0 -173px; }
+.main_search .date .icon { background: url("../../imgs/hotel/sprite/icon-date.png") no-repeat center; }
 
 .main_search .date span { font-size: 16px; }
 
@@ -954,7 +954,7 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .main_search .drop-suggestion-citys .letter-tabs li, .main_search .drop-suggestion-keywords .letter-tabs li, .main_search .drop-complete .letter-tabs li { position: relative; float: left; cursor: pointer; height: 35px; width: 69px; text-align: center; line-height: 35px; font-family: Arial; font-size: 14px; }
 
-.main_search .drop-suggestion-citys .letter-tabs li i, .main_search .drop-suggestion-keywords .letter-tabs li i, .main_search .drop-complete .letter-tabs li i { display: none; position: absolute; bottom: -2px; left: 30px; background-position: -137px -127px; width: 11px; height: 6px; }
+.main_search .drop-suggestion-citys .letter-tabs li i, .main_search .drop-suggestion-keywords .letter-tabs li i, .main_search .drop-complete .letter-tabs li i { display: none; position: absolute; bottom: -2px; left: 30px; background: url("../../imgs/hotel/sprite/icon-arrow-current.png"); width: 11px; height: 6px; }
 
 .main_search .drop-suggestion-citys .letter-tabs li.current, .main_search .drop-suggestion-keywords .letter-tabs li.current, .main_search .drop-complete .letter-tabs li.current { font-family: Arial; color: #e38; font-weight: 600; border-bottom: 2px solid #e38; }
 
@@ -1012,7 +1012,7 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .room-li .list_td7 .select-num { position: absolute; top: 0; left: 0; z-index: 1; cursor: pointer; padding-left: 10px; padding-right: 15px; height: 22px; line-height: 22px; width: 32px; background: url("../../imgs/hotel/alpha.gif") repeat; }
 
-.room-li .list_td7 b { position: absolute; right: 5px; top: 8px; background: no-repeat center;background-position: -80px -173px; height: 6px; width: 9px; }
+.room-li .list_td7 b { position: absolute; right: 5px; top: 8px; background: url("../../imgs/hotel/sprite/icon-arrow.png") no-repeat center; height: 6px; width: 9px; }
 
 .room-li .list_td7 .select-num-selections { display: none; position: absolute; top: 22px; z-index: 10; background-color: #fff; width: 100%; border: 1px solid #ccc; left: -1px; }
 
@@ -1020,7 +1020,7 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .room-li .list_td7 .select-num-selections li:hover, .room-li .list_td7 .select-num-selections li.current { background-color: #fef2f9; color: #e38; }
 
-.icon-arrow { float: right; background: no-repeat center;background-position: -80px -173px; height: 6px; width: 9px; }
+.icon-arrow { float: right; background: url("../../imgs/hotel/sprite/icon-arrow.png") no-repeat center; height: 6px; width: 9px; }
 
 .room_list .icon-arrow { position: absolute; right: -12px; top: 9px; }
 
@@ -1036,132 +1036,14 @@ body img { background: url(http://pic.lvmama.com/img/cmt/img_120_60.jpg) no-repe
 
 .cart-success, .cart-fail { display: none; background-color: #fff; }
 
-.cart-success .icon, .cart-fail .icon { margin: 0 auto; background: no-repeat center;background-position: -100px 0; height: 81px; width: 89px; vertical-align: middle; margin-top: -20px; margin-bottom: 20px; }
+.cart-success .icon, .cart-fail .icon { margin: 0 auto; background: url("../../imgs/hotel/sprite/cart-success.png") no-repeat center; height: 81px; width: 89px; vertical-align: middle; margin-top: -20px; margin-bottom: 20px; }
 
 .cart-success p, .cart-fail p { width: 100%; text-align: center; font-size: 16px; color: #333333; line-height: 28px; padding-left: 10px; }
 
-.cart-fail .icon { background: no-repeat center;background-position: 0 -92px; height: 81px; width: 89px; }
+.cart-fail .icon { background: url("../../imgs/hotel/sprite/cart-fail.png") no-repeat center; height: 81px; width: 89px; }
 
 .no-comment { height: 340px; text-align: center; }
 
 .no-comment span { margin-top: 100px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; color: #999; font-size: 16px; }
 
-.no-comment .pic-lv { background: no-repeat center;background-position: 0 0; height: 100px; width: 100px; }
-
-
-/* ../../imgs/hotel/hotel.png */
-.rank_box li i,
-.rank_box li.active i,
-.rank_box li:hover i,
-.rank_box li.tl-col-down i,
-.rank_box li.tl-col-down.active i,
-.rank_box li.tl-col-down:hover i,
-.proTit a:hover .hlIcon-biao,
-.room_list dt a:hover .icon-arrow,
-.btn_list_show:hover .icon-arrow,
-.hlIcon-warning,
-body .cart,
-body .cart .pro-num,
-body .cart i,
-body .cart:hover,
-.main_search .change-box .error-box .error-icon,
-.main_search .change-box .error-box-bottom .error-icon,
-.main_search .city .icon,
-.main_search .date .icon,
-.main_search .drop-suggestion-citys .letter-tabs li i,
-.main_search .drop-suggestion-keywords .letter-tabs li i,
-.main_search .drop-complete .letter-tabs li i,
-.room-li .list_td7 b,
-.icon-arrow,
-.cart-success .icon,
-.cart-fail .icon,
-.no-comment .pic-lv{
-background-image: url(../../imgs/hotel/hotel.png);
-}
-
-
-/* ../../imgs/hotel/hotel@2x.png */
-@media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
-.rank_box li i,
-.rank_box li.active i,
-.rank_box li:hover i,
-.rank_box li.tl-col-down.active i,
-.rank_box li.tl-col-down:hover i,
-.proTit a:hover .hlIcon-biao,
-.room_list dt a:hover .icon-arrow,
-.btn_list_show:hover .icon-arrow,
-.hlIcon-warning,
-body .cart,
-body .cart .pro-num,
-body .cart i,
-body .cart:hover,
-.main_search .change-box .error-box .error-icon,
-.main_search .change-box .error-box-bottom .error-icon,
-.main_search .city .icon,
-.main_search .date .icon,
-.room-li .list_td7 b,
-.icon-arrow,
-.cart-success .icon,
-.cart-fail .icon,
-.no-comment .pic-lv{
-background-image: url(../../imgs/hotel/hotel@2x.png);
-background-size: 277px auto;
-}
-.rank_box li i{
-background-position: -114px -81px;
-}
-.rank_box li.active i, .rank_box li:hover i{
-background-position: -100px -81px;
-}
-.rank_box li.tl-col-down.active i, .rank_box li.tl-col-down:hover i{
-background-position: -107px -81px;
-}
-.proTit a:hover .hlIcon-biao{
-background-position: -189px 0;
-}
-.room_list dt a:hover .icon-arrow{
-background-position: -137px -127px;
-}
-.btn_list_show:hover .icon-arrow{
-background-position: -137px -127px;
-}
-.hlIcon-warning{
-background-position: -89px -92px;
-}
-body .cart{
-background-position: -137px -81px;
-}
-body .cart .pro-num{
-background-position: -189px -27px;
-}
-body .cart i{
-background-position: -189px -53px;
-}
-body .cart:hover{
-background-position: -89px -140px;
-}
-.main_search .change-box .error-box .error-icon, .main_search .change-box .error-box-bottom .error-icon{
-background-position: -80px -186px;
-}
-.main_search .city .icon, .main_search .date .icon{
-background-position: -40px -173px;
-}
-.main_search .date .icon{
-background-position: 0 -173px;
-}
-.room-li .list_td7 b{
-background-position: -121px -81px;
-}
-.icon-arrow{
-background-position: -121px -81px;
-}
-.cart-success .icon, .cart-fail .icon{
-background-position: -100px 0;
-}
-.cart-fail .icon{
-background-position: 0 -92px;
-}
-.no-comment .pic-lv{
-background-position: 0 0;
-} 
-}
+.no-comment .pic-lv { background: url("../../imgs/hotel/sprite/lv_no.png") no-repeat center; height: 100px; width: 100px; }
