@@ -45,6 +45,11 @@ body {
         color: #fff;
       }
     }
+    .choose_ok {
+      &:hover {
+        color: $color-hover-orange;
+      }
+    }
   }
   .cgFlightAll {
     .loading_box {

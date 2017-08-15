@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69d71360-d30b-42f3-a058-7f814f2babc3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tips.md" afterPath="$PROJECT_DIR$/src/tips.md" />
-    </list>
+    <list default="true" id="69d71360-d30b-42f3-a058-7f814f2babc3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -83,8 +81,8 @@
         <entry file="file://$PROJECT_DIR$/src/tips.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="2911">
-                <caret line="372" column="5" lean-forward="false" selection-start-line="372" selection-start-column="5" selection-end-line="372" selection-end-column="5" />
+              <first_editor relative-caret-position="359">
+                <caret line="256" column="23" lean-forward="true" selection-start-line="256" selection-start-column="23" selection-end-line="256" selection-end-column="23" />
                 <folding>
                   <marker date="1501937792337" expanded="true" signature="206:270" ph="{...}" />
                   <marker date="1501937792337" expanded="true" signature="297:452" ph="{...}" />
@@ -385,7 +383,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../zhuanti/黄山/js/index.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue-sf" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="E:\myproject\github\superfree\node_modules\gulp" />
@@ -505,12 +503,12 @@
       <workItem from="1495251973621" duration="20051000" />
       <workItem from="1495347963966" duration="3373000" />
       <workItem from="1495885917141" duration="1092000" />
-      <workItem from="1501935020089" duration="2772000" />
+      <workItem from="1501935020089" duration="3417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27288000" />
+    <option name="totallyTimeSpent" value="27933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -738,8 +736,8 @@
     <entry file="file://$PROJECT_DIR$/src/tips.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="2911">
-            <caret line="372" column="5" lean-forward="false" selection-start-line="372" selection-start-column="5" selection-end-line="372" selection-end-column="5" />
+          <first_editor relative-caret-position="359">
+            <caret line="256" column="23" lean-forward="true" selection-start-line="256" selection-start-column="23" selection-end-line="256" selection-end-column="23" />
             <folding>
               <marker date="1501937792337" expanded="true" signature="206:270" ph="{...}" />
               <marker date="1501937792337" expanded="true" signature="297:452" ph="{...}" />

@@ -121,7 +121,7 @@ function LoadHotelList(){
     $('.js_tips').poptip({offsetX : -20});
 
     /*右侧模块悬浮*/
-    var oldT = $('.mainRight').offset().top,
+    /*var oldT = $('.mainRight').offset().top,
         left_H = $('.mainLeft').height(),
         $main_r_fixed = $('.main_r_fixed'),
         right_H = $main_r_fixed.height(),
@@ -163,26 +163,26 @@ function LoadHotelList(){
         }else{
             $main_r_fixed.removeAttr('style','');
         };
-    }
+    }*/
 
 
     /*百度地图*/
-    $(function () {
+    /*$(function () {
 
         try{
             var $listBox = $('.prdLi');
 
-            /*地图创建位置的ID*/
+            /!*地图创建位置的ID*!/
             var mapID = document.getElementById('baidu_map');
-            /*创建地图*/
+            /!*创建地图*!/
             var map = new BMap.Map("baidu_map");
-            /*获取第一个酒店坐标和名字*/
+            /!*获取第一个酒店坐标和名字*!/
             var xy1 = $listBox.eq(0).attr('point').split(",");
-            /*默认显示第一个酒店得地图位置*/
+            /!*默认显示第一个酒店得地图位置*!/
             map.centerAndZoom(new BMap.Point(xy1[0],xy1[1]), 14);
-            /*开启滚动条缩放*/
+            /!*开启滚动条缩放*!/
             map.enableScrollWheelZoom();
-            /*鼠标hover对应酒店，跳转到对应地图位置*/
+            /!*鼠标hover对应酒店，跳转到对应地图位置*!/
             var hoverIn = true;
             $listBox.hover(function(){
                 if(hoverIn){
@@ -203,7 +203,7 @@ function LoadHotelList(){
                 hoverIn = true;
             });
 
-            /*创建所有酒店覆盖物*/
+            /!*创建所有酒店覆盖物*!/
             for(var i=0;i<$listBox.length;i++){
                 var xy = $listBox.eq(i).attr('point').split(","),
                     name = $listBox.eq(i).attr('name');
@@ -211,7 +211,7 @@ function LoadHotelList(){
                 console.log(xy + '----' + name + '----' + i);
             }
 
-            /*创建覆盖物函数*/
+            /!*创建覆盖物函数*!/
             function thisMap(xy,name,num){
 
                 //地图覆盖物创建
@@ -222,7 +222,7 @@ function LoadHotelList(){
                 }
                 ComplexCustomOverlay.prototype = new BMap.Overlay();
 
-                /*创建自定义覆盖物dom*/
+                /!*创建自定义覆盖物dom*!/
                 ComplexCustomOverlay.prototype.initialize = function(map){
                     // 保存map对象实例
                     this._map = map;
@@ -238,7 +238,7 @@ function LoadHotelList(){
                     // hide方法，或者对覆盖物进行移除时，API都将操作此元素。
                     return mapThis;
                 };
-                /*创建覆盖物位置*/
+                /!*创建覆盖物位置*!/
                 ComplexCustomOverlay.prototype.draw = function(){
                     // 根据地理坐标转换为像素坐标，并设置给容器
                     var position = this._map.pointToOverlayPixel(this._point);
@@ -248,14 +248,14 @@ function LoadHotelList(){
                 var mySquare = new ComplexCustomOverlay(new BMap.Point(xy[0],xy[1]),name,name);
                 map.addOverlay(mySquare);
 
-                /*一个酒店层级默认是最高*/
+                /!*一个酒店层级默认是最高*!/
                 $('.mapThis:first').addClass('num_this');
 
             }
         } catch (e) {
             console.log(e.message);
         }
-    });
+    });*/
 
 
 };

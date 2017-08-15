@@ -1192,57 +1192,37 @@ $(function () {
     })
 
     // 搜索条固定
-
     function searchBar() {
         var searchBar = $('.main_search'),
-            searchBarTop = searchBar.offset().top,
-            searchSortBar = searchBar.next();
+            searchSortBar = searchBar.next(),
+            searchBarTop = searchBar.offset().top;
         $(window).on('searchBarChange',function(e){
             searchBarTop = searchBar.offset().top;
-        });
+        })
         $(window).scroll(function () {
-            throttle(scrollTop,50,100)()
+            scrollTop(searchBar,searchBarTop,searchSortBar)
         });
-        scrollTop();
-
-        function scrollTop() {
-            var scrollTop = $(window).scrollTop(),
-                searchBarHeight = searchBar.outerHeight();
-            if (scrollTop > searchBarTop) {
-                if (!searchBar.hasClass('fix-top')) {
-                    searchBar.addClass('fix-top');
-                    searchSortBar.css({
-                        marginTop: searchBarHeight
-                    })
-                }
-            } else {
-                if (searchBar.hasClass('fix-top')) {
-                    searchBar.removeClass('fix-top');
-                    searchSortBar.css({
-                        marginTop: 0
-                    })
-                }
+        scrollTop(searchBar,searchBarTop,searchSortBar);
+    };
+    function scrollTop(searchBar,searchBarTop,searchSortBar) {
+        var scrollTop = $(window).scrollTop(),
+            searchBarHeight = searchBar.outerHeight();
+        if (scrollTop > searchBarTop) {
+            if (!searchBar.hasClass('fix-top')) {
+                searchBar.addClass('fix-top');
+                searchSortBar.css({
+                    marginTop: searchBarHeight
+                })
+            }
+        } else {
+            if (searchBar.hasClass('fix-top')) {
+                searchBar.removeClass('fix-top');
+                searchSortBar.css({
+                    marginTop: 0
+                })
             }
         }
-    };
-    function throttle(func, wait, mustRun) {
-        var timeout,
-            startTime = new Date();
+    }
 
-        return function() {
-            var context = this,
-                args = arguments,
-                curTime = new Date();
-            clearTimeout(timeout);
-            // 如果达到了规定的触发时间间隔，触发 handler
-            if(curTime - startTime >= mustRun){
-                func.apply(context,args);
-                startTime = curTime;
-                // 没达到触发间隔，重新设定定时器
-            }else{
-                timeout = setTimeout(func, wait);
-            }
-        };
-    };
 
 });
