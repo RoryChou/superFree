@@ -556,7 +556,9 @@ $(function () {
                 var sectionCheckBoxs = $this.find('.cart-section-pro-wrapper .icon-checkBox');
                 var sectionTitleBox = $this.find('.cart-section-title span').eq(0);
                 sectionCheckBoxs.each(function () {
-                    totalMoneySec += ($(this).parent().find('.pro-money').find('span').html()) / 1;
+                    $(this).parent().find('.pro-money').find('span').each(function () {
+                        totalMoneySec += $(this).html()/1
+                    });
                 });
                 //判断是否section为可用状态
                 if(sectionCheckBoxs.length === 0){
