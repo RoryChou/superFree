@@ -243,6 +243,11 @@ dfn {
     border:1px solid #6fd2a0;
     color:#00cc66;
   }
+  .flight-icon-route-single {
+    @extend .flight-icon-route-go;
+    border:1px solid #C1D0E0;
+    color:#9FB1C4;
+  }
   .flight-from {
     margin-left: 17px;
   }

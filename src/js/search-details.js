@@ -1196,7 +1196,7 @@ $(function () {
         var searchBar = $('.main_search'),
             searchSortBar = searchBar.next(),
             searchBarTop = searchBar.offset().top;
-        $(window).on('searchBarChange',function(e){
+        $(window).on('searchBarChange',function(){
             searchBarTop = searchBar.offset().top;
         })
         $(window).scroll(function () {

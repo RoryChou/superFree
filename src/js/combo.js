@@ -120,14 +120,19 @@ $(function () {
     });
 
     //点击展开
+    var $top = 0;
     $document.on('click','.list-ticket-more',function () {
         var $this = $(this);
         if(!$this.hasClass('list-ticket-close')){
             $this.siblings('.list-ticket-li').show();
             $this.addClass('list-ticket-close');
             $this.html('收起全部门票<i></i>');
+            $top = $document.scrollTop();
         }else {
-            $this.siblings('.list-ticket-li').hide();
+            $this.siblings('.list-ticket-li').filter(':gt(2)').hide();
+            $('html,body').animate({
+                scrollTop:$top
+            },300);
             $this.removeClass('list-ticket-close');
             $this.html('展开全部门票<i></i>');
         }

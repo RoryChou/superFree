@@ -2163,6 +2163,9 @@ li.divide-line .hotel-place-type, li.divide-line .hotel-place-type, li.divide-li
   z-index: 100;
   background: #fff;
   display: none;
+  .price b {
+    font-size: 12px;
+  }
 }
 
 .tip_content .tip_arrow {
@@ -2177,6 +2180,7 @@ li.divide-line .hotel-place-type, li.divide-line .hotel-place-type, li.divide-li
 .tip_content.tip_date .tip_arrow {
   left: 50%;
   margin-left: 5px;
+
 }
 
 .tip_content .tip_arrow i, .tip_content .tip_arrow em {

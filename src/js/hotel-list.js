@@ -23,41 +23,46 @@ function LoadHotelList(){
     });
 
     // 展开全部房型
+    var $top = 0;
     $mainLeft.on('click','.js_room_show',function(e){
         var $This = $(this),
             $room_list = $This.parents('.room_list'),
             $dl = $room_list.find('dl'),
             $roomUl = $('.room-li');
 
-        // if ( $This.hasClass('room_up') ) {
+        /*if ( $This.hasClass('room_up') ) {
+            $This.removeClass('room_up').html($This.html().replace('收起','展开'));
+            $dl.removeClass('open').filter(':gt(2)').hide();
+            $roomUl.each(function(){
+                var $me = $(this);
+                $me.find('li').filter(':gt(2)').hide();
+            });
 
-        //     $This.removeClass('room_up').html($This.html().replace('收起','展开'));
-        //     $dl.removeClass('open').filter(':gt(2)').hide();
-        //     $roomUl.each(function(){
-        //         var $me = $(this);
-        //         $me.find('li').filter(':gt(2)').hide();
-        //     });
+        } else {
+            $This.addClass('room_up').html($This.html().replace('展开','收起'));
+            $dl.removeClass('open').show();
+            $roomUl.each(function(){
+                var $me = $(this);
+                $me.find('li').filter(':gt(2)').show();
+            });
+        }*/
 
-        // } else {
-        //     $This.addClass('room_up').html($This.html().replace('展开','收起'));
-        //     $dl.removeClass('open').show();
-        //     $roomUl.each(function(){
-        //         var $me = $(this);
-        //         $me.find('li').filter(':gt(2)').show();
-        //     });
-        // }
         var $oLi = $room_list.find('li');
         if ( $This.hasClass('room_up') ) {
+            //收起
             $This.removeClass('room_up').html($This.html().replace('收起','展开'));
-            $dl.removeClass('open').hide();
-            $oLi.hide();
-            $('.defaultShow').each(function() {
-                $(this).show().parents('dl').show();
-            });
+            $dl.removeClass('open').filter(':gt(0)').hide()
+            $oLi.filter(':gt(0)').hide();
+            $('html,body').animate({
+                scrollTop:$top
+            },300);
         } else {
+            //展开
+            $top = $(document).scrollTop();
             $dl.removeClass('open').show();
             $oLi.show();
             $This.addClass('room_up').html($This.html().replace('展开','收起'));
+
         }
     });
 

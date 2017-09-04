@@ -6,14 +6,345 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
+    <style>
+        svg {
+            transition: all 2s;
+        }
+        .active {
+            transform: rotateZ(360deg);
+        }
+        .wrapper {
+            width: 300px;
+            height: 300px;
+            transform: rotateZ(45deg);
+            overflow: hidden;
+            opacity: 0.5;
+        }
+        .wrapper:hover {
+            opacity: 1;
+        }
+        img {
+            width: 141%;
+            height: 141%;
+            transform: rotateZ(-45deg);
+            margin-top: -62px;
+            margin-left: -62px;
+        }
+    </style>
 </head>
 <body>
-<div data-src={asd.png,ass.jpg}></div>
-<img src="http://placehold.it/675x450/ddd" alt="">
-<img src="http://placehold.it/675x450/ddd" alt="" width="200" height="100" style="height: 100px;width: 200px">
+    <button id="btn">
+        开始
+    </button>
+    <svg version="1.1" id="test1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="960px" height="560px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+            <polygon fill="none" stroke="#000000" stroke-width="4px" stroke-miterlimit="100" points="287.544,157.684 372.987,409.582 624.253,243.759 "/>
+        </svg>
+    <svg version="1.1" width="200" height="210" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511" xmlns:xlink="http://www.w3.org/1999/xlink" id="my-svg">
+        <path d="M399.5,0h-288C89.72,0,72,17.72,72,39.5v432c0,21.78,17.72,39.5,39.5,39.5h288c21.78,0,39.5-17.72,39.5-39.5v-432   C439,17.72,421.28,0,399.5,0z M424,471.5c0,13.509-10.991,24.5-24.5,24.5h-288C97.991,496,87,485.009,87,471.5v-432   C87,25.991,97.991,15,111.5,15h288c13.509,0,24.5,10.991,24.5,24.5V471.5z" stroke="#000" stroke-width="4px" fill="none"/>
+        <path d="m373.5,64h-236c-5.238,0-9.5,4.262-9.5,9.5v76c0,5.238 4.262,9.5 9.5,9.5h236c5.238,0 9.5-4.262 9.5-9.5v-76c0-5.238-4.262-9.5-9.5-9.5zm-5.5,80h-225v-65h225v65z" stroke="#000" stroke-width="4px" fill="none"/>
+        <path d="m373.5,192h-236c-5.238,0-9.5,4.262-9.5,9.5v236c0,5.238 4.262,9.5 9.5,9.5h236c5.238,0 9.5-4.262 9.5-9.5v-236c0-5.238-4.262-9.5-9.5-9.5zm-150.5,160v-65h65v65h-65zm65,15v65h-65v-65h65zm-145-80h65v65h-65v-65zm80-15v-65h65v65h-65zm80,15h65v65h-65v-65zm65-15h-65v-65h65v65zm-160-65v65h-65v-65h65zm-65,160h65v65h-65v-65zm160,65v-65h65v65h-65z" stroke="#000" stroke-width="4px" fill="none"/>
+        <path d="m279.5,127c4.142,0 7.5-3.358 7.5-7.5v-16c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v16c0,4.142 3.358,7.5 7.5,7.5z" stroke="#000" stroke-width="4px" fill="none"/>
+        <path d="m311.5,127c4.142,0 7.5-3.358 7.5-7.5v-16c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v16c0,4.142 3.358,7.5 7.5,7.5z" stroke="#000" stroke-width="4px" fill="none"/>
+        <path d="m343.5,127c4.142,0 7.5-3.358 7.5-7.5v-16c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v16c0,4.142 3.358,7.5 7.5,7.5z" stroke="#000" stroke-width="4px" fill="none"/>
+    </svg>
+    <svg  id="test2"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+        <!--<path stroke="#000" stroke-width="4px" fill="none" data-start="0" data-duration="10" d="M224 779.712l-0.128-439.712h146.976l45.856-106.048c1.856-4.256 10.496-9.952 15.136-9.952h192.288c4.768 0 13.248 5.6 15.136 9.92l45.856 106.08 146.88 0.32 0.032 439.68L224 779.68zM832.032 276h-104.832l-29.184-67.52C686.016 180.896 654.272 160 624.128 160h-192.288c-30.144 0-61.888 20.864-73.856 48.544l-29.184 67.456H223.968A64.224 64.224 0 0 0 160 340.32v439.36c0 35.488 28.672 64.32 63.968 64.32h608.064A64.192 64.192 0 0 0 896 779.68v-439.36c0-35.456-28.704-64.32-63.968-64.32z"></path>-->
+        <path stroke="#000" stroke-width="4px" fill="none" d="M528 640c-52.928 0-96-43.072-96-96s43.072-96 96-96 96 43.072 96 96-43.072 96-96 96"></path>
+    </svg>
+    <svg id="test3" viewBox="0 0 1024 1024" version="1.1"
+         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+         height="200">
+        <path stroke="#c33" stroke-width="4px" d="M695.104 546.368c-20.16 19.808-31.328 54.4-26.56 82.368l26.976 158.56-140.992-74.688c-25.056-13.248-61.408-13.28-86.464 0l-140.992 74.656 27.008-158.56c4.736-27.904-6.464-62.528-26.56-82.336l-114.56-112.512 158.08-23.136c27.936-4.096 57.312-25.6 69.792-51.04l70.464-143.872 70.464 143.872c12.512 25.472 41.856 46.944 69.824 51.04l158.08 23.136-114.56 112.512z m182.528-89.536c14.976-14.72 20.384-32.96 14.816-50.016-5.536-17.024-20.64-28.512-41.344-31.552l-190.272-27.872c-6.944-1.024-18.432-9.472-21.6-15.872l-85.088-173.76c-9.248-18.88-24.896-29.76-42.88-29.76-17.92 0-33.568 10.88-42.848 29.76l-85.056 173.76c-3.136 6.4-14.656 14.848-21.632 15.872l-190.272 27.84c-20.704 3.072-35.744 14.56-41.28 31.584-5.6 17.024-0.192 35.264 14.784 50.016L282.624 592c5.12 5.024 9.6 18.848 8.352 25.92l-32.512 190.944c-3.52 20.8 2.784 38.816 17.344 49.344 7.52 5.44 16.256 8.16 25.472 8.16 8.576 0 17.632-2.368 26.56-7.104l170.176-90.144c6.08-3.2 20.48-3.2 26.56 0l170.144 90.144c18.496 9.824 37.504 9.408 52.032-1.056 14.56-10.56 20.896-28.512 17.376-49.312l-32.512-190.976c-1.216-7.072 3.232-20.896 8.32-25.92l137.696-135.2z"
+              p-id="2907"></path>
+    </svg>
+    <svg id="test4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1024 1024" version="1.1" p-id="2868" width="200" height="200">
+        <path stroke="#333" stroke-width="4px" fill="none" d="M248.482281 938.000324c-4.306072 0-8.592702-1.336438-12.211113-3.967358-6.395664-4.646833-9.600659-12.521175-8.264221-20.314675l48.430012-282.363949L71.288626 431.382914c-5.66093-5.519714-7.698333-13.772678-5.255701-21.291932 2.444679-7.519254 8.943696-13.000082 16.768919-14.137998l283.508006-41.195238L493.099535 97.853655c3.498684-7.089465 10.720156-11.577686 18.627243-11.577686 7.907087 0 15.127536 4.489244 18.627243 11.577686l126.788661 256.904091 283.510052 41.195238c7.823176 1.137916 14.322194 6.618744 16.766872 14.137998 2.442632 7.519254 0.405229 15.773242-5.255701 21.291932L747.012502 631.354342l48.430012 282.363949c1.336438 7.7935-1.868557 15.667841-8.264221 20.314675-6.399757 4.646833-14.878872 5.257747-21.874193 1.582031L511.726777 802.298666 258.146385 935.614997C255.107165 937.211355 251.789607 938.000324 248.482281 938.000324z"/>
+    </svg>
+    <div class="wrapper">
+        <img src="imgs/home/sanya.jpg" alt="">
+    </div>
+    <svg width="80px" height="50px" id="line-left-combo" class="svg-line-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 80 50" enable-background="new 0 0 80 50" xml:space="preserve">
+                        <path fill="none" stroke="#000" stroke-width="6px" stroke-miterlimit="10" d="M25,4.5C13.945,4.5,5,13.945,5,25s8.945,20.5,20,20.5h50"/>
+                    </svg>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vivus/0.4.2/vivus.min.js"></script>
+    <script>
+        'use strict';
+
+        /**
+         * Pathformer
+         * Beta version
+         *
+         * Take any SVG version 1.1 and transform
+         * child elements to 'path' elements
+         *
+         * This code is purely forked from
+         * https://github.com/Waest/SVGPathConverter
+         */
+
+        /**
+         * Class constructor
+         *
+         * @param {DOM|String} element Dom element of the SVG or id of it
+         */
+        function Pathformer(element) {
+            // Test params
+            if (typeof element === 'undefined') {
+                throw new Error('Pathformer [constructor]: "element" parameter is required');
+            }
+
+            // Set the element
+            if (element.constructor === String) {
+                element = document.getElementById(element);
+                if (!element) {
+                    throw new Error('Pathformer [constructor]: "element" parameter is not related to an existing ID');
+                }
+            }
+            if (element instanceof window.SVGElement ||
+                element instanceof window.SVGGElement ||
+                /^svg$/i.test(element.nodeName)) {
+                this.el = element;
+            } else {
+                throw new Error('Pathformer [constructor]: "element" parameter must be a string or a SVGelement');
+            }
+
+            // Start
+            this.scan(element);
+        }
+
+        /**
+         * List of tags which can be transformed
+         * to path elements
+         *
+         * @type {Array}
+         */
+        Pathformer.prototype.TYPES = ['line', 'ellipse', 'circle', 'polygon', 'polyline', 'rect'];
+
+        /**
+         * List of attribute names which contain
+         * data. This array list them to check if
+         * they contain bad values, like percentage.
+         *
+         * @type {Array}
+         */
+        Pathformer.prototype.ATTR_WATCH = ['cx', 'cy', 'points', 'r', 'rx', 'ry', 'x', 'x1', 'x2', 'y', 'y1', 'y2'];
+
+        /**
+         * Finds the elements compatible for transform
+         * and apply the liked method
+         *
+         * @param  {object} options Object from the constructor
+         */
+        Pathformer.prototype.scan = function (svg) {
+            var fn, element, pathData, pathDom,
+                elements = svg.querySelectorAll(this.TYPES.join(','));
+
+            for (var i = 0; i < elements.length; i++) {
+                element = elements[i];
+                fn = this[element.tagName.toLowerCase() + 'ToPath'];
+                pathData = fn(this.parseAttr(element.attributes));
+                pathDom = this.pathMaker(element, pathData);
+                element.parentNode.replaceChild(pathDom, element);
+            }
+        };
+
+
+        /**
+         * Read `line` element to extract and transform
+         * data, to make it ready for a `path` object.
+         *
+         * @param  {DOMelement} element Line element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.lineToPath = function (element) {
+            var newElement = {},
+                x1 = element.x1 || 0,
+                y1 = element.y1 || 0,
+                x2 = element.x2 || 0,
+                y2 = element.y2 || 0;
+
+            newElement.d = 'M' + x1 + ',' + y1 + 'L' + x2 + ',' + y2;
+            return newElement;
+        };
+
+        /**
+         * Read `rect` element to extract and transform
+         * data, to make it ready for a `path` object.
+         * The radius-border is not taken in charge yet.
+         * (your help is more than welcomed)
+         *
+         * @param  {DOMelement} element Rect element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.rectToPath = function (element) {
+            var newElement = {},
+                x      = parseFloat(element.x)      || 0,
+                y      = parseFloat(element.y)      || 0,
+                width  = parseFloat(element.width)  || 0,
+                height = parseFloat(element.height) || 0;
+
+            newElement.d  = 'M' + x + ' ' + y + ' ';
+            newElement.d += 'L' + (x + width) + ' ' + y + ' ';
+            newElement.d += 'L' + (x + width) + ' ' + (y + height) + ' ';
+            newElement.d += 'L' + x + ' ' + (y + height) + ' Z';
+            return newElement;
+        };
+
+        /**
+         * Read `polyline` element to extract and transform
+         * data, to make it ready for a `path` object.
+         *
+         * @param  {DOMelement} element Polyline element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.polylineToPath = function (element) {
+            var newElement = {},
+                points = element.points.trim().split(' '),
+                i, path;
+
+            // Reformatting if points are defined without commas
+            if (element.points.indexOf(',') === -1) {
+                var formattedPoints = [];
+                for (i = 0; i < points.length; i+=2) {
+                    formattedPoints.push(points[i] + ',' + points[i+1]);
+                }
+                points = formattedPoints;
+            }
+
+            // Generate the path.d value
+            path = 'M' + points[0];
+            for(i = 1; i < points.length; i++) {
+                if (points[i].indexOf(',') !== -1) {
+                    path += 'L' + points[i];
+                }
+            }
+            newElement.d = path;
+            return newElement;
+        };
+
+        /**
+         * Read `polygon` element to extract and transform
+         * data, to make it ready for a `path` object.
+         * This method rely on polylineToPath, because the
+         * logic is similar. The path created is just closed,
+         * so it needs an 'Z' at the end.
+         *
+         * @param  {DOMelement} element Polygon element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.polygonToPath = function (element) {
+            var newElement = Pathformer.prototype.polylineToPath(element);
+
+            newElement.d += 'Z';
+            return newElement;
+        };
+
+        /**
+         * Read `ellipse` element to extract and transform
+         * data, to make it ready for a `path` object.
+         *
+         * @param  {DOMelement} element ellipse element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.ellipseToPath = function (element) {
+            var newElement = {},
+                rx = parseFloat(element.rx) || 0,
+                ry = parseFloat(element.ry) || 0,
+                cx = parseFloat(element.cx) || 0,
+                cy = parseFloat(element.cy) || 0,
+                startX = cx - rx,
+                startY = cy,
+                endX = parseFloat(cx) + parseFloat(rx),
+                endY = cy;
+
+            newElement.d = 'M' + startX + ',' + startY +
+                'A' + rx + ',' + ry + ' 0,1,1 ' + endX + ',' + endY +
+                'A' + rx + ',' + ry + ' 0,1,1 ' + startX + ',' + endY;
+            return newElement;
+        };
+
+        /**
+         * Read `circle` element to extract and transform
+         * data, to make it ready for a `path` object.
+         *
+         * @param  {DOMelement} element Circle element to transform
+         * @return {object}             Data for a `path` element
+         */
+        Pathformer.prototype.circleToPath = function (element) {
+            var newElement = {},
+                r  = parseFloat(element.r)  || 0,
+                cx = parseFloat(element.cx) || 0,
+                cy = parseFloat(element.cy) || 0,
+                startX = cx - r,
+                startY = cy,
+                endX = parseFloat(cx) + parseFloat(r),
+                endY = cy;
+
+            newElement.d =  'M' + startX + ',' + startY +
+                'A' + r + ',' + r + ' 0,1,1 ' + endX + ',' + endY +
+                'A' + r + ',' + r + ' 0,1,1 ' + startX + ',' + endY;
+            return newElement;
+        };
+
+        /**
+         * Create `path` elements form original element
+         * and prepared objects
+         *
+         * @param  {DOMelement} element  Original element to transform
+         * @param  {object} pathData     Path data (from `toPath` methods)
+         * @return {DOMelement}          Path element
+         */
+        Pathformer.prototype.pathMaker = function (element, pathData) {
+            var i, attr, pathTag = document.createElementNS('http://www.w3.org/2000/svg','path');
+            for(i = 0; i < element.attributes.length; i++) {
+                attr = element.attributes[i];
+                if (this.ATTR_WATCH.indexOf(attr.name) === -1) {
+                    pathTag.setAttribute(attr.name, attr.value);
+                }
+            }
+            for(i in pathData) {
+                pathTag.setAttribute(i, pathData[i]);
+            }
+            return pathTag;
+        };
+
+        /**
+         * Parse attributes of a DOM element to
+         * get an object of attribute => value
+         *
+         * @param  {NamedNodeMap} attributes Attributes object from DOM element to parse
+         * @return {object}                  Object of attributes
+         */
+        Pathformer.prototype.parseAttr = function (element) {
+            var attr, output = {};
+            for (var i = 0; i < element.length; i++) {
+                attr = element[i];
+                // Check if no data attribute contains '%', or the transformation is impossible
+                if (this.ATTR_WATCH.indexOf(attr.name) !== -1 && attr.value.indexOf('%') !== -1) {
+                    throw new Error('Pathformer [parseAttr]: a SVG shape got values in percentage. This cannot be transformed into \'path\' tags. Please use \'viewBox\'.');
+                }
+                output[attr.name] = attr.value;
+            }
+            return output;
+        };
+
+    </script>
 <script>
-    $('img').attr('src') = "http://placehold.it/675x450/dfd"
+    $(function () {
+        var vivElem = new Vivus('line-left-combo',{
+            start:'manual',
+            //reverseStack:true
+        });
+        $('#btn').click(function () {
+            //$('#line-left-combo').addClass('active');
+            vivElem.play(1,function () {
+
+            })
+        })
+    })
+
 </script>
 </body>
 </html>

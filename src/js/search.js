@@ -975,7 +975,9 @@ $(function () {
         }
     };
 
-    tabSwitch('.search-tabs>li', '.search-contents>li', true);
+
+
+    tabSwitchSvg('.search-tabs>li', '.search-contents>li', true);
 
     /**
      * @param
@@ -995,5 +997,103 @@ $(function () {
             search.refresh();
         })
     }
+
+
+
+    //svg
+    var vivCombo = new Vivus('svg-combo',{
+        //  start:'manual',
+        duration:50
+    });
+    var vivFlight = new Vivus('svg-flight',{
+          start:'manual',
+        duration:50
+    });
+    var vivHotel = new Vivus('svg-hotel',{
+        start:'manual',
+        duration:50
+    });
+    var vivComboLine= new Vivus('line-left-combo',{
+        start:'manual',
+        duration:30,
+        //delay:50
+    });
+    var vivFlightLineLeft = new Vivus('line-left-flight',{
+        start:'manual',
+        duration:30,
+        //delay:50
+    });
+    var vivFlightLineRight = new Vivus('line-right-flight',{
+        start:'manual',
+        duration:30,
+        //delay:50
+    });
+    var vivHotelLine = new Vivus('line-right-hotel',{
+        start:'manual',
+        duration:30,
+        //delay:50
+    });
+    vivComboLine.play(1)
+    var tabLine = $('.tab-line');
+
+    function tabSwitchSvg(tabs, details, shouldInitSearch) {
+        shouldInitSearch = shouldInitSearch || false;
+        var $tabs = $(tabs);
+        //添加默认样式
+        $tabs.eq(0).addClass("current").siblings(tabs).removeClass("current");
+        $(details).eq(0).show().siblings(details).hide();
+        shouldInitSearch && search.init();
+        //点击切换
+        $tabs.mousedown(function () {
+            //获取上一个tab
+            var lastTab;
+            $tabs.each(function () {
+                if($(this).hasClass('current')){
+                    lastTab =  $(this);
+                }
+            });
+            //上一个tab添加active样式=>旋转
+            lastTab.addClass('active');
+            var viv = null;
+            var vivCurrent = null;
+            //判断上一个tab的vivus实例
+
+            if(lastTab.hasClass('tab-combo')){
+                viv = vivCombo;
+                vivLine = vivComboLine;
+            }else if(lastTab.hasClass('tab-flight')){
+                viv = vivFlight;
+                vivLine = vivFlightLineLeft;
+            }else {
+                viv = vivHotel
+                vivLine = vivHotelLine;
+            }
+            //上一个tab描线=>反向
+            viv.play(-1);
+            vivLine.play(-1)
+
+            //获取当前tab
+            var $this = $(this);
+            //当前tab添加current=>旋转
+            $this.addClass("current").removeClass("active").siblings(tabs).removeClass("current");
+            //判断当前tab的vivus实例
+            if($this.hasClass('tab-combo')){
+                vivCurrent = vivCombo
+                tabLine.removeClass('flight').removeClass('hotel')
+            }else if($this.hasClass('tab-flight')){
+                vivCurrent = vivFlight
+                tabLine.addClass('flight').removeClass('hotel')
+            }else {
+                vivCurrent = vivHotel
+                tabLine.addClass('hotel').removeClass('flight')
+            }
+            //当前tab描线=>正向
+            vivCurrent.play(1);
+
+            $(details).eq($(this).index()).show().siblings(details).hide();
+            search.refresh();
+        })
+    }
+
 
 });

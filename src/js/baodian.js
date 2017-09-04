@@ -83,7 +83,7 @@ $(function () {
         units.each(function () {
             arr.push($(this).offset().top)
         });
-        console.log(arr)
+
         //滚动监听
         $(window).on('scroll',function () {
             if(!flag) return;
@@ -130,6 +130,7 @@ $(function () {
         s.btnR = $('.img-alert-list-right');
         s.smallUl = $('.img-alert-small-list');
         s.bigUl = $('.img-alert-big-list');
+        s.messageBox = $('.bd-pro-mes');
         s.bigLiWidth = 0;
         s.smallWidth = 0;
         s.index = 0;
@@ -144,14 +145,14 @@ $(function () {
                 //填充大图
                 $li = $('<li></li>');
                 $img = $('<img src="" />');
-                $img.attr('src',dataSrcArr[i])
+                $img.attr('src',dataSrcArr[i][0])
                 $li.append($img);
                 s.bigUl.append($li);
                 //填充小图
                 $liS = $('<li></li>');
                 $imgS = $('<img src="" />');
                 $span= $('<span class="img-alert-small-over"></span>');
-                $imgS.attr('src',dataSrcArr[i])
+                $imgS.attr('src',dataSrcArr[i][0])
                 $liS.append($imgS);
                 $liS.append($span);
                 s.smallUl.append($liS)
@@ -173,10 +174,16 @@ $(function () {
                 marginLeft: 0,
                 width: (s.smallWidth+5)*s.imgNum //5px margin-right
             })
+            //默认景点名称
+            s.messageBox.html(dataSrcArr[0][1]);
 
         };
         s.bindEvent = function () {
             s.smallLi.click(function(){
+                s.index = $(this).index()
+                s.move();
+            });
+            s.smallLi.mouseover(function(){
                 s.index = $(this).index()
                 s.move();
             });
@@ -205,6 +212,8 @@ $(function () {
         s.move = function () {
             var index = s.index;
             s.smallLi.eq(index).addClass('current').siblings('li').removeClass('current');
+            //更换景点名称
+            s.messageBox.html(dataSrcArr[index][1]);
             //如果smallLi超出容器，则容器移动
             var smallIndex = s.index > 5?s.index-5:0;
             s.smallUl.stop(true).animate({

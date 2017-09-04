@@ -68,9 +68,34 @@ body {
       border-right: 1px solid #777;
       @include opacity(0.75);
       .tab-wrapper {
-        width: 107px;
+        width: 97px;
         text-align: center;
+        padding-right: 10px;
         padding-bottom: 9px;
+        position: relative;
+      }
+      .svg-icon {
+        position: absolute;
+        left: 50%;
+        margin-left: -20px;
+        transition: all 0.5s linear ;
+        height: 26px;
+        width: 26px;
+      }
+      .svg-line-left {
+        position: absolute;
+        left: 28px;
+        bottom: -11px;
+        height: 26px;
+        width: 26px;
+      }
+      .svg-line-right {
+        @extend .svg-line-left;
+        left: 42px;
+      }
+      span {
+        transition: all 0.2s linear ;
+        opacity: 1;
       }
       i {
         @include inlineblock;
@@ -83,7 +108,15 @@ body {
         @include opacity(1);
         font-weight: 600;
         .tab-wrapper {
-          border-bottom: 2px solid #fff;
+          //border-bottom: 2px solid #fff;
+        }
+        span {
+          opacity: 0;
+        }
+      }
+      &.active {
+        .svg-icon {
+          transform: rotateZ(120deg);
         }
       }
       &:hover {
@@ -135,6 +168,21 @@ body {
           background: url("../../imgs/home/sprite/icon-tab-ticket-cur.png");
         }
       }
+    }
+  }
+  .tab-line {
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background-color: #fff;
+    left: 92px;
+    top: 60px;
+    transition: all 0.3s linear 0.7s;
+    &.flight{
+      transform: translate(200px,0px);
+    }
+    &.hotel{
+      transform: translate(400px,0px);
     }
   }
   .search-contents {

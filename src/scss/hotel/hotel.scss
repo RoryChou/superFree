@@ -75,6 +75,10 @@ body {
   }
 }
 
+.mainBox {
+  padding-bottom: 50px;
+}
+
 .ui-calendar {
   z-index: 40;
 }
@@ -491,6 +495,8 @@ body {
       width: 100%;
       border: 1px solid #ccc;
       left: -1px;
+      max-height: 208px;
+      overflow-y: scroll;
       li {
         height: 20px;
         padding: 0 0 0 10px;

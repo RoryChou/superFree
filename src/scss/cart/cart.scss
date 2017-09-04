@@ -41,7 +41,7 @@ body {
     bottom:0;
     width: 100%;
     min-width: 1200px;
-    z-index: 100;
+    z-index: 1;
     background:#ffffff;
     height:70px;
     box-shadow:0 0 3px 0 rgba(0,0,0,0.09);
@@ -462,6 +462,11 @@ body {
         @extend .flight-icon-route-go;
         border:1px solid #6fd2a0;
         color:#00cc66;
+      }
+      .flight-icon-route-single {
+        @extend .flight-icon-route-go;
+        border:1px solid #C1D0E0;
+        color:#9FB1C4;
       }
       .flight-main-container {
         margin-left: 21px;
