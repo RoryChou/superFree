@@ -492,7 +492,7 @@
                                 </div>
                                 <div class="list-hotel-details clearfix">
                                     <span class="list-icon-notice">房型</span>
-                                    <span class="list-hotel-details-desc">豪华大床房最多十二个字字</span>
+                                    <span class="list-hotel-details-desc js_hotel_title">豪华大床房最多十二个字字</span>
                                     <i class="tl-confirm js-tips" tip-content="立即确认!!!">立即确认</i>
                                     <span class="list-info-bed list-info-1">大床/双床</span>
                                     <span class="list-info-breakfast list-info-2">双早</span>
@@ -1952,6 +1952,24 @@
     </div>
     <!-- 酒店房型介绍hover 浮层 END-->
 
+    <!-- 酒店产品名称hover 浮层 -->
+    <div class="title_float_box" id="hotel_title_pro">
+        <div class="title_float_info">
+            <table>
+                <tr>
+                    <td><b>床型：</b>大床/双床</td>
+                    <td><b>加床：</b>可以加床</td>
+                    <td><b>面积：</b>45平方米</td>
+                    <td><b>楼层：</b>3-16楼</td>
+                    <td><b>宽带：</b>免费</td>
+                    <td><b>无烟房：</b>有无烟楼层</td>
+                </tr>
+            </table>
+        </div>
+        <span class="icon_arrownew"><i>◆</i><b>◆</b></span>
+    </div>
+    <!-- 酒店产品名称hover 浮层END -->
+
     <!-- 更换航班弹窗 开始 -->
     <div class="changeBox cgFlightAll">
 
@@ -2930,6 +2948,11 @@
         }
     })();
     //endregion
+
+    //hover酒店标题展示信息
+    $document.on('mouseover','.js_hotel_title',function(e){
+        window.titleHover($(this),$('#hotel_title_pro'));//hover的对象，显示的对象
+    });
 
     //弹出酒店介绍
     $(document).on('click', '.js_hotel_name', function (e) {

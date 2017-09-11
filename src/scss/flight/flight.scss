@@ -142,6 +142,19 @@ body {
       .icon {
         background: url('../../imgs/flight/sprite/icon-flight.png') no-repeat center;
       }
+      .flight-change {
+        background: url('../../imgs/flight/sprite/icon-change.png') no-repeat center;
+        position: absolute;
+        width: 23px;
+        height: 45px;
+        left: 340px;
+        top: 77px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+          background: url('../../imgs/flight/sprite/icon-change-hover.png') no-repeat center;
+        }
+      }
     }
     .date {
       .input-wrapper {

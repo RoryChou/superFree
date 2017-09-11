@@ -448,9 +448,9 @@ $(function () {
                 // 处理error
                 self.showError('', true, 'flight-from');
                 self.showError('', true, 'flight-to');
-                if (!self.passFlight) {
-                    self.formCheck()
-                }
+                // if (!self.passFlight) {
+                //     self.formCheck()
+                // }
             });
             //下拉框点击
             $document.on('click', '.search-contents-select', function (e) {
@@ -1003,37 +1003,64 @@ $(function () {
     //svg
     var vivCombo = new Vivus('svg-combo',{
         //  start:'manual',
-        duration:50
+        duration:20,
+        animTimingFunction:Vivus.EASE_IN
     });
     var vivFlight = new Vivus('svg-flight',{
           start:'manual',
-        duration:50
+        duration:20,
+        animTimingFunction:Vivus.EASE_IN
     });
     var vivHotel = new Vivus('svg-hotel',{
         start:'manual',
-        duration:50
+        duration:20,
+        animTimingFunction:Vivus.EASE_IN
     });
-    var vivComboLine= new Vivus('line-left-combo',{
-        start:'manual',
-        duration:30,
-        //delay:50
+
+    var loopl = "M100,100 a30 30,0,0,0,0 60",
+        loopr = "M100,100 a30 30,0,0,1,0 60",
+        linel= "M100,100 a30 30,0,0,0,0 60l100 0",
+        liner= "M100,100 a30 30,0,0,1,0 60l-100 0",
+        l1 = Snap.path.getTotalLength(loopl),
+        l2 = Snap.path.getTotalLength(linel);
+
+    var sCombo = Snap('#line-combo')
+    var sFlightR = Snap('#line-flight-right')
+    var sFlightL = Snap('#line-flight-left')
+    var sHotel = Snap('#line-hotel')
+    var lineCombo = sCombo.path({
+        path: loopl,
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: 8,
+        strokeLinecap: "round"
     });
-    var vivFlightLineLeft = new Vivus('line-left-flight',{
-        start:'manual',
-        duration:30,
-        //delay:50
+    var lineFlightR = sFlightR.path({
+        path: loopr,
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: 6,
+        strokeLinecap: "round"
     });
-    var vivFlightLineRight = new Vivus('line-right-flight',{
-        start:'manual',
-        duration:30,
-        //delay:50
+    var lineFlightL = sFlightL.path({
+        path: loopl,
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: 6,
+        strokeLinecap: "round"
     });
-    var vivHotelLine = new Vivus('line-right-hotel',{
-        start:'manual',
-        duration:30,
-        //delay:50
+    var lineHotel = sHotel.path({
+        path: loopr,
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: 6,
+        strokeLinecap: "round"
     });
-    vivComboLine.play(1)
+
+
+
+
+    //vivComboLine.play(1)
     var tabLine = $('.tab-line');
 
     function tabSwitchSvg(tabs, details, shouldInitSearch) {
@@ -1045,6 +1072,8 @@ $(function () {
         shouldInitSearch && search.init();
         //点击切换
         $tabs.mousedown(function () {
+            //获取当前tab
+            var $this = $(this);
             //获取上一个tab
             var lastTab;
             $tabs.each(function () {
@@ -1052,43 +1081,103 @@ $(function () {
                     lastTab =  $(this);
                 }
             });
-            //上一个tab添加active样式=>旋转
-            lastTab.addClass('active');
+
             var viv = null;
             var vivCurrent = null;
+            var $icon = lastTab.find('.svg-icon');
             //判断上一个tab的vivus实例
-
             if(lastTab.hasClass('tab-combo')){
                 viv = vivCombo;
-                vivLine = vivComboLine;
+                snapLine = lineCombo;
+                snapLineTarget = linel;
+                //旋转
+                $icon.css({
+                    'transform':'rotateZ(72deg)'
+                })
+
             }else if(lastTab.hasClass('tab-flight')){
                 viv = vivFlight;
-                vivLine = vivFlightLineLeft;
+                //判断是左还是右
+                if($this.hasClass('tab-combo')){
+                    snapLine = lineFlightR;
+                    snapLineTarget = liner;
+                    //旋转
+                    $icon.css({
+                        'transform':'rotateZ(60deg)'
+                    })
+                }else {
+                    snapLine = lineFlightL;
+                    snapLineTarget = linel;
+                    //旋转
+                    $icon.css({
+                        'transform':'rotateZ(-60deg)'
+                    })
+                }
             }else {
                 viv = vivHotel
-                vivLine = vivHotelLine;
+                snapLine = lineHotel;
+                snapLineTarget = liner;
+                //旋转
+                $icon.css({
+                    'transform':'rotateZ(60deg)'
+                })
             }
-            //上一个tab描线=>反向
-            viv.play(-1);
-            vivLine.play(-1)
 
-            //获取当前tab
-            var $this = $(this);
-            //当前tab添加current=>旋转
-            $this.addClass("current").removeClass("active").siblings(tabs).removeClass("current");
+            //上一个tab描线=>反向
+            viv.play(-1,function () {
+                //显示文字
+                lastTab.removeClass("current")
+            });
+
+            //显示轨迹
+            /*setTimeout(function () {
+                var $lineTarget;
+                if(snapLineTarget === linel){
+                    $lineTarget = lastTab.find('.line-left')
+                }else {
+                    $lineTarget = lastTab.find('.line-right')
+                }
+                $lineTarget.show()//FIXME addclass无效
+
+                Snap.animate(0, l2 - l1, function (val) {
+                    snapLine.attr({
+                        path: Snap.path.getSubpath(snapLineTarget, val, val + l1)
+                    });
+                }, 100,function () {
+                    $lineTarget.hide();
+                });
+            },160)*/
+
+
+            //当前tab文字隐藏
+            $this.addClass("current")//.removeClass("active")//.siblings(tabs).removeClass("current");
+
+            var $curIcon = $this.find('.svg-icon');
             //判断当前tab的vivus实例
             if($this.hasClass('tab-combo')){
                 vivCurrent = vivCombo
                 tabLine.removeClass('flight').removeClass('hotel')
+                //当前tab旋转复位
+                $curIcon.css({
+                    'transform':'rotateZ(144deg)'
+                })
             }else if($this.hasClass('tab-flight')){
                 vivCurrent = vivFlight
                 tabLine.addClass('flight').removeClass('hotel')
+                //当前tab旋转复位
+                $curIcon.css({
+                    'transform':'rotateZ(0deg)'
+                })
             }else {
                 vivCurrent = vivHotel
                 tabLine.addClass('hotel').removeClass('flight')
+                //当前tab旋转复位
+                $curIcon.css({
+                    'transform':'rotateZ(0deg)'
+                })
             }
             //当前tab描线=>正向
-            vivCurrent.play(1);
+            vivCurrent.stop().play(1);
 
             $(details).eq($(this).index()).show().siblings(details).hide();
             search.refresh();

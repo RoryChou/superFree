@@ -585,8 +585,8 @@ body {
           .list-hotel-title-words {
             @include inlineblock;
             font-size:14px;
-            color:#333333;
-            text-decoration: underline;
+            color:#29e;
+            //text-decoration: underline;
             margin-right: 10px;
             &:hover {
               color: $color-hover-orange;
@@ -660,6 +660,11 @@ body {
           line-height:19px;
           width: 144px;
           @include etc;
+          text-decoration: underline;
+          cursor: pointer;
+          &:hover {
+            color: $color-hover-orange;
+          }
         }
       }
     }
@@ -908,6 +913,17 @@ body {
       font-size: 18px;
       margin-bottom: 10px;
     }
-
   }
 }
+
+/*酒店产品信息弹窗*/
+#hotel_title_pro {
+  width: 180px;
+  td {
+    display: block;
+  }
+  .titleHover {
+    width: auto;
+  }
+}
+/*酒店产品信息弹窗END*/

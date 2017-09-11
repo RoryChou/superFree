@@ -114,17 +114,47 @@ dfn {
   dd {
     .order-product-name {
       vertical-align: middle;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .order-title-info {
+      @include inlineblock;
+      vertical-align: top;
+      li {
+        float: left;
+        font-size: 14px;
+        color: #666;
+        b {
+          color: #333;
+          font-weight: normal;
+        }
+        //padding: 6px 0;
+      }
     }
     li {
       margin-right: 17px;
     }
     .order-product-info {
+      .hotel-pro-name {
+        width: 224px;
+        @include etc;
+        text-decoration: underline;
+        color: #333;
+        cursor: pointer;
+        margin-right: 50px;
+        &:hover {
+          color: $color-hover-orange;
+        }
+      }
       .hotel-info-details {
         width: 281px;
         span {
           font-size: 12px;
           padding:0 6px;
           border-right: 1px solid #ccc;
+          &:last-child {
+            border: 0;
+          }
         }
       }
       .order-product-notice {
@@ -549,3 +579,15 @@ dfn {
 .orderTicketInfo li.primary dfn i{
   padding-right: 0;
 }
+
+/*酒店产品信息弹窗*/
+#hotel_title_float {
+  width: 180px;
+  td {
+    display: block;
+  }
+  .titleHover {
+    width: auto;
+  }
+}
+/*酒店产品信息弹窗END*/

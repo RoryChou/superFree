@@ -78,9 +78,10 @@ body {
         position: absolute;
         left: 50%;
         margin-left: -20px;
-        transition: all 0.5s linear ;
+        transition: all 0.3s ease-in;
         height: 26px;
         width: 26px;
+        transform: rotateZ(60deg);
       }
       .svg-line-left {
         position: absolute;
@@ -92,6 +93,21 @@ body {
       .svg-line-right {
         @extend .svg-line-left;
         left: 42px;
+      }
+      .line-left {
+        margin-left: 30px;
+      }
+      .line-left,.line-right {
+        display: none;
+        margin-top: -10px;
+        &.show {
+          display: inline;
+        }
+      }
+      #line-flight-right {
+        position: absolute;
+        top:24px;
+        left: 20px;
       }
       span {
         transition: all 0.2s linear ;
@@ -107,16 +123,8 @@ body {
       &.current {
         @include opacity(1);
         font-weight: 600;
-        .tab-wrapper {
-          //border-bottom: 2px solid #fff;
-        }
         span {
           opacity: 0;
-        }
-      }
-      &.active {
-        .svg-icon {
-          transform: rotateZ(120deg);
         }
       }
       &:hover {
@@ -132,6 +140,9 @@ body {
           background: url("../../imgs/home/sprite/icon-tab-combo-cur.png");
         }
       }
+      .svg-icon {
+        transform: rotateZ(0deg);
+      }
     }
     .tab-flight {
       i {
@@ -142,6 +153,10 @@ body {
           background: url("../../imgs/home/sprite/icon-tab-flight-cur.png");
         }
       }
+      .line-left {
+        margin-left: 10px;
+      }
+
     }
     .tab-hotel {
       border: 0;
@@ -177,7 +192,7 @@ body {
     background-color: #fff;
     left: 92px;
     top: 60px;
-    transition: all 0.3s linear 0.7s;
+    transition: all 0.3s ease-in-out 0s;
     &.flight{
       transform: translate(200px,0px);
     }

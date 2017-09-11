@@ -521,9 +521,9 @@ $(function () {
                 // 处理error
                 self.showError('',true,'flight-from');
                 self.showError('',true,'flight-to');
-                if(!self.passFlight){
-                    self.formCheck()
-                }
+                // if(!self.passFlight){
+                //     self.formCheck()
+                // }
             });
             //下拉框点击
             $document.on('click','.search-contents-select',function (e) {

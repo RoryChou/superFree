@@ -1229,6 +1229,7 @@ a:hover .hlIcon-room {
 
 .list_td2 { /*width: 46px;*/
   width: 64px;
+  @include etc;
   padding: 0;
 }
 

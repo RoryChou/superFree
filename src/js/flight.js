@@ -64,6 +64,7 @@ $(function() {
 
     // 价格日历滑动
     $document.on("click", ".ft-price-calendar a:not(.slider-btn-disable)", function () {
+        console.log(123)
         var $this = $(this);
         var $innerBox = $(".ft-price-box-inner");
         var width = $(".ft-price-box").css("width");
@@ -131,7 +132,10 @@ $(function() {
         var diff = now - lastTime;
 
         if (diff > TEN_MINUTE) {
-            window.location.reload();
+            showTimeout();
+            setTimeout(function(){
+                window.location.reload();
+            }, 1000);
         }
         lastTime = now;
         $document.off("mousemove", mousemove);
@@ -984,4 +988,13 @@ $(function() {
     });
 
     /*所有poptips END*/
+
+    //超时提示
+    function showTimeout() {
+        $(".ft-overlay, .ft-dialog-timeout").show();
+    }
+
+    function hideTimeout() {
+        $(".ft-overlay, .ft-dialog-timeout").hide();
+    }
 });

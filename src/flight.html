@@ -151,6 +151,7 @@
                                         <p>总人数不能超过9人哦！</p>
                                     </div>-->
                                 </div>
+                                <div class="flight-change"></div>
                                 <div class="flight-to section-input search-city">
                                     <div class="search-contents-title">目的地</div>
                                     <input type="text" class="input-city-to" placeholder="请输入目的地">
@@ -332,52 +333,52 @@
                 <div class="ft-price-box">
                     <div class="ft-price-box-inner clearfix">
                         <ul class="clearfix">
-                            <li>
+                            <li data-tag='price-calendar-li' class="disabled">
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-more">点击查看</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li class="active">
+                            <li class="active" data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起<span>低</span></p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
                             </li>
-                            <li>
+                            <li data-tag='price-calendar-li'>
                                 <p class="date-info">01-26<span>周日</span></p>
                                 <p class="price-info"><i>￥</i><b>1690</b>起</p>
                                 <i class="arrow-top"></i>
@@ -1130,6 +1131,16 @@
         </div>
     </div>
     <!-- 搜索无结果 结束 -->
+
+    <!--超时提示-->
+    <div class="ft-dialog-timeout">
+        <div class="ft-dialog-inner clearfix">
+            <div class="ft-dialog-body">
+                <p>距离您上次搜索已经超过<em>10分钟</em>啦!<br><span>正在为您查询最新价格...</span></p>
+            </div>
+        </div>
+    </div>
+    <!--超时提示END-->
 </div>
 
 <!-- build:js -->

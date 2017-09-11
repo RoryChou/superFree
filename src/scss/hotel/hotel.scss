@@ -395,6 +395,7 @@ body {
   }
   .drop-complete {
     @extend .drop-suggestion-citys;
+    width: 418px;
     z-index: 30;
     padding: 10px 0;
     li {
@@ -405,16 +406,21 @@ body {
       color:#666666;
       span {
         @include inlineblock;
+        height: 30px;
+        vertical-align: bottom;
         &.name {
           width: 234px;
+          @include etc;
         }
         &.hotelCount {
           width: 76px;
+          @include etc;
         }
         &.type {
           display: none;
           width: 76px;
           text-align: center;
+          @include etc;
         }
       }
       &:hover {

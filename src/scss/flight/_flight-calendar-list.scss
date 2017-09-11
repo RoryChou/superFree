@@ -46,6 +46,29 @@
   background: $color-bg-orange;
   text-align: center;
   cursor: pointer;
+  &.disabled {
+    cursor: not-allowed;
+    background-color: #fff;
+    &:hover {
+      background-color: #fff;
+      p,span {
+        color: #999;
+      }
+      .price-info {
+        b,i{
+          color: #999;
+        }
+      }
+    }
+    p,span {
+      color: #999;
+    }
+    .price-info {
+      b,i{
+        color: #999;
+      }
+    }
+  }
 }
 .ft-price-calendar li:hover {
   background: #fc6;
