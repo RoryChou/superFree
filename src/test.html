@@ -8,10 +8,7 @@
     <title>Document</title>
     <style>
         svg {
-            transition: all 2s;
-        }
-        .active {
-            transform: rotateZ(360deg);
+            transition: all ease-in 0.5s;
         }
         .wrapper {
             width: 300px;
@@ -39,17 +36,26 @@
         }
         #snap {
             position: absolute;
-            width: 20px;
+            width: 30px;
             height: 12px;
-            bottom: 0;
+            bottom: 2px;
             left: 50%;
-            margin-left: -10px;
+            margin-left: -15px;
+        }
+        .hide {
+            display: none;
+        }
+        .rotate {
+            transform: rotateZ(-120deg);
         }
     </style>
 </head>
 <body>
     <button id="btn">
         开始
+    </button>
+    <button id="move">
+        动起来
     </button>
     <!--<svg version="1.1" id="test1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="960px" height="560px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
@@ -107,13 +113,17 @@
     <div class="container">
         <!--套餐-->
         <svg id="test3" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path stroke="#000" stroke-width="1px" fill="none" d="M7.61362743,15.5122339 L-0.0471542797,23.1807261 C0.193813628,22.9405006 0.578760766,22.9405006 0.817768735,23.177721 C1.05840143,23.416659 1.05840143,23.7970024 0.831666522,24.0311222 L8.48165274,16.3795884 C8.23975804,16.6190349 7.85616145,16.6190349 7.61798085,16.3832839 L7.61557521,16.3808948 C7.49986317,16.2655838 7.434823,16.1089476 7.434823,15.9455895 C7.434823,15.7831501 7.49913357,15.6273574 7.61362751,15.5122338 Z M22.1466176,14.5365831 L18.6962253,9.47322969 L20.391356,3.59716924 L14.490901,5.286086 L9.401056,1.84495574 L9.21224333,7.95571457 L4.31183483,11.7477072 L9.91155059,14.0207192 L12.2729343,19.6831642 L16.0067367,14.7236901 L22.1466176,14.5365831 Z"></path>
+            <!--<path stroke="#000" stroke-width="1px" fill="none" d="M22.1466176,14.5365831 L18.6962253,9.47322969 L20.391356,3.59716924 L14.490901,5.286086 L9.401056,1.84495574 L9.21224333,7.95571457 L4.31183483,11.7477072 L9.91155059,14.0207192 L12.2729343,19.6831642 L16.0067367,14.7236901 L22.1466176,14.5365831 Z"></path>-->
+            <path data-start="5" data-duration="10" stroke="#000" stroke-width="1px" fill="none" d="M22.1466176,14.5365831 L16.0067367,14.7236901 L12.2729343,19.6831642 L9.91155059,14.0207192 L4.31183483,11.7477072 L9.21224333,7.95571457 L9.401056,1.84495574 L14.490901,5.286086 L20.391356,3.59716924 L18.6962253,9.47322969 L22.1466176,14.5365831 Z"></path>
+            <path data-start="0" data-duration="10" stroke="#000" stroke-width="1px" fill="none" d="M-0.0471542797,23.1807261 L7.61362743,15.5122339"></path>
         </svg>
         <!--套餐END-->
-        <svg id="snap" width="20" height="12">
+        <svg id="snap" viewBox="0 0 180 10">
 
         </svg>
     </div>
+
+
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vivus/0.4.2/vivus.min.js"></script>
     <script>
@@ -380,17 +390,48 @@
     <script src="https://cdn.bootcss.com/snap.svg/0.5.1/snap.svg-min.js"></script>
 <script>
     $(function () {
-        var vivElem = new Vivus('test4',{
-            start:'manual',
+        var vivElem = new Vivus('test3',{
+            //start:'manual',
+            type:'scenario',
+            duration:30,
             //reverseStack:true
         });
+        var loop = "M100,100 a30 30,0,0,0,1 1",
+            loop2 = "M140,0 a30 30,0,0,1,-30 30 l-100 0",
+            //star= "M753.1699404800003 572.2823237797916c-26.553139199999993 26.08951296-41.26273536 71.651328-34.9827072 108.48854015999997l35.53062912000003 208.8425472-185.70338304-98.37305856000003c-33.00175871999999-17.44920576-80.88170496000001-17.491353600000004-113.88346367999999 0l-185.70338303999998 98.33091072000002 35.57277696-208.8425472c6.237880320000002-36.75291648-8.513863679999986-82.35687936000001-34.98270719999999-108.44639231999997l-150.8892672-148.19180543999997 208.21032960000002-30.472888319999996c36.79506432-5.394923520000004 75.48678144000002-33.718272000000006 91.92443904000001-67.2258048l92.80954368-189.49668863999997 92.80954367999999 189.49668863999997c16.47980544 33.549680640000005 55.12937472000001 61.83088128 91.96658688000001 67.22580479999999l208.2103296 30.47288832000001-150.88926719999998 148.19180544z",
+            line= "M100,100 a30 30,0,0,0,30 30 l 100 0",
+            line2= "M100,100 a30 30,0,0,1,30 30l-100 0",
+            l1 = Snap.path.getTotalLength(loop2),
+            l2 = Snap.path.getTotalLength(line2);
+
+        var s = Snap('#snap')
+        var p = s.path({
+            path: loop2,
+            fill: "none",
+            stroke: "#000",
+            strokeWidth: 6,
+            strokeLinecap: "round"
+        });
+        //p.addClass('hide');
         $('#btn').click(function () {
             //$('#line-left-combo').addClass('active');
-            vivElem.play(1,function () {
+            $('#test3').addClass('rotate');
+            vivElem.play(-1,function () {
 
             })
+
+            setTimeout(function () {
+                //p.removeClass('hide');
+                Snap.animate(0, l2-80, function (val) {
+                    var val2 = val>80?80:val;
+                    p.attr({
+                        path: Snap.path.getSubpath(line2, val, val+val2)
+                    });
+                }, 350);
+            },30)
         })
-        var line = "";
+
+        /*var line = "";
         var s = Snap('#snap')
         var p = s.path({
             path: line,
@@ -398,28 +439,8 @@
             stroke: "#f00",
             strokeWidth: 6,
             strokeLinecap: "round"
-        });
-        /*var loop = "M100,100 a30 30,0,0,1,0 60",
-            //star= "M753.1699404800003 572.2823237797916c-26.553139199999993 26.08951296-41.26273536 71.651328-34.9827072 108.48854015999997l35.53062912000003 208.8425472-185.70338304-98.37305856000003c-33.00175871999999-17.44920576-80.88170496000001-17.491353600000004-113.88346367999999 0l-185.70338303999998 98.33091072000002 35.57277696-208.8425472c6.237880320000002-36.75291648-8.513863679999986-82.35687936000001-34.98270719999999-108.44639231999997l-150.8892672-148.19180543999997 208.21032960000002-30.472888319999996c36.79506432-5.394923520000004 75.48678144000002-33.718272000000006 91.92443904000001-67.2258048l92.80954368-189.49668863999997 92.80954367999999 189.49668863999997c16.47980544 33.549680640000005 55.12937472000001 61.83088128 91.96658688000001 67.22580479999999l208.2103296 30.47288832000001-150.88926719999998 148.19180544z",
-            line= "M100,100 a30 30,0,0,1,0 60l-100 0",
-            l1 = Snap.path.getTotalLength(line),
-            l2 = Snap.path.getTotalLength(star);
+        });*/
 
-        var s = Snap('#snap')
-        var p = s.path({
-            path: star,
-            fill: "none",
-            stroke: "#f00",
-            strokeWidth: 6,
-            strokeLinecap: "round"
-        });
-        $('#btn').click(function () {
-            Snap.animate(0, l2 - l1, function (val) {
-                p.attr({
-                    path: Snap.path.getSubpath(line, val, val + l1)
-                });
-            }, 5000);
-        })*/
     })
 
 </script>

@@ -1092,7 +1092,7 @@ $(function () {
                 snapLineTarget = linel;
                 //旋转
                 $icon.css({
-                    'transform':'rotateZ(72deg)'
+                    'transform':'rotateZ(-120deg)'
                 })
 
             }else if(lastTab.hasClass('tab-flight')){

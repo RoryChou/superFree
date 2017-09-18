@@ -59,7 +59,7 @@ body {
     li {
       cursor: pointer;
       float: left;
-      padding: 0 47px;
+      padding: 0 42px;
       height: 22px;
       line-height: 22px;
       font-size: 18px;
@@ -68,16 +68,17 @@ body {
       border-right: 1px solid #777;
       @include opacity(0.75);
       .tab-wrapper {
-        width: 97px;
+        width: 104px;
         text-align: center;
         padding-right: 10px;
         padding-bottom: 9px;
         position: relative;
       }
       .svg-icon {
-        position: absolute;
-        left: 50%;
-        margin-left: -20px;
+        //position: absolute;
+        //left: 50%;
+        //margin-left: -20px;
+        vertical-align: middle;
         transition: all 0.3s ease-in;
         height: 26px;
         width: 26px;
@@ -124,7 +125,7 @@ body {
         @include opacity(1);
         font-weight: 600;
         span {
-          opacity: 0;
+          //opacity: 0;
         }
       }
       &:hover {
