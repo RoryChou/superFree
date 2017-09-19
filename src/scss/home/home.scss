@@ -86,10 +86,10 @@ body {
       }
       .svg-line-left {
         position: absolute;
-        left: 28px;
-        bottom: -11px;
-        height: 26px;
-        width: 26px;
+        left: 3px;
+        bottom: -6px;
+        height: 20px;
+        width: 40px;
       }
       .svg-line-right {
         @extend .svg-line-left;
@@ -189,11 +189,11 @@ body {
   .tab-line {
     position: absolute;
     height: 2px;
-    width: 60px;
+    width: 90px;
     background-color: #fff;
-    left: 92px;
+    left: 82px;
     top: 60px;
-    transition: all 0.3s ease-in-out 0s;
+    transition: all 0.5s cubic-bezier(0.6, 0.25, 0.67, 0.37) 0.05s;
     &.flight{
       transform: translate(200px,0px);
     }

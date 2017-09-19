@@ -1017,10 +1017,10 @@ $(function () {
         animTimingFunction:Vivus.EASE_IN
     });
 
-    var loopl = "M100,100 a30 30,0,0,0,0 60",
-        loopr = "M100,100 a30 30,0,0,1,0 60",
-        linel= "M100,100 a30 30,0,0,0,0 60l100 0",
-        liner= "M100,100 a30 30,0,0,1,0 60l-100 0",
+    var loopl = "M10,0 a30 30,0,0,0,1 1",
+        loopr = "M140,0 a30 30,0,0,1,-1 1",
+        linel= "M10,0 a30 30,0,0,0,30 30 l 100 0",
+        liner= "M140,0 a30 30,0,0,1,-30 30l-100 0",
         l1 = Snap.path.getTotalLength(loopl),
         l2 = Snap.path.getTotalLength(linel);
 
@@ -1032,7 +1032,7 @@ $(function () {
         path: loopl,
         fill: "none",
         stroke: "#fff",
-        strokeWidth: 8,
+        strokeWidth: 10,
         strokeLinecap: "round"
     });
     var lineFlightR = sFlightR.path({
@@ -1056,8 +1056,6 @@ $(function () {
         strokeWidth: 6,
         strokeLinecap: "round"
     });
-
-
 
 
     //vivComboLine.play(1)
@@ -1092,7 +1090,7 @@ $(function () {
                 snapLineTarget = linel;
                 //旋转
                 $icon.css({
-                    'transform':'rotateZ(-120deg)'
+                    'transform':'rotateZ(-60deg)'
                 })
 
             }else if(lastTab.hasClass('tab-flight')){
@@ -1130,23 +1128,25 @@ $(function () {
             });
 
             //显示轨迹
-            /*setTimeout(function () {
+            setTimeout(function () {
                 var $lineTarget;
                 if(snapLineTarget === linel){
-                    $lineTarget = lastTab.find('.line-left')
+                    $lineTarget = lastTab.find('.svg-line-left')
                 }else {
                     $lineTarget = lastTab.find('.line-right')
                 }
                 $lineTarget.show()//FIXME addclass无效
 
-                Snap.animate(0, l2 - l1, function (val) {
+
+                Snap.animate(0, l2 - 80, function (val) {
+                    var val2 = val>80?80:val;
                     snapLine.attr({
-                        path: Snap.path.getSubpath(snapLineTarget, val, val + l1)
+                        path: Snap.path.getSubpath(snapLineTarget, val, val+val2)
                     });
                 }, 100,function () {
                     $lineTarget.hide();
                 });
-            },160)*/
+            },100)
 
 
             //当前tab文字隐藏
@@ -1156,10 +1156,11 @@ $(function () {
             //判断当前tab的vivus实例
             if($this.hasClass('tab-combo')){
                 vivCurrent = vivCombo
+
                 tabLine.removeClass('flight').removeClass('hotel')
                 //当前tab旋转复位
                 $curIcon.css({
-                    'transform':'rotateZ(144deg)'
+                    'transform':'rotateZ(0deg)'
                 })
             }else if($this.hasClass('tab-flight')){
                 vivCurrent = vivFlight
