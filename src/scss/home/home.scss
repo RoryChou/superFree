@@ -189,11 +189,12 @@ body {
   .tab-line {
     position: absolute;
     height: 2px;
-    width: 90px;
+    width: 100px;
     background-color: #fff;
-    left: 82px;
+    left: 68px;
     top: 60px;
-    transition: all 0.5s cubic-bezier(0.6, 0.25, 0.67, 0.37) 0.05s;
+    //transition: all 0.5s cubic-bezier(0.6, 0.25, 0.67, 0.37) 0.05s;
+    transition: all 0.5s ease-out 0.1s;
     &.flight{
       transform: translate(200px,0px);
     }
