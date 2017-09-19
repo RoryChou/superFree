@@ -1069,7 +1069,7 @@ $(function () {
         $(details).eq(0).show().siblings(details).hide();
         shouldInitSearch && search.init();
         //点击切换
-        $tabs.mousedown(function () {
+        $tabs.click(function () {
             //获取当前tab
             var $this = $(this);
             //获取上一个tab
